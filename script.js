@@ -1799,12 +1799,136 @@
     CALENDAR_MONTH_THEMES,
     // SunnyGo Sailing Cheer Control
     cheerSunny,
+    // Replay Pixel Art Loader
+    replayLoader: replayPixelLoader,
     // Debug & Testing helpers
     state
   };
 
+  // ============================================================
+  // Full-Screen Pixel Art Luffy Loading Screen Engine
+  // ============================================================
+
+  let pixelAnimInterval = null;
+  let pixelProgressAnim = null;
+
+  function initPixelLoader() {
+    const overlay = document.getElementById('pixelLoaderOverlay');
+    if (!overlay) return;
+    runPixelLoaderSequence();
+  }
+
+  function setLuffyFrame(frameNum) {
+    const frames = [
+      document.getElementById('luffyFrame1'),
+      document.getElementById('luffyFrame2'),
+      document.getElementById('luffyFrame3'),
+      document.getElementById('luffyFrame4')
+    ];
+    const frameJump = document.getElementById('luffyFrame5');
+
+    frames.forEach((f, idx) => {
+      if (f) f.style.display = (idx + 1 === frameNum) ? 'inline' : 'none';
+    });
+    if (frameJump) {
+      frameJump.style.display = (frameNum === 5) ? 'inline' : 'none';
+    }
+  }
+
+  function startLuffyRun() {
+    if (pixelAnimInterval) clearInterval(pixelAnimInterval);
+    let currentIdx = 0;
+    setLuffyFrame(1);
+    pixelAnimInterval = setInterval(() => {
+      currentIdx = (currentIdx + 1) % 4;
+      setLuffyFrame(currentIdx + 1);
+    }, 110);
+  }
+
+  function stopLuffyRun() {
+    if (pixelAnimInterval) {
+      clearInterval(pixelAnimInterval);
+      pixelAnimInterval = null;
+    }
+  }
+
+  function getPixelQuestText(pct) {
+    if (pct < 25) return '✦ HOISTING THE SAILS ✦';
+    if (pct < 50) return '✦ STOCKING MEAT & SUPPLIES ✦';
+    if (pct < 75) return '✦ NAVIGATING THE GRAND LINE ✦';
+    if (pct < 99) return '✦ APPROACHING PIRATE ISLAND ✦';
+    return '✦ PIRATE KING READY! SET SAIL! ⚓ ✦';
+  }
+
+  function runPixelLoaderSequence(onComplete) {
+    const overlay = document.getElementById('pixelLoaderOverlay');
+    const anchor = document.getElementById('pixelLuffyAnchor');
+    const fill = document.getElementById('pixelBarFill');
+    const percentText = document.getElementById('pixelPercentText');
+    const questText = document.getElementById('pixelQuestText');
+
+    if (!overlay || !anchor || !fill || !percentText) return;
+
+    if (pixelProgressAnim) cancelAnimationFrame(pixelProgressAnim);
+
+    overlay.style.display = 'flex';
+    overlay.classList.remove('is-hidden');
+    anchor.classList.remove('is-jumping');
+    fill.classList.remove('is-complete');
+
+    anchor.style.left = '36px';
+    fill.style.width = '0%';
+    percentText.textContent = 'LOADING... 0%';
+    if (questText) questText.textContent = getPixelQuestText(0);
+
+    startLuffyRun();
+
+    const startTime = performance.now();
+    const duration = 1800; // 1.8 seconds smooth progress
+
+    function step(now) {
+      const elapsed = now - startTime;
+      const rawProgress = Math.min(100, (elapsed / duration) * 100);
+      const rounded = Math.round(rawProgress);
+
+      // Interpolate horizontal position so Luffy's feet stay centered on top of the bar
+      anchor.style.left = `calc(36px + (100% - 72px) * ${rawProgress / 100})`;
+      fill.style.width = `${rawProgress}%`;
+      percentText.textContent = `LOADING... ${rounded}%`;
+      if (questText) questText.textContent = getPixelQuestText(rounded);
+
+      if (rawProgress < 100) {
+        pixelProgressAnim = requestAnimationFrame(step);
+      } else {
+        // 100% REACHED!
+        stopLuffyRun();
+        setLuffyFrame(5); // Victory celebration jump
+        anchor.classList.add('is-jumping');
+        fill.classList.add('is-complete');
+        percentText.textContent = 'LOADING... 100%';
+        if (questText) questText.textContent = '✦ SET SAIL! ⚓ ✦';
+
+        // Brief celebration pause before fading out
+        setTimeout(() => {
+          overlay.classList.add('is-hidden');
+          setTimeout(() => {
+            overlay.style.display = 'none';
+            if (onComplete) onComplete();
+          }, 550);
+        }, 650);
+      }
+    }
+
+    pixelProgressAnim = requestAnimationFrame(step);
+  }
+
+  function replayPixelLoader() {
+    runPixelLoaderSequence();
+  }
+
   // Run on DOM ready
   function init() {
+    initPixelLoader();
     initLiveClock();
     loadFromStorage();
     loadNavState();
