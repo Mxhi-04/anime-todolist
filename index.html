@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>One Piece Todo & Mission Log ☠️ | Grand Line Dashboard</title>
+  <meta name="description"
+    content="Set sail across the Grand Line! A One Piece inspired productivity dashboard and mission log.">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Zen Maru Gothic for Japanese accents -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css?v=5">
+</head>
+
+<body class="dark-theme">
+  <!-- Subtle Anime Sakura / Star Background Ornaments -->
+  <div class="bg-decorations" aria-hidden="true">
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+    <div class="glow-orb orb-3"></div>
+    <div class="sakura-petal p-1">☠️</div>
+    <div class="sakura-petal p-2">⚔️</div>
+    <div class="sakura-petal p-3">⚓</div>
+    <div class="sakura-petal p-4">✨</div>
+  </div>
+
+  <div class="app-layout" id="appLayout">
+    <!-- Backdrop for mobile drawer -->
+    <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="app.toggleSidebar(false)"></div>
+
+    <!-- ==================== SIDEBAR ==================== -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-inner">
+        <!-- Collapse button for desktop and mobile -->
+        <button class="btn-sidebar-close" id="btnSidebarClose" onclick="app.toggleSidebar(false)"
+          aria-label="Collapse sidebar" title="Collapse sidebar">✕</button>
+
+        <!-- Sidebar Top: Prominent Live Date & Time -->
+        <div class="sidebar-header-clock">
+          <div class="crest-badge">
+            <span class="crest-icon">☠️</span>
+            <span class="crest-kanji">海賊王</span> <!-- Pirate King -->
+          </div>
+          <div class="sidebar-clock-time" id="sidebarClockTime">--:-- --</div>
+          <div class="sidebar-clock-day" id="sidebarClockDay">-------</div>
+          <div class="sidebar-clock-date" id="sidebarClockDate">-- Month ----</div>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        <!-- Main Navigation Views -->
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">
+            <span>NAVIGATION</span>
+            <span class="jp-sub">案内</span>
+          </div>
+          <nav class="sidebar-nav">
+            <button class="nav-item active" id="navDashboard" onclick="app.switchView('dashboard')">
+              <span class="nav-icon">🏠</span>
+              <span class="nav-label">Dashboard</span>
+            </button>
+            <button class="nav-item" id="navToday" onclick="app.switchView('today-tasks')">
+              <span class="nav-icon">📅</span>
+              <span class="nav-label">Today's Tasks</span>
+              <span class="badge" id="todayTaskCountBadge">0</span>
+            </button>
+            <button class="nav-item" id="navAll" onclick="app.switchView('all-tasks')">
+              <span class="nav-icon">📋</span>
+              <span class="nav-label">Show All Tasks</span>
+              <span class="badge" id="allTaskCountBadge">0</span>
+            </button>
+          </nav>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        <!-- Activities Section -->
+        <div class="sidebar-section activities-section">
+          <div class="sidebar-section-title">
+            <span>ACTIVITIES</span>
+            <span class="jp-sub">活動</span>
+            <button class="btn-icon-subtle" id="btnAddActivityTrigger" onclick="app.openActivityModal()"
+              title="Add Activity" aria-label="Add Activity">+</button>
+          </div>
+
+          <div class="activities-list" id="activitiesList">
+            <!-- Dynamically populated activities -->
+          </div>
+
+          <button class="btn-add-activity-block" onclick="app.openActivityModal()">
+            <span class="plus-sign">+</span>
+            <span>Add Activity</span>
+          </button>
+        </div>
+
+        <!-- Motivational Quote Widget at bottom -->
+        <div class="sidebar-quote-container">
+          <div class="quote-header">
+            <span class="sparkle">☠️</span>
+            <span>Pirate's Code</span>
+            <span class="sparkle">☠️</span>
+            <button class="quote-refresh-btn" onclick="app.nextQuote()" title="New Quote"
+              aria-label="New Quote">↺</button>
+          </div>
+          <div class="quote-body" id="quoteText">
+            "Even the smallest step moves you forward."
+          </div>
+          <div class="quote-sub" id="quoteAuthor">✦ 日々の成長 ✦</div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main class="main-content" id="mainContent">
+      <!-- Main Header / Topbar with Cartoonish SunnyGo Ocean Effect -->
+      <header class="top-header" id="topHeader">
+        <!-- Ocean Horizon & SunnyGo Sailing Background Stage -->
+        <div class="sunny-ocean-stage" id="sunnyOceanStage" aria-hidden="true">
+          <!-- Sky Elements (Night Stars, Crescent Moon, Anime Clouds) -->
+          <div class="sunny-sky-backdrop" id="sunnySkyBackdrop">
+            <div class="sunny-moon-container" id="sunnyMoonContainer" title="Grand Line Moonlight">
+              <div class="sunny-moon-crescent"></div>
+              <div class="sunny-moon-aura"></div>
+            </div>
+            <div class="sunny-stars-container" id="sunnyStarsContainer"></div>
+            <div class="sunny-clouds-container">
+              <span class="anime-cloud cloud-1"></span>
+              <span class="anime-cloud cloud-2"></span>
+              <span class="anime-cloud cloud-3"></span>
+            </div>
+          </div>
+
+          <!-- Dynamic Cartoon Wavelets / Surface Ripples Drifting Across Water -->
+          <div class="cartoon-wavelets-layer">
+            <span class="cartoon-wavelet w-1"></span>
+            <span class="cartoon-wavelet w-2"></span>
+            <span class="cartoon-wavelet w-3"></span>
+            <span class="cartoon-wavelet w-4"></span>
+            <span class="cartoon-wavelet w-5"></span>
+            <span class="cartoon-wavelet w-6"></span>
+          </div>
+
+          <!-- Cartoon Wave Layer 1 (Far Deep Ocean Triangle Waves) -->
+          <div class="sunny-waves-wrapper wave-layer-back">
+            <svg class="sunny-wave-svg" viewBox="0 0 1200 65" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="backWaveGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#1b4d82" stop-opacity="0.88" />
+                  <stop offset="100%" stop-color="#0b1b36" stop-opacity="0.98" />
+                </linearGradient>
+              </defs>
+              <!-- Triangle Tooth Sawtooth Wave Path -->
+              <path class="wave-path" fill="url(#backWaveGrad)" stroke="#173e6a" stroke-width="2" d="M 0,34 L 35,16 L 50,34 L 90,14 L 115,36 L 165,12 L 195,38 L 250,15 L 280,35 L 335,10 L 365,36 L 420,14 L 450,38 L 505,12 L 535,36 L 580,18 L 600,34 L 635,16 L 650,34 L 690,14 L 715,36 L 765,12 L 795,38 L 850,15 L 880,35 L 935,10 L 965,36 L 1020,14 L 1050,38 L 1105,12 L 1135,36 L 1180,18 L 1200,34 L 1200,65 L 0,65 Z"></path>
+              <!-- Cartoon White Triangle Peak Accents -->
+              <path class="wave-crest-line" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" opacity="0.85" d="M 30,22 L 35,16 L 40,22 M 85,20 L 90,14 L 97,20 M 160,18 L 165,12 L 172,18 M 245,21 L 250,15 L 257,21 M 330,16 L 335,10 L 342,16 M 415,20 L 420,14 L 427,20 M 500,18 L 505,12 L 512,18 M 630,22 L 635,16 L 640,22 M 685,20 L 690,14 L 697,20 M 760,18 L 765,12 L 772,18 M 845,21 L 850,15 L 857,21 M 930,16 L 935,10 L 942,16 M 1015,20 L 1020,14 L 1027,20 M 1100,18 L 1105,12 L 1112,18"></path>
+            </svg>
+          </div>
+
+          <!-- Cartoon Wave Layer 2 (Mid Ocean Staggered Triangle Waves) -->
+          <div class="sunny-waves-wrapper wave-layer-mid">
+            <svg class="sunny-wave-svg" viewBox="0 0 1200 65" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="midWaveGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#2372ab" stop-opacity="0.92" />
+                  <stop offset="100%" stop-color="#0c2c52" stop-opacity="0.98" />
+                </linearGradient>
+              </defs>
+              <path class="wave-path" fill="url(#midWaveGrad)" stroke="#1a5682" stroke-width="2.2" d="M 0,26 L 25,38 L 65,12 L 95,34 L 140,8 L 175,32 L 220,14 L 255,36 L 300,10 L 335,34 L 380,12 L 415,38 L 460,8 L 495,34 L 540,14 L 575,36 L 600,26 L 625,38 L 665,12 L 695,34 L 740,8 L 775,32 L 820,14 L 855,36 L 900,10 L 935,34 L 980,12 L 1015,38 L 1060,8 L 1095,34 L 1140,14 L 1175,36 L 1200,26 L 1200,65 L 0,65 Z"></path>
+              <!-- Triangle Cyan Highlights -->
+              <path class="wave-curl-line" fill="none" stroke="#8ce2ff" stroke-width="2.2" stroke-linecap="round" opacity="0.9" d="M 58,18 L 65,12 L 72,18 M 133,14 L 140,8 L 147,14 M 213,20 L 220,14 L 227,20 M 293,16 L 300,10 L 307,16 M 373,18 L 380,12 L 387,18 M 453,14 L 460,8 L 467,14 M 533,20 L 540,14 L 547,20 M 658,18 L 665,12 L 672,18 M 733,14 L 740,8 L 747,14 M 813,20 L 820,14 L 827,20 M 893,16 L 900,10 L 907,16 M 973,18 L 980,12 L 987,18 M 1053,14 L 1060,8 L 1067,14 M 1133,20 L 1140,14 L 1147,20"></path>
+            </svg>
+          </div>
+
+          <!-- SunnyGo Sailing Vessel -->
+          <div class="sunny-ship-track" id="sunnyShipTrack">
+            <div class="sunny-ship-voyager" id="sunnyShipVoyager" onclick="app.cheerSunny(event)" role="button" tabindex="0" title="Thousand Sunny sailing the Grand Line! Click to Cheer!">
+              <!-- Cartoon Splashes & Water Spray -->
+              <div class="cartoon-spray-container">
+                <span class="cartoon-spray-drop drop-1"></span>
+                <span class="cartoon-spray-drop drop-2"></span>
+                <span class="cartoon-spray-drop drop-3"></span>
+                <span class="cartoon-spray-drop drop-4"></span>
+              </div>
+              <!-- Ship's cartoon water wake & bubbly foam -->
+              <div class="sunny-wake-foam" id="sunnyWakeFoam">
+                <span class="foam-bubble b-1"></span>
+                <span class="foam-bubble b-2"></span>
+                <span class="foam-bubble b-3"></span>
+              </div>
+              <div class="sunny-bow-spray" id="sunnyBowSpray"></div>
+              <!-- Night Stern Lantern -->
+              <div class="sunny-stern-lantern" id="sunnySternLantern"></div>
+              <!-- Sunny ship asset -->
+              <img src="assets/sunny_go_ship.png" alt="SunnyGo sailing" class="sunny-ship-img" id="sunnyShipImg">
+              <!-- Interactive speech popup -->
+              <div class="sunny-bubble-msg" id="sunnyBubbleMsg">
+                <span class="bubble-pirate-mark">☠️</span>
+                <span class="bubble-text" id="sunnyBubbleText">Yo-ho-ho! Rest well tonight, Mahi!</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cartoon Wave Layer 3 (Foreground Triangular Waves with White Foam Caps) -->
+          <div class="sunny-waves-wrapper wave-layer-front">
+            <svg class="sunny-wave-svg" viewBox="0 0 1200 65" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="frontWaveGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#3cb0f7" stop-opacity="0.96" />
+                  <stop offset="100%" stop-color="#124a87" stop-opacity="1" />
+                </linearGradient>
+              </defs>
+              <!-- Bold Triangle Teeth Wave Path -->
+              <path class="wave-path" fill="url(#frontWaveGrad)" stroke="#ffffff" stroke-width="2.8" d="M 0,36 L 45,10 L 75,36 L 125,8 L 155,34 L 205,12 L 235,38 L 285,6 L 315,36 L 365,10 L 395,38 L 445,8 L 475,34 L 525,12 L 555,38 L 600,36 L 645,10 L 675,36 L 725,8 L 755,34 L 805,12 L 835,38 L 885,6 L 915,36 L 965,10 L 995,38 L 1045,8 L 1075,34 L 1125,12 L 1155,38 L 1200,36 L 1200,65 L 0,65 Z"></path>
+              <!-- White Triangular Foam Caps on Wave Peaks -->
+              <path class="wave-foam-caps" fill="#ffffff" stroke="#ffffff" stroke-width="1.2" opacity="0.98" d="M 33,20 L 45,10 L 57,20 Z M 113,18 L 125,8 L 137,18 Z M 193,22 L 205,12 L 217,22 Z M 273,16 L 285,6 L 297,16 Z M 353,20 L 365,10 L 377,20 Z M 433,18 L 445,8 L 457,18 Z M 513,22 L 525,12 L 537,22 Z M 633,20 L 645,10 L 657,20 Z M 713,18 L 725,8 L 737,18 Z M 793,22 L 805,12 L 817,22 Z M 873,16 L 885,6 L 897,16 Z M 953,20 L 965,10 L 977,20 Z M 1033,18 L 1045,8 L 1057,18 Z M 1113,22 L 1125,12 L 1137,22 Z"></path>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Foreground Header Content (Toggle & Greeting Box) -->
+        <div class="top-header-left">
+          <button class="btn-toggle-sidebar" id="btnToggleSidebar" onclick="app.toggleSidebar()"
+            aria-label="Toggle Navigation">
+            <span class="menu-bar"></span>
+            <span class="menu-bar"></span>
+            <span class="menu-bar"></span>
+          </button>
+
+          <div class="greeting-box">
+            <h1 class="greeting-title" id="greetingTitle">Good evening, Mahi <span class="sparkle-anim">✦</span></h1>
+            <p class="greeting-subtitle" id="greetingSubtitle">Thursday, 16 October 2026</p>
+          </div>
+        </div>
+
+        <div class="top-header-right">
+          <!-- Sunny voyage option removed per user request -->
+        </div>
+      </header>
+
+      <!-- Main Content Layout (Tasks Column Left, Anime Window & Calendar Column Right) -->
+      <div class="dashboard-workspace-layout" id="dashboardWorkspaceLayout">
+        <!-- Left: Tasks and Active View Column (occupies leftover space) -->
+        <div class="dashboard-tasks-column">
+          <!-- VIEW WRAPPER -->
+          <div class="view-viewport" id="viewViewport">
+            <!-- 1. DASHBOARD VIEW -->
+            <section class="app-view active" id="viewDashboard">
+              <!-- One Piece Alabasta Farewell Hero Banner -->
+              <div class="dashboard-hero-banner" id="dashboardHeroBanner">
+                <div class="hero-banner-bg" id="heroBannerBg"></div>
+                <div class="hero-banner-gradient-overlay"></div>
+                <div class="hero-banner-content">
+                  <div class="hero-crest">☠️ 麦わらの一味 • STRAW HAT CREW ☠️</div>
+                  <h2 class="hero-quote">You're Gonna Become the Pirate King!!</h2>
+                </div>
+              </div>
+
+              <!-- Today's Tasks Section -->
+              <div class="dashboard-card tasks-card">
+                <div class="card-header">
+                  <div class="card-title-group">
+                    <h2 class="card-title">Today's Tasks</h2>
+                    <span class="jp-badge">今日のタスク</span>
+                  </div>
+                  <button class="btn-subtle" onclick="app.openTaskModal()">
+                    <span class="plus-icon">+</span> Add Task
+                  </button>
+                </div>
+
+                <!-- Filter / Progress banner -->
+                <div class="task-progress-banner" id="todayProgressBanner">
+                  <div class="progress-bar-bg">
+                    <div class="progress-bar-fill" id="todayProgressFill" style="width: 0%;"></div>
+                  </div>
+                  <span class="progress-text" id="todayProgressText">0 of 0 tasks completed</span>
+                </div>
+
+                <!-- List of tasks for today -->
+                <div class="task-list-container" id="dashboardTodayTaskList">
+                  <!-- Dynamic task items or empty state -->
+                </div>
+              </div>
+            </section>
+
+            <!-- 2. ACTIVITY VIEW (Filtered by specific Activity) -->
+            <section class="app-view" id="viewActivity">
+              <div class="activity-hero-banner" id="activityHeroBanner">
+                <div class="activity-hero-content">
+                  <span class="activity-hero-icon" id="activityHeroIcon">📚</span>
+                  <div class="activity-hero-info">
+                    <div class="activity-hero-tag">ACTIVITY • 活動</div>
+                    <h2 class="activity-hero-title" id="activityHeroTitle">College</h2>
+                    <p class="activity-hero-stats" id="activityHeroStats">0 tasks • 0 completed</p>
+                  </div>
+                </div>
+                <div class="activity-hero-actions">
+                  <button class="btn-primary" onclick="app.openTaskModalForCurrentActivity()">
+                    <span class="plus-icon">+</span> Add Task
+                  </button>
+                  <button class="btn-danger-ghost" onclick="app.confirmDeleteCurrentActivity()"
+                    title="Delete this Activity">
+                    🗑 Delete Activity
+                  </button>
+                </div>
+              </div>
+
+              <div class="view-content-card">
+                <div class="card-header">
+                  <h3 class="card-title">Tasks in this Activity</h3>
+                  <div class="view-filter-tags">
+                    <button class="filter-pill active" onclick="app.filterActivityTasks('all')">All</button>
+                    <button class="filter-pill" onclick="app.filterActivityTasks('pending')">Pending</button>
+                    <button class="filter-pill" onclick="app.filterActivityTasks('completed')">Completed</button>
+                  </div>
+                </div>
+                <div class="task-list-container" id="activityTaskList">
+                  <!-- Dynamically populated -->
+                </div>
+              </div>
+            </section>
+
+            <!-- 3. SHOW ALL TASKS VIEW -->
+            <section class="app-view" id="viewAllTasks">
+              <div class="view-banner">
+                <div>
+                  <div class="banner-sub">OVERVIEW • 全タスク</div>
+                  <h2 class="banner-title">All Tasks</h2>
+                  <p class="banner-desc">Every task across all your activities, sorted chronologically.</p>
+                </div>
+                <button class="btn-primary" onclick="app.openTaskModal()">
+                  <span class="plus-icon">+</span> Add Task
+                </button>
+              </div>
+
+              <div class="view-content-card">
+                <div class="task-list-container" id="allTaskList">
+                  <!-- Dynamically grouped tasks -->
+                </div>
+              </div>
+            </section>
+
+            <!-- 4. TODAY'S TASKS VIEW -->
+            <section class="app-view" id="viewTodayTasks">
+              <div class="view-banner">
+                <div>
+                  <div class="banner-sub">TODAY • 本日の予定</div>
+                  <h2 class="banner-title">Today's Schedule</h2>
+                  <p class="banner-desc" id="todayViewDateLabel">Showing tasks scheduled for today.</p>
+                </div>
+                <button class="btn-primary" onclick="app.openTaskModal()">
+                  <span class="plus-icon">+</span> Add Task
+                </button>
+              </div>
+
+              <div class="view-content-card">
+                <div class="task-list-container" id="todayScheduleList">
+                  <!-- Dynamically grouped tasks for today -->
+                </div>
+              </div>
+            </section>
+
+            <!-- 5. SPECIFIC DATE TASKS VIEW (From Calendar Click) -->
+            <section class="app-view" id="viewDateTasks">
+              <div class="view-banner">
+                <div>
+                  <div class="banner-sub">SELECTED DATE • 日付詳細</div>
+                  <h2 class="banner-title" id="dateTasksTitle">Tasks for Date</h2>
+                  <p class="banner-desc" id="dateTasksSubtitle">View or schedule tasks for this day.</p>
+                </div>
+                <div class="view-banner-actions">
+                  <button class="btn-subtle" onclick="app.switchView('dashboard')">❮ Back to Dashboard</button>
+                  <button class="btn-primary" onclick="app.openTaskModalForSelectedDate()">
+                    <span class="plus-icon">+</span> Add Task for Date
+                  </button>
+                </div>
+              </div>
+
+              <div class="view-content-card">
+                <div class="task-list-container" id="dateScheduleList">
+                  <!-- Dynamically populated -->
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <!-- Right: Anime Luffy Window + Calendar (Always on the right, even when doing tasks and switching activities) -->
+        <aside class="dashboard-side-column" id="dashboardSideColumn">
+          <!-- 1. Anime Luffy Partner Window (Fitted into card, no padding, border around picture + mission sync, compact size) -->
+          <div class="anime-partner-window" id="animePartnerWindow">
+            <!-- Top Section: Luffy Picture & Synchronized Video Player fitted edge-to-edge -->
+            <div class="partner-media-frame" id="characterAvatarWrapper">
+              <!-- Video 1: Welcome Back Video (Plays first on load, last 10s, muted) -->
+              <video id="luffyWelcomeVideo" class="character-video active" src="assets/companion/Luffy_welcome_10s.mp4"
+                playsinline muted autoplay preload="auto"></video>
+
+              <!-- Video 2A: Idle Video Buffer A (Seamless dual-buffer loop, muted) -->
+              <video id="luffyIdleVideoA" class="character-video" src="assets/companion/Luffy_idle.mp4" playsinline
+                muted preload="auto"></video>
+
+              <!-- Video 2B: Idle Video Buffer B (Seamless dual-buffer loop, muted) -->
+              <video id="luffyIdleVideoB" class="character-video" src="assets/companion/Luffy_idle.mp4" playsinline
+                muted preload="auto"></video>
+
+              <!-- Fallback element for compatibility -->
+              <video id="luffyIdleVideo" style="display:none;" muted></video>
+
+              <!-- Fallback static image -->
+              <img src="assets/luffy.jpg" alt="Luffy Anime Partner" class="character-img fallback" id="characterImg" />
+
+              <!-- Subtle top overlay with name & mute toggle -->
+              <div class="partner-top-overlay">
+                <span class="partner-name-badge">Luffy <span class="sparkle-anim">✦</span> <span
+                    class="partner-jp-tag">ルフィ</span></span>
+                <button class="btn-companion-icon muted" id="btnVoiceToggle" onclick="companion.toggleVoice()"
+                  title="All sounds muted" aria-label="Toggle Japanese Voice">
+                  <span id="voiceIcon">🔇</span>
+                </button>
+              </div>
+
+              <!-- Particle aura -->
+              <div class="character-aura" id="characterAura"></div>
+
+              <!-- Mood badge on image -->
+              <div class="character-mood-badge" id="characterMoodBadge">⚡</div>
+
+              <!-- Speech Bubble / Subtitle dialogue directly on the photo bottom -->
+              <div class="speech-bubble-wrapper" id="speechBubbleWrapper" onclick="companion.skipTyping()"
+                title="Click to skip typing">
+                <div class="speech-bubble" id="speechBubble">
+                  <div class="speech-text" id="speechText">Welcome back! ✦</div>
+                  <div class="speech-jp-sub" id="speechJpSub">おかえり！今日も冒険だ！</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bottom Section: Mission Sync (Directly inside the card, no wasted space) -->
+            <div class="companion-stats-card">
+              <div class="cstat-header">
+                <span class="cstat-title">BOUNTY & LOG POSE • 懸賞金</span>
+                <span class="cstat-badge">Ready</span>
+              </div>
+              <div class="cstat-row">
+                <span class="cstat-label">Tasks Done Today:</span>
+                <span class="cstat-value" id="cstatCompletedToday">0</span>
+              </div>
+              <div class="cstat-row">
+                <span class="cstat-label">Total Missions:</span>
+                <span class="cstat-value" id="cstatCompletedTotal">0</span>
+              </div>
+              <div class="cstat-energy-bar-wrap">
+                <div class="cstat-energy-bar">
+                  <div class="cstat-energy-fill" id="cstatEnergyFill" style="width: 20%;"></div>
+                </div>
+                <span class="cstat-energy-label">Haki Energy (覇気)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Interactive Calendar Component (Placed below Anime Window) -->
+          <div class="dashboard-card calendar-card" id="calendarCard">
+            <!-- Row 1: Calendar Title & Today Button at top of card -->
+            <div class="calendar-card-top">
+              <div class="calendar-title-group">
+                <h2 class="calendar-card-title">Calendar</h2>
+                <span class="calendar-bounty-tag" id="calendarBountyTag">WANTED THEME</span>
+              </div>
+              <button class="btn-cal-today" id="btnCalToday" onclick="app.goToCurrentMonth()">Today</button>
+            </div>
+
+            <!-- Row 2: October and switching dates -->
+            <div class="calendar-month-bar">
+              <button class="cal-nav-btn" onclick="app.prevMonth()" title="Previous Month"
+                aria-label="Previous Month">❮</button>
+              <div class="calendar-month-heading">
+                <span class="calendar-current-month" id="calendarMonthYear">October 2026</span>
+                <span class="calendar-theme-subtitle" id="calendarThemeSubtitle">Jinbe • ฿1,100,000,000</span>
+              </div>
+              <button class="cal-nav-btn" onclick="app.nextMonth()" title="Next Month"
+                aria-label="Next Month">❯</button>
+            </div>
+
+            <!-- Row 3: Weekdays -->
+            <div class="calendar-weekdays">
+              <span>SUN</span><span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span>
+            </div>
+
+            <!-- Row 4: Calendar Grid Days -->
+            <div class="calendar-days-grid" id="calendarDaysGrid">
+              <!-- Dynamically generated days -->
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <!-- ==================== MODALS ==================== -->
+
+    <!-- 1. Task Modal (Create & Edit) -->
+    <div class="modal-overlay" id="taskModal" aria-hidden="true">
+      <div class="modal-card">
+        <div class="modal-header">
+          <div class="modal-title-group">
+            <h3 class="modal-title" id="taskModalTitle">Create New Task ✦</h3>
+            <span class="jp-sub">タスク登録</span>
+          </div>
+          <button class="modal-close-btn" onclick="app.closeTaskModal()" aria-label="Close modal">✕</button>
+        </div>
+
+        <form id="taskForm" onsubmit="app.handleTaskFormSubmit(event)">
+          <input type="hidden" id="taskFormEditId" value="">
+
+          <div class="form-group">
+            <label for="taskFormName" class="form-label">Task Name <span class="required">*</span></label>
+            <input type="text" id="taskFormName" class="form-input"
+              placeholder="e.g. Complete Computational Maths assignment" required autofocus>
+          </div>
+
+          <!-- Activity Selection Group (Shown in All Tasks/Dashboard, Hidden inside an Activity) -->
+          <div class="form-group" id="taskFormActivityGroup">
+            <div class="task-form-activity-header">
+              <label for="taskFormActivity" class="form-label">Select Activity <span class="required">*</span></label>
+              <span class="activity-crew-hint">🏴‍☠️ Pirate Crew Flag</span>
+            </div>
+
+            <!-- Visual Activity Cards with Actual Flag Image + Activity Name -->
+            <div class="task-activity-picker-grid" id="taskActivityPickerGrid" role="radiogroup" aria-label="Select Activity">
+              <!-- Dynamically rendered via populateActivityDropdown -->
+            </div>
+
+            <!-- Native select kept in sync for form validation and accessibility -->
+            <select id="taskFormActivity" class="task-form-activity-native" required tabindex="-1" aria-hidden="true">
+              <!-- Dynamically populated activities -->
+            </select>
+          </div>
+
+          <!-- Locked Activity Group (Shown when adding a task from inside an Activity) -->
+          <div class="form-group" id="taskFormActivityLockedGroup" style="display: none;">
+            <label class="form-label">Activity</label>
+            <div class="task-activity-locked-badge" id="taskFormActivityLockedBadge">
+              <span class="locked-icon">📁</span>
+              <span class="locked-name">Activity</span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-half">
+              <label for="taskFormDate" class="form-label">Date <span class="required">*</span></label>
+              <input type="date" id="taskFormDate" class="form-input" required>
+            </div>
+            <div class="form-group col-half">
+              <label for="taskFormStartTime" class="form-label">Start Time</label>
+              <input type="time" id="taskFormStartTime" class="form-input">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-half">
+              <label for="taskFormEndTime" class="form-label">End Time (Optional)</label>
+              <input type="time" id="taskFormEndTime" class="form-input">
+            </div>
+            <div class="form-group col-half">
+              <label class="form-label">Time Slot Preview</label>
+              <div class="time-slot-preview" id="timeSlotPreview">--:--</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="taskFormNotes" class="form-label">Notes (Optional)</label>
+            <textarea id="taskFormNotes" class="form-textarea"
+              placeholder="Add study notes, links, or specific reminders..." rows="3"></textarea>
+          </div>
+
+          <div class="modal-actions">
+            <button type="button" class="btn-ghost" onclick="app.closeTaskModal()">Cancel</button>
+            <button type="submit" class="btn-primary" id="btnTaskSubmit">Save Task ✦</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- 2. Activity Modal (Create) -->
+    <div class="modal-overlay" id="activityModal" aria-hidden="true">
+      <div class="modal-card">
+        <div class="modal-header">
+          <div class="modal-title-group">
+            <h3 class="modal-title">Create Activity ✦</h3>
+            <span class="jp-sub">新しい活動</span>
+          </div>
+          <button class="modal-close-btn" onclick="app.closeActivityModal()" aria-label="Close modal">✕</button>
+        </div>
+
+        <form id="activityForm" onsubmit="app.handleActivityFormSubmit(event)">
+          <div class="form-group">
+            <label for="activityFormName" class="form-label">Activity Name <span class="required">*</span></label>
+            <input type="text" id="activityFormName" class="form-input"
+              placeholder="e.g. College, Coding, Japanese, Workout" required autofocus>
+          </div>
+
+          <div class="form-group">
+            <div class="character-picker-header">
+              <label class="form-label">Select Crew Pirate Flag / Jolly Roger <span class="required">*</span></label>
+              <span class="crew-badge-tag">🏴‍☠️ 麦わらの一味 • 10 FLAGS</span>
+            </div>
+
+            <div class="character-picker-presets flags-grid-10" id="characterPickerPresets" role="radiogroup" aria-label="Straw Hat Pirate Flags">
+              <button type="button" class="character-preset-btn emoji-preset-btn active" data-char="luffy" onclick="app.selectEmojiPreset('luffy')" title="Luffy's Flag (Straw Hat Skull & Bones)" aria-label="Luffy's Flag">
+                <img src="assets/flags/luffy.svg" alt="Luffy's Pirate Flag" class="char-preset-img flag-img">
+                <span class="char-preset-name">Luffy</span>
+              </button>
+              <button type="button" class="character-preset-btn emoji-preset-btn" data-char="zoro" onclick="app.selectEmojiPreset('zoro')" title="Zoro's Flag (Three Crossed Swords)" aria-label="Zoro's Flag">
+                <img src="assets/flags/zoro.svg" alt="Zoro's Pirate Flag" class="char-preset-img flag-img">
+                <span class="char-preset-name">Zoro</span>
+              </button>
+              <button type="button" class="character-preset-btn emoji-preset-btn" data-char="nami" onclick="app.selectEmojiPreset('nami')" title="Nami's Flag (Tangerine & Money Hand)" aria-label="Nami's Flag">
+                <img src="assets/flags/nami.svg" alt="Nami's Pirate Flag" class="char-preset-img flag-img">
+                <span class="char-preset-name">Nami</span>
+              </button>
+              <button type="button" class="character-preset-btn emoji-preset-btn" data-char="usopp" onclick="app.selectEmojiPreset('usopp')" title="Usopp's Flag (Long Nose & Slingshot)" aria-label="Usopp's Flag">
+                <img src="assets/flags/usopp.svg" alt="Usopp's Pirate Flag" class="char-preset-img flag-img">
+                <span class="char-preset-name">Usopp</span>
+              </button>
+              <button type="button" class="character-preset-btn emoji-preset-btn" data-char="sanji" onclick="app.selectEmojiPreset('sanji')" title="Sanji's Flag (Chef Hat, Fork & Knife)" aria-label="Sanji's Flag">
+                <img src="assets/flags/sanji.svg" alt="Sanji's Pirate Flag" class="char-preset-img flag-img">
+                <span class="char-preset-name">Sanji</span>
+              </button>
+              <button type="button" class="character-preset-btn emoji-preset-btn" data-char="chopper" onclick="app.selectEmojiPreset('chopper')" title="Chopper's Flag (Pink Hat & Sakura Petals)" aria-label="Chopper's Flag">
+                <img src="assets/flags/chopper.svg" alt="Chopper's Pirate Flag" class="char-preset-img flag-img">
+                <span class="char-preset-name">Chopper</span>
+              </button>
+              <button type="button" class="character-preset-btn emoji-preset-btn" data-char="robin" onclick="app.selectEmojiPreset('robin')" title="Robin's Flag (Hana Hana Flower Arms)" aria-label="Robin's Flag">
+                <img src="assets/flags/robin.svg" alt="Robin's Pirate Flag" class="char-preset-img flag-img">
+                <span class="char-preset-name">Robin</span>
+              </button>
+              <button type="button" class="character-preset-btn emoji-preset-btn" data-char="franky" onclick="app.selectEmojiPreset('franky')" title="Franky's Flag (Cyborg & Crossed Wrenches)" aria-label="Franky's Flag">
+                <img src="assets/flags/franky.svg" alt="Franky's Pirate Flag" class="char-preset-img flag-img">
+                <span class="char-preset-name">Franky</span>
+              </button>
+              <button type="button" class="character-preset-btn emoji-preset-btn" data-char="brook" onclick="app.selectEmojiPreset('brook')" title="Brook's Flag (Soul King & Violin)" aria-label="Brook's Flag">
+                <img src="assets/flags/brook.svg" alt="Brook's Pirate Flag" class="char-preset-img flag-img">
+                <span class="char-preset-name">Brook</span>
+              </button>
+              <button type="button" class="character-preset-btn emoji-preset-btn" data-char="jinbe" onclick="app.selectEmojiPreset('jinbe')" title="Jinbe's Flag (Sun Pirates & Anchor)" aria-label="Jinbe's Flag">
+                <img src="assets/flags/jinbe.svg" alt="Jinbe's Pirate Flag" class="char-preset-img flag-img">
+                <span class="char-preset-name">Jinbe</span>
+              </button>
+            </div>
+
+            <!-- Selected Pirate Flag Featured Banner -->
+            <div class="selected-character-card flag-selected-card">
+              <div class="selected-char-avatar-frame">
+                <span class="custom-emoji-preview char-preview-box flag-preview-box" id="activityEmojiPreview">
+                  <img src="assets/flags/luffy.svg" alt="Luffy's Flag" class="char-preview-img flag-preview-img">
+                </span>
+              </div>
+              <div class="selected-character-meta">
+                <div class="selected-character-tag">OFFICIAL JOLLY ROGER</div>
+                <div class="selected-character-name" id="selectedCharacterName">Monkey D. Luffy</div>
+                <div class="selected-character-role" id="selectedCharacterRole">Captain • Straw Hat Pirate Flag</div>
+              </div>
+              <input type="text" id="activityFormIcon" class="form-input custom-emoji-input" value="luffy" style="display: none;">
+            </div>
+          </div>
+
+          <div class="modal-actions">
+            <button type="button" class="btn-ghost" onclick="app.closeActivityModal()">Cancel</button>
+            <button type="submit" class="btn-primary">Create Activity ✦</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- 3. Confirmation Dialog Modal -->
+    <div class="modal-overlay" id="confirmModal" aria-hidden="true">
+      <div class="modal-card modal-card-small">
+        <div class="modal-header">
+          <h3 class="modal-title" id="confirmModalTitle">Are you sure?</h3>
+          <button class="modal-close-btn" onclick="app.closeConfirmModal()" aria-label="Close modal">✕</button>
+        </div>
+        <div class="modal-body-text" id="confirmModalMessage">
+          This action cannot be undone.
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn-ghost" onclick="app.closeConfirmModal()">Cancel</button>
+          <button type="button" class="btn-danger" id="confirmModalAcceptBtn">Delete</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Subtle Toast Notifications -->
+    <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+    <!-- Core JavaScript & Interactive Companion Engine -->
+    <script src="companion.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

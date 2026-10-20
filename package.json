@@ -1,0 +1,17 @@
+{
+  "name": "one-piece-todolist",
+  "version": "1.0.0",
+  "description": "One Piece Todo & Mission Log Dashboard",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^8.3.4"
+  }
+}
