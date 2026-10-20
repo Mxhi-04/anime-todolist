@@ -1805,9 +1805,9 @@
 
   // Run on DOM ready
   function init() {
+    initLiveClock();
     loadFromStorage();
     loadNavState();
-    initLiveClock();
     initSunnyVoyage();
     renderQuote();
     setupFormListeners();
