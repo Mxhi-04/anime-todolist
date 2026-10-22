@@ -681,15 +681,15 @@ app.closeTaskModal();
 // Test 32: Validation of Dynamic Sky, Greeting & Regional Time Changer
 console.log('\n--- Test 32: Validation of Dynamic Sky, Greeting & Regional Time ---');
 
-// 1. Verify HTML elements for Sun, Horizon glow, and Sky-Region controller
+// 1. Verify HTML elements for Sun and Horizon glow (while visible pill is removed)
 if (!htmlContent.includes('id="sunnySunContainer"') ||
-    !htmlContent.includes('id="sunnyHorizonGlow"') ||
-    !htmlContent.includes('id="skyRegionPillBtn"') ||
-    !htmlContent.includes('id="skyRegionDropdown"') ||
-    !htmlContent.includes('id="skyRegionSelect"')) {
-  throw new Error('sunnySunContainer, sunnyHorizonGlow, or skyRegionDropdown missing from index.html');
+    !htmlContent.includes('id="sunnyHorizonGlow"')) {
+  throw new Error('sunnySunContainer or sunnyHorizonGlow missing from index.html');
 }
-console.log('✓ Verified: Sun element, horizon glow, and Sky-Region controller present in index.html');
+if (htmlContent.includes('id="skyRegionPillBtn"') || htmlContent.includes('sky-pill-region')) {
+  throw new Error('Visible skyRegionPillBtn/sky-pill-region should be removed from UI');
+}
+console.log('✓ Verified: Sun element and horizon glow present; annoying visible pill icon removed from UI');
 
 // 2. Verify CSS rules for morning, afternoon, evening, and night skies
 if (!cssContent.includes('.top-header.sky-morning') ||
@@ -740,28 +740,16 @@ if (!greetingTitleEl.innerHTML.includes('Good night')) {
 }
 console.log('✓ Verified: Night sky & greeting applied ("Good night, Mahi") with is-night-voyage');
 
-// 4. Test region switching and timezone formatting
-app.setRegion('Asia/Tokyo');
-if (app.state.selectedRegion !== 'Asia/Tokyo') {
-  throw new Error('app.state.selectedRegion was not updated to Asia/Tokyo');
+// 4. Test region stored in memory and timezone calculations
+app.setRegion('Asia/Kolkata');
+if (app.state.selectedRegion !== 'Asia/Kolkata') {
+  throw new Error('app.state.selectedRegion was not updated in memory');
 }
 const greetingSubtitleEl = getOrCreate('greetingSubtitle');
-if (!greetingSubtitleEl.innerHTML.includes('Tokyo')) {
-  throw new Error('greetingSubtitle does not reflect Tokyo region: ' + greetingSubtitleEl.innerHTML);
+if (greetingSubtitleEl.innerHTML.includes('📍') || greetingSubtitleEl.innerHTML.includes('Asia/Kolkata')) {
+  throw new Error('greetingSubtitle should not display visible Kolkata tag');
 }
-console.log('✓ Verified: Region updated to Tokyo, Japan and reflected in greeting subtitle');
-
-// 5. Test dropdown toggle
-app.toggleSkyDropdown();
-const pillWrapper = getOrCreate('skyRegionPillWrapper');
-if (!pillWrapper.classList.contains('open')) {
-  throw new Error('skyRegionPillWrapper was not toggled open');
-}
-app.closeSkyDropdown();
-if (pillWrapper.classList.contains('open')) {
-  throw new Error('skyRegionPillWrapper was not closed');
-}
-console.log('✓ Verified: Sky region dropdown menu toggle & close working seamlessly');
+console.log('✓ Verified: Region stored cleanly in memory (Asia/Kolkata) with clean subtitle display');
 
 // Restore to auto for clean state
 app.setSkyMode('auto');

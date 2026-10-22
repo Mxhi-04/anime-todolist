@@ -433,7 +433,7 @@
       greetingTitle.innerHTML = `${info.activeGreeting}, Mahi <span class="sparkle-anim">✦</span>`;
     }
     if (greetingSubtitle) {
-      greetingSubtitle.innerHTML = `<span class="greeting-date-text">${info.formattedDate}</span> <span class="greeting-sep">•</span> <span class="greeting-time-text">${info.timeStringShort}</span> <span class="greeting-region-tag" id="greetingRegionTag"><span class="region-pin">📍</span> <span id="greetingRegionName">${escapeHTML(info.regionFriendly)}</span></span>`;
+      greetingSubtitle.innerHTML = `<span class="greeting-date-text">${info.formattedDate}</span> <span class="greeting-sep">•</span> <span class="greeting-time-text">${info.timeStringShort}</span>`;
     }
 
     // 4. Update Top Header Ocean & Sky Atmosphere Classes
