@@ -787,16 +787,21 @@ if (!htmlContent.includes('id="wantedBgStage"') ||
 }
 console.log('✓ Verified: wantedBgStage, wanted3DWrapper, wantedPosterWall, and wantedTextGlowMesh present in index.html');
 
-// 3. Verify CSS rules for 3D live animation, text glow pulse, and shimmer sweep
-if (!cssContent.includes('.wanted-bg-stage') ||
+// 3. Verify CSS rules for original UI bg-decorations, 3D live animation, text glow pulse, and shimmer sweep
+if (!htmlContent.includes('class="bg-decorations"') ||
+    !htmlContent.includes('class="glow-orb orb-1"') ||
+    !cssContent.includes('.bg-decorations') ||
+    !cssContent.includes('.glow-orb') ||
+    !cssContent.includes('.wanted-bg-stage') ||
     !cssContent.includes('@keyframes wanted3DBreath') ||
     !cssContent.includes('@keyframes wantedTextGlowPulse') ||
     !cssContent.includes('@keyframes wantedSweepPass') ||
     !cssContent.includes('.wanted-poster-wall') ||
+    !cssContent.includes('mix-blend-mode: screen;') ||
     !cssContent.includes('.wanted-ghost-text')) {
-  throw new Error('CSS animation rules for wanted3DBreath, wantedTextGlowPulse, or wanted-ghost-text missing from style.css');
+  throw new Error('CSS rules for original bg-decorations, screen blend mode, or wanted-ghost-text missing');
 }
-console.log('✓ Verified: 3D live breathing animation, faint Wanted text glow pulse, ghost typography, and shimmer sweep configured in style.css');
+console.log('✓ Verified: Restored original UI atmospheric background with glowing orbs, screen blend filter, blur, and 3D animation');
 
 // 4. Verify vercel.json exists with Vite configuration
 if (!fs.existsSync('vercel.json')) {
