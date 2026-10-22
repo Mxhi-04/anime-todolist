@@ -81,7 +81,8 @@
     selectedRegion: 'auto',
     skyModeOverride: 'auto',
     isSkyDropdownOpen: false,
-    // Eternal Log Pose Focus Timer State
+    // Focus Timer State (Two options: Log Pose vs Regular Pomodoro)
+    focusMode: 'pose', // 'pose' | 'pomodoro'
     sidebarClockTab: 'focus', // retained for backward-compat
     focusDurationMinutes: 30,
     focusTimeRemainingSeconds: 30 * 60,
@@ -90,7 +91,15 @@
     isFocusRunning: false,
     focusIntervalId: null,
     focusSoundEnabled: true,
-    focusSessionsCompleted: 0
+    focusSessionsCompleted: 0,
+    // Regular Pomodoro Timer State (Liquid Glass + LED Dot Matrix)
+    pomoDurationMinutes: 25,
+    pomoTimeRemainingSeconds: 25 * 60,
+    pomoTotalDurationSeconds: 25 * 60,
+    pomoSessionType: 'FOCUS', // 'FOCUS' | 'REST' | 'DEEP'
+    pomoSessionName: 'Focus Session',
+    isPomoRunning: false,
+    pomoIntervalId: null
   };
 
   // Helper: Format Date to YYYY-MM-DD (local time)
@@ -574,11 +583,12 @@
   }
 
   // ============================================================
-  // One Piece Eternal Log Pose Focus Instrument (エターナルポース)
+  // Focus Module: Two Options (Eternal Log Pose vs Regular Pomodoro)
   // ============================================================
 
   const POSE_ICON_PLAY = `<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"></polygon></svg>`;
   const POSE_ICON_ANCHOR = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="3"></circle><line x1="12" y1="8" x2="12" y2="21"></line><path d="M5 12H2a10 10 0 0 0 20 0h-3"></path></svg>`;
+  const POSE_ICON_PAUSE = `<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16" rx="1"></rect><rect x="14" y="4" width="4" height="16" rx="1"></rect></svg>`;
   const POSE_ICON_RELOAD = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.19"></path></svg>`;
   const POSE_ICON_BELL_ON = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>`;
   const POSE_ICON_BELL_OFF = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.73 21a2 2 0 0 1-3.46 0"></path><path d="M18.63 13A17.89 17.89 0 0 1 18 8"></path><path d="M6.26 6.26A5.86 5.86 0 0 0 6 8c0 7-3 9-3 9h14"></path><path d="M18 8a6 6 0 0 0-9.33-5"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>`;
@@ -588,6 +598,7 @@
       const data = localStorage.getItem(STORAGE_KEY_FOCUS_PREFS);
       if (data) {
         const parsed = JSON.parse(data);
+        if (parsed.focusMode) state.focusMode = parsed.focusMode;
         if (parsed.focusSoundEnabled !== undefined) state.focusSoundEnabled = !!parsed.focusSoundEnabled;
         if (parsed.focusSessionsCompleted !== undefined) state.focusSessionsCompleted = Number(parsed.focusSessionsCompleted) || 0;
       }
@@ -599,6 +610,7 @@
   function saveFocusPreferences() {
     try {
       localStorage.setItem(STORAGE_KEY_FOCUS_PREFS, JSON.stringify({
+        focusMode: state.focusMode,
         focusSoundEnabled: state.focusSoundEnabled,
         focusSessionsCompleted: state.focusSessionsCompleted
       }));
@@ -607,20 +619,38 @@
     }
   }
 
-  function setSidebarClockTab(tab) {
-    state.sidebarClockTab = tab === 'focus' ? 'focus' : 'clock';
-    const btnClock = document.getElementById('btnTabClock');
-    const btnFocus = document.getElementById('btnTabFocus');
-    const viewClock = document.getElementById('sidebarClockView');
-    const viewFocus = document.getElementById('sidebarFocusView');
+  function setFocusMode(mode) {
+    state.focusMode = mode === 'pomodoro' ? 'pomodoro' : 'pose';
+    const btnPose = document.getElementById('btnModePose');
+    const btnPomo = document.getElementById('btnModePomodoro');
+    const viewPose = document.getElementById('viewLogPose');
+    const viewPomo = document.getElementById('viewPomodoro');
 
-    if (btnClock) btnClock.classList.toggle('active', state.sidebarClockTab === 'clock');
-    if (btnFocus) btnFocus.classList.toggle('active', state.sidebarClockTab === 'focus');
-    if (viewClock) viewClock.classList.toggle('active', state.sidebarClockTab === 'clock');
-    if (viewFocus) viewFocus.classList.toggle('active', state.sidebarClockTab === 'focus');
+    if (btnPose) {
+      btnPose.classList.toggle('active', state.focusMode === 'pose');
+      btnPose.setAttribute('aria-selected', state.focusMode === 'pose' ? 'true' : 'false');
+    }
+    if (btnPomo) {
+      btnPomo.classList.toggle('active', state.focusMode === 'pomodoro');
+      btnPomo.setAttribute('aria-selected', state.focusMode === 'pomodoro' ? 'true' : 'false');
+    }
+    if (viewPose) viewPose.style.display = state.focusMode === 'pose' ? 'block' : 'none';
+    if (viewPomo) viewPomo.style.display = state.focusMode === 'pomodoro' ? 'block' : 'none';
 
-    updateFocusTimerUI();
+    saveFocusPreferences();
+    if (state.focusMode === 'pomodoro') {
+      updatePomodoroUI();
+    } else {
+      updateFocusTimerUI();
+    }
   }
+
+  function setSidebarClockTab(tab) {
+    // Retained for backward-compatibility
+    setFocusMode(tab === 'pomodoro' ? 'pomodoro' : 'pose');
+  }
+
+  // --- Option 1: One Piece Eternal Log Pose Engine ---
 
   function setFocusSession(minutes, destName) {
     if (state.isFocusRunning) {
@@ -732,12 +762,411 @@
     showToast('↺ Focus voyage reset to beginning.');
   }
 
+  function updateFocusTimerUI() {
+    const total = state.focusTotalDurationSeconds || (30 * 60);
+    const rem = Math.max(0, state.focusTimeRemainingSeconds);
+    let formatted;
+    if (rem >= 3600) {
+      const hrs = Math.floor(rem / 3600);
+      const mins = Math.floor((rem % 3600) / 60);
+      const secs = rem % 60;
+      formatted = `${hrs}:${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+    } else {
+      const mins = Math.floor(rem / 60);
+      const secs = rem % 60;
+      formatted = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+    }
+
+    const countEl = document.getElementById('logPoseCountdown');
+    if (countEl) countEl.textContent = formatted;
+
+    const progressCircle = document.getElementById('poseCircleProgress');
+    if (progressCircle) {
+      const frac = total > 0 ? (rem / total) : 0;
+      const offset = (264 * (1 - frac)).toFixed(1);
+      progressCircle.setAttribute('stroke-dashoffset', offset);
+    }
+
+    const fractionElapsed = total > 0 ? (1 - (rem / total)) : 0;
+    const sandTop = document.getElementById('sandTopReserve');
+    if (sandTop) {
+      sandTop.style.transform = `scaleY(${(rem / total).toFixed(2)})`;
+    }
+    const sandPile = document.getElementById('sandPile');
+    if (sandPile) {
+      sandPile.style.height = `${Math.min(90, 20 + fractionElapsed * 70).toFixed(0)}%`;
+    }
+
+    const needle = document.getElementById('poseMagneticNeedle');
+    if (needle) {
+      if (rem === 0) {
+        needle.style.setProperty('--needle-angle', '0deg');
+      } else {
+        const angle = (-45 + fractionElapsed * 45).toFixed(1);
+        needle.style.setProperty('--needle-angle', `${angle}deg`);
+      }
+    }
+  }
+
+  function onFocusSessionCompleted() {
+    if (state.focusIntervalId) {
+      clearInterval(state.focusIntervalId);
+      state.focusIntervalId = null;
+    }
+    state.isFocusRunning = false;
+    state.focusSessionsCompleted++;
+    saveFocusPreferences();
+
+    const sphere = document.getElementById('logPoseSphere');
+    if (sphere) sphere.classList.remove('voyage-active');
+
+    const needle = document.getElementById('poseMagneticNeedle');
+    if (needle) needle.style.setProperty('--needle-angle', '0deg');
+
+    const btnMain = document.getElementById('btnPoseMain');
+    if (btnMain) {
+      btnMain.classList.remove('is-running');
+      const icon = document.getElementById('btnPoseMainIcon');
+      const label = document.getElementById('btnPoseMainLabel');
+      if (icon) icon.innerHTML = POSE_ICON_RELOAD;
+      if (label) label.textContent = 'New Voyage';
+    }
+
+    const statusEl = document.getElementById('logPoseStatusText');
+    if (statusEl) statusEl.textContent = 'TARGET ISLAND REACHED! 🏆';
+
+    playShipBellChime();
+    showToast(`🏆 VOYAGE ACCOMPLISHED! Your Eternal Pose locked onto ${state.focusDestinationName}!`);
+
+    if (window.companion && typeof window.companion.speak === 'function') {
+      window.companion.speak(`SUGOI!! You conquered the voyage to ${state.focusDestinationName}! Outstanding focus, Mahi! Have some meat! 🍖⚓`);
+    }
+
+    updateFocusTimerUI();
+  }
+
+  // --- Option 2: Liquid Glass Pomodoro with Photorealistic LED Dot-Matrix Display ---
+
+  // Exact 5x7 dot-matrix pattern matching user-provided LED clock image
+  const LED_DOT_PATTERNS = {
+    '0': [
+      [1,1,1,1,1],
+      [1,0,0,1,1],
+      [1,0,1,0,1],
+      [1,1,0,0,1],
+      [1,0,0,0,1],
+      [1,0,0,0,1],
+      [1,1,1,1,1]
+    ],
+    '1': [
+      [0,0,1,0,0],
+      [0,1,1,0,0],
+      [0,0,1,0,0],
+      [0,0,1,0,0],
+      [0,0,1,0,0],
+      [0,0,1,0,0],
+      [1,1,1,1,1]
+    ],
+    '2': [
+      [1,1,1,1,1],
+      [0,0,0,0,1],
+      [0,0,0,0,1],
+      [1,1,1,1,1],
+      [1,0,0,0,0],
+      [1,0,0,0,0],
+      [1,1,1,1,1]
+    ],
+    '3': [
+      [1,1,1,1,1],
+      [0,0,0,0,1],
+      [0,0,0,0,1],
+      [0,1,1,1,1],
+      [0,0,0,0,1],
+      [0,0,0,0,1],
+      [1,1,1,1,1]
+    ],
+    '4': [
+      [1,0,0,0,1],
+      [1,0,0,0,1],
+      [1,0,0,0,1],
+      [1,1,1,1,1],
+      [0,0,0,0,1],
+      [0,0,0,0,1],
+      [0,0,0,0,1]
+    ],
+    '5': [
+      [1,1,1,1,1],
+      [1,0,0,0,0],
+      [1,0,0,0,0],
+      [1,1,1,1,1],
+      [0,0,0,0,1],
+      [0,0,0,0,1],
+      [1,1,1,1,1]
+    ],
+    '6': [
+      [1,1,1,1,1],
+      [1,0,0,0,0],
+      [1,0,0,0,0],
+      [1,1,1,1,1],
+      [1,0,0,0,1],
+      [1,0,0,0,1],
+      [1,1,1,1,1]
+    ],
+    '7': [
+      [1,1,1,1,1],
+      [0,0,0,0,1],
+      [0,0,0,1,0],
+      [0,0,1,0,0],
+      [0,1,0,0,0],
+      [0,1,0,0,0],
+      [0,1,0,0,0]
+    ],
+    '8': [
+      [1,1,1,1,1],
+      [1,0,0,0,1],
+      [1,0,0,0,1],
+      [1,1,1,1,1],
+      [1,0,0,0,1],
+      [1,0,0,0,1],
+      [1,1,1,1,1]
+    ],
+    '9': [
+      [1,1,1,1,1],
+      [1,0,0,0,1],
+      [1,0,0,0,1],
+      [1,1,1,1,1],
+      [0,0,0,0,1],
+      [0,0,0,0,1],
+      [1,1,1,1,1]
+    ],
+    ':': [
+      [0,0],
+      [0,0],
+      [1,1],
+      [0,0],
+      [1,1],
+      [0,0],
+      [0,0]
+    ]
+  };
+
+  function renderDotMatrixDisplay(timeStr) {
+    const svg = document.getElementById('pomoDotMatrixSvg');
+    if (!svg) return;
+
+    const charList = timeStr.split('');
+    const dotSize = 4.2;
+    const dotGap = 1.6;
+    const charSpacing = 4.0;
+    const startY = 11;
+
+    let totalWidth = 0;
+    charList.forEach((ch, idx) => {
+      const pattern = LED_DOT_PATTERNS[ch] || LED_DOT_PATTERNS['0'];
+      const cols = pattern[0].length;
+      totalWidth += cols * dotSize + (cols - 1) * dotGap;
+      if (idx < charList.length - 1) totalWidth += charSpacing;
+    });
+
+    const svgWidth = 200;
+    const startX = Math.max(4, Math.round((svgWidth - totalWidth) / 2));
+    let currentX = startX;
+
+    let rects = `
+      <defs>
+        <filter id="pomoLedGlow" x="-30%" y="-30%" width="160%" height="160%">
+          <feGaussianBlur stdDeviation="1.8" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+    `;
+
+    charList.forEach((ch, idx) => {
+      const pattern = LED_DOT_PATTERNS[ch] || LED_DOT_PATTERNS['0'];
+      const cols = pattern[0].length;
+      const rows = pattern.length;
+
+      for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < cols; c++) {
+          const isLit = pattern[r][c] === 1;
+          const x = (currentX + c * (dotSize + dotGap)).toFixed(1);
+          const y = (startY + r * (dotSize + dotGap)).toFixed(1);
+
+          if (isLit) {
+            rects += `<rect x="${x}" y="${y}" width="${dotSize}" height="${dotSize}" rx="1.2" fill="#ffffff" filter="url(#pomoLedGlow)"/>`;
+          } else {
+            rects += `<rect x="${x}" y="${y}" width="${dotSize}" height="${dotSize}" rx="1.2" fill="rgba(255,255,255,0.065)"/>`;
+          }
+        }
+      }
+
+      currentX += cols * dotSize + (cols - 1) * dotGap;
+      if (idx < charList.length - 1) currentX += charSpacing;
+    });
+
+    svg.innerHTML = rects;
+  }
+
+  function setPomodoroSession(minutes, name, type) {
+    if (state.isPomoRunning) {
+      togglePomodoroTimer();
+    }
+    state.pomoDurationMinutes = minutes;
+    state.pomoTotalDurationSeconds = minutes * 60;
+    state.pomoTimeRemainingSeconds = minutes * 60;
+    state.pomoSessionName = name || `${minutes}m Session`;
+    state.pomoSessionType = type || (minutes <= 15 ? 'REST' : 'FOCUS');
+
+    [25, 5, 15, 50].forEach(m => {
+      const chip = document.getElementById(`pomoChip-${m}`);
+      if (chip) chip.classList.toggle('active', m === minutes);
+    });
+
+    const indicatorEl = document.getElementById('pomoMatrixIndicator');
+    if (indicatorEl) indicatorEl.textContent = state.pomoSessionType;
+
+    const statusEl = document.getElementById('pomoStatusText');
+    if (statusEl) statusEl.textContent = 'READY';
+
+    updatePomodoroUI();
+    showToast(`⏱️ Pomodoro mode: ${state.pomoSessionName} (${minutes}m)`);
+  }
+
+  function togglePomodoroTimer() {
+    const bezel = document.getElementById('pomoMatrixBezel') || (document.querySelector && document.querySelector('.pomo-dot-matrix-bezel'));
+    const btnMain = document.getElementById('btnPomoMain');
+    const icon = document.getElementById('btnPomoMainIcon');
+    const label = document.getElementById('btnPomoMainLabel');
+    const statusEl = document.getElementById('pomoStatusText');
+
+    if (state.isPomoRunning) {
+      // Pause
+      state.isPomoRunning = false;
+      if (state.pomoIntervalId) {
+        clearInterval(state.pomoIntervalId);
+        state.pomoIntervalId = null;
+      }
+      if (bezel) bezel.classList.remove('is-running');
+      if (btnMain) btnMain.classList.remove('is-running');
+      if (icon) icon.innerHTML = POSE_ICON_PLAY;
+      if (label) label.textContent = 'Resume';
+      if (statusEl) statusEl.textContent = 'PAUSED';
+      showToast('⏸️ Pomodoro paused');
+    } else {
+      // Start / Resume
+      state.isPomoRunning = true;
+      if (bezel) bezel.classList.add('is-running');
+      if (btnMain) btnMain.classList.add('is-running');
+      if (icon) icon.innerHTML = POSE_ICON_PAUSE;
+      if (label) label.textContent = 'Pause';
+      if (statusEl) statusEl.textContent = state.pomoSessionType === 'REST' ? 'RESTING' : 'FOCUSING';
+
+      state.pomoIntervalId = setInterval(() => {
+        if (state.pomoTimeRemainingSeconds > 0) {
+          state.pomoTimeRemainingSeconds--;
+          updatePomodoroUI();
+        } else {
+          onPomodoroSessionCompleted();
+        }
+      }, 1000);
+
+      showToast(`⏱️ Pomodoro started: ${state.pomoSessionName}`);
+    }
+    updatePomodoroUI();
+  }
+
+  function resetPomodoroTimer() {
+    if (state.pomoIntervalId) {
+      clearInterval(state.pomoIntervalId);
+      state.pomoIntervalId = null;
+    }
+    state.isPomoRunning = false;
+    state.pomoTimeRemainingSeconds = state.pomoTotalDurationSeconds;
+
+    const bezel = document.getElementById('pomoMatrixBezel') || (document.querySelector && document.querySelector('.pomo-dot-matrix-bezel'));
+    if (bezel) bezel.classList.remove('is-running');
+
+    const btnMain = document.getElementById('btnPomoMain');
+    if (btnMain) btnMain.classList.remove('is-running');
+
+    const icon = document.getElementById('btnPomoMainIcon');
+    if (icon) icon.innerHTML = POSE_ICON_PLAY;
+
+    const label = document.getElementById('btnPomoMainLabel');
+    if (label) label.textContent = 'Start Focus';
+
+    const statusEl = document.getElementById('pomoStatusText');
+    if (statusEl) statusEl.textContent = 'READY';
+
+    updatePomodoroUI();
+    showToast('↺ Pomodoro timer reset');
+  }
+
+  function updatePomodoroUI() {
+    const rem = Math.max(0, state.pomoTimeRemainingSeconds);
+    let formatted;
+    if (rem >= 3600) {
+      const hrs = Math.floor(rem / 3600);
+      const mins = Math.floor((rem % 3600) / 60);
+      const secs = rem % 60;
+      formatted = `${hrs}:${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+    } else {
+      const mins = Math.floor(rem / 60);
+      const secs = rem % 60;
+      formatted = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+    }
+
+    renderDotMatrixDisplay(formatted);
+
+    const indicatorEl = document.getElementById('pomoMatrixIndicator');
+    if (indicatorEl) indicatorEl.textContent = state.pomoSessionType;
+  }
+
+  function onPomodoroSessionCompleted() {
+    if (state.pomoIntervalId) {
+      clearInterval(state.pomoIntervalId);
+      state.pomoIntervalId = null;
+    }
+    state.isPomoRunning = false;
+    state.focusSessionsCompleted++;
+    saveFocusPreferences();
+
+    const bezel = document.getElementById('pomoMatrixBezel') || (document.querySelector && document.querySelector('.pomo-dot-matrix-bezel'));
+    if (bezel) bezel.classList.remove('is-running');
+
+    const btnMain = document.getElementById('btnPomoMain');
+    if (btnMain) btnMain.classList.remove('is-running');
+
+    const icon = document.getElementById('btnPomoMainIcon');
+    if (icon) icon.innerHTML = POSE_ICON_RELOAD;
+
+    const label = document.getElementById('btnPomoMainLabel');
+    if (label) label.textContent = 'New Session';
+
+    const statusEl = document.getElementById('pomoStatusText');
+    if (statusEl) statusEl.textContent = 'FINISHED! 🔔';
+
+    playShipBellChime();
+    showToast(`🔔 Pomodoro session completed: ${state.pomoSessionName}! Take a well-deserved breath!`);
+
+    if (window.companion && typeof window.companion.speak === 'function') {
+      window.companion.speak(`Sugoi! Pomodoro session complete, Mahi! Great work staying focused! 🍅✨`);
+    }
+
+    updatePomodoroUI();
+  }
+
   function toggleFocusSound() {
     state.focusSoundEnabled = !state.focusSoundEnabled;
     saveFocusPreferences();
-    const icon = document.getElementById('poseSoundIcon');
-    if (icon) icon.innerHTML = state.focusSoundEnabled ? POSE_ICON_BELL_ON : POSE_ICON_BELL_OFF;
-    showToast(state.focusSoundEnabled ? '🔔 Ship bell sound enabled' : '🔕 Focus timer muted');
+    const poseIcon = document.getElementById('poseSoundIcon');
+    if (poseIcon) poseIcon.innerHTML = state.focusSoundEnabled ? POSE_ICON_BELL_ON : POSE_ICON_BELL_OFF;
+    const pomoIcon = document.getElementById('pomoSoundIcon');
+    if (pomoIcon) pomoIcon.innerHTML = state.focusSoundEnabled ? POSE_ICON_BELL_ON : POSE_ICON_BELL_OFF;
+    showToast(state.focusSoundEnabled ? '🔔 Ship bell sound enabled' : '🔕 Timer sound muted');
   }
 
   function playShipBellChime() {
@@ -787,104 +1216,15 @@
     }
   }
 
-  function onFocusSessionCompleted() {
-    if (state.focusIntervalId) {
-      clearInterval(state.focusIntervalId);
-      state.focusIntervalId = null;
-    }
-    state.isFocusRunning = false;
-    state.focusSessionsCompleted++;
-    saveFocusPreferences();
-
-    const sphere = document.getElementById('logPoseSphere');
-    if (sphere) sphere.classList.remove('voyage-active');
-
-    const needle = document.getElementById('poseMagneticNeedle');
-    if (needle) needle.style.setProperty('--needle-angle', '0deg');
-
-    const btnMain = document.getElementById('btnPoseMain');
-    if (btnMain) {
-      btnMain.classList.remove('is-running');
-      const icon = document.getElementById('btnPoseMainIcon');
-      const label = document.getElementById('btnPoseMainLabel');
-      if (icon) icon.innerHTML = POSE_ICON_RELOAD;
-      if (label) label.textContent = 'New Voyage';
-    }
-
-    const statusEl = document.getElementById('logPoseStatusText');
-    if (statusEl) statusEl.textContent = 'TARGET ISLAND REACHED! 🏆';
-
-    playShipBellChime();
-    showToast(`🏆 VOYAGE ACCOMPLISHED! Your Eternal Pose locked onto ${state.focusDestinationName}!`);
-
-    if (window.companion && typeof window.companion.speak === 'function') {
-      window.companion.speak(`SUGOI!! You conquered the voyage to ${state.focusDestinationName}! Outstanding focus, Mahi! Have some meat! 🍖⚓`);
-    }
-
-    updateFocusTimerUI();
-  }
-
-  function updateFocusTimerUI() {
-    const total = state.focusTotalDurationSeconds || (30 * 60);
-    const rem = Math.max(0, state.focusTimeRemainingSeconds);
-    let formatted;
-    if (rem >= 3600) {
-      const hrs = Math.floor(rem / 3600);
-      const mins = Math.floor((rem % 3600) / 60);
-      const secs = rem % 60;
-      formatted = `${hrs}:${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
-    } else {
-      const mins = Math.floor(rem / 60);
-      const secs = rem % 60;
-      formatted = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
-    }
-
-    const countEl = document.getElementById('logPoseCountdown');
-    if (countEl) countEl.textContent = formatted;
-
-    const progressCircle = document.getElementById('poseCircleProgress');
-    if (progressCircle) {
-      const frac = total > 0 ? (rem / total) : 0;
-      const offset = (264 * (1 - frac)).toFixed(1);
-      progressCircle.setAttribute('stroke-dashoffset', offset);
-    }
-
-    const fractionElapsed = total > 0 ? (1 - (rem / total)) : 0;
-    const sandTop = document.getElementById('sandTopReserve');
-    if (sandTop) {
-      sandTop.style.transform = `scaleY(${(rem / total).toFixed(2)})`;
-    }
-    const sandPile = document.getElementById('sandPile');
-    if (sandPile) {
-      sandPile.style.height = `${Math.min(90, 20 + fractionElapsed * 70).toFixed(0)}%`;
-    }
-
-    const needle = document.getElementById('poseMagneticNeedle');
-    if (needle) {
-      if (rem === 0) {
-        needle.style.setProperty('--needle-angle', '0deg');
-      } else {
-        const angle = (-45 + fractionElapsed * 45).toFixed(1);
-        needle.style.setProperty('--needle-angle', `${angle}deg`);
-      }
-    }
-
-    const pill = document.getElementById('tabFocusPill');
-    if (pill) {
-      if (state.isFocusRunning || (rem < total && rem > 0)) {
-        pill.style.display = 'inline-block';
-        pill.textContent = formatted;
-      } else {
-        pill.style.display = 'none';
-      }
-    }
-  }
-
   function initFocusTimer() {
     loadFocusPreferences();
+    setFocusMode(state.focusMode || 'pose');
     updateFocusTimerUI();
-    const soundIcon = document.getElementById('poseSoundIcon');
-    if (soundIcon) soundIcon.innerHTML = state.focusSoundEnabled ? POSE_ICON_BELL_ON : POSE_ICON_BELL_OFF;
+    updatePomodoroUI();
+    const poseIcon = document.getElementById('poseSoundIcon');
+    if (poseIcon) poseIcon.innerHTML = state.focusSoundEnabled ? POSE_ICON_BELL_ON : POSE_ICON_BELL_OFF;
+    const pomoIcon = document.getElementById('pomoSoundIcon');
+    if (pomoIcon) pomoIcon.innerHTML = state.focusSoundEnabled ? POSE_ICON_BELL_ON : POSE_ICON_BELL_OFF;
   }
 
   // ============================================================
@@ -2375,9 +2715,14 @@
     updateClock,
     // One Piece Eternal Log Pose & Hourglass Focus Timer
     setSidebarClockTab,
+    setFocusMode,
     setFocusSession,
     toggleFocusTimer,
     resetFocusTimer,
+    // Liquid Glass Pomodoro Timer
+    setPomodoroSession,
+    togglePomodoroTimer,
+    resetPomodoroTimer,
     toggleFocusSound,
     // 3D Wanted Posters Background Engine
     initWanted3DBackground,

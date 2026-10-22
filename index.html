@@ -133,152 +133,215 @@
         <button class="btn-sidebar-close" id="btnSidebarClose" onclick="app.toggleSidebar(false)"
           aria-label="Collapse sidebar" title="Collapse sidebar">✕</button>
 
-        <!-- Sidebar Top: One Piece Eternal Log Pose Focus Instrument (永久指針) -->
+        <!-- Sidebar Top: Focus Instrument & Liquid Glass Pomodoro Timer -->
         <div class="sidebar-header-pose" id="sidebarHeaderClock">
-          <!-- Top Row: Crest Badge & Grand Line Instrument Title -->
-          <div class="log-pose-top-bar">
-            <div class="crest-badge" onclick="app.replayLoader()" style="cursor: pointer;" title="Replay Pixel Loading Screen ☠️">
-              <span class="crest-icon">☠️</span>
-              <span class="crest-kanji">海賊王</span>
-            </div>
-
-            <!-- Grand Line Instrument Badge -->
-            <div class="log-pose-title-badge" title="One Piece Grand Line Eternal Log Pose">
-              <svg class="pose-title-icon" viewBox="0 0 24 24" width="16" height="16" fill="none">
-                <circle cx="12" cy="12" r="9" stroke="#eab308" stroke-width="1.6"></circle>
-                <polygon points="12,4 14,11 21,12 14,13 12,20 10,13 3,12 10,11" fill="url(#titleCompassGold)" stroke="#d97706" stroke-width="0.75"></polygon>
-                <circle cx="12" cy="12" r="2" fill="#ef4444"></circle>
-              </svg>
-              <div class="pose-badge-text">
-                <span class="pose-badge-main">ETERNAL POSE</span>
-                <span class="pose-badge-sub">永久指針 • FOCUS</span>
-              </div>
-            </div>
+          <!-- Top Row: Two-Option Switcher (Log Pose vs Regular Pomodoro) -->
+          <div class="focus-mode-header-tabs" role="tablist" aria-label="Timer Mode Switcher">
+            <button type="button" class="btn-focus-mode-toggle active" id="btnModePose" onclick="app.setFocusMode('pose')" role="tab" aria-selected="true" title="One Piece Eternal Log Pose">
+              <span class="focus-mode-icon">🧭</span>
+              <span class="focus-mode-label">Log Pose</span>
+            </button>
+            <button type="button" class="btn-focus-mode-toggle" id="btnModePomodoro" onclick="app.setFocusMode('pomodoro')" role="tab" aria-selected="false" title="Regular Liquid Glass Pomodoro Timer">
+              <span class="focus-mode-icon">⏱️</span>
+              <span class="focus-mode-label">Regular Pomodoro</span>
+            </button>
           </div>
 
-          <!-- Island Destination & Navigation Subhead -->
-          <div class="log-pose-island-header">
-            <div class="island-crest">
-              <span class="island-flag-icon">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#eab308" stroke-width="2">
-                  <path d="M12 2v20M5 12h14M7 8c2-2 6-2 8 0M7 16c2 2 6 2 8 0"></path>
-                  <circle cx="12" cy="5" r="2" fill="#eab308"></circle>
+          <!-- OPTION 1: One Piece Eternal Log Pose View -->
+          <div class="focus-view-panel active" id="viewLogPose">
+            <!-- Island Destination & Navigation Subhead -->
+            <div class="log-pose-island-header">
+              <div class="island-crest">
+                <span class="island-flag-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#eab308" stroke-width="2">
+                    <path d="M12 2v20M5 12h14M7 8c2-2 6-2 8 0M7 16c2 2 6 2 8 0"></path>
+                    <circle cx="12" cy="5" r="2" fill="#eab308"></circle>
+                  </svg>
+                </span>
+                <span class="island-name" id="logPoseIslandName">Grand Line Voyage</span>
+              </div>
+              <span class="log-pose-subhead">GRAND LINE NAVIGATION SYSTEM</span>
+            </div>
+
+            <!-- Center Instrument: 3D Eternal Pose Sphere + Hourglass Sand + Tabular Counter -->
+            <div class="log-pose-instrument-wrapper">
+              <div class="log-pose-sphere" id="logPoseSphere" title="Grand Line Eternal Log Pose">
+                <!-- SVG Circular Progress Ring & Compass Tick Marks -->
+                <svg class="pose-svg-ring" viewBox="0 0 100 100">
+                  <defs>
+                    <linearGradient id="poseGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#ffd700"></stop>
+                      <stop offset="50%" stop-color="#f59e0b"></stop>
+                      <stop offset="100%" stop-color="#ef4444"></stop>
+                    </linearGradient>
+                  </defs>
+                  <circle class="pose-circle-bg" cx="50" cy="50" r="42"></circle>
+                  <circle class="pose-circle-ticks" cx="50" cy="50" r="38" stroke-dasharray="1.2 9.8"></circle>
+                  <circle class="pose-circle-progress" id="poseCircleProgress" cx="50" cy="50" r="42" stroke-dasharray="264" stroke-dashoffset="0"></circle>
                 </svg>
-              </span>
-              <span class="island-name" id="logPoseIslandName">Grand Line Voyage</span>
-            </div>
-            <span class="log-pose-subhead">GRAND LINE NAVIGATION SYSTEM</span>
-          </div>
 
-          <!-- Center Instrument: 3D Eternal Pose Sphere + Hourglass Sand + Tabular Counter -->
-          <div class="log-pose-instrument-wrapper">
-            <div class="log-pose-sphere" id="logPoseSphere" title="Grand Line Eternal Log Pose">
-              <!-- SVG Circular Progress Ring & Compass Tick Marks -->
-              <svg class="pose-svg-ring" viewBox="0 0 100 100">
-                <defs>
-                  <linearGradient id="poseGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#ffd700"></stop>
-                    <stop offset="50%" stop-color="#f59e0b"></stop>
-                    <stop offset="100%" stop-color="#ef4444"></stop>
-                  </linearGradient>
-                  <linearGradient id="titleCompassGold" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#fef08a"></stop>
-                    <stop offset="100%" stop-color="#d97706"></stop>
-                  </linearGradient>
-                </defs>
-                <circle class="pose-circle-bg" cx="50" cy="50" r="42"></circle>
-                <circle class="pose-circle-ticks" cx="50" cy="50" r="38" stroke-dasharray="1.2 9.8"></circle>
-                <circle class="pose-circle-progress" id="poseCircleProgress" cx="50" cy="50" r="42" stroke-dasharray="264" stroke-dashoffset="0"></circle>
-              </svg>
-
-              <!-- Brass Outer Gimbal Rim with Engraved Compass Rivets -->
-              <div class="pose-brass-casing">
-                <span class="casing-rivet rivet-n">N</span>
-                <span class="casing-rivet rivet-e">E</span>
-                <span class="casing-rivet rivet-s">S</span>
-                <span class="casing-rivet rivet-w">W</span>
-              </div>
-
-              <!-- Glass Sphere Specular Highlights -->
-              <div class="pose-glass-glare"></div>
-              <div class="pose-glass-glare-secondary"></div>
-
-              <!-- Animated Dual-Bulb Hourglass Chamber Inside Sphere -->
-              <div class="pose-hourglass-chamber" id="poseHourglassChamber">
-                <div class="hourglass-bulb bulb-top">
-                  <div class="sand-top-reserve" id="sandTopReserve"></div>
+                <!-- Brass Outer Gimbal Rim with Engraved Compass Rivets -->
+                <div class="pose-brass-casing">
+                  <span class="casing-rivet rivet-n">N</span>
+                  <span class="casing-rivet rivet-e">E</span>
+                  <span class="casing-rivet rivet-s">S</span>
+                  <span class="casing-rivet rivet-w">W</span>
                 </div>
-                <div class="hourglass-neck">
-                  <div class="sand-fall-stream" id="sandFallStream"></div>
+
+                <!-- Glass Sphere Specular Highlights -->
+                <div class="pose-glass-glare"></div>
+                <div class="pose-glass-glare-secondary"></div>
+
+                <!-- Animated Dual-Bulb Hourglass Chamber Inside Sphere -->
+                <div class="pose-hourglass-chamber" id="poseHourglassChamber">
+                  <div class="hourglass-bulb bulb-top">
+                    <div class="sand-top-reserve" id="sandTopReserve"></div>
+                  </div>
+                  <div class="hourglass-neck">
+                    <div class="sand-fall-stream" id="sandFallStream"></div>
+                  </div>
+                  <div class="hourglass-bulb bulb-bottom">
+                    <div class="sand-pile" id="sandPile"></div>
+                  </div>
                 </div>
-                <div class="hourglass-bulb bulb-bottom">
-                  <div class="sand-pile" id="sandPile"></div>
+
+                <!-- 3D Suspended Magnetic Needle -->
+                <div class="pose-magnetic-needle" id="poseMagneticNeedle">
+                  <div class="needle-half-north" title="Magnetic North"></div>
+                  <div class="needle-pivot"></div>
+                  <div class="needle-half-south" title="Magnetic South"></div>
                 </div>
               </div>
 
-              <!-- 3D Suspended Magnetic Needle -->
-              <div class="pose-magnetic-needle" id="poseMagneticNeedle">
-                <div class="needle-half-north" title="Magnetic North"></div>
-                <div class="needle-pivot"></div>
-                <div class="needle-half-south" title="Magnetic South"></div>
+              <!-- Time Counter Readout -->
+              <div class="log-pose-timer-readout">
+                <div class="log-pose-countdown" id="logPoseCountdown">30:00</div>
+                <div class="log-pose-status-pill" id="logPoseStatusPill">
+                  <span class="status-pulse-dot"></span>
+                  <span class="status-text" id="logPoseStatusText">READY TO SET SAIL</span>
+                </div>
               </div>
             </div>
 
-            <!-- Time Counter Readout -->
-            <div class="log-pose-timer-readout">
-              <div class="log-pose-countdown" id="logPoseCountdown">30:00</div>
-              <div class="log-pose-status-pill" id="logPoseStatusPill">
-                <span class="status-pulse-dot"></span>
-                <span class="status-text" id="logPoseStatusText">READY TO SET SAIL</span>
-              </div>
+            <!-- Island Duration Presets (5m, 30m, 1hr, 1:30hr) -->
+            <div class="log-pose-presets">
+              <button type="button" class="btn-pose-chip" id="poseChip-5" onclick="app.setFocusSession(5, 'Pirate Feast Break')" title="5 Minute Rest & Feast">
+                <span class="chip-min">5m</span>
+                <span class="chip-name">Feast 🍶</span>
+              </button>
+              <button type="button" class="btn-pose-chip active" id="poseChip-30" onclick="app.setFocusSession(30, 'Grand Line Voyage')" title="30 Minute Grand Line Focus">
+                <span class="chip-min">30m</span>
+                <span class="chip-name">Voyage 🌊</span>
+              </button>
+              <button type="button" class="btn-pose-chip" id="poseChip-60" onclick="app.setFocusSession(60, 'Wano Kuni Raid')" title="1 Hour Wano Raid Focus">
+                <span class="chip-min">1hr</span>
+                <span class="chip-name">Raid ⚔️</span>
+              </button>
+              <button type="button" class="btn-pose-chip" id="poseChip-90" onclick="app.setFocusSession(90, 'Laugh Tale Odyssey')" title="1 Hour 30 Minute Epic Voyage">
+                <span class="chip-min">1:30hr</span>
+                <span class="chip-name">Odyssey 👑</span>
+              </button>
+            </div>
+
+            <!-- Primary Actions: Set Sail / Drop Anchor, Reset, and Sound Toggle -->
+            <div class="log-pose-controls">
+              <button type="button" class="btn-pose-main" id="btnPoseMain" onclick="app.toggleFocusTimer()" title="Set Sail or Pause Voyage">
+                <span class="btn-pose-main-icon" id="btnPoseMainIcon">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="6,3 20,12 6,21"></polygon>
+                  </svg>
+                </span>
+                <span class="btn-pose-main-label" id="btnPoseMainLabel">Set Sail</span>
+              </button>
+
+              <button type="button" class="btn-pose-secondary" id="btnPoseReset" onclick="app.resetFocusTimer()" title="Recalibrate Compass (Reset)">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.19"></path>
+                </svg>
+              </button>
+
+              <button type="button" class="btn-pose-secondary" id="btnPoseSound" onclick="app.toggleFocusSound()" title="Toggle Ship Bell Chime">
+                <span id="poseSoundIcon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                    <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                  </svg>
+                </span>
+              </button>
             </div>
           </div>
 
-          <!-- Island Duration Presets (5m, 30m, 1hr, 1:30hr) -->
-          <div class="log-pose-presets">
-            <button type="button" class="btn-pose-chip" id="poseChip-5" onclick="app.setFocusSession(5, 'Pirate Feast Break')" title="5 Minute Rest & Feast">
-              <span class="chip-min">5m</span>
-              <span class="chip-name">Feast 🍶</span>
-            </button>
-            <button type="button" class="btn-pose-chip active" id="poseChip-30" onclick="app.setFocusSession(30, 'Grand Line Voyage')" title="30 Minute Grand Line Focus">
-              <span class="chip-min">30m</span>
-              <span class="chip-name">Voyage 🌊</span>
-            </button>
-            <button type="button" class="btn-pose-chip" id="poseChip-60" onclick="app.setFocusSession(60, 'Wano Kuni Raid')" title="1 Hour Wano Raid Focus">
-              <span class="chip-min">1hr</span>
-              <span class="chip-name">Raid ⚔️</span>
-            </button>
-            <button type="button" class="btn-pose-chip" id="poseChip-90" onclick="app.setFocusSession(90, 'Laugh Tale Odyssey')" title="1 Hour 30 Minute Epic Voyage">
-              <span class="chip-min">1:30hr</span>
-              <span class="chip-name">Odyssey 👑</span>
-            </button>
-          </div>
+          <!-- OPTION 2: Liquid Glass Pomodoro Timer (with Photo-Accurate LED Dot-Matrix Display) -->
+          <div class="focus-view-panel" id="viewPomodoro" style="display: none;">
+            <div class="pomodoro-liquid-card">
+              <!-- Liquid Glass Specular Shimmer Sheen -->
+              <div class="liquid-glass-sheen"></div>
 
-          <!-- Primary Actions: Set Sail / Drop Anchor, Reset, and Sound Toggle -->
-          <div class="log-pose-controls">
-            <button type="button" class="btn-pose-main" id="btnPoseMain" onclick="app.toggleFocusTimer()" title="Set Sail or Pause Voyage">
-              <span class="btn-pose-main-icon" id="btnPoseMainIcon">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-                  <polygon points="6,3 20,12 6,21"></polygon>
-                </svg>
-              </span>
-              <span class="btn-pose-main-label" id="btnPoseMainLabel">Set Sail</span>
-            </button>
+              <!-- LED Dot-Matrix Display Bezel (Matching User Photo Style) -->
+              <div class="pomo-dot-matrix-bezel" id="pomoMatrixBezel">
+                <div class="pomo-dot-matrix-top-row">
+                  <span class="pomo-matrix-indicator" id="pomoMatrixIndicator">FOCUS</span>
+                  <div class="pomo-matrix-live-badge">
+                    <span class="pomo-pulse-dot"></span>
+                    <span id="pomoStatusText">READY</span>
+                  </div>
+                </div>
 
-            <button type="button" class="btn-pose-secondary" id="btnPoseReset" onclick="app.resetFocusTimer()" title="Recalibrate Compass (Reset)">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.19"></path>
-              </svg>
-            </button>
+                <!-- Photorealistic SVG LED Dot-Matrix Digit Screen -->
+                <div class="pomo-matrix-screen">
+                  <svg class="pomo-matrix-svg" id="pomoDotMatrixSvg" viewBox="0 0 200 64" preserveAspectRatio="xMidYMid meet" aria-label="Pomodoro LED Matrix Timer">
+                    <!-- Dynamic 5x7 dot-matrix digits rendered here -->
+                  </svg>
+                </div>
+              </div>
 
-            <button type="button" class="btn-pose-secondary" id="btnPoseSound" onclick="app.toggleFocusSound()" title="Toggle Ship Bell Chime">
-              <span id="poseSoundIcon">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-                  <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-                </svg>
-              </span>
-            </button>
+              <!-- Liquid Glass Presets: 25m Focus, 5m Short Break, 15m Long Break, 50m Deep Work -->
+              <div class="pomo-presets-grid">
+                <button type="button" class="btn-pomo-chip active" id="pomoChip-25" onclick="app.setPomodoroSession(25, 'Focus Session', 'FOCUS')" title="25m Focus Session">
+                  <span class="pomo-chip-time">25m</span>
+                  <span class="pomo-chip-label">Focus</span>
+                </button>
+                <button type="button" class="btn-pomo-chip" id="pomoChip-5" onclick="app.setPomodoroSession(5, 'Short Break', 'REST')" title="5m Short Break">
+                  <span class="pomo-chip-time">5m</span>
+                  <span class="pomo-chip-label">Break</span>
+                </button>
+                <button type="button" class="btn-pomo-chip" id="pomoChip-15" onclick="app.setPomodoroSession(15, 'Long Break', 'REST')" title="15m Long Break">
+                  <span class="pomo-chip-time">15m</span>
+                  <span class="pomo-chip-label">Long Break</span>
+                </button>
+                <button type="button" class="btn-pomo-chip" id="pomoChip-50" onclick="app.setPomodoroSession(50, 'Deep Work', 'DEEP')" title="50m Deep Work">
+                  <span class="pomo-chip-time">50m</span>
+                  <span class="pomo-chip-label">Deep Work</span>
+                </button>
+              </div>
+
+              <!-- Liquid Glass Action Controls -->
+              <div class="pomo-controls-row">
+                <button type="button" class="btn-pomo-main" id="btnPomoMain" onclick="app.togglePomodoroTimer()" title="Start or Pause Pomodoro">
+                  <span class="btn-pomo-icon" id="btnPomoMainIcon">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                      <polygon points="6,3 20,12 6,21"></polygon>
+                    </svg>
+                  </span>
+                  <span id="btnPomoMainLabel">Start Focus</span>
+                </button>
+
+                <button type="button" class="btn-pomo-secondary" id="btnPomoReset" onclick="app.resetPomodoroTimer()" title="Reset Pomodoro Timer">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.19"></path>
+                  </svg>
+                </button>
+
+                <button type="button" class="btn-pomo-secondary" id="btnPomoSound" onclick="app.toggleFocusSound()" title="Toggle Bell Chime">
+                  <span id="pomoSoundIcon">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                      <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 

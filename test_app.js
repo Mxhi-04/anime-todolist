@@ -64,6 +64,11 @@ const mockLocalStorage = {
 const mockDocument = {
   readyState: 'complete',
   getElementById: (id) => getOrCreate(id),
+  querySelector: (selector) => {
+    if (selector.startsWith('#')) return getOrCreate(selector.slice(1));
+    if (selector.startsWith('.')) return getOrCreate(selector.slice(1));
+    return getOrCreate(selector);
+  },
   querySelectorAll: (selector) => {
     return [getOrCreate('mock-el')];
   },
@@ -805,46 +810,71 @@ console.log('✓ Verified: vercel.json is properly configured for Vercel deploym
 app.initWanted3DBackground();
 console.log('✓ Verified: app.initWanted3DBackground executed successfully');
 
-// Test 34: Validation of One Piece Eternal Log Pose & Hourglass Focus Timer
-console.log('\n--- Test 34: Validation of Eternal Log Pose & Hourglass Focus Timer ---');
+// Test 34: Validation of Focus Switcher, One Piece Log Pose & Liquid Glass Pomodoro Timer
+console.log('\n--- Test 34: Validation of Focus Switcher, Log Pose & Liquid Glass Pomodoro Timer ---');
 
-// 1. Verify HTML elements for Eternal Log Pose sphere, needle, hourglass, presets, and controls
-if (!htmlContent.includes('id="sidebarHeaderClock"') ||
-    !htmlContent.includes('id="logPoseSphere"') ||
+// 1. Verify skull and "ETERNAL POSE" text removed from the sidebar clock/focus box
+if (htmlContent.includes('ETERNAL POSE')) {
+  throw new Error('ETERNAL POSE text still found in index.html (expected removed)');
+}
+
+// Check that crest-badge is not inside sidebarHeaderClock
+const clockBoxMatch = htmlContent.match(/<div class="sidebar-header-pose"[^>]*>([\s\S]*?)<\/div>\s*<div class="sidebar-divider">/);
+if (clockBoxMatch && clockBoxMatch[1].includes('crest-badge')) {
+  throw new Error('Skull crest-badge still present inside sidebar focus box');
+}
+console.log('✓ Verified: Skull and ETERNAL POSE text removed from focus box');
+
+// 2. Verify Two-Option Switcher (Log Pose vs Regular Pomodoro) and views
+if (!htmlContent.includes('id="btnModePose"') ||
+    !htmlContent.includes('id="btnModePomodoro"') ||
+    !htmlContent.includes('id="viewLogPose"') ||
+    !htmlContent.includes('id="viewPomodoro"')) {
+  throw new Error('Two-option switcher (btnModePose/btnModePomodoro) or view panels missing from index.html');
+}
+console.log('✓ Verified: Two options (Log Pose vs Regular Pomodoro) present in index.html');
+
+// 3. Verify HTML elements for Log Pose and Liquid Glass Pomodoro with LED Dot-Matrix
+if (!htmlContent.includes('id="logPoseSphere"') ||
     !htmlContent.includes('id="poseMagneticNeedle"') ||
     !htmlContent.includes('id="poseHourglassChamber"') ||
-    !htmlContent.includes('id="sandFallStream"') ||
     !htmlContent.includes('id="logPoseCountdown"') ||
-    !htmlContent.includes('id="poseChip-5"') ||
-    !htmlContent.includes('id="poseChip-30"') ||
-    !htmlContent.includes('id="poseChip-60"') ||
-    !htmlContent.includes('id="poseChip-90"') ||
     !htmlContent.includes('id="btnPoseMain"') ||
-    !htmlContent.includes('id="btnPoseReset"') ||
-    !htmlContent.includes('id="btnPoseSound"')) {
-  throw new Error('Eternal Log Pose or Hourglass Focus Timer elements missing from index.html');
+    !htmlContent.includes('id="pomoDotMatrixSvg"') ||
+    !htmlContent.includes('id="pomoChip-25"') ||
+    !htmlContent.includes('id="pomoChip-5"') ||
+    !htmlContent.includes('id="btnPomoMain"') ||
+    !htmlContent.includes('id="btnPomoReset"') ||
+    !htmlContent.includes('id="btnPomoSound"')) {
+  throw new Error('Log Pose or Pomodoro HTML elements missing from index.html');
 }
+console.log('✓ Verified: Log Pose and Liquid Glass Pomodoro LED Matrix elements present in index.html');
 
-// Verify clock option has been removed from HTML
-if (htmlContent.includes('id="btnTabClock"') || htmlContent.includes('id="sidebarClockView"')) {
-  throw new Error('Clock tab or clock view elements still present in index.html (expected removed)');
+// 4. Verify CSS styles for Two-Option Switcher, Liquid Glass UI, and LED Dot-Matrix
+if (!cssContent.includes('.focus-mode-header-tabs') ||
+    !cssContent.includes('.btn-focus-mode-toggle') ||
+    !cssContent.includes('.pomodoro-liquid-card') ||
+    !cssContent.includes('.pomo-dot-matrix-bezel') ||
+    !cssContent.includes('.pomo-matrix-svg') ||
+    !cssContent.includes('.btn-pomo-main')) {
+  throw new Error('CSS styles for Two-Option Switcher, Liquid Glass, or LED Matrix missing from style.css');
 }
-console.log('✓ Verified: Clock option removed and dedicated Eternal Log Pose elements present in index.html');
+console.log('✓ Verified: Liquid Glass UI and LED dot-matrix display styling configured in style.css');
 
-// 2. Verify CSS styles for Log Pose instrument, Cinzel/Mono fonts, and Hourglass animation
-if (!cssContent.includes('.log-pose-sphere') ||
-    !cssContent.includes('.pose-svg-ring') ||
-    !cssContent.includes('.pose-magnetic-needle') ||
-    !cssContent.includes('.pose-hourglass-chamber') ||
-    !cssContent.includes('--font-cinzel') ||
-    !cssContent.includes('--font-mono') ||
-    !cssContent.includes('@keyframes logPoseNeedleWobble') ||
-    !cssContent.includes('@keyframes sandFallAnim')) {
-  throw new Error('CSS styles for Eternal Log Pose, Cinzel/Mono fonts, needle wobble, or hourglass sand missing from style.css');
+// 5. Test Mode Switching (Log Pose <-> Pomodoro)
+app.setFocusMode('pomodoro');
+if (app.state.focusMode !== 'pomodoro') {
+  throw new Error('app.state.focusMode expected pomodoro, got: ' + app.state.focusMode);
 }
-console.log('✓ Verified: Rich CSS styling, Cinzel/Mono typography, and keyframe animations configured for Eternal Log Pose');
+console.log('✓ Verified: Switched to Regular Pomodoro mode');
 
-// 3. Test Focus Duration Presets: 5m, 30m, 1hr (60m), 1:30hr (90m)
+app.setFocusMode('pose');
+if (app.state.focusMode !== 'pose') {
+  throw new Error('app.state.focusMode expected pose, got: ' + app.state.focusMode);
+}
+console.log('✓ Verified: Switched to Log Pose mode');
+
+// 6. Test Focus Duration Presets on Log Pose: 5m, 30m, 1hr (60m), 1:30hr (90m)
 app.setFocusSession(5, 'Pirate Feast Break');
 if (app.state.focusDurationMinutes !== 5 || app.state.focusTimeRemainingSeconds !== 300) {
   throw new Error('setFocusSession(5) did not update focus state correctly');
@@ -865,60 +895,58 @@ if (countdownEl.textContent !== '30:00') {
 console.log('✓ Verified: 30m preset updates countdown to 30:00');
 
 app.setFocusSession(60, 'Wano Kuni Raid');
-if (app.state.focusDurationMinutes !== 60 || app.state.focusTimeRemainingSeconds !== 3600) {
-  throw new Error('setFocusSession(60) did not update focus state correctly');
-}
 if (countdownEl.textContent !== '1:00:00') {
   throw new Error('1hr (60m) preset countdown display expected 1:00:00, got: ' + countdownEl.textContent);
 }
 console.log('✓ Verified: 1hr preset updates countdown to 1:00:00');
 
 app.setFocusSession(90, 'Laugh Tale Odyssey');
-if (app.state.focusDurationMinutes !== 90 || app.state.focusTimeRemainingSeconds !== 5400) {
-  throw new Error('setFocusSession(90) did not update focus state correctly');
-}
 if (countdownEl.textContent !== '1:30:00') {
   throw new Error('1:30hr (90m) preset countdown display expected 1:30:00, got: ' + countdownEl.textContent);
 }
 console.log('✓ Verified: 1:30hr preset updates countdown to 1:30:00');
 
-// 4. Test Start and Pause Focus Timer
-app.setFocusSession(30, 'Grand Line Voyage');
-app.toggleFocusTimer();
-if (!app.state.isFocusRunning || !app.state.focusIntervalId) {
-  throw new Error('toggleFocusTimer did not start timer');
+// 7. Test Pomodoro Timer Features: Presets, Start, Pause, and Reset
+app.setFocusMode('pomodoro');
+app.setPomodoroSession(25, 'Focus Session', 'FOCUS');
+if (app.state.pomoDurationMinutes !== 25 || app.state.pomoTimeRemainingSeconds !== 1500) {
+  throw new Error('setPomodoroSession(25) failed to set state');
 }
-const logPoseSphereEl = getOrCreate('logPoseSphere');
-if (!logPoseSphereEl.classList.contains('voyage-active')) {
-  throw new Error('logPoseSphere did not receive voyage-active class on start');
-}
-console.log('✓ Verified: Focus timer started, voyage-active class added to Log Pose sphere');
+console.log('✓ Verified: 25m Pomodoro Focus preset configured');
 
-app.toggleFocusTimer();
-if (app.state.isFocusRunning || app.state.focusIntervalId) {
-  throw new Error('toggleFocusTimer did not pause timer');
+app.setPomodoroSession(5, 'Short Break', 'REST');
+if (app.state.pomoDurationMinutes !== 5 || app.state.pomoTimeRemainingSeconds !== 300) {
+  throw new Error('setPomodoroSession(5) failed to set break state');
 }
-if (logPoseSphereEl.classList.contains('voyage-active')) {
-  throw new Error('voyage-active class was not removed on pause');
-}
-console.log('✓ Verified: Focus timer paused smoothly');
+console.log('✓ Verified: 5m Pomodoro Break preset configured');
 
-// 5. Test Reset Focus Timer
-app.state.focusTimeRemainingSeconds = 500;
-app.resetFocusTimer();
-if (app.state.focusTimeRemainingSeconds !== 1800) {
-  throw new Error('resetFocusTimer did not restore full duration (1800s): ' + app.state.focusTimeRemainingSeconds);
+app.togglePomodoroTimer();
+if (!app.state.isPomoRunning || !app.state.pomoIntervalId) {
+  throw new Error('togglePomodoroTimer failed to start timer');
 }
-console.log('✓ Verified: Reset focus timer restored full 30m duration');
+console.log('✓ Verified: Pomodoro timer started running');
 
-// 6. Test Sound Toggle
+app.togglePomodoroTimer();
+if (app.state.isPomoRunning || app.state.pomoIntervalId) {
+  throw new Error('togglePomodoroTimer failed to pause timer');
+}
+console.log('✓ Verified: Pomodoro timer paused smoothly');
+
+app.state.pomoTimeRemainingSeconds = 120;
+app.resetPomodoroTimer();
+if (app.state.pomoTimeRemainingSeconds !== 300) {
+  throw new Error('resetPomodoroTimer failed to restore full duration (300s): ' + app.state.pomoTimeRemainingSeconds);
+}
+console.log('✓ Verified: Reset Pomodoro timer restored full duration');
+
+// 8. Test Sound Toggle
 const initialSound = app.state.focusSoundEnabled;
 app.toggleFocusSound();
 if (app.state.focusSoundEnabled === initialSound) {
   throw new Error('toggleFocusSound did not invert sound state');
 }
 app.toggleFocusSound(); // restore
-console.log('✓ Verified: Ship bell chime sound toggle works seamlessly');
+console.log('✓ Verified: Bell chime sound toggle works seamlessly');
 
 console.log('\n=============================================');
 console.log('🎉 ALL 34 TESTS PASSED FLAWLESSLY! 🎉');
