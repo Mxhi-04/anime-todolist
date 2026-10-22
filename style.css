@@ -773,6 +773,558 @@ body {
   margin-top: 2px;
 }
 
+/* Sidebar Header Top Bar & Mode Switcher Tabs */
+.sidebar-clock-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.sidebar-clock-nav-tabs {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-full);
+  padding: 2px;
+  gap: 2px;
+}
+
+.btn-clock-tab {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-muted);
+  font-family: var(--font-main);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s ease;
+}
+
+.btn-clock-tab:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.btn-clock-tab.active {
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.8), rgba(185, 28, 28, 0.9));
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.4);
+}
+
+.tab-focus-icon {
+  font-size: 11px;
+}
+
+.tab-focus-pill {
+  background: #f59e0b;
+  color: #000000;
+  font-size: 9px;
+  font-weight: 800;
+  padding: 1px 4px;
+  border-radius: 4px;
+  animation: focusPillPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes focusPillPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.75; transform: scale(0.94); }
+}
+
+/* Sidebar Clock View vs Focus View */
+.sidebar-clock-view {
+  display: none;
+  animation: clockFadeIn 0.25s ease-out;
+}
+
+.sidebar-clock-view.active {
+  display: block;
+}
+
+.sidebar-focus-view {
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+  animation: clockFadeIn 0.25s ease-out;
+}
+
+.sidebar-focus-view.active {
+  display: flex;
+}
+
+@keyframes clockFadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Quick Launch Chip under Clock */
+.clock-focus-quick-bar {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+  background: rgba(220, 38, 38, 0.08);
+  border: 1px solid rgba(220, 38, 38, 0.2);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.clock-focus-quick-bar:hover {
+  background: rgba(220, 38, 38, 0.16);
+  border-color: rgba(220, 38, 38, 0.4);
+  transform: translateX(2px);
+}
+
+.quick-pose-icon {
+  font-size: 13px;
+  margin-right: 6px;
+}
+
+.quick-pose-text {
+  font-size: 11px;
+  font-weight: 600;
+  color: #fca5a5;
+  flex: 1;
+}
+
+.quick-pose-arrow {
+  font-size: 11px;
+  color: var(--accent-pink);
+  transition: transform 0.2s ease;
+}
+
+.clock-focus-quick-bar:hover .quick-pose-arrow {
+  transform: translateX(3px);
+}
+
+/* ============================================================
+   One Piece Eternal Log Pose & Hourglass Focus Timer Module
+   ============================================================ */
+
+.log-pose-island-header {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-bottom: 6px;
+  border-bottom: 1px dashed rgba(220, 38, 38, 0.22);
+}
+
+.island-crest {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.island-flag {
+  font-size: 13px;
+  color: #eab308;
+}
+
+.island-name {
+  font-size: 13px;
+  font-weight: 800;
+  color: #fef08a;
+  letter-spacing: 0.3px;
+  text-shadow: 0 0 10px rgba(234, 179, 8, 0.4);
+}
+
+.log-pose-subhead {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* Center Instrument: Eternal Pose Sphere + Digital Timer */
+.log-pose-instrument-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 4px 0;
+}
+
+/* The Grand Line Eternal Log Pose Sphere (Glass dome + Brass gimbal) */
+.log-pose-sphere {
+  position: relative;
+  width: 76px;
+  height: 76px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, rgba(30, 41, 59, 0.85) 0%, rgba(15, 23, 42, 0.95) 70%, #080d1a 100%);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6), inset 0 0 10px rgba(234, 179, 8, 0.2);
+}
+
+/* SVG Circular Progress Ring */
+.pose-svg-ring {
+  position: absolute;
+  inset: -3px;
+  width: calc(100% + 6px);
+  height: calc(100% + 6px);
+  transform: rotate(-90deg);
+  pointer-events: none;
+}
+
+.pose-circle-bg {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.08);
+  stroke-width: 4.5;
+}
+
+.pose-circle-progress {
+  fill: none;
+  stroke: #eab308;
+  stroke-width: 4.5;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.5s ease, stroke 0.3s ease;
+  filter: drop-shadow(0 0 4px rgba(234, 179, 8, 0.6));
+}
+
+.log-pose-sphere.voyage-active .pose-circle-progress {
+  stroke: #ef4444;
+  filter: drop-shadow(0 0 6px rgba(239, 68, 68, 0.7));
+}
+
+/* Brass Outer Casing with N, E, S, W Rivets */
+.pose-brass-casing {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid rgba(234, 179, 8, 0.6);
+  pointer-events: none;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.6);
+}
+
+.casing-rivet {
+  position: absolute;
+  font-size: 8px;
+  font-weight: 800;
+  color: #eab308;
+  opacity: 0.8;
+  line-height: 1;
+}
+
+.rivet-n { top: 3px; left: 50%; transform: translateX(-50%); }
+.rivet-s { bottom: 3px; left: 50%; transform: translateX(-50%); }
+.rivet-e { right: 3px; top: 50%; transform: translateY(-50%); }
+.rivet-w { left: 3px; top: 50%; transform: translateY(-50%); }
+
+/* Glass Sphere Specular Glare */
+.pose-glass-glare {
+  position: absolute;
+  top: 6px;
+  left: 10px;
+  width: 24px;
+  height: 12px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.45) 0%, transparent 100%);
+  transform: rotate(-35deg);
+  pointer-events: none;
+  filter: blur(0.5px);
+}
+
+/* Hourglass Chamber (Visual sand streams inside sphere) */
+.pose-hourglass-chamber {
+  position: absolute;
+  inset: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: none;
+  opacity: 0.65;
+}
+
+.hourglass-bulb {
+  width: 22px;
+  height: 14px;
+  border: 1px solid rgba(234, 179, 8, 0.35);
+  border-radius: 8px 8px 2px 2px;
+  position: relative;
+  overflow: hidden;
+  background: rgba(234, 179, 8, 0.05);
+}
+
+.bulb-bottom {
+  border-radius: 2px 2px 8px 8px;
+}
+
+.sand-top-reserve {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #f59e0b 0%, #d97706 100%);
+  transform-origin: bottom center;
+  transition: transform 1s linear;
+}
+
+.hourglass-neck {
+  width: 4px;
+  height: 10px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.sand-fall-stream {
+  width: 1.5px;
+  height: 100%;
+  background: #fef08a;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.log-pose-sphere.voyage-active .sand-fall-stream {
+  opacity: 0.9;
+  animation: sandFallAnim 0.6s linear infinite;
+}
+
+@keyframes sandFallAnim {
+  0% { transform: translateY(-100%); opacity: 0.4; }
+  50% { opacity: 1; }
+  100% { transform: translateY(100%); opacity: 0.4; }
+}
+
+.sand-pile {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 35%;
+  background: #d97706;
+  border-radius: 50% 50% 0 0;
+  transition: height 1s linear;
+}
+
+/* 3D Suspended Magnetic Compass Needle */
+.pose-magnetic-needle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 52px;
+  transform: translate(-50%, -50%) rotate(var(--needle-angle, 25deg));
+  transform-origin: center center;
+  pointer-events: none;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform;
+}
+
+.log-pose-sphere:not(.voyage-active) .pose-magnetic-needle {
+  animation: logPoseNeedleWobble 4s ease-in-out infinite alternate;
+}
+
+.log-pose-sphere.voyage-active .pose-magnetic-needle {
+  animation: logPoseActiveVibe 0.35s ease-in-out infinite alternate;
+}
+
+@keyframes logPoseNeedleWobble {
+  0% { transform: translate(-50%, -50%) rotate(calc(var(--needle-angle, 25deg) - 5deg)); }
+  100% { transform: translate(-50%, -50%) rotate(calc(var(--needle-angle, 25deg) + 5deg)); }
+}
+
+@keyframes logPoseActiveVibe {
+  0% { transform: translate(-50%, -50%) rotate(calc(var(--needle-angle, 25deg) - 2deg)); }
+  100% { transform: translate(-50%, -50%) rotate(calc(var(--needle-angle, 25deg) + 2deg)); }
+}
+
+.needle-half-north {
+  width: 0;
+  height: 0;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-bottom: 24px solid #ef4444;
+  filter: drop-shadow(0 0 4px rgba(239, 68, 68, 0.7));
+}
+
+.needle-pivot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 7px;
+  height: 7px;
+  background: #eab308;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 6px rgba(234, 179, 8, 0.8);
+  z-index: 2;
+}
+
+.needle-half-south {
+  width: 0;
+  height: 0;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-top: 24px solid #3b82f6;
+  filter: drop-shadow(0 0 3px rgba(59, 130, 246, 0.5));
+}
+
+/* Digital Timer Display Col */
+.log-pose-timer-readout {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.log-pose-countdown {
+  font-family: var(--font-mono, monospace);
+  font-size: 27px;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+  line-height: 1;
+  text-shadow: 0 0 16px rgba(234, 179, 8, 0.35);
+}
+
+.log-pose-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+}
+
+.status-pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #eab308;
+  box-shadow: 0 0 6px #eab308;
+}
+
+.log-pose-sphere.voyage-active ~ .log-pose-timer-readout .status-pulse-dot {
+  background: #22c55e;
+  box-shadow: 0 0 8px #22c55e;
+  animation: statusBlink 1s ease-in-out infinite;
+}
+
+@keyframes statusBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+/* Presets Row */
+.log-pose-presets {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+}
+
+.btn-pose-chip {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+  padding: 5px 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--text-muted);
+}
+
+.btn-pose-chip:hover {
+  background: rgba(234, 179, 8, 0.12);
+  border-color: rgba(234, 179, 8, 0.35);
+  color: #fef08a;
+}
+
+.btn-pose-chip.active {
+  background: linear-gradient(135deg, rgba(234, 179, 8, 0.22), rgba(180, 83, 9, 0.28));
+  border-color: #eab308;
+  color: #fef08a;
+  box-shadow: 0 2px 8px rgba(234, 179, 8, 0.25);
+}
+
+.chip-min {
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.chip-name {
+  font-size: 8px;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+/* Action Controls Row */
+.log-pose-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 2px;
+}
+
+.btn-pose-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-main);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  box-shadow: 0 3px 12px rgba(220, 38, 38, 0.4);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-pose-main:hover {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(220, 38, 38, 0.55);
+}
+
+.btn-pose-main.is-running {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  box-shadow: 0 3px 12px rgba(245, 158, 11, 0.4);
+}
+
+.btn-pose-secondary {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-pose-secondary:hover {
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
 .sidebar-divider {
   height: 1px;
   background: var(--border-subtle);

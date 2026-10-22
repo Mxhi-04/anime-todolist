@@ -133,15 +133,137 @@
         <button class="btn-sidebar-close" id="btnSidebarClose" onclick="app.toggleSidebar(false)"
           aria-label="Collapse sidebar" title="Collapse sidebar">✕</button>
 
-        <!-- Sidebar Top: Prominent Live Date & Time -->
-        <div class="sidebar-header-clock">
-          <div class="crest-badge" onclick="app.replayLoader()" style="cursor: pointer;" title="Replay Pixel Loading Screen ☠️">
-            <span class="crest-icon">☠️</span>
-            <span class="crest-kanji">海賊王</span> <!-- Pirate King -->
+        <!-- Sidebar Top: Prominent Live Date & Time + One Piece Eternal Log Pose Focus Timer -->
+        <div class="sidebar-header-clock" id="sidebarHeaderClock">
+          <!-- Top Row: Crest Badge & Mode Switcher Tabs -->
+          <div class="sidebar-clock-top-bar">
+            <div class="crest-badge" onclick="app.replayLoader()" style="cursor: pointer;" title="Replay Pixel Loading Screen ☠️">
+              <span class="crest-icon">☠️</span>
+              <span class="crest-kanji">海賊王</span>
+            </div>
+
+            <!-- Mode Switcher: Live Clock vs Eternal Log Pose Focus Timer -->
+            <div class="sidebar-clock-nav-tabs">
+              <button type="button" class="btn-clock-tab active" id="btnTabClock" onclick="app.setSidebarClockTab('clock')" title="Show Live Clock">
+                <span>⏰ Clock</span>
+              </button>
+              <button type="button" class="btn-clock-tab" id="btnTabFocus" onclick="app.setSidebarClockTab('focus')" title="Show Eternal Log Pose Focus Timer">
+                <span class="tab-focus-icon">🧭</span>
+                <span class="tab-focus-label">Focus</span>
+                <span class="tab-focus-pill" id="tabFocusPill" style="display: none;">25:00</span>
+              </button>
+            </div>
           </div>
-          <div class="sidebar-clock-time" id="sidebarClockTime">--:-- --</div>
-          <div class="sidebar-clock-day" id="sidebarClockDay">-------</div>
-          <div class="sidebar-clock-date" id="sidebarClockDate">-- Month ----</div>
+
+          <!-- Tab 1: Live Date & Time View -->
+          <div class="sidebar-clock-view active" id="sidebarClockView">
+            <div class="sidebar-clock-time" id="sidebarClockTime">--:-- --</div>
+            <div class="sidebar-clock-day" id="sidebarClockDay">-------</div>
+            <div class="sidebar-clock-date" id="sidebarClockDate">-- Month ----</div>
+            <!-- Quick Launch Chip under Clock -->
+            <div class="clock-focus-quick-bar" onclick="app.setSidebarClockTab('focus')" title="Launch Grand Line Focus Voyage">
+              <span class="quick-pose-icon">🧭</span>
+              <span class="quick-pose-text" id="quickPoseText">Launch Eternal Log Pose Focus</span>
+              <span class="quick-pose-arrow">→</span>
+            </div>
+          </div>
+
+          <!-- Tab 2: One Piece Eternal Log Pose & Hourglass Focus Timer -->
+          <div class="sidebar-focus-view" id="sidebarFocusView">
+            <!-- Navigation Header with Island Destination -->
+            <div class="log-pose-island-header">
+              <div class="island-crest">
+                <span class="island-flag">⚓</span>
+                <span class="island-name" id="logPoseIslandName">Laugh Tale Voyage</span>
+              </div>
+              <span class="log-pose-subhead">永久指針 • FOCUS VOYAGE</span>
+            </div>
+
+            <!-- Center Instrument: Eternal Pose Sphere + Hourglass Sand -->
+            <div class="log-pose-instrument-wrapper">
+              <div class="log-pose-sphere" id="logPoseSphere" title="Grand Line Eternal Log Pose">
+                <!-- SVG Circular Progress Ring -->
+                <svg class="pose-svg-ring" viewBox="0 0 100 100">
+                  <circle class="pose-circle-bg" cx="50" cy="50" r="42"></circle>
+                  <circle class="pose-circle-progress" id="poseCircleProgress" cx="50" cy="50" r="42" stroke-dasharray="264" stroke-dashoffset="0"></circle>
+                </svg>
+
+                <!-- Brass Outer Gimbal Rim with Compass Rivets -->
+                <div class="pose-brass-casing">
+                  <span class="casing-rivet rivet-n">N</span>
+                  <span class="casing-rivet rivet-e">E</span>
+                  <span class="casing-rivet rivet-s">S</span>
+                  <span class="casing-rivet rivet-w">W</span>
+                </div>
+
+                <!-- Glass Sphere Specular Highlight -->
+                <div class="pose-glass-glare"></div>
+
+                <!-- Animated Hourglass Chamber (Glass Hourglass inside Eternal Pose) -->
+                <div class="pose-hourglass-chamber" id="poseHourglassChamber">
+                  <div class="hourglass-bulb bulb-top">
+                    <div class="sand-top-reserve" id="sandTopReserve"></div>
+                  </div>
+                  <div class="hourglass-neck">
+                    <div class="sand-fall-stream" id="sandFallStream"></div>
+                  </div>
+                  <div class="hourglass-bulb bulb-bottom">
+                    <div class="sand-pile" id="sandPile"></div>
+                  </div>
+                </div>
+
+                <!-- Suspended 3D Magnetic Needle -->
+                <div class="pose-magnetic-needle" id="poseMagneticNeedle">
+                  <div class="needle-half-north" title="Magnetic North"></div>
+                  <div class="needle-pivot"></div>
+                  <div class="needle-half-south"></div>
+                </div>
+              </div>
+
+              <!-- Time Counter Readout -->
+              <div class="log-pose-timer-readout">
+                <div class="log-pose-countdown" id="logPoseCountdown">25:00</div>
+                <div class="log-pose-status-pill" id="logPoseStatusPill">
+                  <span class="status-pulse-dot"></span>
+                  <span class="status-text" id="logPoseStatusText">READY TO SET SAIL</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Island Presets Row (25m, 45m, 15m, 5m) -->
+            <div class="log-pose-presets">
+              <button type="button" class="btn-pose-chip active" id="poseChip-25" onclick="app.setFocusSession(25, 'Laugh Tale Voyage')">
+                <span class="chip-min">25m</span>
+                <span class="chip-name">Grand Line</span>
+              </button>
+              <button type="button" class="btn-pose-chip" id="poseChip-45" onclick="app.setFocusSession(45, 'Onigashima Raid')">
+                <span class="chip-min">45m</span>
+                <span class="chip-name">Onigashima</span>
+              </button>
+              <button type="button" class="btn-pose-chip" id="poseChip-15" onclick="app.setFocusSession(15, 'Skypiea Scout')">
+                <span class="chip-min">15m</span>
+                <span class="chip-name">Skypiea</span>
+              </button>
+              <button type="button" class="btn-pose-chip" id="poseChip-5" onclick="app.setFocusSession(5, 'Pirate Feast Break')">
+                <span class="chip-min">5m</span>
+                <span class="chip-name">Feast 🍶</span>
+              </button>
+            </div>
+
+            <!-- Primary Actions: Start/Pause, Reset, and Sound Toggle -->
+            <div class="log-pose-controls">
+              <button type="button" class="btn-pose-main" id="btnPoseMain" onclick="app.toggleFocusTimer()">
+                <span class="btn-pose-main-icon" id="btnPoseMainIcon">▶</span>
+                <span class="btn-pose-main-label" id="btnPoseMainLabel">Set Sail</span>
+              </button>
+              <button type="button" class="btn-pose-secondary" id="btnPoseReset" onclick="app.resetFocusTimer()" title="Reset Focus Voyage">
+                <span>↺</span>
+              </button>
+              <button type="button" class="btn-pose-secondary" id="btnPoseSound" onclick="app.toggleFocusSound()" title="Toggle Ship Bell Chime">
+                <span id="poseSoundIcon">🔔</span>
+              </button>
+            </div>
+          </div>
         </div>
 
         <div class="sidebar-divider"></div>

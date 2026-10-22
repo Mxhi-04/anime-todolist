@@ -805,8 +805,108 @@ console.log('✓ Verified: vercel.json is properly configured for Vercel deploym
 app.initWanted3DBackground();
 console.log('✓ Verified: app.initWanted3DBackground executed successfully');
 
+// Test 34: Validation of One Piece Eternal Log Pose & Hourglass Focus Timer
+console.log('\n--- Test 34: Validation of Eternal Log Pose & Hourglass Focus Timer ---');
+
+// 1. Verify HTML elements for Clock/Focus tabs, Log Pose sphere, needle, hourglass, and controls
+if (!htmlContent.includes('id="sidebarHeaderClock"') ||
+    !htmlContent.includes('id="btnTabClock"') ||
+    !htmlContent.includes('id="btnTabFocus"') ||
+    !htmlContent.includes('id="sidebarClockView"') ||
+    !htmlContent.includes('id="sidebarFocusView"') ||
+    !htmlContent.includes('id="logPoseSphere"') ||
+    !htmlContent.includes('id="poseMagneticNeedle"') ||
+    !htmlContent.includes('id="poseHourglassChamber"') ||
+    !htmlContent.includes('id="sandFallStream"') ||
+    !htmlContent.includes('id="logPoseCountdown"') ||
+    !htmlContent.includes('id="btnPoseMain"') ||
+    !htmlContent.includes('id="btnPoseReset"') ||
+    !htmlContent.includes('id="btnPoseSound"')) {
+  throw new Error('Eternal Log Pose or Hourglass Focus Timer elements missing from index.html');
+}
+console.log('✓ Verified: HTML elements for Eternal Log Pose sphere, magnetic needle, hourglass, and controls present in index.html');
+
+// 2. Verify CSS styles for Log Pose instrument and Hourglass animation
+if (!cssContent.includes('.sidebar-clock-nav-tabs') ||
+    !cssContent.includes('.log-pose-sphere') ||
+    !cssContent.includes('.pose-svg-ring') ||
+    !cssContent.includes('.pose-magnetic-needle') ||
+    !cssContent.includes('.pose-hourglass-chamber') ||
+    !cssContent.includes('@keyframes logPoseNeedleWobble') ||
+    !cssContent.includes('@keyframes sandFallAnim')) {
+  throw new Error('CSS styles for Eternal Log Pose, needle wobble, or hourglass sand missing from style.css');
+}
+console.log('✓ Verified: Rich CSS styling and keyframe animations configured for Eternal Log Pose & Hourglass');
+
+// 3. Test Tab Switching (Clock <-> Focus)
+app.setSidebarClockTab('focus');
+if (app.state.sidebarClockTab !== 'focus') {
+  throw new Error('app.state.sidebarClockTab was not set to focus');
+}
+const focusViewEl = getOrCreate('sidebarFocusView');
+const clockViewEl = getOrCreate('sidebarClockView');
+if (!focusViewEl.classList.contains('active') || clockViewEl.classList.contains('active')) {
+  throw new Error('sidebarFocusView is not active or sidebarClockView is still active');
+}
+console.log('✓ Verified: Switching to Eternal Log Pose Focus tab works cleanly');
+
+app.setSidebarClockTab('clock');
+if (app.state.sidebarClockTab !== 'clock') {
+  throw new Error('app.state.sidebarClockTab was not set to clock');
+}
+console.log('✓ Verified: Switching back to Live Clock tab works cleanly');
+
+// 4. Test Focus Duration Presets
+app.setFocusSession(45, 'Onigashima Raid');
+if (app.state.focusDurationMinutes !== 45 || app.state.focusTotalDurationSeconds !== 2700 || app.state.focusTimeRemainingSeconds !== 2700) {
+  throw new Error('setFocusSession(45) did not update focus state correctly');
+}
+const countdownEl = getOrCreate('logPoseCountdown');
+if (countdownEl.textContent !== '45:00') {
+  throw new Error('Countdown display was not updated to 45:00: ' + countdownEl.textContent);
+}
+console.log('✓ Verified: Setting 45m Onigashima Raid preset updates countdown and state');
+
+// 5. Test Start and Pause Focus Timer
+app.setFocusSession(25, 'Laugh Tale Voyage');
+app.toggleFocusTimer();
+if (!app.state.isFocusRunning || !app.state.focusIntervalId) {
+  throw new Error('toggleFocusTimer did not start timer');
+}
+const logPoseSphereEl = getOrCreate('logPoseSphere');
+if (!logPoseSphereEl.classList.contains('voyage-active')) {
+  throw new Error('logPoseSphere did not receive voyage-active class on start');
+}
+console.log('✓ Verified: Focus timer started, voyage-active class added to Log Pose sphere');
+
+app.toggleFocusTimer();
+if (app.state.isFocusRunning || app.state.focusIntervalId) {
+  throw new Error('toggleFocusTimer did not pause timer');
+}
+if (logPoseSphereEl.classList.contains('voyage-active')) {
+  throw new Error('voyage-active class was not removed on pause');
+}
+console.log('✓ Verified: Focus timer paused smoothly');
+
+// 6. Test Reset Focus Timer
+app.state.focusTimeRemainingSeconds = 500;
+app.resetFocusTimer();
+if (app.state.focusTimeRemainingSeconds !== 1500) {
+  throw new Error('resetFocusTimer did not restore full duration (1500s): ' + app.state.focusTimeRemainingSeconds);
+}
+console.log('✓ Verified: Reset focus timer restored full 25m duration');
+
+// 7. Test Sound Toggle
+const initialSound = app.state.focusSoundEnabled;
+app.toggleFocusSound();
+if (app.state.focusSoundEnabled === initialSound) {
+  throw new Error('toggleFocusSound did not invert sound state');
+}
+app.toggleFocusSound(); // restore
+console.log('✓ Verified: Ship bell chime sound toggle works seamlessly');
+
 console.log('\n=============================================');
-console.log('🎉 ALL 33 TESTS PASSED FLAWLESSLY! 🎉');
+console.log('🎉 ALL 34 TESTS PASSED FLAWLESSLY! 🎉');
 console.log('=============================================\n');
 process.exit(0);
 
