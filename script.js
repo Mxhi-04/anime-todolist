@@ -82,11 +82,11 @@
     skyModeOverride: 'auto',
     isSkyDropdownOpen: false,
     // Eternal Log Pose Focus Timer State
-    sidebarClockTab: 'clock', // 'clock' | 'focus'
-    focusDurationMinutes: 25,
-    focusTimeRemainingSeconds: 25 * 60,
-    focusTotalDurationSeconds: 25 * 60,
-    focusDestinationName: 'Laugh Tale Voyage',
+    sidebarClockTab: 'focus', // retained for backward-compat
+    focusDurationMinutes: 30,
+    focusTimeRemainingSeconds: 30 * 60,
+    focusTotalDurationSeconds: 30 * 60,
+    focusDestinationName: 'Grand Line Voyage',
     isFocusRunning: false,
     focusIntervalId: null,
     focusSoundEnabled: true,
@@ -574,8 +574,14 @@
   }
 
   // ============================================================
-  // One Piece Eternal Log Pose & Hourglass Focus Timer Module
+  // One Piece Eternal Log Pose Focus Instrument (エターナルポース)
   // ============================================================
+
+  const POSE_ICON_PLAY = `<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"></polygon></svg>`;
+  const POSE_ICON_ANCHOR = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="3"></circle><line x1="12" y1="8" x2="12" y2="21"></line><path d="M5 12H2a10 10 0 0 0 20 0h-3"></path></svg>`;
+  const POSE_ICON_RELOAD = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.19"></path></svg>`;
+  const POSE_ICON_BELL_ON = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>`;
+  const POSE_ICON_BELL_OFF = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.73 21a2 2 0 0 1-3.46 0"></path><path d="M18.63 13A17.89 17.89 0 0 1 18 8"></path><path d="M6.26 6.26A5.86 5.86 0 0 0 6 8c0 7-3 9-3 9h14"></path><path d="M18 8a6 6 0 0 0-9.33-5"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>`;
 
   function loadFocusPreferences() {
     try {
@@ -625,10 +631,13 @@
     state.focusTimeRemainingSeconds = minutes * 60;
     state.focusDestinationName = destName || `${minutes}m Voyage`;
 
-    [25, 45, 15, 5].forEach(m => {
+    [5, 30, 60, 90].forEach(m => {
       const chip = document.getElementById(`poseChip-${m}`);
       if (chip) chip.classList.toggle('active', m === minutes);
     });
+
+    const specificChip = document.getElementById(`poseChip-${minutes}`);
+    if (specificChip) specificChip.classList.add('active');
 
     const nameEl = document.getElementById('logPoseIslandName');
     if (nameEl) nameEl.textContent = state.focusDestinationName;
@@ -637,7 +646,8 @@
     if (statusEl) statusEl.textContent = 'READY TO SET SAIL';
 
     updateFocusTimerUI();
-    showToast(`🧭 Destination locked: ${state.focusDestinationName} (${minutes}m)`);
+    const durationLabel = minutes >= 60 ? (minutes === 60 ? '1hr' : (minutes === 90 ? '1:30hr' : `${minutes}m`)) : `${minutes}m`;
+    showToast(`🧭 Destination locked: ${state.focusDestinationName} (${durationLabel})`);
   }
 
   function toggleFocusTimer() {
@@ -656,7 +666,7 @@
         btnMain.classList.remove('is-running');
         const icon = document.getElementById('btnPoseMainIcon');
         const label = document.getElementById('btnPoseMainLabel');
-        if (icon) icon.textContent = '▶';
+        if (icon) icon.innerHTML = POSE_ICON_PLAY;
         if (label) label.textContent = 'Resume';
       }
 
@@ -674,7 +684,7 @@
         btnMain.classList.add('is-running');
         const icon = document.getElementById('btnPoseMainIcon');
         const label = document.getElementById('btnPoseMainLabel');
-        if (icon) icon.textContent = '⏸';
+        if (icon) icon.innerHTML = POSE_ICON_ANCHOR;
         if (label) label.textContent = 'Drop Anchor';
       }
 
@@ -711,7 +721,7 @@
       btnMain.classList.remove('is-running');
       const icon = document.getElementById('btnPoseMainIcon');
       const label = document.getElementById('btnPoseMainLabel');
-      if (icon) icon.textContent = '▶';
+      if (icon) icon.innerHTML = POSE_ICON_PLAY;
       if (label) label.textContent = 'Set Sail';
     }
 
@@ -726,7 +736,7 @@
     state.focusSoundEnabled = !state.focusSoundEnabled;
     saveFocusPreferences();
     const icon = document.getElementById('poseSoundIcon');
-    if (icon) icon.textContent = state.focusSoundEnabled ? '🔔' : '🔕';
+    if (icon) icon.innerHTML = state.focusSoundEnabled ? POSE_ICON_BELL_ON : POSE_ICON_BELL_OFF;
     showToast(state.focusSoundEnabled ? '🔔 Ship bell sound enabled' : '🔕 Focus timer muted');
   }
 
@@ -797,7 +807,7 @@
       btnMain.classList.remove('is-running');
       const icon = document.getElementById('btnPoseMainIcon');
       const label = document.getElementById('btnPoseMainLabel');
-      if (icon) icon.textContent = '↺';
+      if (icon) icon.innerHTML = POSE_ICON_RELOAD;
       if (label) label.textContent = 'New Voyage';
     }
 
@@ -815,23 +825,31 @@
   }
 
   function updateFocusTimerUI() {
-    const total = state.focusTotalDurationSeconds || (25 * 60);
+    const total = state.focusTotalDurationSeconds || (30 * 60);
     const rem = Math.max(0, state.focusTimeRemainingSeconds);
-    const mins = Math.floor(rem / 60);
-    const secs = rem % 60;
-    const formatted = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+    let formatted;
+    if (rem >= 3600) {
+      const hrs = Math.floor(rem / 3600);
+      const mins = Math.floor((rem % 3600) / 60);
+      const secs = rem % 60;
+      formatted = `${hrs}:${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+    } else {
+      const mins = Math.floor(rem / 60);
+      const secs = rem % 60;
+      formatted = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+    }
 
     const countEl = document.getElementById('logPoseCountdown');
     if (countEl) countEl.textContent = formatted;
 
     const progressCircle = document.getElementById('poseCircleProgress');
     if (progressCircle) {
-      const frac = rem / total;
+      const frac = total > 0 ? (rem / total) : 0;
       const offset = (264 * (1 - frac)).toFixed(1);
       progressCircle.setAttribute('stroke-dashoffset', offset);
     }
 
-    const fractionElapsed = 1 - (rem / total);
+    const fractionElapsed = total > 0 ? (1 - (rem / total)) : 0;
     const sandTop = document.getElementById('sandTopReserve');
     if (sandTop) {
       sandTop.style.transform = `scaleY(${(rem / total).toFixed(2)})`;
@@ -860,24 +878,13 @@
         pill.style.display = 'none';
       }
     }
-
-    const quickText = document.getElementById('quickPoseText');
-    if (quickText) {
-      if (state.isFocusRunning) {
-        quickText.textContent = `Voyage in Progress: ${formatted} left`;
-      } else if (rem < total && rem > 0) {
-        quickText.textContent = `Voyage Paused: ${formatted}`;
-      } else {
-        quickText.textContent = 'Launch Eternal Log Pose Focus';
-      }
-    }
   }
 
   function initFocusTimer() {
     loadFocusPreferences();
     updateFocusTimerUI();
     const soundIcon = document.getElementById('poseSoundIcon');
-    if (soundIcon) soundIcon.textContent = state.focusSoundEnabled ? '🔔' : '🔕';
+    if (soundIcon) soundIcon.innerHTML = state.focusSoundEnabled ? POSE_ICON_BELL_ON : POSE_ICON_BELL_OFF;
   }
 
   // ============================================================
