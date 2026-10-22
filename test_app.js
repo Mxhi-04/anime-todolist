@@ -850,16 +850,21 @@ if (!htmlContent.includes('id="logPoseSphere"') ||
 }
 console.log('✓ Verified: Log Pose and Liquid Glass Pomodoro LED Matrix elements present in index.html');
 
-// 4. Verify CSS styles for Two-Option Switcher, Liquid Glass UI, and LED Dot-Matrix
+// 4. Verify CSS styles for Two-Option Switcher, Liquid Glass UI for both Log Pose & Pomodoro, and Button Gradients
 if (!cssContent.includes('.focus-mode-header-tabs') ||
     !cssContent.includes('.btn-focus-mode-toggle') ||
+    !cssContent.includes('.log-pose-liquid-card') ||
     !cssContent.includes('.pomodoro-liquid-card') ||
+    !cssContent.includes('.liquid-glass-sheen') ||
     !cssContent.includes('.pomo-dot-matrix-bezel') ||
     !cssContent.includes('.pomo-matrix-svg') ||
-    !cssContent.includes('.btn-pomo-main')) {
-  throw new Error('CSS styles for Two-Option Switcher, Liquid Glass, or LED Matrix missing from style.css');
+    !cssContent.includes('.btn-pose-main') ||
+    !cssContent.includes('.btn-pomo-main') ||
+    !cssContent.includes('timerButtonPulseAmber') ||
+    !cssContent.includes('timerButtonPulseEmerald')) {
+  throw new Error('CSS styles for Liquid Glass UI or Button Gradients missing from style.css');
 }
-console.log('✓ Verified: Liquid Glass UI and LED dot-matrix display styling configured in style.css');
+console.log('✓ Verified: Liquid Glass UI applied to both Log Pose & Pomodoro with rich button gradients & keyframe effects');
 
 // 5. Test Mode Switching (Log Pose <-> Pomodoro)
 app.setFocusMode('pomodoro');

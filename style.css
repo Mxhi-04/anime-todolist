@@ -781,13 +781,13 @@ body {
 
 .sidebar-header-pose,
 .sidebar-header-clock {
-  background: radial-gradient(circle at 50% 0%, rgba(30, 41, 59, 0.75) 0%, rgba(15, 23, 42, 0.85) 100%);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(234, 179, 8, 0.25);
+  background: linear-gradient(135deg, rgba(20, 28, 48, 0.75) 0%, rgba(10, 16, 32, 0.88) 100%);
+  backdrop-filter: blur(24px) saturate(200%);
+  -webkit-backdrop-filter: blur(24px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: var(--radius-md);
-  padding: 12px 10px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  padding: 10px 8px;
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.55), inset 0 1px 1px rgba(255, 255, 255, 0.25);
   position: relative;
   overflow: hidden;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -801,28 +801,31 @@ body {
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #eab308 30%, #ef4444 70%, transparent);
-  opacity: 0.75;
+  background: linear-gradient(90deg, transparent, rgba(234, 179, 8, 0.8) 25%, rgba(239, 68, 68, 0.8) 50%, rgba(56, 189, 248, 0.8) 75%, transparent 100%);
+  opacity: 0.85;
 }
 
 /* Header Top Row: Focus Mode Switcher (Log Pose vs Regular Pomodoro) */
 .focus-mode-header-tabs {
   display: flex;
   align-items: center;
-  background: rgba(0, 0, 0, 0.45);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.55) 0%, rgba(15, 23, 42, 0.65) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: var(--radius-full);
   padding: 3px;
   gap: 3px;
-  margin-bottom: 10px;
+  margin-bottom: 9px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.6), 0 4px 12px rgba(0, 0, 0, 0.35);
 }
 
 .btn-focus-mode-toggle {
   flex: 1;
   background: transparent;
-  border: none;
+  border: 1px solid transparent;
   outline: none;
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.6);
   font-family: var(--font-main);
   font-size: 11px;
   font-weight: 700;
@@ -833,27 +836,36 @@ body {
   align-items: center;
   justify-content: center;
   gap: 5px;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   white-space: nowrap;
+  position: relative;
 }
 
 .btn-focus-mode-toggle:hover {
-  color: var(--text-primary);
-  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-0.5px);
 }
 
 .btn-focus-mode-toggle.active {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.05) 100%);
   color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.45);
 }
 
 .btn-focus-mode-toggle.active#btnModePose {
-  background: linear-gradient(135deg, rgba(234, 179, 8, 0.25) 0%, rgba(220, 38, 38, 0.25) 100%);
-  border-color: rgba(234, 179, 8, 0.4);
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.4) 0%, rgba(220, 38, 38, 0.3) 100%);
+  border: 1px solid rgba(254, 240, 138, 0.65);
   color: #fef08a;
-  box-shadow: 0 2px 8px rgba(234, 179, 8, 0.25);
+  box-shadow: 0 0 14px rgba(245, 158, 11, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.5);
+  text-shadow: 0 0 8px rgba(245, 158, 11, 0.6);
+}
+
+.btn-focus-mode-toggle.active#btnModePomodoro {
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.4) 0%, rgba(99, 102, 241, 0.3) 100%);
+  border: 1px solid rgba(125, 211, 252, 0.65);
+  color: #ffffff;
+  box-shadow: 0 0 14px rgba(56, 189, 248, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.5);
+  text-shadow: 0 0 8px rgba(56, 189, 248, 0.6);
 }
 
 .focus-view-panel {
@@ -921,7 +933,13 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 2px 0 6px;
+  padding: 8px 10px;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.65) 0%, rgba(15, 23, 42, 0.75) 100%);
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.85), 0 4px 14px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 1;
 }
 
 /* The Grand Line Eternal Log Pose Sphere (Glass dome + Brass gimbal) */
@@ -1214,43 +1232,63 @@ body {
   50% { opacity: 0.3; }
 }
 
-/* Presets Row (5m, 30m, 1hr, 1:30hr) */
-.log-pose-presets {
+/* Presets Row: Log Pose & Pomodoro (Liquid Glass Chips) */
+.log-pose-presets,
+.pomo-presets-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 4px;
+  gap: 4.5px;
   margin-bottom: 8px;
+  position: relative;
+  z-index: 1;
 }
 
-.btn-pose-chip {
-  background: rgba(0, 0, 0, 0.35);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+.btn-pose-chip,
+.btn-pomo-chip {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: var(--radius-sm);
-  padding: 5px 2px;
+  padding: 6px 3px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2px;
   cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  color: var(--text-muted);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  color: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2), 0 2px 6px rgba(0, 0, 0, 0.35);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
 }
 
-.btn-pose-chip:hover {
-  background: rgba(234, 179, 8, 0.12);
-  border-color: rgba(234, 179, 8, 0.4);
+.btn-pose-chip:hover,
+.btn-pomo-chip:hover {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.06) 100%);
+  border-color: rgba(255, 255, 255, 0.38);
+  color: #ffffff;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.45), 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Log Pose Preset Chips: Active Golden-Amber Pirate Gradient */
+.btn-pose-chip.active {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.42) 0%, rgba(234, 179, 8, 0.32) 40%, rgba(220, 38, 38, 0.36) 100%);
+  border: 1px solid rgba(254, 240, 138, 0.8);
   color: #fef08a;
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.5), inset 0 1px 2px rgba(255, 255, 255, 0.6);
   transform: translateY(-1px);
 }
 
-.btn-pose-chip.active {
-  background: linear-gradient(135deg, rgba(220, 38, 38, 0.28) 0%, rgba(234, 179, 8, 0.28) 100%);
-  border-color: #f59e0b;
-  color: #fef08a;
-  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3), inset 0 0 6px rgba(234, 179, 8, 0.15);
+.btn-pose-chip.active .chip-min {
+  color: #ffffff;
+  text-shadow: 0 0 6px rgba(254, 240, 138, 0.85);
 }
 
-.chip-min {
+.chip-min,
+.pomo-chip-time {
   font-family: var(--font-mono, 'JetBrains Mono', monospace);
   font-size: 11px;
   font-weight: 800;
@@ -1258,7 +1296,8 @@ body {
   color: #ffffff;
 }
 
-.chip-name {
+.chip-name,
+.pomo-chip-label {
   font-size: 8px;
   font-weight: 600;
   letter-spacing: 0.2px;
@@ -1269,84 +1308,217 @@ body {
   opacity: 0.85;
 }
 
-/* Action Controls Row */
-.log-pose-controls {
+/* Pomodoro Preset Chips: Active Thematic Gradients */
+.btn-pomo-chip.active {
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.btn-pomo-chip.active#pomoChip-25 {
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.45) 0%, rgba(37, 99, 235, 0.35) 100%);
+  border-color: rgba(125, 211, 252, 0.85);
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.55), inset 0 1px 2px rgba(255, 255, 255, 0.6);
+}
+
+.btn-pomo-chip.active#pomoChip-5 {
+  background: linear-gradient(135deg, rgba(52, 211, 153, 0.45) 0%, rgba(5, 150, 105, 0.35) 100%);
+  border-color: rgba(110, 231, 183, 0.85);
+  box-shadow: 0 0 16px rgba(52, 211, 153, 0.55), inset 0 1px 2px rgba(255, 255, 255, 0.6);
+}
+
+.btn-pomo-chip.active#pomoChip-15 {
+  background: linear-gradient(135deg, rgba(45, 212, 191, 0.45) 0%, rgba(14, 165, 233, 0.35) 100%);
+  border-color: rgba(94, 234, 212, 0.85);
+  box-shadow: 0 0 16px rgba(45, 212, 191, 0.55), inset 0 1px 2px rgba(255, 255, 255, 0.6);
+}
+
+.btn-pomo-chip.active#pomoChip-50 {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.45) 0%, rgba(217, 70, 239, 0.35) 100%);
+  border-color: rgba(216, 180, 254, 0.85);
+  box-shadow: 0 0 18px rgba(168, 85, 247, 0.6), inset 0 1px 2px rgba(255, 255, 255, 0.6);
+}
+
+/* Action Controls Rows (Log Pose & Pomodoro) */
+.log-pose-controls,
+.pomo-controls-row {
   display: flex;
   align-items: center;
   gap: 6px;
+  position: relative;
+  z-index: 1;
 }
 
-.btn-pose-main {
+/* Main Action Buttons (Set Sail & Start Pomodoro) with Radiant Gradients & Sheen Sweep */
+.btn-pose-main,
+.btn-pomo-main {
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
-  padding: 8px 10px;
-  background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+  padding: 8.5px 12px;
   color: #ffffff;
-  border: 1px solid rgba(254, 240, 138, 0.3);
   border-radius: var(--radius-sm);
-  font-family: var(--font-cinzel, serif);
   font-size: 11.5px;
   font-weight: 800;
   letter-spacing: 0.6px;
   cursor: pointer;
-  box-shadow: 0 3px 12px rgba(220, 38, 38, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1;
+}
+
+/* Specular Shimmer Sweep Effect across Main Buttons */
+.btn-pose-main::after,
+.btn-pomo-main::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.35) 50%, transparent 100%);
+  transform: skewX(-25deg);
+  transition: left 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.btn-pose-main:hover::after,
+.btn-pomo-main:hover::after {
+  left: 170%;
+}
+
+/* Log Pose Main Action Button */
+.btn-pose-main {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 40%, #b91c1c 75%, #f59e0b 100%);
+  border: 1px solid rgba(254, 240, 138, 0.45);
+  font-family: var(--font-cinzel, serif);
+  box-shadow: 0 5px 18px rgba(220, 38, 38, 0.5), inset 0 1.5px 2px rgba(255, 255, 255, 0.55), inset 0 -1px 2px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 }
 
 .btn-pose-main:hover {
-  background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 16px rgba(220, 38, 38, 0.6);
-  border-color: rgba(254, 240, 138, 0.5);
+  background: linear-gradient(135deg, #f87171 0%, #ef4444 40%, #dc2626 75%, #fbbf24 100%);
+  transform: translateY(-2px) scale(1.02);
+  border-color: rgba(254, 240, 138, 0.75);
+  box-shadow: 0 8px 24px rgba(220, 38, 38, 0.65), 0 0 14px rgba(245, 158, 11, 0.4), inset 0 1.5px 2px rgba(255, 255, 255, 0.7);
 }
 
 .btn-pose-main.is-running {
-  background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
-  border-color: rgba(254, 240, 138, 0.4);
-  box-shadow: 0 3px 12px rgba(217, 119, 6, 0.45);
+  background: linear-gradient(135deg, #f59e0b 0%, #ea580c 45%, #dc2626 100%);
+  border-color: rgba(254, 240, 138, 0.6);
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.6), inset 0 1.5px 2px rgba(255, 255, 255, 0.6);
+  animation: timerButtonPulseAmber 2s ease-in-out infinite;
 }
 
-.btn-pose-secondary {
-  width: 32px;
-  height: 32px;
+/* Pomodoro Main Action Button */
+.btn-pomo-main {
+  background: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 35%, #6366f1 70%, #a855f7 100%);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  font-family: var(--font-main);
+  box-shadow: 0 5px 20px rgba(59, 130, 246, 0.55), 0 0 16px rgba(14, 165, 233, 0.4), inset 0 1.5px 2px rgba(255, 255, 255, 0.65);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.btn-pomo-main:hover {
+  background: linear-gradient(135deg, #38bdf8 0%, #60a5fa 35%, #818cf8 70%, #c084fc 100%);
+  transform: translateY(-2px) scale(1.02);
+  border-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.65), 0 0 18px rgba(56, 189, 248, 0.5), inset 0 1.5px 2px rgba(255, 255, 255, 0.8);
+}
+
+.btn-pomo-main.is-running {
+  background: linear-gradient(135deg, #10b981 0%, #059669 45%, #0284c7 100%);
+  border-color: rgba(110, 231, 183, 0.6);
+  box-shadow: 0 0 22px rgba(16, 185, 129, 0.65), inset 0 1.5px 2px rgba(255, 255, 255, 0.7);
+  animation: timerButtonPulseEmerald 2s ease-in-out infinite;
+}
+
+@keyframes timerButtonPulseAmber {
+  0%, 100% { box-shadow: 0 0 14px rgba(245, 158, 11, 0.45), inset 0 1.5px 2px rgba(255, 255, 255, 0.6); }
+  50% { box-shadow: 0 0 24px rgba(245, 158, 11, 0.8), inset 0 1.5px 2px rgba(255, 255, 255, 0.8); }
+}
+
+@keyframes timerButtonPulseEmerald {
+  0%, 100% { box-shadow: 0 0 14px rgba(16, 185, 129, 0.45), inset 0 1.5px 2px rgba(255, 255, 255, 0.65); }
+  50% { box-shadow: 0 0 24px rgba(16, 185, 129, 0.85), inset 0 1.5px 2px rgba(255, 255, 255, 0.85); }
+}
+
+/* Secondary Action Buttons (Reset & Sound Toggle) */
+.btn-pose-secondary,
+.btn-pomo-secondary {
+  width: 33px;
+  height: 33px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.35);
-  border: 1px solid rgba(234, 179, 8, 0.25);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.03) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: var(--radius-sm);
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.75);
   font-size: 13px;
   cursor: pointer;
-  transition: all 0.2s ease;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.35);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  z-index: 1;
 }
 
 .btn-pose-secondary:hover {
-  background: rgba(234, 179, 8, 0.14);
+  background: linear-gradient(145deg, rgba(245, 158, 11, 0.28) 0%, rgba(245, 158, 11, 0.08) 100%);
   color: #fef08a;
-  border-color: rgba(234, 179, 8, 0.5);
+  border-color: rgba(254, 240, 138, 0.65);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.4), 0 0 12px rgba(245, 158, 11, 0.4);
+}
+
+.btn-pomo-secondary:hover {
+  background: linear-gradient(145deg, rgba(56, 189, 248, 0.28) 0%, rgba(56, 189, 248, 0.08) 100%);
+  color: #ffffff;
+  border-color: rgba(125, 211, 252, 0.65);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.4), 0 0 12px rgba(56, 189, 248, 0.4);
+}
+
+.btn-pose-secondary:active,
+.btn-pomo-secondary:active {
+  transform: translateY(0) scale(0.92);
 }
 
 /* ============================================================
-   Liquid Glass Pomodoro Timer (with LED Dot-Matrix Display)
+   Enhanced Liquid Glass UI (Shared by Log Pose & Pomodoro)
    ============================================================ */
 
+.log-pose-liquid-card,
 .pomodoro-liquid-card {
   position: relative;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.09) 0%, rgba(255, 255, 255, 0.02) 100%);
+  backdrop-filter: blur(24px) saturate(200%);
+  -webkit-backdrop-filter: blur(24px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: var(--radius-md);
   padding: 10px 8px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.25);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.55), inset 0 1px 1.5px rgba(255, 255, 255, 0.35), inset 0 -1px 2px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   gap: 8px;
   overflow: hidden;
+}
+
+.log-pose-liquid-card::before,
+.pomodoro-liquid-card::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  left: -30%;
+  width: 160%;
+  height: 160%;
+  background: radial-gradient(ellipse at 35% 20%, rgba(255, 255, 255, 0.12) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
 }
 
 .liquid-glass-sheen {
@@ -1354,9 +1526,10 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5) 40%, rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0.5) 60%, transparent);
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.25) 20%, rgba(255, 255, 255, 0.85) 50%, rgba(255, 255, 255, 0.25) 80%, transparent 100%);
   pointer-events: none;
+  z-index: 1;
 }
 
 /* LED Dot-Matrix Display Bezel (Matching User Photo) */
@@ -1368,6 +1541,7 @@ body {
   box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.95), 0 4px 14px rgba(0, 0, 0, 0.6);
   position: relative;
   overflow: hidden;
+  z-index: 1;
 }
 
 .pomo-dot-matrix-top-row {
@@ -1432,120 +1606,6 @@ body {
   max-width: 220px;
   height: auto;
   display: block;
-}
-
-/* Pomodoro Presets (Liquid Glass Chips) */
-.pomo-presets-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 4px;
-}
-
-.btn-pomo-chip {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: var(--radius-sm);
-  padding: 5px 2px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
-  cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  color: rgba(255, 255, 255, 0.65);
-}
-
-.btn-pomo-chip:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.25);
-  color: #ffffff;
-  transform: translateY(-1px);
-}
-
-.btn-pomo-chip.active {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.06) 100%);
-  border-color: rgba(255, 255, 255, 0.45);
-  color: #ffffff;
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.35);
-}
-
-.pomo-chip-time {
-  font-family: var(--font-mono, monospace);
-  font-size: 11px;
-  font-weight: 800;
-  line-height: 1;
-}
-
-.pomo-chip-label {
-  font-size: 8px;
-  font-weight: 600;
-  letter-spacing: 0.2px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 100%;
-}
-
-/* Liquid Glass Action Controls */
-.pomo-controls-row {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.btn-pomo-main {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  padding: 8px 10px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0.08) 100%);
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: var(--radius-sm);
-  font-family: var(--font-main);
-  font-size: 11.5px;
-  font-weight: 800;
-  letter-spacing: 0.6px;
-  cursor: pointer;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.4);
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.btn-pomo-main:hover {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.12) 100%);
-  transform: translateY(-1px);
-  border-color: rgba(255, 255, 255, 0.5);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5), 0 0 12px rgba(255, 255, 255, 0.2);
-}
-
-.btn-pomo-main.is-running {
-  background: linear-gradient(135deg, rgba(245, 158, 11, 0.38) 0%, rgba(217, 119, 6, 0.18) 100%);
-  border-color: rgba(245, 158, 11, 0.55);
-  box-shadow: 0 4px 16px rgba(245, 158, 11, 0.3);
-}
-
-.btn-pomo-secondary {
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: var(--radius-sm);
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 13px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.btn-pomo-secondary:hover {
-  background: rgba(255, 255, 255, 0.14);
-  color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.35);
-  transform: translateY(-1px);
 }
 
 /* Fallback tab classes for backward-compatibility */
