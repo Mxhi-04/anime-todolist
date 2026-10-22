@@ -80,122 +80,397 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Background Atmospheric Glow (Hardware Accelerated for Smooth 60fps Scrolling) */
-.bg-decorations {
+/* ============================================================
+   One Piece Wanted Posters — 3D Live Animated Background
+   ============================================================ */
+
+.wanted-bg-stage {
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 0;
   overflow: hidden;
+  perspective: 1200px;
+  background-color: #060911;
   transform: translate3d(0, 0, 0);
   will-change: transform;
 }
 
-.glow-orb {
+/* 3D Perspective Canvas Container */
+.wanted-3d-wrapper {
+  --mouse-tilt-x: 0deg;
+  --mouse-tilt-y: 0deg;
   position: absolute;
-  border-radius: 50%;
+  inset: -45px; /* Bleed to prevent clipping during 3D rotation */
+  transform-style: preserve-3d;
+  will-change: transform;
+  animation: wanted3DBreath 22s ease-in-out infinite alternate;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Primary Wanted Posters Collage Wallpaper */
+.wanted-poster-wall {
+  position: absolute;
+  inset: 0;
+  background-image: url('assets/wanted_posters_bg.png');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.88;
+  filter: contrast(1.18) saturate(1.15) brightness(0.96);
+  transform: translateZ(0);
+  transition: opacity 0.5s ease;
+}
+
+/* Subtle 3D Depth Floating Wanted Accents & Faint Typography Glow */
+.wanted-text-glow-mesh {
+  position: absolute;
+  inset: 0;
   pointer-events: none;
-  transform: translate3d(0, 0, 0);
-  will-change: transform;
-  animation: floatOrb 18s ease-in-out infinite alternate;
+  transform-style: preserve-3d;
 }
 
-.orb-1 {
-  width: 500px;
-  height: 500px;
-  top: -100px;
-  left: 15%;
-  background: radial-gradient(circle, rgba(220, 38, 38, 0.12) 0%, rgba(37, 99, 235, 0.06) 45%, transparent 70%);
-}
-
-.orb-2 {
-  width: 550px;
-  height: 550px;
-  bottom: -120px;
-  right: 5%;
-  background: radial-gradient(circle, rgba(37, 99, 235, 0.12) 0%, rgba(220, 38, 38, 0.05) 50%, transparent 70%);
-  animation-duration: 24s;
-}
-
-.orb-3 {
-  width: 350px;
-  height: 350px;
-  top: 40%;
-  left: 45%;
-  background: radial-gradient(circle, rgba(220, 38, 38, 0.08) 0%, rgba(37, 99, 235, 0.04) 50%, transparent 70%);
-  animation-duration: 20s;
-}
-
-.sakura-petal {
+/* Individual Hotspot Glows over the WANTED headings */
+.wanted-glow-spot {
   position: absolute;
-  font-size: 14px;
-  opacity: 0.22;
+  border-radius: 20px;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  filter: blur(5px);
+  animation: wantedTextGlowPulse var(--pulse-dur, 6s) ease-in-out infinite alternate;
+  animation-delay: var(--pulse-delay, 0s);
+  opacity: 0.42;
+  will-change: opacity, transform;
+}
+
+/* Faint Ghost Typography Overlay for "WANTED" */
+.wanted-ghost-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Times New Roman', 'Georgia', serif;
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 0.22em;
+  color: #fff6c8;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.75), 0 0 20px rgba(255, 180, 50, 0.45);
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  opacity: 0.45;
   user-select: none;
-  animation: floatPetal 14s linear infinite;
 }
 
-.p-1 {
-  top: 12%;
+/* Center Luffy Gear 5 WANTED text */
+.spot-gear5 {
+  top: 37%;
+  left: 47%;
+  width: 220px;
+  height: 85px;
+  background: radial-gradient(ellipse at center, rgba(255, 240, 160, 0.5) 0%, rgba(255, 180, 50, 0.28) 45%, transparent 75%);
+  --pulse-dur: 4.8s;
+  --pulse-delay: 0s;
+  transform: translateZ(18px) rotate(-2deg);
+}
+
+/* Shanks WANTED text (Top Right) */
+.spot-shanks {
+  top: 4%;
+  right: 4%;
+  width: 200px;
+  height: 85px;
+  background: radial-gradient(ellipse at center, rgba(255, 120, 100, 0.45) 0%, rgba(220, 38, 38, 0.24) 50%, transparent 75%);
+  --pulse-dur: 5.4s;
+  --pulse-delay: 1.2s;
+  transform: translateZ(14px) rotate(2deg);
+}
+
+/* Ace WANTED text (Top Center) */
+.spot-ace {
+  top: 2%;
+  left: 42%;
+  width: 190px;
+  height: 80px;
+  background: radial-gradient(ellipse at center, rgba(255, 180, 60, 0.5) 0%, rgba(249, 115, 22, 0.25) 50%, transparent 75%);
+  --pulse-dur: 5.1s;
+  --pulse-delay: 2.1s;
+  transform: translateZ(16px) rotate(12deg);
+}
+
+/* Sabo WANTED text (Top Mid-Right) */
+.spot-sabo {
+  top: 18%;
+  right: 34%;
+  width: 180px;
+  height: 75px;
+  background: radial-gradient(ellipse at center, rgba(255, 200, 90, 0.45) 0%, rgba(245, 158, 11, 0.22) 50%, transparent 75%);
+  --pulse-dur: 5.7s;
+  --pulse-delay: 1.7s;
+  transform: translateZ(13px) rotate(-4deg);
+}
+
+/* Rayleigh WANTED text (Top Mid-Right) */
+.spot-rayleigh {
+  top: 11%;
+  right: 19%;
+  width: 190px;
+  height: 80px;
+  background: radial-gradient(ellipse at center, rgba(255, 225, 140, 0.42) 0%, rgba(234, 179, 8, 0.2) 50%, transparent 75%);
+  --pulse-dur: 6.2s;
+  --pulse-delay: 3s;
+  transform: translateZ(12px) rotate(16deg);
+}
+
+/* Mihawk WANTED text (Top Left) */
+.spot-mihawk {
+  top: 7%;
+  left: 10%;
+  width: 190px;
+  height: 80px;
+  background: radial-gradient(ellipse at center, rgba(210, 140, 255, 0.4) 0%, rgba(147, 51, 234, 0.2) 50%, transparent 75%);
+  --pulse-dur: 5.8s;
+  --pulse-delay: 0.8s;
+  transform: translateZ(15px) rotate(-16deg);
+}
+
+/* Law WANTED text (Top Center-Left) */
+.spot-law {
+  top: 4%;
+  left: 26%;
+  width: 190px;
+  height: 80px;
+  background: radial-gradient(ellipse at center, rgba(255, 230, 130, 0.42) 0%, rgba(245, 158, 11, 0.2) 50%, transparent 75%);
+  --pulse-dur: 5.2s;
+  --pulse-delay: 2.6s;
+  transform: translateZ(13px) rotate(-22deg);
+}
+
+/* Zoro WANTED text (Bottom Center) */
+.spot-zoro {
+  bottom: 18%;
+  left: 38%;
+  width: 210px;
+  height: 85px;
+  background: radial-gradient(ellipse at center, rgba(167, 243, 208, 0.42) 0%, rgba(16, 185, 129, 0.22) 50%, transparent 75%);
+  --pulse-dur: 5.6s;
+  --pulse-delay: 1.8s;
+  transform: translateZ(16px) rotate(-8deg);
+}
+
+/* Sanji WANTED text (Mid Right) */
+.spot-sanji {
+  top: 46%;
+  right: 25%;
+  width: 190px;
+  height: 80px;
+  background: radial-gradient(ellipse at center, rgba(254, 240, 138, 0.46) 0%, rgba(234, 179, 8, 0.22) 50%, transparent 75%);
+  --pulse-dur: 4.9s;
+  --pulse-delay: 3.4s;
+  transform: translateZ(14px) rotate(12deg);
+}
+
+/* Hancock WANTED text (Mid Left) */
+.spot-hancock {
+  top: 33%;
   left: 8%;
-  animation-delay: 0s;
-  font-size: 16px;
+  width: 190px;
+  height: 80px;
+  background: radial-gradient(ellipse at center, rgba(253, 164, 175, 0.42) 0%, rgba(244, 63, 94, 0.2) 50%, transparent 75%);
+  --pulse-dur: 6.4s;
+  --pulse-delay: 1.5s;
+  transform: translateZ(12px) rotate(-14deg);
 }
 
-.p-2 {
-  top: 40%;
-  right: 12%;
-  animation-delay: 3s;
-  font-size: 12px;
-  color: var(--accent-pink);
+/* Kidd WANTED text (Center Left) */
+.spot-kidd {
+  top: 32%;
+  left: 24%;
+  width: 190px;
+  height: 80px;
+  background: radial-gradient(ellipse at center, rgba(254, 202, 202, 0.44) 0%, rgba(239, 68, 68, 0.22) 50%, transparent 75%);
+  --pulse-dur: 5.5s;
+  --pulse-delay: 2.8s;
+  transform: translateZ(15px) rotate(18deg);
 }
 
-.p-3 {
-  bottom: 20%;
-  left: 35%;
-  animation-delay: 6s;
-  font-size: 18px;
+/* Robin WANTED text (Mid Far-Right) */
+.spot-robin {
+  top: 44%;
+  right: 5%;
+  width: 190px;
+  height: 80px;
+  background: radial-gradient(ellipse at center, rgba(216, 180, 254, 0.42) 0%, rgba(168, 85, 247, 0.2) 50%, transparent 75%);
+  --pulse-dur: 5.9s;
+  --pulse-delay: 4.1s;
+  transform: translateZ(13px) rotate(-10deg);
 }
 
-.p-4 {
-  top: 75%;
-  right: 28%;
-  animation-delay: 9s;
-  font-size: 13px;
-  color: var(--accent-purple);
+/* Nami WANTED text (Bottom Left-Mid) */
+.spot-nami {
+  bottom: 22%;
+  left: 18%;
+  width: 180px;
+  height: 80px;
+  background: radial-gradient(ellipse at center, rgba(254, 215, 170, 0.46) 0%, rgba(249, 115, 22, 0.22) 50%, transparent 75%);
+  --pulse-dur: 5.3s;
+  --pulse-delay: 0.5s;
+  transform: translateZ(14px) rotate(15deg);
 }
 
-@keyframes floatOrb {
+/* Chopper WANTED text (Bottom Right) */
+.spot-chopper {
+  bottom: 12%;
+  right: 17%;
+  width: 180px;
+  height: 80px;
+  background: radial-gradient(ellipse at center, rgba(254, 205, 211, 0.46) 0%, rgba(251, 113, 133, 0.22) 50%, transparent 75%);
+  --pulse-dur: 4.7s;
+  --pulse-delay: 2.3s;
+  transform: translateZ(15px) rotate(8deg);
+}
+
+/* Jinbe WANTED text (Bottom Left) */
+.spot-jinbe {
+  bottom: 15%;
+  left: 3%;
+  width: 180px;
+  height: 80px;
+  background: radial-gradient(ellipse at center, rgba(186, 230, 253, 0.44) 0%, rgba(14, 165, 233, 0.2) 50%, transparent 75%);
+  --pulse-dur: 5.6s;
+  --pulse-delay: 1.1s;
+  transform: translateZ(13px) rotate(-12deg);
+}
+
+/* Usopp WANTED text (Bottom Center-Right) */
+.spot-usopp {
+  bottom: 8%;
+  left: 52%;
+  width: 180px;
+  height: 80px;
+  background: radial-gradient(ellipse at center, rgba(254, 240, 138, 0.45) 0%, rgba(202, 138, 4, 0.2) 50%, transparent 75%);
+  --pulse-dur: 5.2s;
+  --pulse-delay: 3.2s;
+  transform: translateZ(14px) rotate(14deg);
+}
+
+/* Faint Glowing Pulse for WANTED typography */
+@keyframes wantedTextGlowPulse {
   0% {
-    transform: translate(0, 0) scale(1);
+    opacity: 0.25;
+    transform: scale(0.96) translateZ(14px);
+    filter: blur(6px);
   }
-
   50% {
-    transform: translate(30px, 40px) scale(1.08);
+    opacity: 0.65;
+    transform: scale(1.05) translateZ(24px);
+    filter: blur(4px) drop-shadow(0 0 12px rgba(255, 215, 0, 0.65));
   }
-
   100% {
-    transform: translate(-20px, 20px) scale(0.95);
+    opacity: 0.32;
+    transform: scale(0.98) translateZ(16px);
+    filter: blur(6px);
   }
 }
 
-@keyframes floatPetal {
+/* Minute Ambient Shimmer Beam Sweeping Over Wanted Letters */
+.wanted-shimmer-sweep {
+  position: absolute;
+  inset: -50%;
+  background: linear-gradient(
+    115deg,
+    transparent 0%,
+    transparent 42%,
+    rgba(255, 240, 180, 0.04) 47%,
+    rgba(255, 215, 0, 0.12) 50%,
+    rgba(255, 240, 180, 0.04) 53%,
+    transparent 58%,
+    transparent 100%
+  );
+  mix-blend-mode: color-dodge;
+  pointer-events: none;
+  animation: wantedSweepPass 16s ease-in-out infinite;
+  transform: translateZ(22px);
+}
+
+@keyframes wantedSweepPass {
   0% {
-    transform: translateY(0) rotate(0deg);
-    opacity: 0;
+    transform: translateX(-60%) translateY(-30%) rotate(-12deg) translateZ(22px);
   }
-
-  10% {
-    opacity: 0.3;
+  45%, 100% {
+    transform: translateX(60%) translateY(30%) rotate(-12deg) translateZ(22px);
   }
+}
 
-  90% {
-    opacity: 0.3;
+/* 3D Minute Breathing Drift */
+@keyframes wanted3DBreath {
+  0% {
+    transform: perspective(1200px) rotateX(calc(0.9deg + var(--mouse-tilt-x, 0deg))) rotateY(calc(-1.1deg + var(--mouse-tilt-y, 0deg))) translate3d(0, 0, 0) scale(1.04);
   }
-
+  25% {
+    transform: perspective(1200px) rotateX(calc(-0.7deg + var(--mouse-tilt-x, 0deg))) rotateY(calc(-0.4deg + var(--mouse-tilt-y, 0deg))) translate3d(-6px, -4px, 10px) scale(1.055);
+  }
+  50% {
+    transform: perspective(1200px) rotateX(calc(-0.8deg + var(--mouse-tilt-x, 0deg))) rotateY(calc(0.9deg + var(--mouse-tilt-y, 0deg))) translate3d(4px, -7px, 16px) scale(1.06);
+  }
+  75% {
+    transform: perspective(1200px) rotateX(calc(0.6deg + var(--mouse-tilt-x, 0deg))) rotateY(calc(0.5deg + var(--mouse-tilt-y, 0deg))) translate3d(7px, -2px, 12px) scale(1.05);
+  }
   100% {
-    transform: translateY(400px) rotate(360deg);
+    transform: perspective(1200px) rotateX(calc(0.9deg + var(--mouse-tilt-x, 0deg))) rotateY(calc(-1.1deg + var(--mouse-tilt-y, 0deg))) translate3d(0, 0, 0) scale(1.04);
+  }
+}
+
+/* Floating Gold Embers / Bounty Sparkles */
+.wanted-bounty-sparkles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  transform: translateZ(24px);
+}
+
+.wanted-sparkle {
+  position: absolute;
+  width: 2.5px;
+  height: 2.5px;
+  background: #ffecb3;
+  border-radius: 50%;
+  box-shadow: 0 0 6px 1px rgba(255, 215, 0, 0.65);
+  opacity: 0.35;
+  pointer-events: none;
+  animation: floatEmber var(--ember-dur, 12s) linear infinite;
+  animation-delay: var(--ember-delay, 0s);
+}
+
+@keyframes floatEmber {
+  0% {
+    transform: translateY(0) translateX(0) scale(0.6);
     opacity: 0;
   }
+  20% {
+    opacity: 0.55;
+  }
+  80% {
+    opacity: 0.55;
+  }
+  100% {
+    transform: translateY(-260px) translateX(var(--drift-x, 20px)) scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* Smooth Cinematic Contrast & Dark Vignette Overlay */
+.wanted-vignette-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(8, 12, 22, 0.16) 0%,
+    rgba(8, 12, 22, 0.46) 65%,
+    rgba(5, 8, 16, 0.78) 100%
+  );
+  box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.6);
 }
 
 /* ============================================================
@@ -739,6 +1014,61 @@ body {
   font-size: 13px;
   color: var(--text-secondary);
   font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+
+.greeting-sep {
+  opacity: 0.35;
+  font-size: 10px;
+}
+
+.greeting-time-text {
+  color: var(--text-primary);
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.greeting-region-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 1.5px 8px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 11.5px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  transition: all 0.4s ease;
+}
+
+.top-header.sky-morning .greeting-region-tag {
+  background: rgba(255, 183, 77, 0.16);
+  border-color: rgba(255, 183, 77, 0.35);
+  color: #ffe0b2;
+}
+
+.top-header.sky-afternoon .greeting-region-tag {
+  background: rgba(56, 189, 248, 0.16);
+  border-color: rgba(56, 189, 248, 0.35);
+  color: #bae6fd;
+}
+
+.top-header.sky-evening .greeting-region-tag {
+  background: rgba(249, 115, 22, 0.2);
+  border-color: rgba(249, 115, 22, 0.4);
+  color: #ffedd5;
+}
+
+.top-header.sky-night .greeting-region-tag,
+.top-header.is-night-voyage .greeting-region-tag {
+  background: rgba(14, 165, 233, 0.15);
+  border-color: rgba(14, 165, 233, 0.3);
+  color: #7dd3fc;
 }
 
 .top-header-right {
@@ -749,9 +1079,265 @@ body {
   z-index: 20;
 }
 
+/* Sky Atmosphere & Region Controller Pill */
+.sky-region-pill-wrapper {
+  position: relative;
+  z-index: 30;
+}
+
+.sky-region-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 6px 14px 6px 9px;
+  background: rgba(13, 20, 36, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 30px;
+  backdrop-filter: blur(14px);
+  cursor: pointer;
+  color: var(--text-primary);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+}
+
+.sky-region-pill-btn:hover {
+  background: rgba(23, 35, 62, 0.9);
+  border-color: rgba(255, 255, 255, 0.28);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.sky-region-pill-btn:active {
+  transform: translateY(0);
+}
+
+.top-header.sky-morning .sky-region-pill-btn {
+  border-color: rgba(244, 162, 97, 0.45);
+  box-shadow: 0 4px 16px rgba(230, 126, 34, 0.25);
+}
+
+.top-header.sky-afternoon .sky-region-pill-btn {
+  border-color: rgba(56, 189, 248, 0.45);
+  box-shadow: 0 4px 16px rgba(2, 132, 199, 0.22);
+}
+
+.top-header.sky-evening .sky-region-pill-btn {
+  border-color: rgba(249, 115, 22, 0.5);
+  box-shadow: 0 4px 18px rgba(194, 65, 12, 0.3);
+}
+
+.top-header.sky-night .sky-region-pill-btn,
+.top-header.is-night-voyage .sky-region-pill-btn {
+  border-color: rgba(56, 189, 248, 0.35);
+  box-shadow: 0 4px 18px rgba(14, 165, 233, 0.22);
+}
+
+.sky-pill-icon {
+  font-size: 17px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.12);
+  transition: transform 0.3s ease;
+}
+
+.sky-region-pill-btn:hover .sky-pill-icon {
+  transform: scale(1.15) rotate(6deg);
+}
+
+.sky-pill-text-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.sky-pill-primary {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #ffffff;
+}
+
+.sky-pill-dot {
+  opacity: 0.4;
+  font-size: 10px;
+}
+
+.sky-pill-sub {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.sky-pill-chevron {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-left: 2px;
+  transition: transform 0.3s ease;
+}
+
+.sky-region-pill-wrapper.open .sky-pill-chevron {
+  transform: rotate(180deg);
+}
+
+/* Sky & Region Dropdown Popover */
+.sky-region-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: 320px;
+  padding: 16px;
+  background: rgba(12, 18, 34, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-lg, 16px);
+  backdrop-filter: blur(24px);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.06);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px) scale(0.97);
+  transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.25s;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.sky-region-pill-wrapper.open .sky-region-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.sky-dropdown-header {
+  margin-bottom: 12px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sky-dropdown-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.sky-dropdown-desc {
+  font-size: 11.5px;
+  color: var(--text-muted);
+  margin-top: 3px;
+  line-height: 1.35;
+}
+
+.sky-dropdown-field {
+  margin-bottom: 12px;
+}
+
+.sky-dropdown-field:last-child {
+  margin-bottom: 0;
+}
+
+.sky-field-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+
+.sky-select-wrapper {
+  position: relative;
+}
+
+.sky-native-select {
+  width: 100%;
+  padding: 8px 12px;
+  background: rgba(20, 30, 52, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-md, 10px);
+  color: var(--text-primary);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.sky-native-select:focus {
+  border-color: var(--accent-cyan, #00b4d8);
+  background: rgba(26, 38, 64, 0.95);
+}
+
+.sky-native-select option {
+  background: #0d1627;
+  color: #ffffff;
+}
+
+/* Sky Mode Grid */
+.sky-mode-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 5px;
+}
+
+.sky-mode-option-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 3px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+}
+
+.sky-mode-option-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.sky-mode-option-btn.active {
+  background: rgba(0, 180, 216, 0.22);
+  border-color: var(--accent-cyan, #00b4d8);
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 180, 216, 0.35);
+}
+
+.mode-btn-icon {
+  font-size: 16px;
+  margin-bottom: 3px;
+}
+
+.mode-btn-title {
+  font-size: 10.5px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.mode-btn-desc {
+  display: none;
+}
+
 /* ============================================================
    SunnyGo Grand Line Ocean Stage (Top Header Sailing Effect)
-   Inspired by assets/sunnoGo.mp4
+   Inspired by assets/sunnoGo.mp4 & Dynamic Sky Phases
    ============================================================ */
 
 .top-header {
@@ -761,12 +1347,32 @@ body {
   overflow: hidden;
   background: rgba(10, 15, 28, 0.75);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+  transition: border-color 0.6s ease, box-shadow 0.6s ease, background 0.6s ease;
 }
 
+.top-header.sky-morning {
+  border-bottom: 1px solid rgba(244, 162, 97, 0.4);
+  box-shadow: 0 4px 24px rgba(230, 126, 34, 0.2);
+  --wavelet-inner-color: #38bdf8;
+}
+
+.top-header.sky-afternoon {
+  border-bottom: 1px solid rgba(56, 189, 248, 0.4);
+  box-shadow: 0 4px 24px rgba(2, 132, 199, 0.2);
+  --wavelet-inner-color: #0284c7;
+}
+
+.top-header.sky-evening {
+  border-bottom: 1px solid rgba(249, 115, 22, 0.45);
+  box-shadow: 0 4px 24px rgba(194, 65, 12, 0.25);
+  --wavelet-inner-color: #f97316;
+}
+
+.top-header.sky-night,
 .top-header.is-night-voyage {
   border-bottom: 1px solid rgba(0, 180, 216, 0.25);
   box-shadow: 0 4px 24px rgba(4, 12, 30, 0.65);
+  --wavelet-inner-color: #1e40af;
 }
 
 .sunny-ocean-stage {
@@ -780,18 +1386,50 @@ body {
     rgba(12, 24, 46, 0.82) 48%,
     rgba(16, 38, 70, 0.92) 100%
   );
-  transition: background 0.6s ease;
+  transition: background 0.8s ease;
 }
 
-.top-header.is-night-voyage .sunny-ocean-stage {
+.top-header.sky-morning .sunny-ocean-stage {
   background: linear-gradient(180deg,
-    rgba(6, 11, 22, 0.92) 0%,
-    rgba(8, 20, 42, 0.88) 50%,
-    rgba(11, 32, 64, 0.96) 100%
+    #17294e 0%,
+    #2a4b7c 22%,
+    #c45d4a 50%,
+    #f2945d 72%,
+    #fedb8b 90%,
+    #287d98 100%
   );
 }
 
-/* Sky & Celestial Elements */
+.top-header.sky-afternoon .sunny-ocean-stage {
+  background: linear-gradient(180deg,
+    #0d4287 0%,
+    #1b68ba 32%,
+    #3ca2eb 68%,
+    #93d7fd 100%
+  );
+}
+
+.top-header.sky-evening .sunny-ocean-stage {
+  background: linear-gradient(180deg,
+    #220f35 0%,
+    #581648 26%,
+    #b22846 54%,
+    #e25528 76%,
+    #ff9e3b 92%,
+    #5c1d48 100%
+  );
+}
+
+.top-header.sky-night .sunny-ocean-stage,
+.top-header.is-night-voyage .sunny-ocean-stage {
+  background: linear-gradient(180deg,
+    rgba(5, 9, 20, 0.95) 0%,
+    rgba(8, 20, 44, 0.9) 48%,
+    rgba(11, 32, 64, 0.98) 100%
+  );
+}
+
+/* Sky & Celestial Elements Backdrop */
 .sunny-sky-backdrop {
   position: absolute;
   top: 0;
@@ -801,6 +1439,229 @@ body {
   pointer-events: none;
 }
 
+/* Dynamic Sun Celestial Component */
+.sunny-sun-container {
+  position: absolute;
+  pointer-events: none;
+  transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sunny-sun-core {
+  position: relative;
+  border-radius: 50%;
+  z-index: 3;
+  transition: all 1s ease;
+}
+
+.sunny-sun-glow {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 1;
+  transition: all 1s ease;
+  animation: sunGlowPulse 4s infinite alternate ease-in-out;
+}
+
+.sunny-sun-rays {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 2;
+  transition: all 1s ease;
+  animation: sunRaySpin 45s linear infinite;
+}
+
+.sunny-sun-flare {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 4;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+@keyframes sunGlowPulse {
+  0% { transform: scale(0.92); opacity: 0.65; }
+  100% { transform: scale(1.12); opacity: 1; }
+}
+
+@keyframes sunRaySpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Morning Sun (Dawn Sunrise rising above horizon) */
+.top-header.sky-morning .sunny-sun-container {
+  right: 28%;
+  bottom: 8px;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.top-header.sky-morning .sunny-sun-core {
+  width: 24px;
+  height: 24px;
+  background: radial-gradient(circle at 35% 35%, #ffffff 0%, #ffd166 40%, #ff6b4a 100%);
+  box-shadow: 0 0 20px 6px rgba(255, 178, 62, 0.8), 0 0 45px 14px rgba(255, 107, 74, 0.5);
+}
+.top-header.sky-morning .sunny-sun-glow {
+  inset: -16px;
+  background: radial-gradient(circle, rgba(255, 193, 7, 0.45) 0%, rgba(255, 87, 34, 0.22) 50%, transparent 75%);
+}
+.top-header.sky-morning .sunny-sun-rays {
+  inset: -24px;
+  background: conic-gradient(
+    from 0deg,
+    rgba(255, 236, 179, 0.28) 0deg 16deg,
+    transparent 16deg 45deg,
+    rgba(255, 236, 179, 0.28) 45deg 61deg,
+    transparent 61deg 90deg,
+    rgba(255, 236, 179, 0.28) 90deg 106deg,
+    transparent 106deg 135deg,
+    rgba(255, 236, 179, 0.28) 135deg 151deg,
+    transparent 151deg 180deg,
+    rgba(255, 236, 179, 0.28) 180deg 196deg,
+    transparent 196deg 225deg,
+    rgba(255, 236, 179, 0.28) 225deg 241deg,
+    transparent 241deg 270deg,
+    rgba(255, 236, 179, 0.28) 270deg 286deg,
+    transparent 286deg 315deg,
+    rgba(255, 236, 179, 0.28) 315deg 331deg,
+    transparent 331deg 360deg
+  );
+}
+
+/* Afternoon Sun (High Noon Sun) */
+.top-header.sky-afternoon .sunny-sun-container {
+  right: 170px;
+  top: 8px;
+  opacity: 1;
+  transform: translateY(0) scale(1.08);
+}
+.top-header.sky-afternoon .sunny-sun-core {
+  width: 26px;
+  height: 26px;
+  background: radial-gradient(circle at 35% 35%, #ffffff 0%, #fff59d 45%, #ffa000 100%);
+  box-shadow: 0 0 28px 8px rgba(255, 235, 59, 0.95), 0 0 60px 18px rgba(255, 179, 0, 0.55);
+}
+.top-header.sky-afternoon .sunny-sun-glow {
+  inset: -18px;
+  background: radial-gradient(circle, rgba(255, 241, 118, 0.5) 0%, rgba(255, 213, 79, 0.25) 50%, transparent 75%);
+}
+.top-header.sky-afternoon .sunny-sun-rays {
+  inset: -26px;
+  background: conic-gradient(
+    from 15deg,
+    rgba(255, 255, 255, 0.35) 0deg 18deg,
+    transparent 18deg 45deg,
+    rgba(255, 255, 255, 0.35) 45deg 63deg,
+    transparent 63deg 90deg,
+    rgba(255, 255, 255, 0.35) 90deg 108deg,
+    transparent 108deg 135deg,
+    rgba(255, 255, 255, 0.35) 135deg 153deg,
+    transparent 153deg 180deg,
+    rgba(255, 255, 255, 0.35) 180deg 198deg,
+    transparent 198deg 225deg,
+    rgba(255, 255, 255, 0.35) 225deg 243deg,
+    transparent 243deg 270deg,
+    rgba(255, 255, 255, 0.35) 270deg 288deg,
+    transparent 288deg 315deg,
+    rgba(255, 255, 255, 0.35) 315deg 333deg,
+    transparent 333deg 360deg
+  );
+}
+.top-header.sky-afternoon .sunny-sun-flare {
+  inset: -12px;
+  opacity: 0.8;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, rgba(129, 212, 250, 0.25) 40%, transparent 70%);
+}
+
+/* Evening Sun (Dramatic Sunset Orb dipping towards the sea) */
+.top-header.sky-evening .sunny-sun-container {
+  right: 22%;
+  bottom: 4px;
+  opacity: 1;
+  transform: translateY(0) scale(1.15);
+}
+.top-header.sky-evening .sunny-sun-core {
+  width: 30px;
+  height: 30px;
+  background: radial-gradient(circle at 35% 35%, #fff8e1 0%, #ff5722 50%, #c2185b 100%);
+  box-shadow: 0 0 32px 10px rgba(255, 87, 34, 0.9), 0 0 75px 22px rgba(194, 24, 91, 0.6);
+}
+.top-header.sky-evening .sunny-sun-glow {
+  inset: -20px;
+  background: radial-gradient(circle, rgba(255, 87, 34, 0.55) 0%, rgba(194, 24, 91, 0.3) 50%, transparent 80%);
+}
+.top-header.sky-evening .sunny-sun-rays {
+  inset: -30px;
+  background: conic-gradient(
+    from 5deg,
+    rgba(255, 138, 101, 0.3) 0deg 20deg,
+    transparent 20deg 45deg,
+    rgba(255, 138, 101, 0.3) 45deg 65deg,
+    transparent 65deg 90deg,
+    rgba(255, 138, 101, 0.3) 90deg 110deg,
+    transparent 110deg 135deg,
+    rgba(255, 138, 101, 0.3) 135deg 155deg,
+    transparent 155deg 180deg,
+    rgba(255, 138, 101, 0.3) 180deg 200deg,
+    transparent 200deg 225deg,
+    rgba(255, 138, 101, 0.3) 225deg 245deg,
+    transparent 245deg 270deg,
+    rgba(255, 138, 101, 0.3) 270deg 290deg,
+    transparent 290deg 315deg,
+    rgba(255, 138, 101, 0.3) 315deg 335deg,
+    transparent 335deg 360deg
+  );
+}
+
+/* Night Sun (Hidden Below Horizon) */
+.top-header.sky-night .sunny-sun-container,
+.top-header.is-night-voyage:not(.sky-morning):not(.sky-afternoon):not(.sky-evening) .sunny-sun-container {
+  right: 22%;
+  bottom: -40px;
+  opacity: 0;
+  transform: translateY(30px) scale(0.5);
+  pointer-events: none;
+}
+
+/* Horizon Ambient Glow Layer */
+.sunny-horizon-glow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 42px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1s ease;
+  z-index: 1;
+}
+
+.top-header.sky-morning .sunny-horizon-glow {
+  opacity: 0.9;
+  background: radial-gradient(ellipse at 72% 100%, rgba(254, 219, 139, 0.65) 0%, rgba(242, 147, 92, 0.35) 45%, transparent 75%);
+}
+
+.top-header.sky-afternoon .sunny-horizon-glow {
+  opacity: 0.45;
+  background: radial-gradient(ellipse at 50% 100%, rgba(147, 215, 253, 0.4) 0%, transparent 60%);
+}
+
+.top-header.sky-evening .sunny-horizon-glow {
+  opacity: 0.95;
+  background: radial-gradient(ellipse at 78% 100%, rgba(255, 158, 59, 0.75) 0%, rgba(226, 85, 40, 0.45) 50%, transparent 80%);
+}
+
+.top-header.sky-night .sunny-horizon-glow,
+.top-header.is-night-voyage .sunny-horizon-glow {
+  opacity: 0.25;
+  background: radial-gradient(ellipse at 80% 100%, rgba(56, 189, 248, 0.2) 0%, transparent 60%);
+}
+
+/* Moon Container & Crescent Glow */
 .sunny-moon-container {
   position: absolute;
   top: 8px;
@@ -808,12 +1669,30 @@ body {
   width: 22px;
   height: 22px;
   pointer-events: none;
-  opacity: 0.9;
+  opacity: 0;
+  transform: translateY(-15px) scale(0.7);
+  transition: opacity 0.8s ease, transform 0.8s ease;
   animation: moonFloat 5s ease-in-out infinite;
+  z-index: 2;
 }
 
-.top-header:not(.is-night-voyage) .sunny-moon-container {
-  opacity: 0.25;
+.top-header.sky-night .sunny-moon-container,
+.top-header.is-night-voyage:not(.sky-morning):not(.sky-afternoon):not(.sky-evening) .sunny-moon-container {
+  opacity: 0.95;
+  transform: translateY(0) scale(1);
+}
+
+.top-header.sky-evening .sunny-moon-container {
+  opacity: 0.4;
+  top: 6px;
+  right: 75px;
+  transform: translateY(0) scale(0.85);
+}
+
+.top-header.sky-morning .sunny-moon-container,
+.top-header.sky-afternoon .sunny-moon-container {
+  opacity: 0;
+  transform: translateY(-20px) scale(0.5);
 }
 
 .sunny-moon-crescent {
@@ -847,6 +1726,23 @@ body {
   position: absolute;
   inset: 0;
   pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  z-index: 1;
+}
+
+.top-header.sky-night .sunny-stars-container,
+.top-header.is-night-voyage:not(.sky-morning):not(.sky-afternoon):not(.sky-evening) .sunny-stars-container {
+  opacity: 1;
+}
+
+.top-header.sky-evening .sunny-stars-container {
+  opacity: 0.35;
+}
+
+.top-header.sky-morning .sunny-stars-container,
+.top-header.sky-afternoon .sunny-stars-container {
+  opacity: 0;
 }
 
 .sunny-star {
@@ -950,7 +1846,7 @@ body {
   height: 0;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-bottom: 7px solid #3cb0f7;
+  border-bottom: 7px solid var(--wavelet-inner-color, #3cb0f7);
 }
 
 .cartoon-wavelet.w-1 {
@@ -1318,6 +2214,25 @@ body {
   box-shadow: 0 0 12px 3px rgba(255, 167, 38, 0.9);
   pointer-events: none;
   animation: lanternFlicker 2.8s infinite ease-in-out;
+  transition: opacity 0.8s ease, box-shadow 0.8s ease;
+}
+
+.top-header.sky-morning .sunny-stern-lantern,
+.top-header.sky-afternoon .sunny-stern-lantern {
+  opacity: 0.1;
+  box-shadow: none;
+  animation: none;
+}
+
+.top-header.sky-evening .sunny-stern-lantern {
+  opacity: 0.8;
+  box-shadow: 0 0 9px 2px rgba(255, 167, 38, 0.75);
+}
+
+.top-header.sky-night .sunny-stern-lantern,
+.top-header.is-night-voyage .sunny-stern-lantern {
+  opacity: 1;
+  box-shadow: 0 0 14px 4px rgba(255, 167, 38, 0.95);
 }
 
 @keyframes lanternFlicker {
@@ -3228,11 +4143,16 @@ body {
 
   .top-header-right {
     width: 100%;
-    justify-content: space-between;
+    justify-content: flex-end;
   }
 
-  .header-clock-pill {
-    padding: 6px 12px;
+  .sky-region-pill-wrapper {
+    max-width: 100%;
+  }
+
+  .sky-region-dropdown {
+    right: 0;
+    width: min(320px, calc(100vw - 32px));
   }
 
   .stats-row {

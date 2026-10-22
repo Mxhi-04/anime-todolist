@@ -1,0 +1,168 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <!-- Background Radial Gradient -->
+    <radialGradient id="aceBgGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2d1208" />
+      <stop offset="70%" stop-color="#180a06" />
+      <stop offset="100%" stop-color="#0d0504" />
+    </radialGradient>
+
+    <!-- Flame Gradients -->
+    <linearGradient id="fireGradOuter" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#d90429" />
+      <stop offset="45%" stop-color="#f77f00" />
+      <stop offset="100%" stop-color="#fcbf49" />
+    </linearGradient>
+    
+    <linearGradient id="fireGradInner" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#f77f00" />
+      <stop offset="60%" stop-color="#fcbf49" />
+      <stop offset="100%" stop-color="#ffffff" />
+    </linearGradient>
+
+    <!-- Hat Gradient -->
+    <linearGradient id="hatGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e85d04" />
+      <stop offset="50%" stop-color="#dc2f02" />
+      <stop offset="100%" stop-color="#9d0208" />
+    </linearGradient>
+    
+    <linearGradient id="boneGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="85%" stop-color="#e2e8f0" />
+      <stop offset="100%" stop-color="#94a3b8" />
+    </linearGradient>
+
+    <!-- Filter for fiery aura -->
+    <filter id="fireGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Circular Badge Base -->
+  <circle cx="128" cy="128" r="120" fill="url(#aceBgGlow)" stroke="#f77f00" stroke-width="4" />
+  <circle cx="128" cy="128" r="114" fill="none" stroke="#d90429" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.6" />
+
+  <!-- Outer Swirling Fire Flames -->
+  <g filter="url(#fireGlow)">
+    <!-- Bottom & Side Fire Tongues -->
+    <path d="M 50 170 C 35 140 45 110 58 100 C 52 118 64 125 72 115 C 65 95 85 80 98 75 C 90 92 102 96 112 90 C 105 70 128 50 135 40 C 132 60 148 68 155 60 C 150 45 175 48 182 62 C 176 76 190 78 198 70 C 195 90 215 105 210 130 C 202 120 196 132 198 142 C 208 140 215 160 205 180 C 198 170 192 180 188 190 C 175 215 145 225 128 228 C 110 225 80 215 68 190 C 64 180 58 170 50 170 Z" fill="url(#fireGradOuter)" opacity="0.85" />
+    <!-- Inner bright flames -->
+    <path d="M 65 165 C 55 140 65 120 74 112 C 70 125 80 130 86 122 C 82 105 98 92 108 90 C 102 102 114 105 120 98 C 118 82 135 68 140 60 C 138 75 150 80 156 74 C 154 62 170 65 175 75 C 172 85 182 86 188 80 C 185 96 200 110 196 128 C 190 120 186 130 188 138 C 180 160 155 205 128 212 C 100 205 76 160 65 165 Z" fill="url(#fireGradInner)" opacity="0.9" />
+  </g>
+
+  <!-- Crossed Bones (Spade / Roger bones) -->
+  <g fill="url(#boneGrad)" stroke="#64748b" stroke-width="1.5">
+    <!-- Bone 1: Top-Left to Bottom-Right -->
+    <g transform="rotate(45 128 128)">
+      <!-- Left knobs -->
+      <circle cx="28" cy="120" r="12" />
+      <circle cx="28" cy="136" r="12" />
+      <!-- Right knobs -->
+      <circle cx="228" cy="120" r="12" />
+      <circle cx="228" cy="136" r="12" />
+      <!-- Bone shaft -->
+      <rect x="28" y="122" width="200" height="12" rx="3" />
+    </g>
+    <!-- Bone 2: Bottom-Left to Top-Right -->
+    <g transform="rotate(-45 128 128)">
+      <!-- Left knobs -->
+      <circle cx="28" cy="120" r="12" />
+      <circle cx="28" cy="136" r="12" />
+      <!-- Right knobs -->
+      <circle cx="228" cy="120" r="12" />
+      <circle cx="228" cy="136" r="12" />
+      <!-- Bone shaft -->
+      <rect x="28" y="122" width="200" height="12" rx="3" />
+    </g>
+  </g>
+
+  <!-- Skull Base -->
+  <g>
+    <!-- Skull Cranium -->
+    <path d="M 88 140 C 80 110 92 88 128 88 C 164 88 176 110 168 140 C 165 152 155 158 152 166 C 148 175 142 178 128 178 C 114 178 108 175 104 166 C 101 158 91 152 88 140 Z" fill="#ffffff" stroke="#334155" stroke-width="2.5" />
+    <!-- Jaw / Teeth Box -->
+    <path d="M 106 166 L 150 166 L 146 182 C 146 186 142 188 128 188 C 114 188 110 186 110 182 Z" fill="#f8fafc" stroke="#334155" stroke-width="2" />
+    <!-- Teeth divider lines -->
+    <line x1="118" y1="166" x2="118" y2="185" stroke="#475569" stroke-width="2" />
+    <line x1="128" y1="166" x2="128" y2="187" stroke="#475569" stroke-width="2" />
+    <line x1="138" y1="166" x2="138" y2="185" stroke="#475569" stroke-width="2" />
+
+    <!-- Eye Sockets (Ace's stylized skull eyes) -->
+    <ellipse cx="112" cy="136" rx="12" ry="14" fill="#0f172a" />
+    <ellipse cx="144" cy="136" rx="12" ry="14" fill="#0f172a" />
+    <!-- Fire glint in eyes -->
+    <circle cx="114" cy="133" r="3.5" fill="#f77f00" />
+    <circle cx="146" cy="133" r="3.5" fill="#f77f00" />
+    <circle cx="115" cy="132" r="1.5" fill="#fff" />
+    <circle cx="147" cy="132" r="1.5" fill="#fff" />
+
+    <!-- Inverted Heart Nose -->
+    <path d="M 128 148 C 124 144 122 148 125 154 L 128 158 L 131 154 C 134 148 132 144 128 148 Z" fill="#0f172a" />
+  </g>
+
+  <!-- Ace's Iconic Cowboy Hat -->
+  <g>
+    <!-- Hat Back Shadow / Underbrim -->
+    <path d="M 64 105 C 80 94 176 94 192 105 C 185 116 71 116 64 105 Z" fill="#6a040f" />
+    
+    <!-- Hat Crown -->
+    <path d="M 94 98 C 92 68 100 52 128 50 C 156 52 164 68 162 98 Z" fill="url(#hatGrad)" stroke="#6a040f" stroke-width="2" />
+    <!-- Hat Crown Crease / Dents -->
+    <path d="M 112 55 C 120 62 136 62 144 55" fill="none" stroke="#6a040f" stroke-width="3" stroke-linecap="round" />
+    <path d="M 128 58 L 128 78" fill="none" stroke="#6a040f" stroke-width="2.5" stroke-linecap="round" />
+
+    <!-- Hat Curved Brim -->
+    <path d="M 52 104 C 70 86 186 86 204 104 C 192 120 64 120 52 104 Z" fill="url(#hatGrad)" stroke="#370617" stroke-width="2.5" />
+    <!-- Brim edge highlight -->
+    <path d="M 56 104 C 80 90 176 90 200 104" fill="none" stroke="#ffba08" stroke-width="2" opacity="0.6" />
+
+    <!-- Red Beaded Hatband -->
+    <g>
+      <path d="M 88 98 C 104 103 152 103 168 98" fill="none" stroke="#9d0208" stroke-width="8" stroke-linecap="round" />
+      <!-- Red Beads -->
+      <circle cx="92" cy="98" r="5" fill="#d90429" stroke="#590d22" stroke-width="1" />
+      <circle cx="103" cy="99" r="5" fill="#d90429" stroke="#590d22" stroke-width="1" />
+      <circle cx="115" cy="100" r="5" fill="#ef233c" stroke="#590d22" stroke-width="1" />
+      <circle cx="128" cy="101" r="5.5" fill="#ef233c" stroke="#590d22" stroke-width="1" />
+      <circle cx="141" cy="100" r="5" fill="#ef233c" stroke="#590d22" stroke-width="1" />
+      <circle cx="153" cy="99" r="5" fill="#d90429" stroke="#590d22" stroke-width="1" />
+      <circle cx="164" cy="98" r="5" fill="#d90429" stroke="#590d22" stroke-width="1" />
+    </g>
+
+    <!-- Two Iconic Ace Badges on Hatband -->
+    <!-- Left Badge: Happy Smiling Face 🙂 -->
+    <g transform="translate(104, 82)">
+      <circle cx="0" cy="0" r="10" fill="#3a86ff" stroke="#1d3557" stroke-width="1.5" />
+      <!-- Eyes -->
+      <circle cx="-3.5" cy="-2" r="1.5" fill="#000" />
+      <circle cx="3.5" cy="-2" r="1.5" fill="#000" />
+      <!-- Big Smile -->
+      <path d="M -5 2 Q 0 7 5 2" fill="none" stroke="#000" stroke-width="1.8" stroke-linecap="round" />
+    </g>
+
+    <!-- Right Badge: Sad Frowning Face ☹️ -->
+    <g transform="translate(152, 82)">
+      <circle cx="0" cy="0" r="10" fill="#3a86ff" stroke="#1d3557" stroke-width="1.5" />
+      <!-- Eyes -->
+      <circle cx="-3.5" cy="-2" r="1.5" fill="#000" />
+      <circle cx="3.5" cy="-2" r="1.5" fill="#000" />
+      <!-- Deep Frown -->
+      <path d="M -5 5 Q 0 0 5 5" fill="none" stroke="#000" stroke-width="1.8" stroke-linecap="round" />
+    </g>
+
+    <!-- Hanging Neck Cord / Tassels with Medallion -->
+    <path d="M 82 108 C 80 135 90 160 98 178" fill="none" stroke="#2b2d42" stroke-width="3" />
+    <path d="M 174 108 C 176 135 166 160 158 178" fill="none" stroke="#2b2d42" stroke-width="3" />
+    <!-- Bottom Knot/Medallion -->
+    <circle cx="128" cy="198" r="7" fill="#ffb703" stroke="#b5179e" stroke-width="1.5" />
+    <circle cx="128" cy="198" r="3.5" fill="#d90429" />
+  </g>
+
+  <!-- Banner / Name Tag -->
+  <g transform="translate(128, 230)">
+    <rect x="-48" y="-12" width="96" height="20" rx="10" fill="#1e1b18" stroke="#f77f00" stroke-width="1.5" />
+    <text x="0" y="2" font-family="'Impact', 'Arial Black', sans-serif" font-size="12" font-weight="900" fill="#ffb703" text-anchor="middle" letter-spacing="2">PORTGAS D. ACE</text>
+  </g>
+</svg>

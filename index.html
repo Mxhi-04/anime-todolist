@@ -70,15 +70,44 @@
     </div>
   </div>
 
-  <!-- Subtle Anime Sakura / Star Background Ornaments -->
-  <div class="bg-decorations" aria-hidden="true">
-    <div class="glow-orb orb-1"></div>
-    <div class="glow-orb orb-2"></div>
-    <div class="glow-orb orb-3"></div>
-    <div class="sakura-petal p-1">☠️</div>
-    <div class="sakura-petal p-2">⚔️</div>
-    <div class="sakura-petal p-3">⚓</div>
-    <div class="sakura-petal p-4">✨</div>
+  <!-- ============================================================
+       One Piece Wanted Posters — 3D Live Animated Background
+       ============================================================ -->
+  <div class="wanted-bg-stage" id="wantedBgStage" aria-hidden="true">
+    <!-- 3D Perspective Canvas Container -->
+    <div class="wanted-3d-wrapper" id="wanted3DWrapper">
+      <!-- Primary Wanted Posters Collage Wallpaper -->
+      <div class="wanted-poster-wall" id="wantedPosterWall"></div>
+
+      <!-- Subtle 3D Depth Floating Wanted Accents & Faint Typography Glow -->
+      <div class="wanted-text-glow-mesh" id="wantedTextGlowMesh">
+        <div class="wanted-glow-spot spot-gear5" title="Gear 5 Luffy Wanted Glow"><span class="wanted-ghost-text">WANTED</span></div>
+        <div class="wanted-glow-spot spot-ace" title="Fire Fist Ace Wanted Glow"><span class="wanted-ghost-text">WANTED</span></div>
+        <div class="wanted-glow-spot spot-shanks" title="Red Hair Shanks Wanted Glow"><span class="wanted-ghost-text">WANTED</span></div>
+        <div class="wanted-glow-spot spot-sabo" title="Flame Emperor Sabo Wanted Glow"><span class="wanted-ghost-text">WANTED</span></div>
+        <div class="wanted-glow-spot spot-zoro" title="Roronoa Zoro Wanted Glow"><span class="wanted-ghost-text">WANTED</span></div>
+        <div class="wanted-glow-spot spot-sanji" title="Black Leg Sanji Wanted Glow"><span class="wanted-ghost-text">WANTED</span></div>
+        <div class="wanted-glow-spot spot-law" title="Trafalgar Law Wanted Glow"><span class="wanted-ghost-text">WANTED</span></div>
+        <div class="wanted-glow-spot spot-mihawk" title="Dracule Mihawk Wanted Glow"><span class="wanted-ghost-text">WANTED</span></div>
+        <div class="wanted-glow-spot spot-rayleigh" title="Silvers Rayleigh Wanted Glow"><span class="wanted-ghost-text">WANTED</span></div>
+        <div class="wanted-glow-spot spot-nami" title="Cat Burglar Nami Wanted Glow"><span class="wanted-ghost-text">WANTED</span></div>
+        <div class="wanted-glow-spot spot-chopper" title="Tony Tony Chopper Wanted Glow"><span class="wanted-ghost-text">WANTED</span></div>
+        <div class="wanted-glow-spot spot-hancock" title="Boa Hancock Wanted Glow"><span class="wanted-ghost-text">WANTED</span></div>
+        <div class="wanted-glow-spot spot-kidd" title="Eustass Captain Kidd Wanted Glow"><span class="wanted-ghost-text">WANTED</span></div>
+        <div class="wanted-glow-spot spot-robin" title="Nico Robin Wanted Glow"><span class="wanted-ghost-text">WANTED</span></div>
+        <div class="wanted-glow-spot spot-jinbe" title="Knight of the Sea Jinbe Wanted Glow"><span class="wanted-ghost-text">WANTED</span></div>
+        <div class="wanted-glow-spot spot-usopp" title="God Usopp Wanted Glow"><span class="wanted-ghost-text">WANTED</span></div>
+      </div>
+
+      <!-- Minute Ambient Shimmer Beam Sweeping Over Wanted Letters -->
+      <div class="wanted-shimmer-sweep"></div>
+
+      <!-- Subtle Floating Grand Line Gold Embers / Bounty Sparkles -->
+      <div class="wanted-bounty-sparkles" id="wantedBountySparkles"></div>
+    </div>
+
+    <!-- Smooth Cinematic Contrast & Dark Vignette Overlay -->
+    <div class="wanted-vignette-overlay"></div>
   </div>
 
   <div class="app-layout" id="appLayout">
@@ -173,13 +202,25 @@
       <header class="top-header" id="topHeader">
         <!-- Ocean Horizon & SunnyGo Sailing Background Stage -->
         <div class="sunny-ocean-stage" id="sunnyOceanStage" aria-hidden="true">
-          <!-- Sky Elements (Night Stars, Crescent Moon, Anime Clouds) -->
+          <!-- Sky Elements (Night Stars, Crescent Moon, Anime Clouds, Dynamic Sun) -->
           <div class="sunny-sky-backdrop" id="sunnySkyBackdrop">
+            <!-- Dynamic Sun (Morning Sunrise, Afternoon High Sun, Evening Sunset) -->
+            <div class="sunny-sun-container" id="sunnySunContainer" title="Grand Line Sun">
+              <div class="sunny-sun-glow"></div>
+              <div class="sunny-sun-rays"></div>
+              <div class="sunny-sun-core"></div>
+              <div class="sunny-sun-flare"></div>
+            </div>
+            <!-- Horizon Ambient Dawn/Dusk Bloom -->
+            <div class="sunny-horizon-glow" id="sunnyHorizonGlow"></div>
+            <!-- Night Moon -->
             <div class="sunny-moon-container" id="sunnyMoonContainer" title="Grand Line Moonlight">
               <div class="sunny-moon-crescent"></div>
               <div class="sunny-moon-aura"></div>
             </div>
+            <!-- Twinkling Night Stars -->
             <div class="sunny-stars-container" id="sunnyStarsContainer"></div>
+            <!-- Anime Translucent Clouds -->
             <div class="sunny-clouds-container">
               <span class="anime-cloud cloud-1"></span>
               <span class="anime-cloud cloud-2"></span>
@@ -202,8 +243,8 @@
             <svg class="sunny-wave-svg" viewBox="0 0 1200 65" preserveAspectRatio="none">
               <defs>
                 <linearGradient id="backWaveGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stop-color="#1b4d82" stop-opacity="0.88" />
-                  <stop offset="100%" stop-color="#0b1b36" stop-opacity="0.98" />
+                  <stop id="backWaveStop0" offset="0%" stop-color="#1b4d82" stop-opacity="0.88" />
+                  <stop id="backWaveStop1" offset="100%" stop-color="#0b1b36" stop-opacity="0.98" />
                 </linearGradient>
               </defs>
               <!-- Triangle Tooth Sawtooth Wave Path -->
@@ -218,8 +259,8 @@
             <svg class="sunny-wave-svg" viewBox="0 0 1200 65" preserveAspectRatio="none">
               <defs>
                 <linearGradient id="midWaveGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stop-color="#2372ab" stop-opacity="0.92" />
-                  <stop offset="100%" stop-color="#0c2c52" stop-opacity="0.98" />
+                  <stop id="midWaveStop0" offset="0%" stop-color="#2372ab" stop-opacity="0.92" />
+                  <stop id="midWaveStop1" offset="100%" stop-color="#0c2c52" stop-opacity="0.98" />
                 </linearGradient>
               </defs>
               <path class="wave-path" fill="url(#midWaveGrad)" stroke="#1a5682" stroke-width="2.2" d="M 0,26 L 25,38 L 65,12 L 95,34 L 140,8 L 175,32 L 220,14 L 255,36 L 300,10 L 335,34 L 380,12 L 415,38 L 460,8 L 495,34 L 540,14 L 575,36 L 600,26 L 625,38 L 665,12 L 695,34 L 740,8 L 775,32 L 820,14 L 855,36 L 900,10 L 935,34 L 980,12 L 1015,38 L 1060,8 L 1095,34 L 1140,14 L 1175,36 L 1200,26 L 1200,65 L 0,65 Z"></path>
@@ -262,8 +303,8 @@
             <svg class="sunny-wave-svg" viewBox="0 0 1200 65" preserveAspectRatio="none">
               <defs>
                 <linearGradient id="frontWaveGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stop-color="#3cb0f7" stop-opacity="0.96" />
-                  <stop offset="100%" stop-color="#124a87" stop-opacity="1" />
+                  <stop id="frontWaveStop0" offset="0%" stop-color="#3cb0f7" stop-opacity="0.96" />
+                  <stop id="frontWaveStop1" offset="100%" stop-color="#124a87" stop-opacity="1" />
                 </linearGradient>
               </defs>
               <!-- Bold Triangle Teeth Wave Path -->
@@ -290,7 +331,89 @@
         </div>
 
         <div class="top-header-right">
-          <!-- Sunny voyage option removed per user request -->
+          <!-- Sky Atmosphere & Region Controller -->
+          <div class="sky-region-pill-wrapper" id="skyRegionPillWrapper">
+            <button class="sky-region-pill-btn" id="skyRegionPillBtn" onclick="app.toggleSkyDropdown(event)" aria-label="Grand Line Time & Sky Atmosphere" title="Click to change region or preview morning, afternoon, evening & night sky">
+              <span class="sky-pill-icon" id="skyPillIcon">🌙</span>
+              <div class="sky-pill-text-group">
+                <div class="sky-pill-primary">
+                  <span class="sky-pill-phase" id="skyPillPhase">Night</span>
+                  <span class="sky-pill-dot">•</span>
+                  <span class="sky-pill-time" id="skyPillTime">11:42 PM</span>
+                </div>
+                <div class="sky-pill-sub">
+                  <span class="sky-pill-region" id="skyPillRegion">Asia/Kolkata</span>
+                </div>
+              </div>
+              <span class="sky-pill-chevron">▾</span>
+            </button>
+
+            <!-- Interactive Dropdown Menu -->
+            <div class="sky-region-dropdown" id="skyRegionDropdown">
+              <div class="sky-dropdown-header">
+                <div class="sky-dropdown-title-row">
+                  <span class="sky-header-icon">🧭</span>
+                  <span class="sky-header-title">Grand Line Sky & Region</span>
+                </div>
+                <p class="sky-dropdown-desc">Sky transforms dynamically with daylight in your region</p>
+              </div>
+
+              <!-- Region Selector -->
+              <div class="sky-dropdown-field">
+                <label class="sky-field-label" for="skyRegionSelect">
+                  <span>🗺️ Active Region / Timezone</span>
+                </label>
+                <div class="sky-select-wrapper">
+                  <select id="skyRegionSelect" class="sky-native-select" onchange="app.setRegion(this.value)">
+                    <option value="auto">🌐 Auto-Detect (Your Local Region)</option>
+                    <option value="Asia/Tokyo">🇯🇵 Tokyo, Japan (JST)</option>
+                    <option value="Asia/Kolkata">🇮🇳 New Delhi / Kolkata, India (IST)</option>
+                    <option value="Europe/London">🇬🇧 London, UK (GMT/BST)</option>
+                    <option value="America/New_York">🇺🇸 New York, USA (EDT/EST)</option>
+                    <option value="America/Los_Angeles">🇺🇸 Los Angeles, USA (PDT/PST)</option>
+                    <option value="Australia/Sydney">🇦🇺 Sydney, Australia (AEST)</option>
+                    <option value="Europe/Paris">🇫🇷 Paris, France (CEST)</option>
+                    <option value="Asia/Singapore">🇸🇬 Singapore (SGT)</option>
+                    <option value="Asia/Dubai">🇦🇪 Dubai, UAE (GST)</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Quick Sky Atmosphere Preview Buttons -->
+              <div class="sky-dropdown-field">
+                <label class="sky-field-label">
+                  <span>✨ Sky Atmosphere Mode</span>
+                </label>
+                <div class="sky-mode-grid">
+                  <button type="button" class="sky-mode-option-btn active" id="skyModeBtn-auto" onclick="app.setSkyMode('auto')">
+                    <span class="mode-btn-icon">⚡</span>
+                    <span class="mode-btn-title">Auto</span>
+                    <span class="mode-btn-desc">Live Clock</span>
+                  </button>
+                  <button type="button" class="sky-mode-option-btn" id="skyModeBtn-morning" onclick="app.setSkyMode('morning')">
+                    <span class="mode-btn-icon">🌅</span>
+                    <span class="mode-btn-title">Morning</span>
+                    <span class="mode-btn-desc">Dawn 5am-12pm</span>
+                  </button>
+                  <button type="button" class="sky-mode-option-btn" id="skyModeBtn-afternoon" onclick="app.setSkyMode('afternoon')">
+                    <span class="mode-btn-icon">☀️</span>
+                    <span class="mode-btn-title">Afternoon</span>
+                    <span class="mode-btn-desc">Noon 12pm-5pm</span>
+                  </button>
+                  <button type="button" class="sky-mode-option-btn" id="skyModeBtn-evening" onclick="app.setSkyMode('evening')">
+                    <span class="mode-btn-icon">🌇</span>
+                    <span class="mode-btn-title">Evening</span>
+                    <span class="mode-btn-desc">Dusk 5pm-9pm</span>
+                  </button>
+                  <button type="button" class="sky-mode-option-btn" id="skyModeBtn-night" onclick="app.setSkyMode('night')">
+                    <span class="mode-btn-icon">🌙</span>
+                    <span class="mode-btn-title">Night</span>
+                    <span class="mode-btn-desc">Stars 9pm-5am</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </header>
 

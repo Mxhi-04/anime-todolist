@@ -11,6 +11,8 @@
   const STORAGE_KEY_ACTIVITIES = 'anime_todo_activities_v1';
   const STORAGE_KEY_TASKS = 'anime_todo_tasks_v1';
   const STORAGE_KEY_NAV = 'anime_todo_nav_state_v1';
+  const STORAGE_KEY_SKY_REGION = 'anime_todo_sky_region_v1';
+  const STORAGE_KEY_SKY_MODE = 'anime_todo_sky_mode_v1';
 
   // One Piece Quotes Collection
   const MOTIVATIONAL_QUOTES = [
@@ -74,7 +76,10 @@
     activityFilter: 'all', // 'all' | 'pending' | 'completed'
     quoteIndex: Math.floor(Math.random() * MOTIVATIONAL_QUOTES.length),
     isSidebarOpen: false,
-    isSidebarCollapsed: false
+    isSidebarCollapsed: false,
+    selectedRegion: 'auto',
+    skyModeOverride: 'auto',
+    isSkyDropdownOpen: false
   };
 
   // Helper: Format Date to YYYY-MM-DD (local time)
@@ -232,75 +237,329 @@
   }
 
   // ============================================================
-  // Live Date and Time Tracker
+  // Dynamic Sky Phases, Regional Time & Live Tracker
   // ============================================================
 
+  const WAVE_GRADIENT_PALETTES = {
+    morning: {
+      back0: '#1c5277', back1: '#0a2942',
+      mid0: '#257e9e', mid1: '#0f445f',
+      front0: '#41bed8', front1: '#166282'
+    },
+    afternoon: {
+      back0: '#104e8d', back1: '#082c54',
+      mid0: '#196ebd', mid1: '#0e3f72',
+      front0: '#38bdf8', front1: '#1368b0'
+    },
+    evening: {
+      back0: '#33143c', back1: '#180922',
+      mid0: '#5f1e4a', mid1: '#2b0d26',
+      front0: '#c84838', front1: '#4a142f'
+    },
+    night: {
+      back0: '#14355a', back1: '#071326',
+      mid0: '#1b5480', mid1: '#0a223d',
+      front0: '#2c8dc7', front1: '#0e3760'
+    }
+  };
+
+  const SKY_PHASE_META = {
+    morning: { icon: '🌅', label: 'Morning' },
+    afternoon: { icon: '☀️', label: 'Afternoon' },
+    evening: { icon: '🌇', label: 'Evening' },
+    night: { icon: '🌙', label: 'Night' }
+  };
+
+  function loadSkyPreferences() {
+    try {
+      const reg = localStorage.getItem(STORAGE_KEY_SKY_REGION);
+      if (reg) state.selectedRegion = reg;
+      const mode = localStorage.getItem(STORAGE_KEY_SKY_MODE);
+      if (mode) state.skyModeOverride = mode;
+    } catch (e) {
+      console.warn('Error loading sky preferences:', e);
+    }
+  }
+
+  function getRegionalDateTime(timeZoneKey) {
+    const now = new Date();
+    let targetTimeZone = timeZoneKey || 'auto';
+
+    let localTimeZone = 'UTC';
+    try {
+      localTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC';
+    } catch (e) {
+      localTimeZone = 'UTC';
+    }
+
+    if (!targetTimeZone || targetTimeZone === 'auto') {
+      targetTimeZone = localTimeZone;
+    }
+
+    let hours = now.getHours();
+    let minutes = now.getMinutes();
+    let seconds = now.getSeconds();
+    let weekday = now.toLocaleDateString('en-US', { weekday: 'long' });
+    let day = now.toLocaleDateString('en-US', { day: 'numeric' });
+    let month = now.toLocaleDateString('en-US', { month: 'long' });
+    let year = now.toLocaleDateString('en-US', { year: 'numeric' });
+    let timeZoneAbbr = '';
+
+    try {
+      const formatter = new Intl.DateTimeFormat('en-US', {
+        timeZone: targetTimeZone,
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric',
+        hour12: false,
+        weekday: 'long',
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric',
+        timeZoneName: 'short'
+      });
+      const parts = formatter.formatToParts(now);
+      const pMap = {};
+      parts.forEach(p => pMap[p.type] = p.value);
+      if (pMap.hour !== undefined) {
+        hours = parseInt(pMap.hour, 10) % 24;
+      }
+      if (pMap.minute !== undefined) minutes = parseInt(pMap.minute, 10);
+      if (pMap.second !== undefined) seconds = parseInt(pMap.second, 10);
+      if (pMap.weekday) weekday = pMap.weekday;
+      if (pMap.day) day = pMap.day;
+      if (pMap.month) month = pMap.month;
+      if (pMap.year) year = pMap.year;
+      if (pMap.timeZoneName) timeZoneAbbr = pMap.timeZoneName;
+    } catch (err) {
+      hours = now.getHours();
+      minutes = now.getMinutes();
+      seconds = now.getSeconds();
+    }
+
+    const cityRaw = targetTimeZone.split('/').pop() || targetTimeZone;
+    const cityClean = cityRaw.replace(/_/g, ' ');
+    const regionFriendly = timeZoneAbbr ? `${cityClean} (${timeZoneAbbr})` : cityClean;
+
+    // Daylight cycle based on the regional hour:
+    // Morning Dawn: 05:00 - 11:59
+    // Afternoon High Sun: 12:00 - 16:59
+    // Evening Twilight: 17:00 - 20:59
+    // Night Stars: 21:00 - 04:59
+    let naturalPhase = 'night';
+    let naturalGreeting = 'Good night';
+    if (hours >= 5 && hours < 12) {
+      naturalPhase = 'morning';
+      naturalGreeting = 'Good morning';
+    } else if (hours >= 12 && hours < 17) {
+      naturalPhase = 'afternoon';
+      naturalGreeting = 'Good afternoon';
+    } else if (hours >= 17 && hours < 21) {
+      naturalPhase = 'evening';
+      naturalGreeting = 'Good evening';
+    } else {
+      naturalPhase = 'night';
+      naturalGreeting = 'Good night';
+    }
+
+    const activePhase = (state.skyModeOverride && state.skyModeOverride !== 'auto')
+      ? state.skyModeOverride
+      : naturalPhase;
+
+    let activeGreeting = naturalGreeting;
+    if (state.skyModeOverride && state.skyModeOverride !== 'auto') {
+      if (state.skyModeOverride === 'morning') activeGreeting = 'Good morning';
+      else if (state.skyModeOverride === 'afternoon') activeGreeting = 'Good afternoon';
+      else if (state.skyModeOverride === 'evening') activeGreeting = 'Good evening';
+      else if (state.skyModeOverride === 'night') activeGreeting = 'Good night';
+    }
+
+    const period = hours >= 12 ? 'PM' : 'AM';
+    const hours12 = hours % 12 || 12;
+    const timeStringShort = `${String(hours12).padStart(2, '0')}:${String(minutes).padStart(2, '0')} ${period}`;
+    const timeStringWithSec = `${String(hours12).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')} ${period}`;
+    const formattedDate = `${weekday}, ${day} ${month} ${year}`;
+
+    return {
+      hours,
+      minutes,
+      seconds,
+      hours12,
+      period,
+      weekday,
+      day,
+      month,
+      year,
+      timeZoneAbbr,
+      targetTimeZone,
+      regionFriendly,
+      timeStringShort,
+      timeStringWithSec,
+      formattedDate,
+      naturalPhase,
+      activePhase,
+      activeGreeting
+    };
+  }
+
   function initLiveClock() {
+    loadSkyPreferences();
     updateClock();
     setInterval(updateClock, 1000);
   }
 
   function updateClock() {
-    const now = new Date();
-    const hours = now.getHours();
-    const minutes = now.getMinutes();
-    const seconds = now.getSeconds();
-    const period = hours >= 12 ? 'PM' : 'AM';
-    const hours12 = hours % 12 || 12;
+    const info = getRegionalDateTime(state.selectedRegion);
 
-    const timeStringWithSec = `${String(hours12).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')} ${period}`;
-    const timeStringShort = `${String(hours12).padStart(2, '0')}:${String(minutes).padStart(2, '0')} ${period}`;
-
-    // Top Header Time
+    // 1. Top Header Time (legacy / general element if present)
     const headerTimeEl = document.getElementById('headerTime');
     if (headerTimeEl) {
-      headerTimeEl.textContent = timeStringWithSec;
+      headerTimeEl.textContent = info.timeStringWithSec;
     }
 
-    // Sidebar Clock
+    // 2. Sidebar Clock
     const sidebarClockTime = document.getElementById('sidebarClockTime');
     const sidebarClockDay = document.getElementById('sidebarClockDay');
     const sidebarClockDate = document.getElementById('sidebarClockDate');
 
-    if (sidebarClockTime) sidebarClockTime.textContent = timeStringShort;
-    if (sidebarClockDay) {
-      sidebarClockDay.textContent = now.toLocaleDateString('en-US', { weekday: 'long' });
-    }
-    if (sidebarClockDate) {
-      sidebarClockDate.textContent = now.toLocaleDateString('en-US', {
-        day: 'numeric',
-        month: 'long',
-        year: 'numeric'
-      });
-    }
+    if (sidebarClockTime) sidebarClockTime.textContent = info.timeStringShort;
+    if (sidebarClockDay) sidebarClockDay.textContent = info.weekday;
+    if (sidebarClockDate) sidebarClockDate.textContent = `${info.day} ${info.month} ${info.year}`;
 
-    // Greeting Banner
+    // 3. Greeting Banner Title & Subtitle with Region Tag
     const greetingTitle = document.getElementById('greetingTitle');
     const greetingSubtitle = document.getElementById('greetingSubtitle');
-    if (greetingTitle && greetingSubtitle) {
-      let greeting = 'Good evening';
-      if (hours >= 5 && hours < 12) greeting = 'Good morning';
-      else if (hours >= 12 && hours < 17) greeting = 'Good afternoon';
-      else if (hours >= 22 || hours < 5) greeting = 'Good night';
+    if (greetingTitle) {
+      greetingTitle.innerHTML = `${info.activeGreeting}, Mahi <span class="sparkle-anim">✦</span>`;
+    }
+    if (greetingSubtitle) {
+      greetingSubtitle.innerHTML = `<span class="greeting-date-text">${info.formattedDate}</span> <span class="greeting-sep">•</span> <span class="greeting-time-text">${info.timeStringShort}</span> <span class="greeting-region-tag" id="greetingRegionTag"><span class="region-pin">📍</span> <span id="greetingRegionName">${escapeHTML(info.regionFriendly)}</span></span>`;
+    }
 
-      greetingTitle.innerHTML = `${greeting}, Mahi <span class="sparkle-anim">✦</span>`;
-      greetingSubtitle.textContent = now.toLocaleDateString('en-US', {
-        weekday: 'long',
-        day: 'numeric',
-        month: 'long',
-        year: 'numeric'
+    // 4. Update Top Header Ocean & Sky Atmosphere Classes
+    const topHeader = document.getElementById('topHeader');
+    if (topHeader && topHeader.classList) {
+      ['sky-morning', 'sky-afternoon', 'sky-evening', 'sky-night'].forEach(c => {
+        if (c === `sky-${info.activePhase}`) {
+          topHeader.classList.add(c);
+        } else {
+          topHeader.classList.remove(c);
+        }
       });
 
-      // Update Sunny Ocean Topbar Atmosphere
-      const topHeader = document.getElementById('topHeader');
-      if (topHeader && topHeader.classList) {
-        if (greeting === 'Good night') {
-          topHeader.classList.add('is-night-voyage');
-        } else {
-          topHeader.classList.remove('is-night-voyage');
-        }
+      if (info.activePhase === 'night') {
+        topHeader.classList.add('is-night-voyage');
+      } else {
+        topHeader.classList.remove('is-night-voyage');
       }
     }
+
+    // 5. Update Wave SVG Gradients dynamically
+    const pal = WAVE_GRADIENT_PALETTES[info.activePhase] || WAVE_GRADIENT_PALETTES.night;
+    const setStop = (id, color) => {
+      const el = document.getElementById(id);
+      if (el) {
+        if (typeof el.setAttribute === 'function') el.setAttribute('stop-color', color);
+        if (el.style) el.style.stopColor = color;
+      }
+    };
+    setStop('backWaveStop0', pal.back0);
+    setStop('backWaveStop1', pal.back1);
+    setStop('midWaveStop0', pal.mid0);
+    setStop('midWaveStop1', pal.mid1);
+    setStop('frontWaveStop0', pal.front0);
+    setStop('frontWaveStop1', pal.front1);
+
+    // 6. Update Top Header Right Sky & Region Pill
+    const pillIcon = document.getElementById('skyPillIcon');
+    const pillPhase = document.getElementById('skyPillPhase');
+    const pillTime = document.getElementById('skyPillTime');
+    const pillRegion = document.getElementById('skyPillRegion');
+    const meta = SKY_PHASE_META[info.activePhase] || SKY_PHASE_META.night;
+
+    if (pillIcon) pillIcon.textContent = meta.icon;
+    if (pillPhase) pillPhase.textContent = info.activePhase.charAt(0).toUpperCase() + info.activePhase.slice(1);
+    if (pillTime) pillTime.textContent = info.timeStringShort;
+    if (pillRegion) pillRegion.textContent = info.regionFriendly;
+
+    // 7. Sync Dropdown UI Controls if open or present
+    const regionSelect = document.getElementById('skyRegionSelect');
+    if (regionSelect && regionSelect.value !== (state.selectedRegion || 'auto')) {
+      regionSelect.value = state.selectedRegion || 'auto';
+    }
+
+    const currentMode = state.skyModeOverride || 'auto';
+    ['auto', 'morning', 'afternoon', 'evening', 'night'].forEach(m => {
+      const btn = document.getElementById(`skyModeBtn-${m}`);
+      if (btn && btn.classList) {
+        if (m === currentMode) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      }
+    });
+
+    // 8. Update initial speech dialogue if not interacted with
+    const bubbleText = document.getElementById('sunnyBubbleText');
+    if (bubbleText && !bubbleText.dataset.userCheered) {
+      if (info.activePhase === 'morning') {
+        bubbleText.textContent = "Good morning! Setting sail into the sunrise! ☀️⚓";
+      } else if (info.activePhase === 'afternoon') {
+        bubbleText.textContent = "Full sail ahead! Keep conquering tasks under clear skies! 🌊⚔️";
+      } else if (info.activePhase === 'evening') {
+        bubbleText.textContent = "Good evening, Mahi! Sunset over the Grand Line is magnificent! 🌇✨";
+      } else {
+        bubbleText.textContent = "Yo-ho-ho! Rest well tonight, Mahi! Sailing smoothly under the moonlight! 🌙💤";
+      }
+    }
+  }
+
+  // Sky Region Dropdown & Controller Methods
+  function toggleSkyDropdown(event) {
+    if (event && event.stopPropagation) event.stopPropagation();
+    const wrapper = document.getElementById('skyRegionPillWrapper');
+    if (!wrapper) return;
+    state.isSkyDropdownOpen = !state.isSkyDropdownOpen;
+    wrapper.classList.toggle('open', state.isSkyDropdownOpen);
+  }
+
+  function closeSkyDropdown() {
+    const wrapper = document.getElementById('skyRegionPillWrapper');
+    if (wrapper) {
+      wrapper.classList.remove('open');
+      state.isSkyDropdownOpen = false;
+    }
+  }
+
+  function setRegion(newRegion) {
+    state.selectedRegion = newRegion || 'auto';
+    try {
+      localStorage.setItem(STORAGE_KEY_SKY_REGION, state.selectedRegion);
+    } catch (e) {
+      console.warn('Error saving sky region:', e);
+    }
+    updateClock();
+    const city = newRegion === 'auto' ? 'Auto-Detect (Local)' : (newRegion.split('/').pop() || newRegion).replace(/_/g, ' ');
+    showToast(`🧭 Region set to ${city}`);
+  }
+
+  function setSkyMode(mode) {
+    state.skyModeOverride = mode || 'auto';
+    try {
+      localStorage.setItem(STORAGE_KEY_SKY_MODE, state.skyModeOverride);
+    } catch (e) {
+      console.warn('Error saving sky mode:', e);
+    }
+    updateClock();
+    const labels = {
+      auto: 'Auto (Live Region Clock)',
+      morning: 'Morning Dawn 🌅',
+      afternoon: 'Afternoon Sky ☀️',
+      evening: 'Sunset Evening 🌇',
+      night: 'Starlit Night 🌙'
+    };
+    showToast(`✨ Sky set to ${labels[mode] || mode}`);
   }
 
   // ============================================================
@@ -310,7 +569,12 @@
   const SUNNY_PIRATE_QUOTES = [
     "Yo-ho-ho! Sailing smoothly under the moonlight! 🌙",
     "Rest well tonight, Mahi! Tomorrow we conquer the Grand Line! 🍖",
-    "Thousand Sunny standing by! Coup de Burst ready! 💥",
+    "Good morning, Mahi! Setting sail into the sunrise! ☀️⚓",
+    "Morning ocean breeze! Let's conquer all our bounties! 🌊",
+    "High noon on the Grand Line! Thousand Sunny is flying! 💥",
+    "Thousand Sunny standing by! Coup de Burst ready! 🚀",
+    "Good evening, Mahi! The sunset over the sea is magnificent! 🌇✨",
+    "Grand Line twilight! What an incredible day of adventures! 🍖",
     "Straw Hat Crew is sailing strong! Sleep tight! ⚓",
     "The seas are peaceful tonight, Captain! 🌊✨",
     "You're gonna become the Pirate King! 👑"
@@ -348,18 +612,7 @@
     }
 
     // Set initial dialogue if element exists
-    const bubbleText = document.getElementById('sunnyBubbleText');
-    if (bubbleText) {
-      const now = new Date();
-      const h = now.getHours();
-      if (h >= 22 || h < 5) {
-        bubbleText.textContent = "Yo-ho-ho! Rest well tonight, Mahi! 🌙";
-      } else if (h >= 5 && h < 12) {
-        bubbleText.textContent = "Good morning! Setting sail for adventure! ☀️";
-      } else {
-        bubbleText.textContent = "Full sail ahead! Keep conquering tasks! ⚓";
-      }
-    }
+    updateClock();
   }
 
   function cheerSunny(event) {
@@ -370,6 +623,7 @@
 
     sunnyQuoteIdx = (sunnyQuoteIdx + 1) % SUNNY_PIRATE_QUOTES.length;
     if (bubbleText) {
+      bubbleText.dataset.userCheered = 'true';
       bubbleText.textContent = SUNNY_PIRATE_QUOTES[sunnyQuoteIdx];
     }
 
@@ -1751,17 +2005,6 @@
     });
   }
 
-  // ============================================================
-  // Initialize Application
-  // ============================================================
-
-  function init() {
-    loadFromStorage();
-    initLiveClock();
-    renderQuote();
-    setupFormListeners();
-    renderCurrentView();
-  }
 
   // Expose methods to global `app` object for inline HTML event handlers
   window.app = {
@@ -1799,6 +2042,14 @@
     CALENDAR_MONTH_THEMES,
     // SunnyGo Sailing Cheer Control
     cheerSunny,
+    // Sky Atmosphere & Region Controller
+    toggleSkyDropdown,
+    closeSkyDropdown,
+    setRegion,
+    setSkyMode,
+    updateClock,
+    // 3D Wanted Posters Background Engine
+    initWanted3DBackground,
     // Replay Pixel Art Loader
     replayLoader: replayPixelLoader,
     // Debug & Testing helpers
@@ -1926,8 +2177,77 @@
     runPixelLoaderSequence();
   }
 
+  // ============================================================
+  // 3D Wanted Posters Background Engine & Parallax
+  // ============================================================
+
+  function initWanted3DBackground() {
+    const wrapper = document.getElementById('wanted3DWrapper');
+    const sparklesContainer = document.getElementById('wantedBountySparkles');
+
+    // 1. Generate subtle floating golden bounty sparkles
+    if (sparklesContainer && (!sparklesContainer.children || sparklesContainer.children.length === 0)) {
+      const sparkleCount = 18;
+      for (let i = 0; i < sparkleCount; i++) {
+        const s = document.createElement('span');
+        s.className = 'wanted-sparkle';
+        const left = Math.round(4 + (i * 5.6) % 92);
+        const top = Math.round(12 + (i * 5.1) % 82);
+        const dur = (10 + (i % 5) * 2.5).toFixed(1) + 's';
+        const delay = ((i * 0.65) % 6).toFixed(1) + 's';
+        const driftX = (i % 2 === 0 ? 1 : -1) * (15 + (i % 4) * 8) + 'px';
+
+        s.style.left = `${left}%`;
+        s.style.top = `${top}%`;
+        s.style.setProperty('--ember-dur', dur);
+        s.style.setProperty('--ember-delay', delay);
+        s.style.setProperty('--drift-x', driftX);
+        sparklesContainer.appendChild(s);
+      }
+    }
+
+    // 2. Micro 3D mouse parallax tracking
+    if (!wrapper || typeof window === 'undefined') return;
+
+    let targetRotX = 0;
+    let targetRotY = 0;
+    let currentRotX = 0;
+    let currentRotY = 0;
+    let isTracking = false;
+
+    window.addEventListener('mousemove', (e) => {
+      const w = window.innerWidth || 1200;
+      const h = window.innerHeight || 800;
+      const xPct = (e.clientX / w) - 0.5;
+      const yPct = (e.clientY / h) - 0.5;
+
+      // Minute 3D tilt: max ~1.2deg tilt
+      targetRotY = xPct * 2.2;
+      targetRotX = -yPct * 1.8;
+      isTracking = true;
+    }, { passive: true });
+
+    window.addEventListener('mouseleave', () => {
+      targetRotX = 0;
+      targetRotY = 0;
+    });
+
+    function smoothParallax() {
+      if (isTracking && wrapper) {
+        currentRotX += (targetRotX - currentRotX) * 0.05;
+        currentRotY += (targetRotY - currentRotY) * 0.05;
+
+        wrapper.style.setProperty('--mouse-tilt-x', `${currentRotX.toFixed(2)}deg`);
+        wrapper.style.setProperty('--mouse-tilt-y', `${currentRotY.toFixed(2)}deg`);
+      }
+      requestAnimationFrame(smoothParallax);
+    }
+    requestAnimationFrame(smoothParallax);
+  }
+
   // Run on DOM ready
   function init() {
+    initWanted3DBackground();
     initPixelLoader();
     initLiveClock();
     loadFromStorage();
@@ -1936,11 +2256,13 @@
     renderQuote();
     setupFormListeners();
 
-    // Restore desktop sidebar collapsed state if previously set
-    const appLayout = document.getElementById('appLayout');
-    if (appLayout && window.innerWidth > 1024 && state.isSidebarCollapsed) {
-      appLayout.classList.add('sidebar-collapsed');
-    }
+    // Close sky region dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+      const wrapper = document.getElementById('skyRegionPillWrapper');
+      if (wrapper && !wrapper.contains(e.target)) {
+        closeSkyDropdown();
+      }
+    });
 
     renderCurrentView();
   }

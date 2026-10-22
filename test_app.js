@@ -102,6 +102,8 @@ mockWindow.AudioContext = class {
   }
 };
 global.SpeechSynthesisUtterance = class { constructor(t) { this.text = t; } };
+global.requestAnimationFrame = mockWindow.requestAnimationFrame = (cb) => setTimeout(cb, 16);
+global.cancelAnimationFrame = mockWindow.cancelAnimationFrame = (id) => clearTimeout(id);
 
 global.window = mockWindow;
 global.document = mockDocument;
@@ -676,8 +678,142 @@ if (targetCodingAct) {
 }
 app.closeTaskModal();
 
+// Test 32: Validation of Dynamic Sky, Greeting & Regional Time Changer
+console.log('\n--- Test 32: Validation of Dynamic Sky, Greeting & Regional Time ---');
+
+// 1. Verify HTML elements for Sun, Horizon glow, and Sky-Region controller
+if (!htmlContent.includes('id="sunnySunContainer"') ||
+    !htmlContent.includes('id="sunnyHorizonGlow"') ||
+    !htmlContent.includes('id="skyRegionPillBtn"') ||
+    !htmlContent.includes('id="skyRegionDropdown"') ||
+    !htmlContent.includes('id="skyRegionSelect"')) {
+  throw new Error('sunnySunContainer, sunnyHorizonGlow, or skyRegionDropdown missing from index.html');
+}
+console.log('✓ Verified: Sun element, horizon glow, and Sky-Region controller present in index.html');
+
+// 2. Verify CSS rules for morning, afternoon, evening, and night skies
+if (!cssContent.includes('.top-header.sky-morning') ||
+    !cssContent.includes('.top-header.sky-afternoon') ||
+    !cssContent.includes('.top-header.sky-evening') ||
+    !cssContent.includes('.top-header.sky-night') ||
+    !cssContent.includes('.sunny-sun-container')) {
+  throw new Error('CSS rules for sky phases or sunny-sun-container missing from style.css');
+}
+console.log('✓ Verified: Rich CSS styling configured for morning, afternoon, evening, and night skies');
+
+// 3. Test sky mode switches: morning, afternoon, evening, night
+app.setSkyMode('morning');
+const topHeaderEl = getOrCreate('topHeader');
+const greetingTitleEl = getOrCreate('greetingTitle');
+if (!topHeaderEl.classList.contains('sky-morning')) {
+  throw new Error('topHeader did not receive sky-morning class');
+}
+if (!greetingTitleEl.innerHTML.includes('Good morning')) {
+  throw new Error('Greeting title does not contain Good morning: ' + greetingTitleEl.innerHTML);
+}
+console.log('✓ Verified: Morning sky & greeting applied ("Good morning, Mahi")');
+
+app.setSkyMode('afternoon');
+if (!topHeaderEl.classList.contains('sky-afternoon')) {
+  throw new Error('topHeader did not receive sky-afternoon class');
+}
+if (!greetingTitleEl.innerHTML.includes('Good afternoon')) {
+  throw new Error('Greeting title does not contain Good afternoon: ' + greetingTitleEl.innerHTML);
+}
+console.log('✓ Verified: Afternoon sky & greeting applied ("Good afternoon, Mahi")');
+
+app.setSkyMode('evening');
+if (!topHeaderEl.classList.contains('sky-evening')) {
+  throw new Error('topHeader did not receive sky-evening class');
+}
+if (!greetingTitleEl.innerHTML.includes('Good evening')) {
+  throw new Error('Greeting title does not contain Good evening: ' + greetingTitleEl.innerHTML);
+}
+console.log('✓ Verified: Evening sky & greeting applied ("Good evening, Mahi")');
+
+app.setSkyMode('night');
+if (!topHeaderEl.classList.contains('sky-night') || !topHeaderEl.classList.contains('is-night-voyage')) {
+  throw new Error('topHeader did not receive sky-night and is-night-voyage classes');
+}
+if (!greetingTitleEl.innerHTML.includes('Good night')) {
+  throw new Error('Greeting title does not contain Good night: ' + greetingTitleEl.innerHTML);
+}
+console.log('✓ Verified: Night sky & greeting applied ("Good night, Mahi") with is-night-voyage');
+
+// 4. Test region switching and timezone formatting
+app.setRegion('Asia/Tokyo');
+if (app.state.selectedRegion !== 'Asia/Tokyo') {
+  throw new Error('app.state.selectedRegion was not updated to Asia/Tokyo');
+}
+const greetingSubtitleEl = getOrCreate('greetingSubtitle');
+if (!greetingSubtitleEl.innerHTML.includes('Tokyo')) {
+  throw new Error('greetingSubtitle does not reflect Tokyo region: ' + greetingSubtitleEl.innerHTML);
+}
+console.log('✓ Verified: Region updated to Tokyo, Japan and reflected in greeting subtitle');
+
+// 5. Test dropdown toggle
+app.toggleSkyDropdown();
+const pillWrapper = getOrCreate('skyRegionPillWrapper');
+if (!pillWrapper.classList.contains('open')) {
+  throw new Error('skyRegionPillWrapper was not toggled open');
+}
+app.closeSkyDropdown();
+if (pillWrapper.classList.contains('open')) {
+  throw new Error('skyRegionPillWrapper was not closed');
+}
+console.log('✓ Verified: Sky region dropdown menu toggle & close working seamlessly');
+
+// Restore to auto for clean state
+app.setSkyMode('auto');
+app.setRegion('auto');
+
+// Test 33: Validation of Wanted Posters Background & 3D Live Glowing Animation
+console.log('\n--- Test 33: Validation of Wanted Posters Background & 3D Live Animation ---');
+
+// 1. Verify assets/wanted_posters_bg.png exists on disk
+if (!fs.existsSync('assets/wanted_posters_bg.png')) {
+  throw new Error('assets/wanted_posters_bg.png is missing from assets directory');
+}
+console.log('✓ Verified: assets/wanted_posters_bg.png exists on disk');
+
+// 2. Verify HTML structure for 3D Wanted stage, poster wall, and glow mesh
+if (!htmlContent.includes('id="wantedBgStage"') ||
+    !htmlContent.includes('id="wanted3DWrapper"') ||
+    !htmlContent.includes('id="wantedPosterWall"') ||
+    !htmlContent.includes('id="wantedTextGlowMesh"') ||
+    !htmlContent.includes('spot-gear5') ||
+    !htmlContent.includes('wanted-shimmer-sweep')) {
+  throw new Error('wantedBgStage, wanted3DWrapper, wantedPosterWall or wantedTextGlowMesh missing from index.html');
+}
+console.log('✓ Verified: wantedBgStage, wanted3DWrapper, wantedPosterWall, and wantedTextGlowMesh present in index.html');
+
+// 3. Verify CSS rules for 3D live animation, text glow pulse, and shimmer sweep
+if (!cssContent.includes('.wanted-bg-stage') ||
+    !cssContent.includes('@keyframes wanted3DBreath') ||
+    !cssContent.includes('@keyframes wantedTextGlowPulse') ||
+    !cssContent.includes('@keyframes wantedSweepPass') ||
+    !cssContent.includes('.wanted-poster-wall') ||
+    !cssContent.includes('.wanted-ghost-text')) {
+  throw new Error('CSS animation rules for wanted3DBreath, wantedTextGlowPulse, or wanted-ghost-text missing from style.css');
+}
+console.log('✓ Verified: 3D live breathing animation, faint Wanted text glow pulse, ghost typography, and shimmer sweep configured in style.css');
+
+// 4. Verify vercel.json exists with Vite configuration
+if (!fs.existsSync('vercel.json')) {
+  throw new Error('vercel.json is missing');
+}
+const vercelConf = JSON.parse(fs.readFileSync('vercel.json', 'utf8'));
+if (vercelConf.framework !== 'vite' || vercelConf.outputDirectory !== 'dist') {
+  throw new Error('vercel.json is missing framework: vite or outputDirectory: dist');
+}
+console.log('✓ Verified: vercel.json is properly configured for Vercel deployment');
+
+// 5. Verify initWanted3DBackground executes and generates sparkles
+app.initWanted3DBackground();
+console.log('✓ Verified: app.initWanted3DBackground executed successfully');
+
 console.log('\n=============================================');
-console.log('🎉 ALL 31 TESTS PASSED FLAWLESSLY! 🎉');
+console.log('🎉 ALL 33 TESTS PASSED FLAWLESSLY! 🎉');
 console.log('=============================================\n');
 process.exit(0);
 
