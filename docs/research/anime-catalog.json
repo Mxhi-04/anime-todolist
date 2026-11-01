@@ -1,0 +1,2561 @@
+{
+  "schemaVersion": 1,
+  "researchDate": "2026-11-01",
+  "status": "Implemented catalog; production asset manifest is src/data/catalog.json",
+  "rankingMethod": "First 50 entries observed on Crunchyroll Popular in signed-in Chrome on 2026-11-01, plus the established major-anime selection. Position is a dated view, not an official global rank.",
+  "regionNote": "Signed-in Chrome popular view. Ordering may change by region, account and date.",
+  "entries": [
+    {
+      "id": "frieren",
+      "title": "Frieren: Beyond Journey’s End",
+      "editorialOrder": 13,
+      "officialRank": null,
+      "genres": [
+        "Fantasy"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/GG5H5XQX4/frieren-beyond-journeys-end",
+        "type": "Popular listing; partial indexed snapshot, live shell unavailable",
+        "checkedOn": "2026-11-01",
+        "locale": "mixed; not an India availability verification"
+      },
+      "designProposal": {
+        "primary": "#738D57",
+        "secondary": "#8D73AA",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Quiet chapter headings and pale botanical margins",
+        "taskLabel": "Journey tasks",
+        "focusLabel": "Quiet focus",
+        "loopScene": "Verified meadow or town landscape with gentle grasses/clouds and locked camera",
+        "completionTreatment": "Brief ink check and chapter-progress update; validate the motif against official art before production."
+      },
+      "media": {
+        "poster": null,
+        "hero": null,
+        "loopMp4": null,
+        "loopWebm": null,
+        "referenceImage": null,
+        "officialArtPage": "https://frieren-anime.jp/",
+        "officialVideoReferencePage": "https://frieren-anime.jp/movie/",
+        "referenceStatus": "source page discovered; media not acquired",
+        "productionReadiness": "pending",
+        "usageStatus": "not established",
+        "loopReviewStatus": "not produced"
+      },
+      "idMal": 52991,
+      "popularPosition": 1,
+      "popularObservedOn": "2026-11-01"
+    },
+    {
+      "id": "golden-kamuy",
+      "idMal": 36028,
+      "title": "Golden Kamuy",
+      "editorialOrder": 51,
+      "officialRank": null,
+      "genres": [
+        "Adventure"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/GY8DWQN5Y/golden-kamuy",
+        "type": "Browser-observed Crunchyroll Popular card",
+        "checkedOn": "2026-11-01",
+        "locale": "Signed-in account view; no universal or India playback claim"
+      },
+      "designProposal": {
+        "primary": "#A98239",
+        "secondary": "#435B6C",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Topographic rules and gold chapter marks",
+        "taskLabel": "Expeditions",
+        "focusLabel": "Trail focus",
+        "loopScene": "Cyclic camera motion around the sourced title-matched still; no regenerated character motion."
+      },
+      "media": {
+        "referenceStatus": "Title confirmed against AniList metadata",
+        "usageStatus": "Not established; creator attribution is not permission",
+        "productionReadiness": "See src/data/catalog.json and docs/implementation/media-checks.json"
+      },
+      "popularPosition": 2,
+      "popularObservedOn": "2026-11-01"
+    },
+    {
+      "id": "fire-force",
+      "title": "Fire Force",
+      "editorialOrder": 32,
+      "officialRank": null,
+      "genres": [
+        "Action"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/GYQWNXPZY/fire-force",
+        "type": "catalog listing; indexed page",
+        "checkedOn": "2026-11-01",
+        "locale": "mixed; not an India availability verification"
+      },
+      "designProposal": {
+        "primary": "#D86B28",
+        "secondary": "#447A9B",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Orange technical labels and clear safety-stripe accents",
+        "taskLabel": "Assignments",
+        "focusLabel": "Focus operation",
+        "loopScene": "Verified fire-company setting with gentle source-matched flame/light cycle",
+        "completionTreatment": "Brief ink check and chapter-progress update; validate the motif against official art before production."
+      },
+      "media": {
+        "poster": null,
+        "hero": null,
+        "loopMp4": null,
+        "loopWebm": null,
+        "referenceImage": null,
+        "officialArtPage": null,
+        "officialVideoReferencePage": null,
+        "referenceStatus": "not acquired",
+        "productionReadiness": "pending",
+        "usageStatus": "not established",
+        "loopReviewStatus": "not produced"
+      },
+      "idMal": 38671,
+      "popularPosition": 3,
+      "popularObservedOn": "2026-11-01"
+    },
+    {
+      "id": "fate-strange-fake",
+      "idMal": 55830,
+      "title": "Fate/strange Fake",
+      "editorialOrder": 52,
+      "officialRank": null,
+      "genres": [
+        "Supernatural"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/G4PH0WJQZ/fatestrange-fake",
+        "type": "Browser-observed Crunchyroll Popular card",
+        "checkedOn": "2026-11-01",
+        "locale": "Signed-in account view; no universal or India playback claim"
+      },
+      "designProposal": {
+        "primary": "#456B9B",
+        "secondary": "#BA633E",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Fine constellation rules and ritual circles",
+        "taskLabel": "Assignments",
+        "focusLabel": "Ritual focus",
+        "loopScene": "Cyclic camera motion around the sourced title-matched still; no regenerated character motion."
+      },
+      "media": {
+        "referenceStatus": "Title confirmed against AniList metadata",
+        "usageStatus": "Not established; creator attribution is not permission",
+        "productionReadiness": "See src/data/catalog.json and docs/implementation/media-checks.json"
+      },
+      "popularPosition": 4,
+      "popularObservedOn": "2026-11-01"
+    },
+    {
+      "id": "cheat-skill-another-world",
+      "idMal": 52830,
+      "title": "I Got a Cheat Skill in Another World and Became Unrivaled in The Real World, Too",
+      "editorialOrder": 53,
+      "officialRank": null,
+      "genres": [
+        "Fantasy"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/GEXH3W49E/i-got-a-cheat-skill-in-another-world-and-became-unrivaled-in-the-real-world-too",
+        "type": "Browser-observed Crunchyroll Popular card",
+        "checkedOn": "2026-11-01",
+        "locale": "Signed-in account view; no universal or India playback claim"
+      },
+      "designProposal": {
+        "primary": "#4F7A72",
+        "secondary": "#A56C8E",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Split-world panels and restrained magic rings",
+        "taskLabel": "Quests",
+        "focusLabel": "Training focus",
+        "loopScene": "Cyclic camera motion around the sourced title-matched still; no regenerated character motion."
+      },
+      "media": {
+        "referenceStatus": "Title confirmed against AniList metadata",
+        "usageStatus": "Not established; creator attribution is not permission",
+        "productionReadiness": "See src/data/catalog.json and docs/implementation/media-checks.json"
+      },
+      "popularPosition": 5,
+      "popularObservedOn": "2026-11-01"
+    },
+    {
+      "id": "one-piece",
+      "title": "One Piece",
+      "editorialOrder": 1,
+      "officialRank": null,
+      "genres": [
+        "Adventure"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/GRMG8ZQZR/one-piece",
+        "type": "catalog listing; indexed page",
+        "checkedOn": "2026-11-01",
+        "locale": "mixed; not an India availability verification"
+      },
+      "designProposal": {
+        "primary": "#E84B35",
+        "secondary": "#2C8CC9",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Nautical chart lines and wanted-paper edges",
+        "taskLabel": "Missions",
+        "focusLabel": "Set sail",
+        "loopScene": "Locked view of a verified ship scene; gently repeating sea and flag movement",
+        "completionTreatment": "Brief ink check and chapter-progress update; validate the motif against official art before production."
+      },
+      "media": {
+        "poster": null,
+        "hero": null,
+        "loopMp4": null,
+        "loopWebm": null,
+        "referenceImage": "reference-images/one-piece-official.jpg",
+        "officialArtPage": "https://www.toei-animation.com/catalog/one-piece/",
+        "officialVideoReferencePage": "https://www.toei-animation.com/catalog/one-piece/",
+        "referenceStatus": "downloaded and visually inspected",
+        "productionReadiness": "pending",
+        "usageStatus": "not established",
+        "loopReviewStatus": "not produced",
+        "referenceNote": "Identity reference only: 540x432, insufficient full-screen resolution."
+      },
+      "idMal": 21,
+      "popularPosition": 6,
+      "popularObservedOn": "2026-11-01"
+    },
+    {
+      "id": "mf-ghost",
+      "idMal": 50695,
+      "title": "MF GHOST",
+      "editorialOrder": 54,
+      "officialRank": null,
+      "genres": [
+        "Sports"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/GEXH3W2W7/mf-ghost",
+        "type": "Browser-observed Crunchyroll Popular card",
+        "checkedOn": "2026-11-01",
+        "locale": "Signed-in account view; no universal or India playback claim"
+      },
+      "designProposal": {
+        "primary": "#C34B3F",
+        "secondary": "#456C8B",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Circuit lines and crisp timing marks",
+        "taskLabel": "Lap goals",
+        "focusLabel": "Practice session",
+        "loopScene": "Cyclic camera motion around the sourced title-matched still; no regenerated character motion."
+      },
+      "media": {
+        "referenceStatus": "Title confirmed against AniList metadata",
+        "usageStatus": "Not established; creator attribution is not permission",
+        "productionReadiness": "See src/data/catalog.json and docs/implementation/media-checks.json"
+      },
+      "popularPosition": 7,
+      "popularObservedOn": "2026-11-01"
+    },
+    {
+      "id": "trigun-stampede",
+      "idMal": 52093,
+      "title": "TRIGUN STAMPEDE",
+      "editorialOrder": 55,
+      "officialRank": null,
+      "genres": [
+        "Sci-Fi"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/GXJHM3PK5/trigun-stampede",
+        "type": "Browser-observed Crunchyroll Popular card",
+        "checkedOn": "2026-11-01",
+        "locale": "Signed-in account view; no universal or India playback claim"
+      },
+      "designProposal": {
+        "primary": "#B34E40",
+        "secondary": "#B18E3E",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Sand-tone borders and precise crosshair rules",
+        "taskLabel": "Jobs",
+        "focusLabel": "Desert focus",
+        "loopScene": "Cyclic camera motion around the sourced title-matched still; no regenerated character motion."
+      },
+      "media": {
+        "referenceStatus": "Title confirmed against AniList metadata",
+        "usageStatus": "Not established; creator attribution is not permission",
+        "productionReadiness": "See src/data/catalog.json and docs/implementation/media-checks.json"
+      },
+      "popularPosition": 8,
+      "popularObservedOn": "2026-11-01"
+    },
+    {
+      "id": "jujutsu-kaisen",
+      "title": "JUJUTSU KAISEN",
+      "editorialOrder": 6,
+      "officialRank": null,
+      "genres": [
+        "Supernatural"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/GRDV0019R/jujutsu-kaisen",
+        "type": "catalog listing; indexed page",
+        "checkedOn": "2026-11-01",
+        "locale": "mixed; not an India availability verification"
+      },
+      "designProposal": {
+        "primary": "#6855BE",
+        "secondary": "#DA4F62",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Brush ink and fractured panel dividers",
+        "taskLabel": "Assignments",
+        "focusLabel": "Focus domain",
+        "loopScene": "Verified sorcerer scene with subtle circular energy motion and stable character pose",
+        "completionTreatment": "Brief ink check and chapter-progress update; validate the motif against official art before production."
+      },
+      "media": {
+        "poster": null,
+        "hero": null,
+        "loopMp4": null,
+        "loopWebm": null,
+        "referenceImage": null,
+        "officialArtPage": "https://jujutsukaisen.jp/",
+        "officialVideoReferencePage": "https://jujutsukaisen.jp/movie/",
+        "referenceStatus": "source page discovered; media not acquired",
+        "productionReadiness": "pending",
+        "usageStatus": "not established",
+        "loopReviewStatus": "not produced"
+      },
+      "idMal": 40748,
+      "popularPosition": 9,
+      "popularObservedOn": "2026-11-01"
+    },
+    {
+      "id": "my-hero-academia",
+      "title": "My Hero Academia",
+      "editorialOrder": 11,
+      "officialRank": null,
+      "genres": [
+        "Action"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/G6NQ5DWZ6/my-hero-academia",
+        "type": "catalog listing; indexed page",
+        "checkedOn": "2026-11-01",
+        "locale": "mixed; not an India availability verification"
+      },
+      "designProposal": {
+        "primary": "#288A73",
+        "secondary": "#E7B632",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Comic callouts and bold progress captions",
+        "taskLabel": "Hero tasks",
+        "focusLabel": "Training session",
+        "loopScene": "Verified academy-era character scene with a small cyclic light/wind effect",
+        "completionTreatment": "Brief ink check and chapter-progress update; validate the motif against official art before production."
+      },
+      "media": {
+        "poster": null,
+        "hero": null,
+        "loopMp4": null,
+        "loopWebm": null,
+        "referenceImage": null,
+        "officialArtPage": null,
+        "officialVideoReferencePage": null,
+        "referenceStatus": "not acquired",
+        "productionReadiness": "pending",
+        "usageStatus": "not established",
+        "loopReviewStatus": "not produced"
+      },
+      "idMal": 31964,
+      "popularPosition": 10,
+      "popularObservedOn": "2026-11-01"
+    },
+    {
+      "id": "to-your-eternity",
+      "idMal": 41025,
+      "title": "To Your Eternity",
+      "editorialOrder": 56,
+      "officialRank": null,
+      "genres": [
+        "Fantasy"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/GG5H5XMWV/to-your-eternity",
+        "type": "Browser-observed Crunchyroll Popular card",
+        "checkedOn": "2026-11-01",
+        "locale": "Signed-in account view; no universal or India playback claim"
+      },
+      "designProposal": {
+        "primary": "#698663",
+        "secondary": "#A27665",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Organic chapter lines and calm landscape margins",
+        "taskLabel": "Chapters",
+        "focusLabel": "Quiet focus",
+        "loopScene": "Cyclic camera motion around the sourced title-matched still; no regenerated character motion."
+      },
+      "media": {
+        "referenceStatus": "Title confirmed against AniList metadata",
+        "usageStatus": "Not established; creator attribution is not permission",
+        "productionReadiness": "See src/data/catalog.json and docs/implementation/media-checks.json"
+      },
+      "popularPosition": 11,
+      "popularObservedOn": "2026-11-01"
+    },
+    {
+      "id": "slime",
+      "title": "That Time I Got Reincarnated as a Slime",
+      "editorialOrder": 26,
+      "officialRank": null,
+      "genres": [
+        "Fantasy"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/GYZJ43JMR/that-time-i-got-reincarnated-as-a-slime",
+        "type": "Popular listing; partial indexed snapshot, live shell unavailable",
+        "checkedOn": "2026-11-01",
+        "locale": "mixed; not an India availability verification"
+      },
+      "designProposal": {
+        "primary": "#328FC1",
+        "secondary": "#5B9B85",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Rounded sky-blue panels and settlement-map marks",
+        "taskLabel": "Quests",
+        "focusLabel": "Focus quest",
+        "loopScene": "Verified Rimuru scene with small water/light cycles and stable silhouettes",
+        "completionTreatment": "Brief ink check and chapter-progress update; validate the motif against official art before production."
+      },
+      "media": {
+        "poster": null,
+        "hero": null,
+        "loopMp4": null,
+        "loopWebm": null,
+        "referenceImage": null,
+        "officialArtPage": null,
+        "officialVideoReferencePage": null,
+        "referenceStatus": "not acquired",
+        "productionReadiness": "pending",
+        "usageStatus": "not established",
+        "loopReviewStatus": "not produced"
+      },
+      "idMal": 37430,
+      "popularPosition": 12,
+      "popularObservedOn": "2026-11-01"
+    },
+    {
+      "id": "solo-leveling",
+      "title": "Solo Leveling",
+      "editorialOrder": 9,
+      "officialRank": null,
+      "genres": [
+        "Fantasy"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/GDKHZEJ0K/solo-leveling",
+        "type": "Popular listing; partial indexed snapshot, live shell unavailable",
+        "checkedOn": "2026-11-01",
+        "locale": "mixed; not an India availability verification"
+      },
+      "designProposal": {
+        "primary": "#7552CB",
+        "secondary": "#237FB6",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "System panels and violet progress ticks",
+        "taskLabel": "Daily quests",
+        "focusLabel": "Focus dungeon",
+        "loopScene": "Verified Jinwoo scene with a looping ambient shadow effect and no face morphing",
+        "completionTreatment": "Brief ink check and chapter-progress update; validate the motif against official art before production."
+      },
+      "media": {
+        "poster": null,
+        "hero": null,
+        "loopMp4": null,
+        "loopWebm": null,
+        "referenceImage": "reference-images/solo-leveling-official.jpg",
+        "officialArtPage": "https://sololeveling-anime.net/",
+        "officialVideoReferencePage": "https://sololeveling-anime.net/movie/",
+        "referenceStatus": "downloaded and visually inspected",
+        "productionReadiness": "pending",
+        "usageStatus": "not established",
+        "loopReviewStatus": "not produced",
+        "referenceNote": "Landscape identity reference; includes embedded release-date text."
+      },
+      "idMal": 52299,
+      "popularPosition": 13,
+      "popularObservedOn": "2026-11-01"
+    },
+    {
+      "id": "classroom-of-the-elite",
+      "title": "Classroom of the Elite",
+      "editorialOrder": 34,
+      "officialRank": null,
+      "genres": [
+        "Drama"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/GRVN8MNQY/classroom-of-the-elite",
+        "type": "Popular listing; partial indexed snapshot, live shell unavailable",
+        "checkedOn": "2026-11-01",
+        "locale": "mixed; not an India availability verification"
+      },
+      "designProposal": {
+        "primary": "#9D3A50",
+        "secondary": "#75845C",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Precise school-planner typography and crisp margins",
+        "taskLabel": "Study tasks",
+        "focusLabel": "Study period",
+        "loopScene": "Verified classroom/window setting with subtle outdoor foliage motion",
+        "completionTreatment": "Brief ink check and chapter-progress update; validate the motif against official art before production."
+      },
+      "media": {
+        "poster": null,
+        "hero": null,
+        "loopMp4": null,
+        "loopWebm": null,
+        "referenceImage": null,
+        "officialArtPage": null,
+        "officialVideoReferencePage": null,
+        "referenceStatus": "not acquired",
+        "productionReadiness": "pending",
+        "usageStatus": "not established",
+        "loopReviewStatus": "not produced"
+      },
+      "idMal": 35507,
+      "popularPosition": 14,
+      "popularObservedOn": "2026-11-01"
+    },
+    {
+      "id": "apothecary-diaries",
+      "title": "The Apothecary Diaries",
+      "editorialOrder": 14,
+      "officialRank": null,
+      "genres": [
+        "Mystery"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/G3KHEVDJ7/the-apothecary-diaries",
+        "type": "Popular listing; partial indexed snapshot, live shell unavailable",
+        "checkedOn": "2026-11-01",
+        "locale": "mixed; not an India availability verification"
+      },
+      "designProposal": {
+        "primary": "#398B7E",
+        "secondary": "#B65D7F",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Botanical annotation and delicate chapter seals",
+        "taskLabel": "Notes",
+        "focusLabel": "Study session",
+        "loopScene": "Verified Maomao setting with a small tea-steam or garden-breeze loop",
+        "completionTreatment": "Brief ink check and chapter-progress update; validate the motif against official art before production."
+      },
+      "media": {
+        "poster": null,
+        "hero": null,
+        "loopMp4": null,
+        "loopWebm": null,
+        "referenceImage": null,
+        "officialArtPage": null,
+        "officialVideoReferencePage": null,
+        "referenceStatus": "not acquired",
+        "productionReadiness": "pending",
+        "usageStatus": "not established",
+        "loopReviewStatus": "not produced"
+      },
+      "idMal": 54492,
+      "popularPosition": 15,
+      "popularObservedOn": "2026-11-01"
+    },
+    {
+      "id": "black-clover",
+      "title": "Black Clover",
+      "editorialOrder": 12,
+      "officialRank": null,
+      "genres": [
+        "Fantasy"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/GRE50KV36/black-clover",
+        "type": "catalog listing; indexed page",
+        "checkedOn": "2026-11-01",
+        "locale": "mixed; not an India availability verification"
+      },
+      "designProposal": {
+        "primary": "#A74343",
+        "secondary": "#667F53",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Grimoire page rules and ink leaf marks",
+        "taskLabel": "Quests",
+        "focusLabel": "Training focus",
+        "loopScene": "Verified outdoor/grimoire scene with repeatable page or foliage movement",
+        "completionTreatment": "Brief ink check and chapter-progress update; validate the motif against official art before production."
+      },
+      "media": {
+        "poster": null,
+        "hero": null,
+        "loopMp4": null,
+        "loopWebm": null,
+        "referenceImage": null,
+        "officialArtPage": null,
+        "officialVideoReferencePage": null,
+        "referenceStatus": "not acquired",
+        "productionReadiness": "pending",
+        "usageStatus": "not established",
+        "loopReviewStatus": "not produced"
+      },
+      "idMal": 34572,
+      "popularPosition": 16,
+      "popularObservedOn": "2026-11-01"
+    },
+    {
+      "id": "dr-stone",
+      "title": "Dr. STONE",
+      "editorialOrder": 20,
+      "officialRank": null,
+      "genres": [
+        "Adventure"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/GYEXQKJG6/dr-stone",
+        "type": "Popular listing; partial indexed snapshot, live shell unavailable",
+        "checkedOn": "2026-11-01",
+        "locale": "mixed; not an India availability verification"
+      },
+      "designProposal": {
+        "primary": "#65A05E",
+        "secondary": "#B58B43",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Lab notebook lines and scientific annotations",
+        "taskLabel": "Experiments",
+        "focusLabel": "Lab session",
+        "loopScene": "Verified science-workspace scene with repeatable steam or apparatus-light cycle",
+        "completionTreatment": "Brief ink check and chapter-progress update; validate the motif against official art before production."
+      },
+      "media": {
+        "poster": null,
+        "hero": null,
+        "loopMp4": null,
+        "loopWebm": null,
+        "referenceImage": null,
+        "officialArtPage": null,
+        "officialVideoReferencePage": null,
+        "referenceStatus": "not acquired",
+        "productionReadiness": "pending",
+        "usageStatus": "not established",
+        "loopReviewStatus": "not produced"
+      },
+      "idMal": 38691,
+      "popularPosition": 17,
+      "popularObservedOn": "2026-11-01"
+    },
+    {
+      "id": "haikyu",
+      "title": "Haikyu!!",
+      "editorialOrder": 17,
+      "officialRank": null,
+      "genres": [
+        "Sports"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/GY8VM8MWY/haikyu",
+        "type": "Popular listing; partial indexed snapshot, live shell unavailable",
+        "checkedOn": "2026-11-01",
+        "locale": "mixed; not an India availability verification"
+      },
+      "designProposal": {
+        "primary": "#EA6D27",
+        "secondary": "#343B48",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Court lines and clear scoreboard hierarchy",
+        "taskLabel": "Goals",
+        "focusLabel": "Practice block",
+        "loopScene": "Verified gym scene with gentle light movement; no reversed ball physics",
+        "completionTreatment": "Brief ink check and chapter-progress update; validate the motif against official art before production."
+      },
+      "media": {
+        "poster": null,
+        "hero": null,
+        "loopMp4": null,
+        "loopWebm": null,
+        "referenceImage": null,
+        "officialArtPage": null,
+        "officialVideoReferencePage": null,
+        "referenceStatus": "not acquired",
+        "productionReadiness": "pending",
+        "usageStatus": "not established",
+        "loopReviewStatus": "not produced"
+      },
+      "idMal": 20583,
+      "popularPosition": 18,
+      "popularObservedOn": "2026-11-01"
+    },
+    {
+      "id": "demon-slayer",
+      "title": "Demon Slayer: Kimetsu no Yaiba",
+      "editorialOrder": 7,
+      "officialRank": null,
+      "genres": [
+        "Action"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/GY5P48XEY/demon-slayer-kimetsu-no-yaiba",
+        "type": "Popular listing; partial indexed snapshot, live shell unavailable",
+        "checkedOn": "2026-11-01",
+        "locale": "mixed; not an India availability verification"
+      },
+      "designProposal": {
+        "primary": "#247E69",
+        "secondary": "#C83C3F",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Checkered edge details and brush rules",
+        "taskLabel": "Missions",
+        "focusLabel": "Breathing session",
+        "loopScene": "Verified character landscape with gentle lantern or mist cycle; avoid logo-only art",
+        "completionTreatment": "Brief ink check and chapter-progress update; validate the motif against official art before production."
+      },
+      "media": {
+        "poster": null,
+        "hero": null,
+        "loopMp4": null,
+        "loopWebm": null,
+        "referenceImage": "reference-images/demon-slayer-official.png",
+        "officialArtPage": "https://kimetsu.com/anime/",
+        "officialVideoReferencePage": null,
+        "referenceStatus": "downloaded and visually inspected",
+        "productionReadiness": "pending",
+        "usageStatus": "not established",
+        "loopReviewStatus": "not produced",
+        "referenceNote": "Logo-only reference: not a character poster or hero."
+      },
+      "idMal": 38000,
+      "popularPosition": 19,
+      "popularObservedOn": "2026-11-01"
+    },
+    {
+      "id": "dragon-ball-z",
+      "title": "Dragon Ball Z",
+      "editorialOrder": 4,
+      "officialRank": null,
+      "genres": [
+        "Action"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/G9VHN9PPW/dragon-ball-z",
+        "type": "Popular listing; partial indexed snapshot, live shell unavailable",
+        "checkedOn": "2026-11-01",
+        "locale": "mixed; not an India availability verification"
+      },
+      "designProposal": {
+        "primary": "#F48426",
+        "secondary": "#3C61D1",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Bold speed lines and power-meter marks",
+        "taskLabel": "Training goals",
+        "focusLabel": "Power up",
+        "loopScene": "Verified Z-era landscape and character; low-amplitude aura cycle",
+        "completionTreatment": "Brief ink check and chapter-progress update; validate the motif against official art before production."
+      },
+      "media": {
+        "poster": null,
+        "hero": null,
+        "loopMp4": null,
+        "loopWebm": null,
+        "referenceImage": null,
+        "officialArtPage": null,
+        "officialVideoReferencePage": null,
+        "referenceStatus": "not acquired",
+        "productionReadiness": "pending",
+        "usageStatus": "not established",
+        "loopReviewStatus": "not produced"
+      },
+      "idMal": 813,
+      "popularPosition": 20,
+      "popularObservedOn": "2026-11-01"
+    },
+    {
+      "id": "gachiakuta",
+      "title": "Gachiakuta",
+      "editorialOrder": 46,
+      "officialRank": null,
+      "genres": [
+        "Action"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/GP5HJ84P7/gachiakuta",
+        "type": "catalog listing; indexed page",
+        "checkedOn": "2026-11-01",
+        "locale": "mixed; not an India availability verification"
+      },
+      "designProposal": {
+        "primary": "#788B45",
+        "secondary": "#C8663D",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Rough print textures and bold utilitarian captions",
+        "taskLabel": "Tasks",
+        "focusLabel": "Focus shift",
+        "loopScene": "Verified anime environment/character with a restrained wind or dust cycle",
+        "completionTreatment": "Brief ink check and chapter-progress update; validate the motif against official art before production."
+      },
+      "media": {
+        "poster": null,
+        "hero": null,
+        "loopMp4": null,
+        "loopWebm": null,
+        "referenceImage": null,
+        "officialArtPage": null,
+        "officialVideoReferencePage": null,
+        "referenceStatus": "not acquired",
+        "productionReadiness": "pending",
+        "usageStatus": "not established",
+        "loopReviewStatus": "not produced"
+      },
+      "idMal": 59062,
+      "popularPosition": 21,
+      "popularObservedOn": "2026-11-01"
+    },
+    {
+      "id": "beginning-after-end",
+      "idMal": 60146,
+      "title": "The Beginning After the End",
+      "editorialOrder": 57,
+      "officialRank": null,
+      "genres": [
+        "Fantasy"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/G24H1NWKE/the-beginning-after-the-end",
+        "type": "Browser-observed Crunchyroll Popular card",
+        "checkedOn": "2026-11-01",
+        "locale": "Signed-in account view; no universal or India playback claim"
+      },
+      "designProposal": {
+        "primary": "#487E80",
+        "secondary": "#9B7353",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Bound-book margins and subtle rune geometry",
+        "taskLabel": "Quests",
+        "focusLabel": "Training focus",
+        "loopScene": "Cyclic camera motion around the sourced title-matched still; no regenerated character motion."
+      },
+      "media": {
+        "referenceStatus": "Title confirmed against AniList metadata",
+        "usageStatus": "Not established; creator attribution is not permission",
+        "productionReadiness": "See src/data/catalog.json and docs/implementation/media-checks.json"
+      },
+      "popularPosition": 22,
+      "popularObservedOn": "2026-11-01"
+    },
+    {
+      "id": "mushoku-tensei",
+      "title": "Mushoku Tensei: Jobless Reincarnation",
+      "editorialOrder": 25,
+      "officialRank": null,
+      "genres": [
+        "Fantasy"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/G24H1N3MP/mushoku-tensei-jobless-reincarnation",
+        "type": "Popular listing; partial indexed snapshot, live shell unavailable",
+        "checkedOn": "2026-11-01",
+        "locale": "mixed; not an India availability verification"
+      },
+      "designProposal": {
+        "primary": "#A27B49",
+        "secondary": "#527F72",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Travel-journal margins and warm map details",
+        "taskLabel": "Journey tasks",
+        "focusLabel": "Study block",
+        "loopScene": "Verified landscape scene with a locked camera and repeating wind movement",
+        "completionTreatment": "Brief ink check and chapter-progress update; validate the motif against official art before production."
+      },
+      "media": {
+        "poster": null,
+        "hero": null,
+        "loopMp4": null,
+        "loopWebm": null,
+        "referenceImage": null,
+        "officialArtPage": null,
+        "officialVideoReferencePage": null,
+        "referenceStatus": "not acquired",
+        "productionReadiness": "pending",
+        "usageStatus": "not established",
+        "loopReviewStatus": "not produced"
+      },
+      "idMal": 39535,
+      "popularPosition": 23,
+      "popularObservedOn": "2026-11-01"
+    },
+    {
+      "id": "naruto-shippuden",
+      "title": "Naruto Shippuden",
+      "editorialOrder": 2,
+      "officialRank": null,
+      "genres": [
+        "Action"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/GYQ4MW246/naruto-shippuden",
+        "type": "Popular listing; partial indexed snapshot, live shell unavailable",
+        "checkedOn": "2026-11-01",
+        "locale": "mixed; not an India availability verification"
+      },
+      "designProposal": {
+        "primary": "#EC6B28",
+        "secondary": "#253E77",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Ink scroll framing and village-map rules",
+        "taskLabel": "Missions",
+        "focusLabel": "Training session",
+        "loopScene": "Verified Shippuden-era village scene with a repeatable breeze and leaf movement",
+        "completionTreatment": "Brief ink check and chapter-progress update; validate the motif against official art before production."
+      },
+      "media": {
+        "poster": null,
+        "hero": null,
+        "loopMp4": null,
+        "loopWebm": null,
+        "referenceImage": null,
+        "officialArtPage": "https://naruto-official.com/en/news/01_2696?pubDate=20261014",
+        "officialVideoReferencePage": null,
+        "referenceStatus": "source page discovered; media not acquired",
+        "productionReadiness": "pending",
+        "usageStatus": "not established",
+        "loopReviewStatus": "not produced"
+      },
+      "idMal": 1735,
+      "popularPosition": 24,
+      "popularObservedOn": "2026-11-01"
+    },
+    {
+      "id": "tsukimichi",
+      "idMal": 43523,
+      "title": "TSUKIMICHI -Moonlit Fantasy-",
+      "editorialOrder": 58,
+      "officialRank": null,
+      "genres": [
+        "Fantasy"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/GZJH3D719/tsukimichi--moonlit-fantasy-",
+        "type": "Browser-observed Crunchyroll Popular card",
+        "checkedOn": "2026-11-01",
+        "locale": "Signed-in account view; no universal or India playback claim"
+      },
+      "designProposal": {
+        "primary": "#566D99",
+        "secondary": "#9A6495",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Fine moon arcs and indigo chapter marks",
+        "taskLabel": "Quests",
+        "focusLabel": "Moonlit focus",
+        "loopScene": "Cyclic camera motion around the sourced title-matched still; no regenerated character motion."
+      },
+      "media": {
+        "referenceStatus": "Title confirmed against AniList metadata",
+        "usageStatus": "Not established; creator attribution is not permission",
+        "productionReadiness": "See src/data/catalog.json and docs/implementation/media-checks.json"
+      },
+      "popularPosition": 25,
+      "popularObservedOn": "2026-11-01"
+    },
+    {
+      "id": "shield-hero",
+      "title": "The Rising of the Shield Hero",
+      "editorialOrder": 27,
+      "officialRank": null,
+      "genres": [
+        "Fantasy"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/G6W4QKX0R/the-rising-of-the-shield-hero",
+        "type": "Popular listing; partial indexed snapshot, live shell unavailable",
+        "checkedOn": "2026-11-01",
+        "locale": "mixed; not an India availability verification"
+      },
+      "designProposal": {
+        "primary": "#4D875D",
+        "secondary": "#B39247",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Shield-shaped section markers and travel-paper rules",
+        "taskLabel": "Quests",
+        "focusLabel": "Defend your focus",
+        "loopScene": "Verified character/camp scene with low-amplitude wind or firelight cycle",
+        "completionTreatment": "Brief ink check and chapter-progress update; validate the motif against official art before production."
+      },
+      "media": {
+        "poster": null,
+        "hero": null,
+        "loopMp4": null,
+        "loopWebm": null,
+        "referenceImage": null,
+        "officialArtPage": null,
+        "officialVideoReferencePage": null,
+        "referenceStatus": "not acquired",
+        "productionReadiness": "pending",
+        "usageStatus": "not established",
+        "loopReviewStatus": "not produced"
+      },
+      "idMal": 35790,
+      "popularPosition": 26,
+      "popularObservedOn": "2026-11-01"
+    },
+    {
+      "id": "blue-lock",
+      "title": "BLUE LOCK",
+      "editorialOrder": 16,
+      "officialRank": null,
+      "genres": [
+        "Sports"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/G4PH0WEKE/blue-lock",
+        "type": "Popular listing; partial indexed snapshot, live shell unavailable",
+        "checkedOn": "2026-11-01",
+        "locale": "mixed; not an India availability verification"
+      },
+      "designProposal": {
+        "primary": "#2868CB",
+        "secondary": "#A5BA38",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Pitch diagrams and precise score typography",
+        "taskLabel": "Goals",
+        "focusLabel": "Training interval",
+        "loopScene": "Verified training-ground scene with a stable pose and repeating background light",
+        "completionTreatment": "Brief ink check and chapter-progress update; validate the motif against official art before production."
+      },
+      "media": {
+        "poster": null,
+        "hero": null,
+        "loopMp4": null,
+        "loopWebm": null,
+        "referenceImage": null,
+        "officialArtPage": null,
+        "officialVideoReferencePage": null,
+        "referenceStatus": "not acquired",
+        "productionReadiness": "pending",
+        "usageStatus": "not established",
+        "loopReviewStatus": "not produced"
+      },
+      "idMal": 49596,
+      "popularPosition": 27,
+      "popularObservedOn": "2026-11-01"
+    },
+    {
+      "id": "rezero",
+      "title": "Re:ZERO -Starting Life in Another World-",
+      "editorialOrder": 24,
+      "officialRank": null,
+      "genres": [
+        "Fantasy"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/GRGG9798R/rezero--starting-life-in-another-world-",
+        "type": "Popular listing; partial indexed snapshot, live shell unavailable",
+        "checkedOn": "2026-11-01",
+        "locale": "mixed; not an India availability verification"
+      },
+      "designProposal": {
+        "primary": "#8063AA",
+        "secondary": "#5D9BB0",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Chapter tabs and restrained violet ornamental rules",
+        "taskLabel": "Quests",
+        "focusLabel": "Focus chapter",
+        "loopScene": "Verified series courtyard/character scene with gentle foliage and no narrative reset effect",
+        "completionTreatment": "Brief ink check and chapter-progress update; validate the motif against official art before production."
+      },
+      "media": {
+        "poster": null,
+        "hero": null,
+        "loopMp4": null,
+        "loopWebm": null,
+        "referenceImage": null,
+        "officialArtPage": null,
+        "officialVideoReferencePage": null,
+        "referenceStatus": "not acquired",
+        "productionReadiness": "pending",
+        "usageStatus": "not established",
+        "loopReviewStatus": "not produced"
+      },
+      "idMal": 31240,
+      "popularPosition": 28,
+      "popularObservedOn": "2026-11-01"
+    },
+    {
+      "id": "fairy-tail",
+      "title": "Fairy Tail",
+      "editorialOrder": 29,
+      "officialRank": null,
+      "genres": [
+        "Fantasy"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/G6DQDD3WR/fairy-tail",
+        "type": "Popular listing; partial indexed snapshot, live shell unavailable",
+        "checkedOn": "2026-11-01",
+        "locale": "mixed; not an India availability verification"
+      },
+      "designProposal": {
+        "primary": "#C94A43",
+        "secondary": "#DBA23E",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Guild-board headings and warm ink stamps",
+        "taskLabel": "Guild quests",
+        "focusLabel": "Training session",
+        "loopScene": "Verified guild or town scene with a stable foreground and repeatable ambient motion",
+        "completionTreatment": "Brief ink check and chapter-progress update; validate the motif against official art before production."
+      },
+      "media": {
+        "poster": null,
+        "hero": null,
+        "loopMp4": null,
+        "loopWebm": null,
+        "referenceImage": null,
+        "officialArtPage": null,
+        "officialVideoReferencePage": null,
+        "referenceStatus": "not acquired",
+        "productionReadiness": "pending",
+        "usageStatus": "not established",
+        "loopReviewStatus": "not produced"
+      },
+      "idMal": 6702,
+      "popularPosition": 29,
+      "popularObservedOn": "2026-11-01"
+    },
+    {
+      "id": "your-lie-in-april",
+      "idMal": 23273,
+      "title": "Your lie in April",
+      "editorialOrder": 59,
+      "officialRank": null,
+      "genres": [
+        "Music"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/G63V7KN9Y/your-lie-in-april",
+        "type": "Browser-observed Crunchyroll Popular card",
+        "checkedOn": "2026-11-01",
+        "locale": "Signed-in account view; no universal or India playback claim"
+      },
+      "designProposal": {
+        "primary": "#BA6B79",
+        "secondary": "#5C83A0",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Sheet-music rules and pale petal accents",
+        "taskLabel": "Practice goals",
+        "focusLabel": "Practice session",
+        "loopScene": "Cyclic camera motion around the sourced title-matched still; no regenerated character motion."
+      },
+      "media": {
+        "referenceStatus": "Title confirmed against AniList metadata",
+        "usageStatus": "Not established; creator attribution is not permission",
+        "productionReadiness": "See src/data/catalog.json and docs/implementation/media-checks.json"
+      },
+      "popularPosition": 30,
+      "popularObservedOn": "2026-11-01"
+    },
+    {
+      "id": "jojos-bizarre-adventure",
+      "title": "JoJo’s Bizarre Adventure",
+      "editorialOrder": 30,
+      "officialRank": null,
+      "genres": [
+        "Action"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/GYP8DP1MY/jojos-bizarre-adventure",
+        "type": "Popular listing; partial indexed snapshot, live shell unavailable",
+        "checkedOn": "2026-11-01",
+        "locale": "mixed; not an India availability verification"
+      },
+      "designProposal": {
+        "primary": "#AA4B98",
+        "secondary": "#DBB13E",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Expressive diagonal panels and bold caption blocks",
+        "taskLabel": "Assignments",
+        "focusLabel": "Focus chapter",
+        "loopScene": "One explicitly chosen anime part and character; subtle graphic background cycle",
+        "completionTreatment": "Brief ink check and chapter-progress update; validate the motif against official art before production."
+      },
+      "media": {
+        "poster": null,
+        "hero": null,
+        "loopMp4": null,
+        "loopWebm": null,
+        "referenceImage": null,
+        "officialArtPage": null,
+        "officialVideoReferencePage": null,
+        "referenceStatus": "not acquired",
+        "productionReadiness": "pending",
+        "usageStatus": "not established",
+        "loopReviewStatus": "not produced"
+      },
+      "idMal": 14719,
+      "popularPosition": 31,
+      "popularObservedOn": "2026-11-01"
+    },
+    {
+      "id": "shangri-la-frontier",
+      "title": "Shangri-La Frontier",
+      "editorialOrder": 33,
+      "officialRank": null,
+      "genres": [
+        "Fantasy"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/G79H23Z8P/shangri-la-frontier",
+        "type": "Popular listing; partial indexed snapshot, live shell unavailable",
+        "checkedOn": "2026-11-01",
+        "locale": "mixed; not an India availability verification"
+      },
+      "designProposal": {
+        "primary": "#2F9BB1",
+        "secondary": "#D58B39",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Map markers and playful quest-log hierarchy",
+        "taskLabel": "Quests",
+        "focusLabel": "Quest focus",
+        "loopScene": "Verified anime environment and character with cyclic ambient scenery",
+        "completionTreatment": "Brief ink check and chapter-progress update; validate the motif against official art before production."
+      },
+      "media": {
+        "poster": null,
+        "hero": null,
+        "loopMp4": null,
+        "loopWebm": null,
+        "referenceImage": null,
+        "officialArtPage": null,
+        "officialVideoReferencePage": null,
+        "referenceStatus": "not acquired",
+        "productionReadiness": "pending",
+        "usageStatus": "not established",
+        "loopReviewStatus": "not produced"
+      },
+      "idMal": 52347,
+      "popularPosition": 32,
+      "popularObservedOn": "2026-11-01"
+    },
+    {
+      "id": "iruma-kun",
+      "idMal": 39196,
+      "title": "Welcome to Demon School! Iruma-kun",
+      "editorialOrder": 60,
+      "officialRank": null,
+      "genres": [
+        "Comedy"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/G6NVG970Y/welcome-to-demon-school-iruma-kun",
+        "type": "Browser-observed Crunchyroll Popular card",
+        "checkedOn": "2026-11-01",
+        "locale": "Signed-in account view; no universal or India playback claim"
+      },
+      "designProposal": {
+        "primary": "#5B6FAE",
+        "secondary": "#AA6295",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Playful school notebook panels and star marks",
+        "taskLabel": "Assignments",
+        "focusLabel": "Study session",
+        "loopScene": "Cyclic camera motion around the sourced title-matched still; no regenerated character motion."
+      },
+      "media": {
+        "referenceStatus": "Title confirmed against AniList metadata",
+        "usageStatus": "Not established; creator attribution is not permission",
+        "productionReadiness": "See src/data/catalog.json and docs/implementation/media-checks.json"
+      },
+      "popularPosition": 33,
+      "popularObservedOn": "2026-11-01"
+    },
+    {
+      "id": "spy-family",
+      "title": "SPY x FAMILY",
+      "editorialOrder": 15,
+      "officialRank": null,
+      "genres": [
+        "Comedy"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/G4PH0WXVJ/spy-x-family",
+        "type": "Popular listing; partial indexed snapshot, live shell unavailable",
+        "checkedOn": "2026-11-01",
+        "locale": "mixed; not an India availability verification"
+      },
+      "designProposal": {
+        "primary": "#80A997",
+        "secondary": "#D85D73",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Mint dossiers and rounded editorial stamps",
+        "taskLabel": "Operations",
+        "focusLabel": "Operation focus",
+        "loopScene": "Verified family/interior scene with minimal curtain or window-light motion",
+        "completionTreatment": "Brief ink check and chapter-progress update; validate the motif against official art before production."
+      },
+      "media": {
+        "poster": null,
+        "hero": null,
+        "loopMp4": null,
+        "loopWebm": null,
+        "referenceImage": null,
+        "officialArtPage": null,
+        "officialVideoReferencePage": null,
+        "referenceStatus": "not acquired",
+        "productionReadiness": "pending",
+        "usageStatus": "not established",
+        "loopReviewStatus": "not produced"
+      },
+      "idMal": 50265,
+      "popularPosition": 34,
+      "popularObservedOn": "2026-11-01"
+    },
+    {
+      "id": "dragon-ball-super",
+      "title": "Dragon Ball Super",
+      "editorialOrder": 5,
+      "officialRank": null,
+      "genres": [
+        "Action"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/GR19V7816/dragon-ball-super",
+        "type": "Popular listing; partial indexed snapshot, live shell unavailable",
+        "checkedOn": "2026-11-01",
+        "locale": "mixed; not an India availability verification"
+      },
+      "designProposal": {
+        "primary": "#2879D9",
+        "secondary": "#F39532",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Sky-blue panels and energy-ring geometry",
+        "taskLabel": "Training goals",
+        "focusLabel": "Focus round",
+        "loopScene": "Verified Super-era scene with a stable camera and repeating ambient energy",
+        "completionTreatment": "Brief ink check and chapter-progress update; validate the motif against official art before production."
+      },
+      "media": {
+        "poster": null,
+        "hero": null,
+        "loopMp4": null,
+        "loopWebm": null,
+        "referenceImage": null,
+        "officialArtPage": null,
+        "officialVideoReferencePage": null,
+        "referenceStatus": "not acquired",
+        "productionReadiness": "pending",
+        "usageStatus": "not established",
+        "loopReviewStatus": "not produced"
+      },
+      "idMal": 30694,
+      "popularPosition": 35,
+      "popularObservedOn": "2026-11-01"
+    },
+    {
+      "id": "soul-eater",
+      "idMal": 3588,
+      "title": "Soul Eater",
+      "editorialOrder": 61,
+      "officialRank": null,
+      "genres": [
+        "Supernatural"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/GYX0ZW80R/soul-eater",
+        "type": "Browser-observed Crunchyroll Popular card",
+        "checkedOn": "2026-11-01",
+        "locale": "Signed-in account view; no universal or India playback claim"
+      },
+      "designProposal": {
+        "primary": "#AA6538",
+        "secondary": "#67639A",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Lunar circles and angular ink borders",
+        "taskLabel": "Assignments",
+        "focusLabel": "Resonance focus",
+        "loopScene": "Cyclic camera motion around the sourced title-matched still; no regenerated character motion."
+      },
+      "media": {
+        "referenceStatus": "Title confirmed against AniList metadata",
+        "usageStatus": "Not established; creator attribution is not permission",
+        "productionReadiness": "See src/data/catalog.json and docs/implementation/media-checks.json"
+      },
+      "popularPosition": 36,
+      "popularObservedOn": "2026-11-01"
+    },
+    {
+      "id": "my-dress-up-darling",
+      "title": "My Dress-Up Darling",
+      "editorialOrder": 35,
+      "officialRank": null,
+      "genres": [
+        "Romance"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/GQWH0M9N8/my-dress-up-darling",
+        "type": "Popular listing; partial indexed snapshot, live shell unavailable",
+        "checkedOn": "2026-11-01",
+        "locale": "mixed; not an India availability verification"
+      },
+      "designProposal": {
+        "primary": "#D87097",
+        "secondary": "#72A5B4",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Fabric swatches and soft graphic sticker details",
+        "taskLabel": "Projects",
+        "focusLabel": "Creative session",
+        "loopScene": "Verified workshop or room scene with gentle curtain/light cycle",
+        "completionTreatment": "Brief ink check and chapter-progress update; validate the motif against official art before production."
+      },
+      "media": {
+        "poster": null,
+        "hero": null,
+        "loopMp4": null,
+        "loopWebm": null,
+        "referenceImage": null,
+        "officialArtPage": null,
+        "officialVideoReferencePage": null,
+        "referenceStatus": "not acquired",
+        "productionReadiness": "pending",
+        "usageStatus": "not established",
+        "loopReviewStatus": "not produced"
+      },
+      "idMal": 48736,
+      "popularPosition": 37,
+      "popularObservedOn": "2026-11-01"
+    },
+    {
+      "id": "sword-art-online",
+      "title": "Sword Art Online",
+      "editorialOrder": 28,
+      "officialRank": null,
+      "genres": [
+        "Fantasy"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/GR49G9VP6/sword-art-online",
+        "type": "Popular listing; partial indexed snapshot, live shell unavailable",
+        "checkedOn": "2026-11-01",
+        "locale": "mixed; not an India availability verification"
+      },
+      "designProposal": {
+        "primary": "#398BA3",
+        "secondary": "#A0AAB4",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Fine interface rules and restrained cyan geometry",
+        "taskLabel": "Quests",
+        "focusLabel": "Focus session",
+        "loopScene": "Verified anime landscape scene with subtle water/cloud movement; no game-footage substitution",
+        "completionTreatment": "Brief ink check and chapter-progress update; validate the motif against official art before production."
+      },
+      "media": {
+        "poster": null,
+        "hero": null,
+        "loopMp4": null,
+        "loopWebm": null,
+        "referenceImage": null,
+        "officialArtPage": null,
+        "officialVideoReferencePage": null,
+        "referenceStatus": "not acquired",
+        "productionReadiness": "pending",
+        "usageStatus": "not established",
+        "loopReviewStatus": "not produced"
+      },
+      "idMal": 11757,
+      "popularPosition": 38,
+      "popularObservedOn": "2026-11-01"
+    },
+    {
+      "id": "horimiya",
+      "title": "Horimiya",
+      "editorialOrder": 36,
+      "officialRank": null,
+      "genres": [
+        "Romance"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/G9VHN9P43/horimiya",
+        "type": "Popular listing; partial indexed snapshot, live shell unavailable",
+        "checkedOn": "2026-11-01",
+        "locale": "mixed; not an India availability verification"
+      },
+      "designProposal": {
+        "primary": "#BC785F",
+        "secondary": "#759488",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Soft chapter tabs and warm notebook rules",
+        "taskLabel": "Daily tasks",
+        "focusLabel": "Study together",
+        "loopScene": "Verified school/home scene with subtle breeze and no dialogue-dependent movement",
+        "completionTreatment": "Brief ink check and chapter-progress update; validate the motif against official art before production."
+      },
+      "media": {
+        "poster": null,
+        "hero": null,
+        "loopMp4": null,
+        "loopWebm": null,
+        "referenceImage": null,
+        "officialArtPage": null,
+        "officialVideoReferencePage": null,
+        "referenceStatus": "not acquired",
+        "productionReadiness": "pending",
+        "usageStatus": "not established",
+        "loopReviewStatus": "not produced"
+      },
+      "idMal": 42897,
+      "popularPosition": 39,
+      "popularObservedOn": "2026-11-01"
+    },
+    {
+      "id": "kaiju-no-8",
+      "title": "Kaiju No. 8",
+      "editorialOrder": 19,
+      "officialRank": null,
+      "genres": [
+        "Action"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/GG5H5XQ7D/kaiju-no-8",
+        "type": "catalog listing; indexed page",
+        "checkedOn": "2026-11-01",
+        "locale": "mixed; not an India availability verification"
+      },
+      "designProposal": {
+        "primary": "#298C82",
+        "secondary": "#4A5E76",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Tactical ticks and sea-green graphic panels",
+        "taskLabel": "Assignments",
+        "focusLabel": "Focus operation",
+        "loopScene": "Verified city/character scene with subtle moving haze behind a stable foreground",
+        "completionTreatment": "Brief ink check and chapter-progress update; validate the motif against official art before production."
+      },
+      "media": {
+        "poster": null,
+        "hero": null,
+        "loopMp4": null,
+        "loopWebm": null,
+        "referenceImage": null,
+        "officialArtPage": null,
+        "officialVideoReferencePage": null,
+        "referenceStatus": "not acquired",
+        "productionReadiness": "pending",
+        "usageStatus": "not established",
+        "loopReviewStatus": "not produced"
+      },
+      "idMal": 52588,
+      "popularPosition": 40,
+      "popularObservedOn": "2026-11-01"
+    },
+    {
+      "id": "tokyo-ghoul",
+      "title": "Tokyo Ghoul",
+      "editorialOrder": 31,
+      "officialRank": null,
+      "genres": [
+        "Supernatural"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/G6NV7Z50Y/tokyo-ghoul",
+        "type": "catalog listing; indexed page",
+        "checkedOn": "2026-11-01",
+        "locale": "mixed; not an India availability verification"
+      },
+      "designProposal": {
+        "primary": "#AD3E4A",
+        "secondary": "#56606B",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Scarlet slashes on quiet pale task panels",
+        "taskLabel": "Tasks",
+        "focusLabel": "Quiet focus",
+        "loopScene": "Verified anime city or cafe scene with restrained light/rain cycle",
+        "completionTreatment": "Brief ink check and chapter-progress update; validate the motif against official art before production."
+      },
+      "media": {
+        "poster": null,
+        "hero": null,
+        "loopMp4": null,
+        "loopWebm": null,
+        "referenceImage": null,
+        "officialArtPage": null,
+        "officialVideoReferencePage": null,
+        "referenceStatus": "not acquired",
+        "productionReadiness": "pending",
+        "usageStatus": "not established",
+        "loopReviewStatus": "not produced"
+      },
+      "idMal": 22319,
+      "popularPosition": 41,
+      "popularObservedOn": "2026-11-01"
+    },
+    {
+      "id": "dragon-ball",
+      "idMal": 223,
+      "title": "Dragon Ball",
+      "editorialOrder": 62,
+      "officialRank": null,
+      "genres": [
+        "Adventure"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/G8DHV7W21/dragon-ball",
+        "type": "Browser-observed Crunchyroll Popular card",
+        "checkedOn": "2026-11-01",
+        "locale": "Signed-in account view; no universal or India playback claim"
+      },
+      "designProposal": {
+        "primary": "#D47632",
+        "secondary": "#477BA4",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Round journey stamps and bold speed lines",
+        "taskLabel": "Training goals",
+        "focusLabel": "Training session",
+        "loopScene": "Cyclic camera motion around the sourced title-matched still; no regenerated character motion."
+      },
+      "media": {
+        "referenceStatus": "Title confirmed against AniList metadata",
+        "usageStatus": "Not established; creator attribution is not permission",
+        "productionReadiness": "See src/data/catalog.json and docs/implementation/media-checks.json"
+      },
+      "popularPosition": 42,
+      "popularObservedOn": "2026-11-01"
+    },
+    {
+      "id": "wistoria",
+      "idMal": 58059,
+      "title": "Wistoria: Wand and Sword",
+      "editorialOrder": 63,
+      "officialRank": null,
+      "genres": [
+        "Fantasy"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/GW4HM7WK9/wistoria-wand-and-sword",
+        "type": "Browser-observed Crunchyroll Popular card",
+        "checkedOn": "2026-11-01",
+        "locale": "Signed-in account view; no universal or India playback claim"
+      },
+      "designProposal": {
+        "primary": "#427B79",
+        "secondary": "#9F7157",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Fine tower geometry and grimoire rules",
+        "taskLabel": "Quests",
+        "focusLabel": "Study session",
+        "loopScene": "Cyclic camera motion around the sourced title-matched still; no regenerated character motion."
+      },
+      "media": {
+        "referenceStatus": "Title confirmed against AniList metadata",
+        "usageStatus": "Not established; creator attribution is not permission",
+        "productionReadiness": "See src/data/catalog.json and docs/implementation/media-checks.json"
+      },
+      "popularPosition": 43,
+      "popularObservedOn": "2026-11-01"
+    },
+    {
+      "id": "chainsaw-man",
+      "title": "Chainsaw Man",
+      "editorialOrder": 10,
+      "officialRank": null,
+      "genres": [
+        "Supernatural"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/GVDHX8QNW/chainsaw-man",
+        "type": "catalog listing; indexed page",
+        "checkedOn": "2026-11-01",
+        "locale": "mixed; not an India availability verification"
+      },
+      "designProposal": {
+        "primary": "#D45B27",
+        "secondary": "#648048",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Graphic cut-paper blocks and rough ink",
+        "taskLabel": "Jobs",
+        "focusLabel": "Focus shift",
+        "loopScene": "Verified anime city scene with restrained wind/light changes; no combat montage",
+        "completionTreatment": "Brief ink check and chapter-progress update; validate the motif against official art before production."
+      },
+      "media": {
+        "poster": null,
+        "hero": null,
+        "loopMp4": null,
+        "loopWebm": null,
+        "referenceImage": null,
+        "officialArtPage": null,
+        "officialVideoReferencePage": null,
+        "referenceStatus": "not acquired",
+        "productionReadiness": "pending",
+        "usageStatus": "not established",
+        "loopReviewStatus": "not produced"
+      },
+      "idMal": 44511,
+      "popularPosition": 44,
+      "popularObservedOn": "2026-11-01"
+    },
+    {
+      "id": "fullmetal-alchemist",
+      "title": "Fullmetal Alchemist: Brotherhood",
+      "editorialOrder": 22,
+      "officialRank": null,
+      "genres": [
+        "Fantasy"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/GRGGPG93R/fullmetal-alchemist-brotherhood",
+        "type": "catalog listing; indexed page",
+        "checkedOn": "2026-11-01",
+        "locale": "mixed; not an India availability verification"
+      },
+      "designProposal": {
+        "primary": "#AA4143",
+        "secondary": "#657C91",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Fine diagram geometry and journal margins",
+        "taskLabel": "Assignments",
+        "focusLabel": "Research session",
+        "loopScene": "Verified Brotherhood-era workshop scene with stable warm light and drifting dust",
+        "completionTreatment": "Brief ink check and chapter-progress update; validate the motif against official art before production."
+      },
+      "media": {
+        "poster": null,
+        "hero": null,
+        "loopMp4": null,
+        "loopWebm": null,
+        "referenceImage": null,
+        "officialArtPage": null,
+        "officialVideoReferencePage": null,
+        "referenceStatus": "not acquired",
+        "productionReadiness": "pending",
+        "usageStatus": "not established",
+        "loopReviewStatus": "not produced"
+      },
+      "idMal": 5114,
+      "popularPosition": 45,
+      "popularObservedOn": "2026-11-01"
+    },
+    {
+      "id": "ascendance-bookworm",
+      "idMal": 39468,
+      "title": "Ascendance of a Bookworm",
+      "editorialOrder": 64,
+      "officialRank": null,
+      "genres": [
+        "Fantasy"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/G6793XKZY/ascendance-of-a-bookworm",
+        "type": "Browser-observed Crunchyroll Popular card",
+        "checkedOn": "2026-11-01",
+        "locale": "Signed-in account view; no universal or India playback claim"
+      },
+      "designProposal": {
+        "primary": "#876B45",
+        "secondary": "#5E7F9B",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Library-card rules and warm book margins",
+        "taskLabel": "Chapters",
+        "focusLabel": "Reading session",
+        "loopScene": "Cyclic camera motion around the sourced title-matched still; no regenerated character motion."
+      },
+      "media": {
+        "referenceStatus": "Title confirmed against AniList metadata",
+        "usageStatus": "Not established; creator attribution is not permission",
+        "productionReadiness": "See src/data/catalog.json and docs/implementation/media-checks.json"
+      },
+      "popularPosition": 46,
+      "popularObservedOn": "2026-11-01"
+    },
+    {
+      "id": "konosuba",
+      "title": "KONOSUBA -God’s blessing on this wonderful world!",
+      "editorialOrder": 49,
+      "officialRank": null,
+      "genres": [
+        "Comedy"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/GYE5K3GQR/konosuba---gods-blessing-on-this-wonderful-world",
+        "type": "regional fantasy Popular listing; indexed page",
+        "checkedOn": "2026-11-01",
+        "locale": "mixed; not an India availability verification"
+      },
+      "designProposal": {
+        "primary": "#4288BA",
+        "secondary": "#B2A044",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Playful quest-board headings and guild-paper stamps",
+        "taskLabel": "Quests",
+        "focusLabel": "Quest session",
+        "loopScene": "Verified main-series town or tavern scene with gentle source-matched motion",
+        "completionTreatment": "Brief ink check and chapter-progress update; validate the motif against official art before production."
+      },
+      "media": {
+        "poster": null,
+        "hero": null,
+        "loopMp4": null,
+        "loopWebm": null,
+        "referenceImage": null,
+        "officialArtPage": null,
+        "officialVideoReferencePage": null,
+        "referenceStatus": "not acquired",
+        "productionReadiness": "pending",
+        "usageStatus": "not established",
+        "loopReviewStatus": "not produced"
+      },
+      "idMal": 30831,
+      "popularPosition": 47,
+      "popularObservedOn": "2026-11-01"
+    },
+    {
+      "id": "overlord",
+      "title": "Overlord",
+      "editorialOrder": 45,
+      "officialRank": null,
+      "genres": [
+        "Fantasy"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/G69PZ5PDY/overlord",
+        "type": "catalog listing; indexed page",
+        "checkedOn": "2026-11-01",
+        "locale": "mixed; not an India availability verification"
+      },
+      "designProposal": {
+        "primary": "#7B5A94",
+        "secondary": "#AB924B",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Ornamental page corners and measured rank labels",
+        "taskLabel": "Objectives",
+        "focusLabel": "Focus session",
+        "loopScene": "Verified anime interior with repeating candlelight; no unrelated fantasy footage",
+        "completionTreatment": "Brief ink check and chapter-progress update; validate the motif against official art before production."
+      },
+      "media": {
+        "poster": null,
+        "hero": null,
+        "loopMp4": null,
+        "loopWebm": null,
+        "referenceImage": null,
+        "officialArtPage": null,
+        "officialVideoReferencePage": null,
+        "referenceStatus": "not acquired",
+        "productionReadiness": "pending",
+        "usageStatus": "not established",
+        "loopReviewStatus": "not produced"
+      },
+      "idMal": 29803,
+      "popularPosition": 48,
+      "popularObservedOn": "2026-11-01"
+    },
+    {
+      "id": "naruto",
+      "title": "Naruto",
+      "editorialOrder": 3,
+      "officialRank": null,
+      "genres": [
+        "Action"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/GY9PJ5KWR/naruto",
+        "type": "catalog listing; indexed page",
+        "checkedOn": "2026-11-01",
+        "locale": "mixed; not an India availability verification"
+      },
+      "designProposal": {
+        "primary": "#F18A32",
+        "secondary": "#3556A8",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Notebook stamps and youthful orange panels",
+        "taskLabel": "Missions",
+        "focusLabel": "Training block",
+        "loopScene": "Original-series training-ground scene with cyclic foliage motion",
+        "completionTreatment": "Brief ink check and chapter-progress update; validate the motif against official art before production."
+      },
+      "media": {
+        "poster": null,
+        "hero": null,
+        "loopMp4": null,
+        "loopWebm": null,
+        "referenceImage": null,
+        "officialArtPage": null,
+        "officialVideoReferencePage": null,
+        "referenceStatus": "not acquired",
+        "productionReadiness": "pending",
+        "usageStatus": "not established",
+        "loopReviewStatus": "not produced"
+      },
+      "idMal": 20,
+      "popularPosition": 49,
+      "popularObservedOn": "2026-11-01"
+    },
+    {
+      "id": "wind-breaker",
+      "title": "WIND BREAKER",
+      "editorialOrder": 47,
+      "officialRank": null,
+      "genres": [
+        "Action"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/G3KHEVDPE/wind-breaker",
+        "type": "catalog listing; indexed page",
+        "checkedOn": "2026-11-01",
+        "locale": "mixed; not an India availability verification"
+      },
+      "designProposal": {
+        "primary": "#548875",
+        "secondary": "#839BAA",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Street-poster framing and clean school-notebook lines",
+        "taskLabel": "Daily goals",
+        "focusLabel": "Training block",
+        "loopScene": "Verified anime street scene with cyclic tree/banner movement",
+        "completionTreatment": "Brief ink check and chapter-progress update; validate the motif against official art before production."
+      },
+      "media": {
+        "poster": null,
+        "hero": null,
+        "loopMp4": null,
+        "loopWebm": null,
+        "referenceImage": null,
+        "officialArtPage": null,
+        "officialVideoReferencePage": null,
+        "referenceStatus": "not acquired",
+        "productionReadiness": "pending",
+        "usageStatus": "not established",
+        "loopReviewStatus": "not produced"
+      },
+      "idMal": 54900,
+      "popularPosition": 50,
+      "popularObservedOn": "2026-11-01"
+    },
+    {
+      "id": "attack-on-titan",
+      "title": "Attack on Titan",
+      "editorialOrder": 8,
+      "officialRank": null,
+      "genres": [
+        "Action"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/videos/popular?lang=dub",
+        "type": "Popular listing; partial indexed snapshot, live shell unavailable",
+        "checkedOn": "2026-11-01",
+        "locale": "mixed; not an India availability verification"
+      },
+      "designProposal": {
+        "primary": "#7A8055",
+        "secondary": "#A45B3C",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Survey-map grids and restrained insignia placement",
+        "taskLabel": "Assignments",
+        "focusLabel": "Expedition focus",
+        "loopScene": "Verified wall/sky vista with wind/cloud motion and no battle cuts",
+        "completionTreatment": "Brief ink check and chapter-progress update; validate the motif against official art before production."
+      },
+      "media": {
+        "poster": null,
+        "hero": null,
+        "loopMp4": null,
+        "loopWebm": null,
+        "referenceImage": null,
+        "officialArtPage": null,
+        "officialVideoReferencePage": null,
+        "referenceStatus": "not acquired",
+        "productionReadiness": "pending",
+        "usageStatus": "not established",
+        "loopReviewStatus": "not produced"
+      },
+      "idMal": 16498,
+      "popularPosition": null
+    },
+    {
+      "id": "dandadan",
+      "title": "DAN DA DAN",
+      "editorialOrder": 18,
+      "officialRank": null,
+      "genres": [
+        "Supernatural"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/GG5H5XQ0D/dan-da-dan",
+        "type": "series page; indexed content",
+        "checkedOn": "2026-11-01",
+        "locale": "mixed; not an India availability verification"
+      },
+      "designProposal": {
+        "primary": "#D84362",
+        "secondary": "#7954B6",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Cut-out headlines and eccentric magenta panels",
+        "taskLabel": "Missions",
+        "focusLabel": "Focus burst",
+        "loopScene": "Verified Momo/Okarun scene with cyclic background atmosphere; no cut montage",
+        "completionTreatment": "Brief ink check and chapter-progress update; validate the motif against official art before production."
+      },
+      "media": {
+        "poster": null,
+        "hero": null,
+        "loopMp4": null,
+        "loopWebm": null,
+        "referenceImage": "reference-images/dandadan-official.png",
+        "officialArtPage": "https://anime-dandadan.com/",
+        "officialVideoReferencePage": "https://anime-dandadan.com/movie",
+        "referenceStatus": "downloaded and visually inspected",
+        "productionReadiness": "pending",
+        "usageStatus": "not established",
+        "loopReviewStatus": "not produced",
+        "referenceNote": "Identity reference: split art/logo layout; not a clean full-width scene."
+      },
+      "idMal": 57334,
+      "popularPosition": null
+    },
+    {
+      "id": "mob-psycho-100",
+      "title": "Mob Psycho 100",
+      "editorialOrder": 21,
+      "officialRank": null,
+      "genres": [
+        "Supernatural"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/es?beta_opt_in=1",
+        "type": "Spanish catalog listing; indexed page",
+        "checkedOn": "2026-11-01",
+        "locale": "mixed; not an India availability verification"
+      },
+      "designProposal": {
+        "primary": "#A55AB2",
+        "secondary": "#52A2AE",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Expressive hand-drawn marks and calm content panels",
+        "taskLabel": "Daily goals",
+        "focusLabel": "Steady focus",
+        "loopScene": "Verified Mob scene with a restrained cyclic aura confined to the artwork",
+        "completionTreatment": "Brief ink check and chapter-progress update; validate the motif against official art before production."
+      },
+      "media": {
+        "poster": null,
+        "hero": null,
+        "loopMp4": null,
+        "loopWebm": null,
+        "referenceImage": null,
+        "officialArtPage": null,
+        "officialVideoReferencePage": null,
+        "referenceStatus": "not acquired",
+        "productionReadiness": "pending",
+        "usageStatus": "not established",
+        "loopReviewStatus": "not produced"
+      },
+      "idMal": 32182,
+      "popularPosition": null
+    },
+    {
+      "id": "vinland-saga",
+      "title": "VINLAND SAGA",
+      "editorialOrder": 23,
+      "officialRank": null,
+      "genres": [
+        "Adventure"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/",
+        "type": "catalog listing; indexed page",
+        "checkedOn": "2026-11-01",
+        "locale": "mixed; not an India availability verification"
+      },
+      "designProposal": {
+        "primary": "#537F96",
+        "secondary": "#B39563",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Map contours and understated weathered paper",
+        "taskLabel": "Journey tasks",
+        "focusLabel": "Steady progress",
+        "loopScene": "Verified seascape or farmland scene with naturally cyclic water or grasses",
+        "completionTreatment": "Brief ink check and chapter-progress update; validate the motif against official art before production."
+      },
+      "media": {
+        "poster": null,
+        "hero": null,
+        "loopMp4": null,
+        "loopWebm": null,
+        "referenceImage": null,
+        "officialArtPage": null,
+        "officialVideoReferencePage": null,
+        "referenceStatus": "not acquired",
+        "productionReadiness": "pending",
+        "usageStatus": "not established",
+        "loopReviewStatus": "not produced"
+      },
+      "idMal": 37521,
+      "popularPosition": null
+    },
+    {
+      "id": "kaguya-sama",
+      "title": "Kaguya-sama: Love is War",
+      "editorialOrder": 37,
+      "officialRank": null,
+      "genres": [
+        "Romance"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/videos/anime/genres/romance",
+        "type": "romance Popular listing; indexed page",
+        "checkedOn": "2026-11-01",
+        "locale": "mixed; not an India availability verification"
+      },
+      "designProposal": {
+        "primary": "#BC3B51",
+        "secondary": "#343B55",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Sharp editorial blocks and small heart/stamp accents",
+        "taskLabel": "Assignments",
+        "focusLabel": "Study session",
+        "loopScene": "Verified student-council room scene with cyclic light or curtain motion",
+        "completionTreatment": "Brief ink check and chapter-progress update; validate the motif against official art before production."
+      },
+      "media": {
+        "poster": null,
+        "hero": null,
+        "loopMp4": null,
+        "loopWebm": null,
+        "referenceImage": null,
+        "officialArtPage": null,
+        "officialVideoReferencePage": null,
+        "referenceStatus": "not acquired",
+        "productionReadiness": "pending",
+        "usageStatus": "not established",
+        "loopReviewStatus": "not produced"
+      },
+      "idMal": 37999,
+      "popularPosition": null
+    },
+    {
+      "id": "fruits-basket",
+      "title": "Fruits Basket (2019)",
+      "editorialOrder": 38,
+      "officialRank": null,
+      "genres": [
+        "Romance"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/G6ZJMGEXY/fruits-basket",
+        "type": "series page; indexed content",
+        "checkedOn": "2026-11-01",
+        "locale": "mixed; not an India availability verification"
+      },
+      "designProposal": {
+        "primary": "#A383AA",
+        "secondary": "#71A08E",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Botanical borders and calm journal captions",
+        "taskLabel": "Daily tasks",
+        "focusLabel": "Gentle focus",
+        "loopScene": "Verified 2019 adaptation garden/home scene with naturally repeating leaves",
+        "completionTreatment": "Brief ink check and chapter-progress update; validate the motif against official art before production."
+      },
+      "media": {
+        "poster": null,
+        "hero": null,
+        "loopMp4": null,
+        "loopWebm": null,
+        "referenceImage": null,
+        "officialArtPage": null,
+        "officialVideoReferencePage": null,
+        "referenceStatus": "not acquired",
+        "productionReadiness": "pending",
+        "usageStatus": "not established",
+        "loopReviewStatus": "not produced"
+      },
+      "idMal": 38680,
+      "popularPosition": null
+    },
+    {
+      "id": "bocchi-the-rock",
+      "title": "BOCCHI THE ROCK!",
+      "editorialOrder": 39,
+      "officialRank": null,
+      "genres": [
+        "Music"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/GXJHM3P19/bocchi-the-rock?pubDate=20250519",
+        "type": "series page; indexed content",
+        "checkedOn": "2026-11-01",
+        "locale": "mixed; not an India availability verification"
+      },
+      "designProposal": {
+        "primary": "#D7739F",
+        "secondary": "#D6AE3E",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Poster-tape details and setlist typography",
+        "taskLabel": "Practice goals",
+        "focusLabel": "Practice session",
+        "loopScene": "Verified rehearsal-room scene with gentle equipment lights; no audio requirement",
+        "completionTreatment": "Brief ink check and chapter-progress update; validate the motif against official art before production."
+      },
+      "media": {
+        "poster": null,
+        "hero": null,
+        "loopMp4": null,
+        "loopWebm": null,
+        "referenceImage": null,
+        "officialArtPage": null,
+        "officialVideoReferencePage": null,
+        "referenceStatus": "not acquired",
+        "productionReadiness": "pending",
+        "usageStatus": "not established",
+        "loopReviewStatus": "not produced"
+      },
+      "idMal": 47917,
+      "popularPosition": null
+    },
+    {
+      "id": "cowboy-bebop",
+      "title": "Cowboy Bebop",
+      "editorialOrder": 40,
+      "officialRank": null,
+      "genres": [
+        "Sci-Fi"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/GYVNXMVP6/cowboy-bebop",
+        "type": "series page; indexed content",
+        "checkedOn": "2026-11-01",
+        "locale": "mixed; not an India availability verification"
+      },
+      "designProposal": {
+        "primary": "#B94439",
+        "secondary": "#3B6A8D",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Jazz-poster typography and wide graphic rules",
+        "taskLabel": "Bounties",
+        "focusLabel": "Focus session",
+        "loopScene": "Verified anime spacecraft/interior with stable stars or instrument-light cycle",
+        "completionTreatment": "Brief ink check and chapter-progress update; validate the motif against official art before production."
+      },
+      "media": {
+        "poster": null,
+        "hero": null,
+        "loopMp4": null,
+        "loopWebm": null,
+        "referenceImage": null,
+        "officialArtPage": null,
+        "officialVideoReferencePage": null,
+        "referenceStatus": "not acquired",
+        "productionReadiness": "pending",
+        "usageStatus": "not established",
+        "loopReviewStatus": "not produced"
+      },
+      "idMal": 1,
+      "popularPosition": null
+    },
+    {
+      "id": "steins-gate",
+      "title": "STEINS;GATE",
+      "editorialOrder": 41,
+      "officialRank": null,
+      "genres": [
+        "Sci-Fi"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/GYWE7W5GY/steinsgate?pubDate=20250523",
+        "type": "series page; indexed content",
+        "checkedOn": "2026-11-01",
+        "locale": "mixed; not an India availability verification"
+      },
+      "designProposal": {
+        "primary": "#A47745",
+        "secondary": "#667983",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Time-stamped lab notes and measured grid details",
+        "taskLabel": "Experiments",
+        "focusLabel": "Lab focus",
+        "loopScene": "Verified anime lab scene with a subtle monitor/light cycle; no game art",
+        "completionTreatment": "Brief ink check and chapter-progress update; validate the motif against official art before production."
+      },
+      "media": {
+        "poster": null,
+        "hero": null,
+        "loopMp4": null,
+        "loopWebm": null,
+        "referenceImage": null,
+        "officialArtPage": null,
+        "officialVideoReferencePage": null,
+        "referenceStatus": "not acquired",
+        "productionReadiness": "pending",
+        "usageStatus": "not established",
+        "loopReviewStatus": "not produced"
+      },
+      "idMal": 9253,
+      "popularPosition": null
+    },
+    {
+      "id": "code-geass",
+      "title": "Code Geass",
+      "editorialOrder": 42,
+      "officialRank": null,
+      "genres": [
+        "Sci-Fi"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/GY2P9ED0Y/code-geass?pubDate=20250428",
+        "type": "series page; indexed content",
+        "checkedOn": "2026-11-01",
+        "locale": "mixed; not an India availability verification"
+      },
+      "designProposal": {
+        "primary": "#7F4B92",
+        "secondary": "#B59A52",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Chess-like grid rules and gold chapter ticks",
+        "taskLabel": "Objectives",
+        "focusLabel": "Strategy session",
+        "loopScene": "Verified anime scene with controlled light movement behind stable characters",
+        "completionTreatment": "Brief ink check and chapter-progress update; validate the motif against official art before production."
+      },
+      "media": {
+        "poster": null,
+        "hero": null,
+        "loopMp4": null,
+        "loopWebm": null,
+        "referenceImage": null,
+        "officialArtPage": null,
+        "officialVideoReferencePage": null,
+        "referenceStatus": "not acquired",
+        "productionReadiness": "pending",
+        "usageStatus": "not established",
+        "loopReviewStatus": "not produced"
+      },
+      "idMal": 1575,
+      "popularPosition": null
+    },
+    {
+      "id": "hells-paradise",
+      "title": "Hell’s Paradise",
+      "editorialOrder": 43,
+      "officialRank": null,
+      "genres": [
+        "Supernatural"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/videos/popular?lang=dub",
+        "type": "Popular listing; partial indexed snapshot, live shell unavailable",
+        "checkedOn": "2026-11-01",
+        "locale": "mixed; not an India availability verification"
+      },
+      "designProposal": {
+        "primary": "#AF4E43",
+        "secondary": "#647C62",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Botanical ink margins and vermilion chapter marks",
+        "taskLabel": "Assignments",
+        "focusLabel": "Steady focus",
+        "loopScene": "Verified anime landscape with gentle leaves/mist; avoid violent action loops",
+        "completionTreatment": "Brief ink check and chapter-progress update; validate the motif against official art before production."
+      },
+      "media": {
+        "poster": null,
+        "hero": null,
+        "loopMp4": null,
+        "loopWebm": null,
+        "referenceImage": null,
+        "officialArtPage": null,
+        "officialVideoReferencePage": null,
+        "referenceStatus": "not acquired",
+        "productionReadiness": "pending",
+        "usageStatus": "not established",
+        "loopReviewStatus": "not produced"
+      },
+      "idMal": 46569,
+      "popularPosition": null
+    },
+    {
+      "id": "mashle",
+      "title": "MASHLE: MAGIC AND MUSCLES",
+      "editorialOrder": 44,
+      "officialRank": null,
+      "genres": [
+        "Fantasy"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/GDKHZEP8W/mashle-magic-and-muscles",
+        "type": "series page; indexed content",
+        "checkedOn": "2026-11-01",
+        "locale": "mixed; not an India availability verification"
+      },
+      "designProposal": {
+        "primary": "#A78B3E",
+        "secondary": "#536A94",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "School-paper stamps and bold workout counters",
+        "taskLabel": "Training goals",
+        "focusLabel": "Training focus",
+        "loopScene": "Verified academy scene with subtle ambient motion and consistent character details",
+        "completionTreatment": "Brief ink check and chapter-progress update; validate the motif against official art before production."
+      },
+      "media": {
+        "poster": null,
+        "hero": null,
+        "loopMp4": null,
+        "loopWebm": null,
+        "referenceImage": null,
+        "officialArtPage": null,
+        "officialVideoReferencePage": null,
+        "referenceStatus": "not acquired",
+        "productionReadiness": "pending",
+        "usageStatus": "not established",
+        "loopReviewStatus": "not produced"
+      },
+      "idMal": 52211,
+      "popularPosition": null
+    },
+    {
+      "id": "hunter-x-hunter",
+      "title": "Hunter x Hunter",
+      "editorialOrder": 48,
+      "officialRank": null,
+      "genres": [
+        "Adventure"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/pl/news/guides/2022/3/1/funimation-titles-now-available-on-crunchyroll",
+        "type": "historical catalog announcement; current availability unverified",
+        "checkedOn": "2026-11-01",
+        "locale": "mixed; not an India availability verification"
+      },
+      "designProposal": {
+        "primary": "#498B5A",
+        "secondary": "#C9983E",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "Adventure-journal tabs and route-map rules",
+        "taskLabel": "Quests",
+        "focusLabel": "Training session",
+        "loopScene": "Verified 2011 adaptation landscape and character with naturally repeating wind",
+        "completionTreatment": "Brief ink check and chapter-progress update; validate the motif against official art before production."
+      },
+      "media": {
+        "poster": null,
+        "hero": null,
+        "loopMp4": null,
+        "loopWebm": null,
+        "referenceImage": null,
+        "officialArtPage": null,
+        "officialVideoReferencePage": null,
+        "referenceStatus": "not acquired",
+        "productionReadiness": "pending",
+        "usageStatus": "not established",
+        "loopReviewStatus": "not produced"
+      },
+      "idMal": 11061,
+      "popularPosition": null
+    },
+    {
+      "id": "assassination-classroom",
+      "title": "Assassination Classroom",
+      "editorialOrder": 50,
+      "officialRank": null,
+      "genres": [
+        "Comedy"
+      ],
+      "catalogEvidence": {
+        "url": "https://www.crunchyroll.com/series/GRE59JGX6/assassination-classroom?modal=share",
+        "type": "series page; indexed content",
+        "checkedOn": "2026-11-01",
+        "locale": "mixed; not an India availability verification"
+      },
+      "designProposal": {
+        "primary": "#C8A12C",
+        "secondary": "#518E72",
+        "surface": "#FFF9ED",
+        "ink": "#191919",
+        "motif": "School notebook grids and yellow chapter labels",
+        "taskLabel": "Study goals",
+        "focusLabel": "Class period",
+        "loopScene": "Verified classroom/character composition with stable faces and small background motion",
+        "completionTreatment": "Brief ink check and chapter-progress update; validate the motif against official art before production."
+      },
+      "media": {
+        "poster": null,
+        "hero": null,
+        "loopMp4": null,
+        "loopWebm": null,
+        "referenceImage": null,
+        "officialArtPage": null,
+        "officialVideoReferencePage": null,
+        "referenceStatus": "not acquired",
+        "productionReadiness": "pending",
+        "usageStatus": "not established",
+        "loopReviewStatus": "not produced"
+      },
+      "idMal": 24833,
+      "popularPosition": null
+    }
+  ]
+}

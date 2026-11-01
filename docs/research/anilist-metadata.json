@@ -1,0 +1,2168 @@
+{
+  "provider": "AniList public GraphQL",
+  "endpoint": "https://graphql.anilist.co",
+  "retrievedOn": "2026-11-01",
+  "entries": {
+    "frieren": {
+      "id": 154587,
+      "idMal": 52991,
+      "title": {
+        "romaji": "Sousou no Frieren",
+        "english": "Frieren: Beyond Journey’s End",
+        "native": "葬送のフリーレン"
+      },
+      "synonyms": [
+        "Frieren at the Funeral",
+        "장송의 프리렌",
+        "Frieren - Oltre la Fine del Viaggio",
+        "คำอธิษฐานในวันที่จากลา Frieren",
+        "Frieren e a Jornada para o Além",
+        "Frieren – Nach dem Ende der Reise",
+        "葬送的芙莉蓮",
+        "Frieren: Más allá del final del viaje",
+        "Frieren en el funeral",
+        "Sōsō no Furīren",
+        "Frieren. U kresu drogi",
+        "Frieren - Pháp sư tiễn táng",
+        "Фрирен, провожающая в последний путь",
+        "فريرن: ما وراء نهاية الرحلة",
+        "Frieren: Tras finalizar el viaje"
+      ],
+      "genres": [
+        "Adventure",
+        "Drama",
+        "Fantasy"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx154587-qQTzQnEJJ3oB.jpg",
+        "color": "#bbf1a1"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/154587-ivXNJ23SM1xB.jpg",
+      "siteUrl": "https://anilist.co/anime/154587",
+      "trailer": {
+        "id": "tR8YH0G67Rk",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/tR8YH0G67Rk/hqdefault.jpg"
+      }
+    },
+    "golden-kamuy": {
+      "id": 99699,
+      "idMal": 36028,
+      "title": {
+        "romaji": "Golden Kamuy",
+        "english": "Golden Kamuy",
+        "native": "ゴールデンカムイ"
+      },
+      "synonyms": [
+        "Golden Kamui",
+        "黄金神威"
+      ],
+      "genres": [
+        "Action",
+        "Adventure",
+        "Comedy"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx99699-mBCjpoWpAVGX.jpg",
+        "color": "#78281a"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/99699-95D2XWA6eWAH.jpg",
+      "siteUrl": "https://anilist.co/anime/99699",
+      "trailer": {
+        "id": "5olutLS6mdo",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/5olutLS6mdo/hqdefault.jpg"
+      }
+    },
+    "fire-force": {
+      "id": 105310,
+      "idMal": 38671,
+      "title": {
+        "romaji": "Enen no Shouboutai",
+        "english": "Fire Force",
+        "native": "炎炎ノ消防隊"
+      },
+      "synonyms": [
+        "หน่วยผจญคนไฟลุก",
+        "כוח האש",
+        "Полум'яні вогнеборці",
+        "Пламенный отряд"
+      ],
+      "genres": [
+        "Action",
+        "Drama",
+        "Sci-Fi",
+        "Supernatural"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx105310-2PKUvoaA6fTn.jpg",
+        "color": "#f1bb28"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/105310-ygGL9yweZM2Q.jpg",
+      "siteUrl": "https://anilist.co/anime/105310",
+      "trailer": {
+        "id": "Dpae4acLLeA",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/Dpae4acLLeA/hqdefault.jpg"
+      }
+    },
+    "fate-strange-fake": {
+      "id": 166617,
+      "idMal": 55830,
+      "title": {
+        "romaji": "Fate/strange Fake",
+        "english": "Fate/strange Fake",
+        "native": "Fate/strange Fake"
+      },
+      "synonyms": [
+        "Судьба/Странная подделка"
+      ],
+      "genres": [
+        "Action",
+        "Adventure",
+        "Fantasy",
+        "Mystery",
+        "Supernatural"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx166617-34fpC9y47tTx.png",
+        "color": "#1a0df1"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/166617-P4w3p0H4lE1O.jpg",
+      "siteUrl": "https://anilist.co/anime/166617",
+      "trailer": {
+        "id": "k1G8EvZg_BY",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/k1G8EvZg_BY/hqdefault.jpg"
+      }
+    },
+    "cheat-skill-another-world": {
+      "id": 153845,
+      "idMal": 52830,
+      "title": {
+        "romaji": "Isekai de Cheat Skill wo Te ni Shita Ore wa, Genjitsu Sekai wo mo Musou Suru: Level Up wa Jinsei wo Kaeta",
+        "english": "I Got a Cheat Skill in Another World and Became Unrivaled in The Real World, Too",
+        "native": "異世界でチート能力を手にした俺は、現実世界をも無双する ～レベルアップは人生を変えた～"
+      },
+      "synonyms": [
+        "I Got a Cheat Ability in a Different World, and Became Extraordinary Even in the Real World",
+        "Isekai de Cheat Nouryoku Ote ni Shita Ore wa, Genjitsu Sekai o mo Musou Suru",
+        "สกิลโกงไร้เทียมทาน สร้างตำนานในสองโลก: ชีวิตพลิกผันด้วยการอัปเลเวล",
+        "Ganhei um Poder Apelão em Outro Mundo e Agora Sou Imbatível no Mundo Real",
+        "Iseleve",
+        "在异世界获得超强能力的我，在现实世界照样无敌～等级提升改变人生命运",
+        "いせれべ",
+        "Skill Nge-Cheat yang Kudapat di Dunia Lain Juga Membuatku Tanpa Tanding di Dunia Asal"
+      ],
+      "genres": [
+        "Action",
+        "Adventure",
+        "Fantasy",
+        "Romance"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx153845-C47aoKy7wf19.jpg",
+        "color": "#86281a"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/153845-qcUXgT0toF1J.jpg",
+      "siteUrl": "https://anilist.co/anime/153845",
+      "trailer": {
+        "id": "qDaUzzpowzQ",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/qDaUzzpowzQ/hqdefault.jpg"
+      }
+    },
+    "one-piece": {
+      "id": 21,
+      "idMal": 21,
+      "title": {
+        "romaji": "ONE PIECE",
+        "english": "ONE PIECE",
+        "native": "ONE PIECE"
+      },
+      "synonyms": [
+        "ワンピース",
+        "海贼王",
+        "וואן פיס",
+        "ون بيس",
+        "วันพีซ",
+        "Vua Hải Tặc",
+        "All'arrembaggio!",
+        "Tutti all'arrembaggio!",
+        "Ντρέηκ, το Κυνήγι του Θησαυρού",
+        "OP",
+        "Ван-Пис"
+      ],
+      "genres": [
+        "Action",
+        "Adventure",
+        "Comedy",
+        "Drama",
+        "Fantasy"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21-ELSYx3yMPcKM.jpg",
+        "color": "#e49335"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/21-wf37VakJmZqs.jpg",
+      "siteUrl": "https://anilist.co/anime/21",
+      "trailer": null
+    },
+    "mf-ghost": {
+      "id": 143327,
+      "idMal": 50695,
+      "title": {
+        "romaji": "MF Ghost",
+        "english": "MF GHOST",
+        "native": "MFゴースト"
+      },
+      "synonyms": [
+        "燃油車鬥魂"
+      ],
+      "genres": [
+        "Sports"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx143327-6gv1QzquNg2o.png",
+        "color": "#1af1f1"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/143327-9oKdfizmBzC7.jpg",
+      "siteUrl": "https://anilist.co/anime/143327",
+      "trailer": {
+        "id": "_BGFUbJcJi8",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/_BGFUbJcJi8/hqdefault.jpg"
+      }
+    },
+    "trigun-stampede": {
+      "id": 151040,
+      "idMal": 52093,
+      "title": {
+        "romaji": "TRIGUN STAMPEDE",
+        "english": "TRIGUN STAMPEDE",
+        "native": "TRIGUN STAMPEDE"
+      },
+      "synonyms": [
+        "トライガン スタンピード"
+      ],
+      "genres": [
+        "Action",
+        "Drama",
+        "Sci-Fi"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx151040-9QXRpaprfNmL.png",
+        "color": "#5da1e4"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/151040-1auPdaGqDGYd.jpg",
+      "siteUrl": "https://anilist.co/anime/151040",
+      "trailer": {
+        "id": "lcFWdVqh3Xs",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/lcFWdVqh3Xs/hqdefault.jpg"
+      }
+    },
+    "jujutsu-kaisen": {
+      "id": 113415,
+      "idMal": 40748,
+      "title": {
+        "romaji": "Jujutsu Kaisen",
+        "english": "JUJUTSU KAISEN",
+        "native": "呪術廻戦"
+      },
+      "synonyms": [
+        "JJK",
+        "Sorcery Fight",
+        "咒术回战",
+        "주술회전",
+        "มหาเวทย์ผนึกมาร",
+        "جوجوتسو كايسن",
+        "Магическая битва",
+        "咒術迴戰",
+        "Chú Thuật Hồi Chiến"
+      ],
+      "genres": [
+        "Action",
+        "Drama",
+        "Supernatural"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx113415-LHBAeoZDIsnF.jpg",
+        "color": "#e45d5d"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/113415-jQBSkxWAAk83.jpg",
+      "siteUrl": "https://anilist.co/anime/113415",
+      "trailer": {
+        "id": "RIyb52EMx8c",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/RIyb52EMx8c/hqdefault.jpg"
+      }
+    },
+    "my-hero-academia": {
+      "id": 21459,
+      "idMal": 31964,
+      "title": {
+        "romaji": "Boku no Hero Academia",
+        "english": "My Hero Academia",
+        "native": "僕のヒーローアカデミア"
+      },
+      "synonyms": [
+        "BNHA",
+        "MHA",
+        "나의 히어로 아카데미아 1기",
+        "나히아 1기",
+        "אקדמיית הגיבורים שלי",
+        "我的英雄学院",
+        "มายฮีโร่ อคาเดเมีย",
+        "أكاديميتي للأبطال",
+        "Η Δική Μου Ακαδημία Ηρώων",
+        "Akademia bohaterów",
+        "Моя геройская академия",
+        "Hősakadémia",
+        "Học Viện Anh Hùng"
+      ],
+      "genres": [
+        "Action",
+        "Adventure",
+        "Comedy"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21459-nYh85uj2Fuwr.jpg",
+        "color": "#f1d643"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/21459-yeVkolGKdGUV.jpg",
+      "siteUrl": "https://anilist.co/anime/21459",
+      "trailer": {
+        "id": "AhqVltWDqFA",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/AhqVltWDqFA/hqdefault.jpg"
+      }
+    },
+    "to-your-eternity": {
+      "id": 114535,
+      "idMal": 41025,
+      "title": {
+        "romaji": "Fumetsu no Anata e",
+        "english": "To Your Eternity",
+        "native": "不滅のあなたへ"
+      },
+      "synonyms": [
+        "To You, the Immortal",
+        "Uma vida imortal",
+        "致不灭的你",
+        "A te, l'immortale",
+        "Ku twej wieczności",
+        "불멸의 그대에게",
+        "Untukmu yang Abadi",
+        "Gửi em, người bất tử",
+        "แด่เธอผู้เป็นนิรันดร์"
+      ],
+      "genres": [
+        "Adventure",
+        "Drama",
+        "Fantasy",
+        "Psychological",
+        "Supernatural"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx114535-y3NnjexcqKG1.jpg",
+        "color": "#f1d6a1"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/114535-ASUprf4AsNwC.jpg",
+      "siteUrl": "https://anilist.co/anime/114535",
+      "trailer": {
+        "id": "0S0ty44JPao",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/0S0ty44JPao/hqdefault.jpg"
+      }
+    },
+    "slime": {
+      "id": 101280,
+      "idMal": 37430,
+      "title": {
+        "romaji": "Tensei Shitara Slime Datta Ken",
+        "english": "That Time I Got Reincarnated as a Slime",
+        "native": "転生したらスライムだった件"
+      },
+      "synonyms": [
+        "転スラ",
+        "TenSura",
+        "Vita da Slime",
+        "Moi, quand je me réincarne en Slime",
+        "关于我转生变成史莱姆这档事",
+        "เกิดใหม่ทั้งทีก็เป็นสไลม์ไปซะแล้ว",
+        "Meine Wiedergeburt als Schleim in einer anderen Welt",
+        "О моём перерождении в слизь",
+        "TTIGRAAS",
+        "Lúc đó tôi đã chuyển sinh thành Slime",
+        "Bereinkarnasi Malah Menjadi Slime",
+        "Odrodzony jako galareta"
+      ],
+      "genres": [
+        "Action",
+        "Adventure",
+        "Comedy",
+        "Fantasy"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101280-tDxCVJm714nt.jpg",
+        "color": "#5daef1"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/101280-9t7J3774n955.jpg",
+      "siteUrl": "https://anilist.co/anime/101280",
+      "trailer": {
+        "id": "QsS7AzXCwKA",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/QsS7AzXCwKA/hqdefault.jpg"
+      }
+    },
+    "solo-leveling": {
+      "id": 151807,
+      "idMal": 52299,
+      "title": {
+        "romaji": "Ore dake Level Up na Ken",
+        "english": "Solo Leveling",
+        "native": "俺だけレベルアップな件"
+      },
+      "synonyms": [
+        "나 혼자만 레벨업",
+        "Na Honjaman Level Up",
+        "Solo Leveling: Поднятие уровня в одиночку"
+      ],
+      "genres": [
+        "Action",
+        "Adventure",
+        "Fantasy"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx151807-it355ZgzquUd.png",
+        "color": "#35bbf1"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/151807-37yfQA3ym8PA.jpg",
+      "siteUrl": "https://anilist.co/anime/151807",
+      "trailer": {
+        "id": "HkIKAnwLZCw",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/HkIKAnwLZCw/hqdefault.jpg"
+      }
+    },
+    "classroom-of-the-elite": {
+      "id": 98659,
+      "idMal": 35507,
+      "title": {
+        "romaji": "Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e",
+        "english": "Classroom of the Elite",
+        "native": "ようこそ実力至上主義の教室へ"
+      },
+      "synonyms": [
+        "Youjitsu",
+        "You-Zitsu",
+        "ขอต้อนรับสู่ห้องเรียนนิยม (เฉพาะ) ยอดคน",
+        "Cote",
+        "歡迎來到實力至上主義的教室",
+        "Добро пожаловать в класс для особо одарённых",
+        "فصل النخبة",
+        "Chào mừng đến với lớp học đề cao thực lực",
+        "Chào mừng tới lớp học biết tuốt"
+      ],
+      "genres": [
+        "Drama",
+        "Psychological"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx98659-WNyPLIZDpGGY.jpg",
+        "color": "#bbf1a1"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/98659-u46B5RCNl9il.jpg",
+      "siteUrl": "https://anilist.co/anime/98659",
+      "trailer": {
+        "id": "iYsx6w5PNno",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/iYsx6w5PNno/hqdefault.jpg"
+      }
+    },
+    "apothecary-diaries": {
+      "id": 161645,
+      "idMal": 54492,
+      "title": {
+        "romaji": "Kusuriya no Hitorigoto",
+        "english": "The Apothecary Diaries",
+        "native": "薬屋のひとりごと"
+      },
+      "synonyms": [
+        "Drugstore Soliloquy",
+        "Les Carnets de l'Apothicaire",
+        "Zapiski zielarki",
+        "Diários de uma Apotecária",
+        "Il monologo della Speziale",
+        "Los diarios de la boticaria",
+        "สืบคดีปริศนา หมอยาตำรับโคมแดง",
+        "Записки аптекаря",
+        "Die Tagebücher der Apothekerin",
+        "يوميات الصيدلانيّة",
+        "藥師少女的獨語",
+        "药屋少女的呢喃",
+        "Монолог фармацевта",
+        "약사의 혼잣말",
+        "Dược sư tự sự"
+      ],
+      "genres": [
+        "Drama",
+        "Mystery"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx161645-QLbzHXiYRgV2.jpg",
+        "color": "#f1865d"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/161645-oqzTZYIvviWI.jpg",
+      "siteUrl": "https://anilist.co/anime/161645",
+      "trailer": {
+        "id": "oyHqh8ue4zw",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/oyHqh8ue4zw/hqdefault.jpg"
+      }
+    },
+    "black-clover": {
+      "id": 97940,
+      "idMal": 34572,
+      "title": {
+        "romaji": "Black Clover",
+        "english": "Black Clover",
+        "native": "ブラッククローバー"
+      },
+      "synonyms": [
+        "תלתן שחור",
+        "แบล็กโคลเวอร์",
+        "Чёрный клевер"
+      ],
+      "genres": [
+        "Action",
+        "Adventure",
+        "Comedy",
+        "Fantasy"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx97940-fyh8o7gNbha0.png",
+        "color": "#d6c96b"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/97940-1URQdQ4U1a0b.jpg",
+      "siteUrl": "https://anilist.co/anime/97940",
+      "trailer": {
+        "id": "vUjAxk1qYzQ",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/vUjAxk1qYzQ/hqdefault.jpg"
+      }
+    },
+    "dr-stone": {
+      "id": 105333,
+      "idMal": 38691,
+      "title": {
+        "romaji": "Dr. STONE",
+        "english": "Dr. STONE",
+        "native": "Dr.STONE"
+      },
+      "synonyms": [
+        "Dcst",
+        "石纪元",
+        "ドクターストーン",
+        "ดร.สโตน เจ้าแห่งวิทยาศาสตร์กู้คืนอารยธรรมโลก",
+        "Доктор Стоун"
+      ],
+      "genres": [
+        "Action",
+        "Adventure",
+        "Comedy",
+        "Sci-Fi"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx105333-GybuoSoOZfpH.jpg",
+        "color": "#c9d678"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/105333-KWKGvBM8Hyga.jpg",
+      "siteUrl": "https://anilist.co/anime/105333",
+      "trailer": {
+        "id": "pon9R5n5dMk",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/pon9R5n5dMk/hqdefault.jpg"
+      }
+    },
+    "haikyu": {
+      "id": 20464,
+      "idMal": 20583,
+      "title": {
+        "romaji": "Haikyuu!!",
+        "english": "HAIKYU!!",
+        "native": "ハイキュー!!"
+      },
+      "synonyms": [
+        "High Kyuu!!",
+        "HAIKYÛ !!",
+        "排球少年！！",
+        "Haikyu!! L'asso del volley",
+        "ไฮคิว!! คู่ตบฟ้าประทาน"
+      ],
+      "genres": [
+        "Comedy",
+        "Drama",
+        "Sports"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20464-ooZUyBe4ptp9.png",
+        "color": "#e48635"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/20464-PpYjO9cPN1gs.jpg",
+      "siteUrl": "https://anilist.co/anime/20464",
+      "trailer": {
+        "id": "9kLRkH9zC5k",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/9kLRkH9zC5k/hqdefault.jpg"
+      }
+    },
+    "demon-slayer": {
+      "id": 101922,
+      "idMal": 38000,
+      "title": {
+        "romaji": "Kimetsu no Yaiba",
+        "english": "Demon Slayer: Kimetsu no Yaiba",
+        "native": "鬼滅の刃"
+      },
+      "synonyms": [
+        "KnY",
+        "Kimetsu no Yaiba: Kyoudai no Kizuna",
+        "Demon Slayer: Kimetsu no Yaiba: Bonds of Siblings",
+        "鬼滅の刃-兄妹の絆-",
+        "鬼灭之刃",
+        "הלהב קוטל השדים",
+        "قاتل الشياطين",
+        "ดาบพิฆาตอสูร",
+        "Miecz zabójcy demonów – Kimetsu no Yaiba",
+        " Guardians de la nit: Kimetsu no Yaiba",
+        "İblis Keser",
+        "ΚΥΝΗΓΟΣ ΔΑΙΜΟΝΩΝ: KIMETSU NO YAIBA",
+        "Zabiják démonů",
+        "شیطان کش",
+        "귀멸의 칼날",
+        "Истребитель демонов",
+        "Клинок, рассекающий демонов"
+      ],
+      "genres": [
+        "Action",
+        "Adventure",
+        "Drama",
+        "Fantasy",
+        "Supernatural"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101922-WBsBl0ClmgYL.jpg",
+        "color": "#f1c9ae"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/101922-33MtJGsUSxga.jpg",
+      "siteUrl": "https://anilist.co/anime/101922",
+      "trailer": {
+        "id": "6vMuWuWlW4I",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/6vMuWuWlW4I/hqdefault.jpg"
+      }
+    },
+    "dragon-ball-z": {
+      "id": 813,
+      "idMal": 813,
+      "title": {
+        "romaji": "Dragon Ball Z",
+        "english": "Dragon Ball Z",
+        "native": "ドラゴンボールZ"
+      },
+      "synonyms": [
+        "DBZ",
+        "Dragonball Z",
+        "דרגון בול זי",
+        "What's My Destiny Dragon Ball",
+        "ดราก้อนบอล Z",
+        "Bảy Viên Ngọc Rồng Z",
+        "Драконий жемчуг Зет"
+      ],
+      "genres": [
+        "Action",
+        "Adventure",
+        "Comedy",
+        "Fantasy",
+        "Supernatural"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx813-ZhnFNOeCU5dQ.png",
+        "color": "#e49343"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/813-03ZLvWJgR6Wd.jpg",
+      "siteUrl": "https://anilist.co/anime/813",
+      "trailer": null
+    },
+    "gachiakuta": {
+      "id": 178025,
+      "idMal": 59062,
+      "title": {
+        "romaji": "Gachiakuta",
+        "english": "Gachiakuta",
+        "native": "ガチアクタ"
+      },
+      "synonyms": [
+        "Гачиакута"
+      ],
+      "genres": [
+        "Action",
+        "Drama",
+        "Fantasy"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx178025-cWJKEsZynkil.jpg",
+        "color": "#e4a150"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/178025-WvcXi1J2SGRa.jpg",
+      "siteUrl": "https://anilist.co/anime/178025",
+      "trailer": {
+        "id": "VpMwWDgZqtI",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/VpMwWDgZqtI/hqdefault.jpg"
+      }
+    },
+    "beginning-after-end": {
+      "id": 183161,
+      "idMal": 60146,
+      "title": {
+        "romaji": "Saikyou no Ousama, Nidome no Jinsei wa Nani wo Suru?",
+        "english": "The Beginning After the End",
+        "native": "最強の王様、二度目の人生は 何をする?"
+      },
+      "synonyms": [
+        "TBATE",
+        "終末起點",
+        "Начало после конца"
+      ],
+      "genres": [
+        "Action",
+        "Adventure",
+        "Fantasy"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx183161-5M054tuPmZJX.jpg",
+        "color": "#43aeff"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/183161-L5X2veRcYJnh.jpg",
+      "siteUrl": "https://anilist.co/anime/183161",
+      "trailer": {
+        "id": "LwCJhJbpg4Q",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/LwCJhJbpg4Q/hqdefault.jpg"
+      }
+    },
+    "mushoku-tensei": {
+      "id": 108465,
+      "idMal": 39535,
+      "title": {
+        "romaji": "Mushoku Tensei: Isekai Ittara Honki Dasu",
+        "english": "Mushoku Tensei: Jobless Reincarnation",
+        "native": "無職転生 ～異世界行ったら本気だす～"
+      },
+      "synonyms": [
+        "Jobless Reincarnation: I Will Seriously Try If I Go To Another World",
+        "无职转生 ~到了异世界就拿出真本事~",
+        "เกิดชาตินี้พี่ต้องเทพ",
+        "Thất nghiệp chuyển sinh"
+      ],
+      "genres": [
+        "Adventure",
+        "Drama",
+        "Ecchi",
+        "Fantasy"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx108465-1ANspF1EWyFx.jpg",
+        "color": "#43a1e4"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/108465-RgsRpTMhP9Sv.jpg",
+      "siteUrl": "https://anilist.co/anime/108465",
+      "trailer": {
+        "id": "JoS7Z8MCD6E",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/JoS7Z8MCD6E/hqdefault.jpg"
+      }
+    },
+    "naruto-shippuden": {
+      "id": 1735,
+      "idMal": 1735,
+      "title": {
+        "romaji": "NARUTO: Shippuuden",
+        "english": "Naruto: Shippuden",
+        "native": "NARUTO -ナルト- 疾風伝"
+      },
+      "synonyms": [
+        "Naruto Shippuuden",
+        "Naruto Shippuden",
+        "נארוטו שיפודן",
+        "火影忍者 疾风传",
+        "นารูโตะ ตำนานวายุสลาตัน",
+        "ناروتو شيبودن",
+        "Наруто: Ураганные хроники"
+      ],
+      "genres": [
+        "Action",
+        "Adventure",
+        "Comedy",
+        "Drama",
+        "Fantasy",
+        "Supernatural"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1735-kGfVm0YqCPcu.png",
+        "color": "#e4865d"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/1735.jpg",
+      "siteUrl": "https://anilist.co/anime/1735",
+      "trailer": null
+    },
+    "tsukimichi": {
+      "id": 125206,
+      "idMal": 43523,
+      "title": {
+        "romaji": "Tsuki ga Michibiku Isekai Douchuu",
+        "english": "TSUKIMICHI -Moonlit Fantasy-",
+        "native": "月が導く異世界道中"
+      },
+      "synonyms": [
+        "Moon-led Journey Across Another World",
+        "จันทรานำพาสู่ต่างโลก",
+        "月光下的异世界之旅",
+        "Благословлённое лунным светом приключение в другом мире"
+      ],
+      "genres": [
+        "Action",
+        "Adventure",
+        "Comedy",
+        "Fantasy"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx125206-O2MsOWdW1lVi.jpg",
+        "color": "#e4a150"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/125206-UdWijVTgcC5t.jpg",
+      "siteUrl": "https://anilist.co/anime/125206",
+      "trailer": {
+        "id": "U8T63kIny7E",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/U8T63kIny7E/hqdefault.jpg"
+      }
+    },
+    "shield-hero": {
+      "id": 99263,
+      "idMal": 35790,
+      "title": {
+        "romaji": "Tate no Yuusha no Nariagari",
+        "english": "The Rising of the Shield Hero",
+        "native": "盾の勇者の成り上がり"
+      },
+      "synonyms": [
+        "盾之勇者成名录",
+        "ผู้กล้าโล่ผงาด",
+        "Восхождение героя щита"
+      ],
+      "genres": [
+        "Action",
+        "Adventure",
+        "Fantasy"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx99263-LcazQwdlWzMy.jpg",
+        "color": "#5dc9e4"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/99263-IwkmdCTsDY1t.jpg",
+      "siteUrl": "https://anilist.co/anime/99263",
+      "trailer": {
+        "id": "VKYmpq-V3Rs",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/VKYmpq-V3Rs/hqdefault.jpg"
+      }
+    },
+    "blue-lock": {
+      "id": 137822,
+      "idMal": 49596,
+      "title": {
+        "romaji": "Blue Lock",
+        "english": "BLUE LOCK",
+        "native": "ブルーロック"
+      },
+      "synonyms": [
+        "BLUE LOCK ขังดวลแข้ง",
+        " بلو لوك"
+      ],
+      "genres": [
+        "Action",
+        "Drama",
+        "Sports"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx137822-U8naszP96vzC.png",
+        "color": "#286be4"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/137822-oevspckMGLuY.jpg",
+      "siteUrl": "https://anilist.co/anime/137822",
+      "trailer": {
+        "id": "5YBL7fx94RU",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/5YBL7fx94RU/hqdefault.jpg"
+      }
+    },
+    "rezero": {
+      "id": 21355,
+      "idMal": 31240,
+      "title": {
+        "romaji": "Re:Zero kara Hajimeru Isekai Seikatsu",
+        "english": "Re:ZERO -Starting Life in Another World-",
+        "native": "Re:ゼロから始める異世界生活"
+      },
+      "synonyms": [
+        "Re: Life in a different world from zero",
+        "ReZero",
+        "Re Zero",
+        "Re：从零开始的异世界生活",
+        "Re:Zero รีเซทชีวิต ฝ่าวิกฤตต่างโลก",
+        "Re:Zero — жизнь с нуля в другом мире",
+        "Re:Zero Empezar de cero en un mundo diferente",
+        "Re:Zero – Bắt đầu lại ở thế giới khác"
+      ],
+      "genres": [
+        "Action",
+        "Adventure",
+        "Drama",
+        "Fantasy",
+        "Psychological",
+        "Romance",
+        "Thriller"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21355-wRVUrGxpvIQQ.jpg",
+        "color": "#f150ae"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/21355-f9SjOfEJMk5P.jpg",
+      "siteUrl": "https://anilist.co/anime/21355",
+      "trailer": {
+        "id": "vFfXjuVA1Jk",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/vFfXjuVA1Jk/hqdefault.jpg"
+      }
+    },
+    "fairy-tail": {
+      "id": 6702,
+      "idMal": 6702,
+      "title": {
+        "romaji": "FAIRY TAIL",
+        "english": "Fairy Tail",
+        "native": "FAIRY TAIL"
+      },
+      "synonyms": [
+        "פיירי טייל",
+        "妖精的尾巴",
+        "フェアリーテイル",
+        "แฟรี่เทล ศึกจอมเวทอภินิหาร"
+      ],
+      "genres": [
+        "Action",
+        "Adventure",
+        "Comedy",
+        "Fantasy"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b6702-KI4qgSMyI8Pm.png",
+        "color": "#e45d50"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/6702-VSHyctSAeUBS.jpg",
+      "siteUrl": "https://anilist.co/anime/6702",
+      "trailer": {
+        "id": "mAAKPx-ndAg",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/mAAKPx-ndAg/hqdefault.jpg"
+      }
+    },
+    "your-lie-in-april": {
+      "id": 20665,
+      "idMal": 23273,
+      "title": {
+        "romaji": "Shigatsu wa Kimi no Uso",
+        "english": "Your lie in April",
+        "native": "四月は君の嘘"
+      },
+      "synonyms": [
+        "KimiUso",
+        "השקר שלך באפריל",
+        "Bugie d'aprile",
+        "四月是你的谎言",
+        "YLIA",
+        "Sekunden in Moll",
+        "Твоя апрельская ложь",
+        "Tháng Tư Là Lời Nói Dối Của Em"
+      ],
+      "genres": [
+        "Drama",
+        "Music",
+        "Romance",
+        "Slice of Life"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20665-TLgkL8T8IRFd.png",
+        "color": "#e4bb50"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/20665-j4kSsfhfkM24.jpg",
+      "siteUrl": "https://anilist.co/anime/20665",
+      "trailer": {
+        "id": "3aL0gDZtFbE",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/3aL0gDZtFbE/hqdefault.jpg"
+      }
+    },
+    "jojos-bizarre-adventure": {
+      "id": 14719,
+      "idMal": 14719,
+      "title": {
+        "romaji": "JoJo no Kimyou na Bouken (TV)",
+        "english": "JoJo's Bizarre Adventure (TV)",
+        "native": "ジョジョの奇妙な冒険 (TV)"
+      },
+      "synonyms": [
+        "JoJo no Kimyou na Bouken (2012)",
+        "JoJo no Kimyou na Bouken: Sentou Chouryuu",
+        "JoJo's Bizarre Adventure: Phantom Blood",
+        "JoJo's Bizarre Adventure: Battle Tendency",
+        "مغامرات جوجو العجيبة",
+        "مغامرات جوجو العجيبة:الدماء الوهمية",
+        "مغامرات جوجو العجيبة:حمى القتال",
+        "Le bizzarre avventure di JoJo (2012)",
+        "Le bizzarre avventure di JoJo: Phantom Blood",
+        "Le bizzarre avventure di JoJo: Battle Tendency",
+        "Химерні пригоди ДжоДжо: Тяжіння до бою",
+        "Химерні пригоди ДжоДжо: Примарна кров",
+        "JJBA",
+        "Невероятные приключения ДжоДжо: Призрачная кровь",
+        "Невероятные приключения ДжоДжо: Стремление к бою"
+      ],
+      "genres": [
+        "Action",
+        "Adventure",
+        "Supernatural"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx14719-VT5dRzTBSZ0w.jpg",
+        "color": "#e49343"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/14719-m7Hv2AxcNNjM.jpg",
+      "siteUrl": "https://anilist.co/anime/14719",
+      "trailer": null
+    },
+    "shangri-la-frontier": {
+      "id": 151970,
+      "idMal": 52347,
+      "title": {
+        "romaji": "Shangri-La Frontier",
+        "english": "Shangri-La Frontier",
+        "native": "シャングリラ・フロンティア"
+      },
+      "synonyms": [
+        "ShanFro",
+        "シャンフロ",
+        "シャングリラ・フロンティア〜クソゲーハンター, 神ゲーに挑まんとす〜",
+        "Shangri-La Frontier: Kusoge Hunter, Kami ge ni Idoman to su",
+        "SHANGRI-LA FRONTIER ～เมื่อนักล่าเกมขยะท้าสู้ในเกมเทพ～",
+        "Рубеж Шангри-Ла",
+        "Thợ săn Game rác thách thức Game cấp Thánh"
+      ],
+      "genres": [
+        "Action",
+        "Adventure",
+        "Comedy",
+        "Fantasy",
+        "Sci-Fi"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx151970-xtIx3VqEk02X.jpg",
+        "color": "#5da1e4"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/151970-Tnnfp0f7NOzj.jpg",
+      "siteUrl": "https://anilist.co/anime/151970",
+      "trailer": {
+        "id": "4HpOvyY4sDw",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/4HpOvyY4sDw/hqdefault.jpg"
+      }
+    },
+    "iruma-kun": {
+      "id": 107693,
+      "idMal": 39196,
+      "title": {
+        "romaji": "Mairimashita! Iruma-kun",
+        "english": "Welcome to Demon School! Iruma-kun",
+        "native": "魔入りました！入間くん"
+      },
+      "synonyms": [
+        "Welcome to Demon School, Iruma-kun!",
+        "入间同学入魔了！",
+        "อิรุมะคุง พจญในแดนปีศาจ!",
+        "Vào ma giới rồi đấy! Iruma-kun"
+      ],
+      "genres": [
+        "Comedy",
+        "Fantasy"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx107693-A9bSSFAMxA6j.jpg",
+        "color": "#f18635"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/107693-h0syT88giDiw.jpg",
+      "siteUrl": "https://anilist.co/anime/107693",
+      "trailer": {
+        "id": "kkeuJt0DE7g",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/kkeuJt0DE7g/hqdefault.jpg"
+      }
+    },
+    "spy-family": {
+      "id": 140960,
+      "idMal": 50265,
+      "title": {
+        "romaji": "SPY×FAMILY",
+        "english": "SPY x FAMILY",
+        "native": "SPY×FAMILY"
+      },
+      "synonyms": [
+        "SxF",
+        "스파이 패밀리",
+        "间谍过家家",
+        "Семья шпиона",
+        "سباي إكس فاميلي",
+        "Gia Đình Điệp Viên"
+      ],
+      "genres": [
+        "Action",
+        "Comedy",
+        "Slice of Life",
+        "Supernatural"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx140960-Kb6R5nYQfjmP.jpg",
+        "color": "#c9f1f1"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/140960-Z7xSvkRxHKfj.jpg",
+      "siteUrl": "https://anilist.co/anime/140960",
+      "trailer": {
+        "id": "_VRxEEBa1XU",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/_VRxEEBa1XU/hqdefault.jpg"
+      }
+    },
+    "dragon-ball-super": {
+      "id": 21175,
+      "idMal": 30694,
+      "title": {
+        "romaji": "Dragon Ball Super",
+        "english": "Dragon Ball Super",
+        "native": "ドラゴンボール超"
+      },
+      "synonyms": [
+        "DBS",
+        "Dragonball Super",
+        "דרגון בול סופר",
+        "Драконий жемчуг: Супер"
+      ],
+      "genres": [
+        "Action",
+        "Adventure",
+        "Comedy",
+        "Fantasy",
+        "Sci-Fi"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21175-EH06qlfF8TnB.jpg",
+        "color": "#e48628"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/21175-Qo9gdGPUm4Im.jpg",
+      "siteUrl": "https://anilist.co/anime/21175",
+      "trailer": {
+        "id": "ycaU9xEEdi8",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/ycaU9xEEdi8/hqdefault.jpg"
+      }
+    },
+    "soul-eater": {
+      "id": 3588,
+      "idMal": 3588,
+      "title": {
+        "romaji": "Soul Eater",
+        "english": "Soul Eater",
+        "native": "ソウルイーター"
+      },
+      "synonyms": [
+        "אכלן הנשמות ",
+        "סול איטר",
+        "Пожирач душ"
+      ],
+      "genres": [
+        "Action",
+        "Adventure",
+        "Comedy",
+        "Fantasy",
+        "Supernatural"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx3588-fSMggQoFSbUI.png",
+        "color": "#e4bb5d"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/3588-rpnVOMaLD3is.jpg",
+      "siteUrl": "https://anilist.co/anime/3588",
+      "trailer": {
+        "id": "DTTCUzmHKvI",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/DTTCUzmHKvI/hqdefault.jpg"
+      }
+    },
+    "my-dress-up-darling": {
+      "id": 132405,
+      "idMal": 48736,
+      "title": {
+        "romaji": "Sono Bisque Doll wa Koi wo Suru",
+        "english": "My Dress-Up Darling",
+        "native": "その着せ替え人形は恋をする"
+      },
+      "synonyms": [
+        "Sono Kisekae Ningyou wa Koi wo suru",
+        "หนุ่มเย็บผ้ากับสาวนักคอสเพลย์",
+        "その着せ替え人形（ビスク・ドール）は恋をする",
+        "kisekoi",
+        "Si Boneka Rias Sedang Jatuh Cinta",
+        "Projekt: cosplay",
+        "Любовь с иголочки",
+        "着せ恋",
+        "Oyuncak Bebek Sevgilim",
+        "Nàng Búp Bê Thử Đồ Biết Yêu"
+      ],
+      "genres": [
+        "Comedy",
+        "Ecchi",
+        "Romance",
+        "Slice of Life"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx132405-qP7FQYGmNI3d.jpg",
+        "color": "#e46b5d"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/132405-LnPQaqaksEpN.jpg",
+      "siteUrl": "https://anilist.co/anime/132405",
+      "trailer": {
+        "id": "qJ8GyiSJ1KU",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/qJ8GyiSJ1KU/hqdefault.jpg"
+      }
+    },
+    "sword-art-online": {
+      "id": 11757,
+      "idMal": 11757,
+      "title": {
+        "romaji": "Sword Art Online",
+        "english": "Sword Art Online",
+        "native": "ソードアート・オンライン"
+      },
+      "synonyms": [
+        "S.A.O",
+        "SAO",
+        "אומנות החרב אונליין",
+        "刀剑神域",
+        "ซอร์ดอาร์ตออนไลน์",
+        "Мастера меча онлайн"
+      ],
+      "genres": [
+        "Action",
+        "Adventure",
+        "Fantasy",
+        "Romance"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx11757-SxYDUzdr9rh2.jpg",
+        "color": "#e4bb5d"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/11757-TlEEV9weG4Ag.jpg",
+      "siteUrl": "https://anilist.co/anime/11757",
+      "trailer": {
+        "id": "C8Jl_-b7ju0",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/C8Jl_-b7ju0/hqdefault.jpg"
+      }
+    },
+    "horimiya": {
+      "id": 124080,
+      "idMal": 42897,
+      "title": {
+        "romaji": "Horimiya",
+        "english": "Horimiya",
+        "native": "ホリミヤ"
+      },
+      "synonyms": [
+        "堀与宫村",
+        "โฮริมิยะ สาวมั่นกับนายมืดมน",
+        "Хоримия"
+      ],
+      "genres": [
+        "Comedy",
+        "Romance",
+        "Slice of Life"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx124080-3i22mRVPBS0T.jpg",
+        "color": "#5dc9f1"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/124080-ARyLAHHgikRq.jpg",
+      "siteUrl": "https://anilist.co/anime/124080",
+      "trailer": {
+        "id": "tryurXgGqkI",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/tryurXgGqkI/hqdefault.jpg"
+      }
+    },
+    "kaiju-no-8": {
+      "id": 153288,
+      "idMal": 52588,
+      "title": {
+        "romaji": "Kaijuu 8-gou",
+        "english": "Kaiju No. 8",
+        "native": "怪獣８号"
+      },
+      "synonyms": [
+        "Monster #8",
+        "8Kaijuu",
+        "KAIJU No. EIGHT",
+        "Kaiju N°8",
+        "괴수 8호"
+      ],
+      "genres": [
+        "Action",
+        "Sci-Fi"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx153288-25FBfFJzEQ5O.jpg",
+        "color": "#f1e4ae"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/153288-JNsWuMPMAuJL.jpg",
+      "siteUrl": "https://anilist.co/anime/153288",
+      "trailer": {
+        "id": "7n_mFVPeApw",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/7n_mFVPeApw/hqdefault.jpg"
+      }
+    },
+    "tokyo-ghoul": {
+      "id": 20605,
+      "idMal": 22319,
+      "title": {
+        "romaji": "Tokyo Ghoul",
+        "english": "Tokyo Ghoul",
+        "native": "東京喰種 トーキョーグール"
+      },
+      "synonyms": [
+        "Tokyo Kushu",
+        "שדי טוקיו",
+        "东京食种",
+        "طوكيو غول",
+        "Токийский гуль"
+      ],
+      "genres": [
+        "Action",
+        "Drama",
+        "Horror",
+        "Mystery",
+        "Psychological",
+        "Supernatural"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b20605-k665mVkSug8D.jpg",
+        "color": "#ff6b35"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/20605-RCJ7M71zLmrh.jpg",
+      "siteUrl": "https://anilist.co/anime/20605",
+      "trailer": {
+        "id": "XfQUjYsVBrE",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/XfQUjYsVBrE/hqdefault.jpg"
+      }
+    },
+    "dragon-ball": {
+      "id": 223,
+      "idMal": 223,
+      "title": {
+        "romaji": "Dragon Ball",
+        "english": "Dragon Ball",
+        "native": "ドラゴンボール"
+      },
+      "synonyms": [
+        "Dragonball",
+        "Bola de Drac",
+        "דרגון בול ",
+        "ดราก้อนบอล",
+        "Bảy Viên Ngọc Rồng",
+        "DB",
+        "Драконий жемчуг"
+      ],
+      "genres": [
+        "Action",
+        "Adventure",
+        "Comedy",
+        "Fantasy",
+        "Sci-Fi",
+        "Supernatural"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx223-scE5uJfXqqj8.png",
+        "color": "#e48635"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/223-vyRuUBBYfcUb.jpg",
+      "siteUrl": "https://anilist.co/anime/223",
+      "trailer": null
+    },
+    "wistoria": {
+      "id": 174576,
+      "idMal": 58059,
+      "title": {
+        "romaji": "Tsue to Tsurugi no Wistoria",
+        "english": "Wistoria: Wand and Sword",
+        "native": "杖と剣のウィストリア"
+      },
+      "synonyms": [
+        "杖與劍的魔劍譚",
+        "ตำนานดาบและคทาแห่งวิสตอเรีย",
+        "Wistoria: Varinhas e Espadas",
+        "Wistoria: Trượng và Kiếm"
+      ],
+      "genres": [
+        "Action",
+        "Comedy",
+        "Drama",
+        "Fantasy"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx174576-tpKcHG0eO6CS.jpg",
+        "color": "#e4865d"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/174576-6stJnscy5rCi.jpg",
+      "siteUrl": "https://anilist.co/anime/174576",
+      "trailer": {
+        "id": "FNiBiXXeyb8",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/FNiBiXXeyb8/hqdefault.jpg"
+      }
+    },
+    "chainsaw-man": {
+      "id": 127230,
+      "idMal": 44511,
+      "title": {
+        "romaji": "Chainsaw Man",
+        "english": "Chainsaw Man",
+        "native": "チェンソーマン"
+      },
+      "synonyms": [
+        "CSM",
+        "رجل المنشار",
+        "链锯人",
+        "Человек-бензопила",
+        "체인소 맨",
+        "Thợ Săn Quỷ"
+      ],
+      "genres": [
+        "Action",
+        "Drama",
+        "Horror",
+        "Supernatural"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx127230-DdP4vAdssLoz.png",
+        "color": "#6b1a1a"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/127230-o8IRwCGVr9KW.jpg",
+      "siteUrl": "https://anilist.co/anime/127230",
+      "trailer": {
+        "id": "v4yLeNt-kCU",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/v4yLeNt-kCU/hqdefault.jpg"
+      }
+    },
+    "fullmetal-alchemist": {
+      "id": 5114,
+      "idMal": 5114,
+      "title": {
+        "romaji": "Hagane no Renkinjutsushi: FULLMETAL ALCHEMIST",
+        "english": "Fullmetal Alchemist: Brotherhood",
+        "native": "鋼の錬金術師 FULLMETAL ALCHEMIST"
+      },
+      "synonyms": [
+        "FMA",
+        "FMAB",
+        "Hagaren",
+        "الخيميائي الفولاذي",
+        "אלכימאי המתכת: אחוות אחים",
+        "Full Metal Alchemist: Brotherhood",
+        "钢之炼金术师 FULLMETAL ALCHEMIST",
+        "แขนกล คนแปรธาตุ: บราเธอร์ฮูด",
+        "Stalowy alchemik: Misja braci",
+        "Сталевий алхімік. Братерство",
+        "Стальной алхимик: Братство"
+      ],
+      "genres": [
+        "Action",
+        "Adventure",
+        "Drama",
+        "Fantasy"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx5114-nSWCgQlmOMtj.jpg",
+        "color": "#e4c993"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/5114-q0V5URebphSG.jpg",
+      "siteUrl": "https://anilist.co/anime/5114",
+      "trailer": {
+        "id": "1ac3_YdSSy0",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/1ac3_YdSSy0/hqdefault.jpg"
+      }
+    },
+    "ascendance-bookworm": {
+      "id": 108268,
+      "idMal": 39468,
+      "title": {
+        "romaji": "Honzuki no Gekokujou: Shisho ni Naru Tame ni wa Shudan wo Erandeiraremasen",
+        "english": "Ascendance of a Bookworm",
+        "native": "本好きの下剋上 司書になるためには手段を選んでいられません"
+      },
+      "synonyms": [
+        "Ascendance of a Bookworm: I'll do anything to become a librarian",
+        "爱书的下克上：为了成为图书管理员不择手段！",
+        "หนอนหนังสือยึดอำนาจ "
+      ],
+      "genres": [
+        "Fantasy",
+        "Slice of Life"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx108268-Dtt82uOi3vq5.jpg",
+        "color": "#e4bb50"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/108268-JbUzGiUlmCTy.jpg",
+      "siteUrl": "https://anilist.co/anime/108268",
+      "trailer": {
+        "id": "Wo28IopG2WE",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/Wo28IopG2WE/hqdefault.jpg"
+      }
+    },
+    "konosuba": {
+      "id": 21202,
+      "idMal": 30831,
+      "title": {
+        "romaji": "Kono Subarashii Sekai ni Shukufuku wo!",
+        "english": "KONOSUBA -God's blessing on this wonderful world!",
+        "native": "この素晴らしい世界に祝福を！"
+      },
+      "synonyms": [
+        "Konosuba",
+        "Kono Subarashii Sekai ni Syukufuku wo!",
+        "Konosuba - As Bençãos de Deus Neste Mundo Maravilhoso",
+        "为美好的世界献上祝福！",
+        "ขอให้โชคดีมีชัยในโลกแฟนตาซี!",
+        "Konosuba : Sois béni monde merveilleux !",
+        "Да благословят боги сей расчудесный мир!",
+        "Konosuba: Un mundo maravilloso!",
+        " Konosuba: ¡Bendito sea este maravilloso mundo!"
+      ],
+      "genres": [
+        "Adventure",
+        "Comedy",
+        "Ecchi",
+        "Fantasy"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21202-mPOr80AEjUcZ.png",
+        "color": "#5daee4"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/21202-UWijdV7RMnXo.jpg",
+      "siteUrl": "https://anilist.co/anime/21202",
+      "trailer": {
+        "id": "NU87y-38glA",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/NU87y-38glA/hqdefault.jpg"
+      }
+    },
+    "overlord": {
+      "id": 20832,
+      "idMal": 29803,
+      "title": {
+        "romaji": "Overlord",
+        "english": "Overlord",
+        "native": "オーバーロード"
+      },
+      "synonyms": [
+        "Over Lord",
+        "โอเวอร์ลอร์ด",
+        "โอเวอร์ ลอร์ด จอมมารพิชิตโลก"
+      ],
+      "genres": [
+        "Action",
+        "Adventure",
+        "Fantasy"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20832-vUNm5zrYWifc.jpg",
+        "color": "#505de4"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/20832-NswCiSYMoI2k.jpg",
+      "siteUrl": "https://anilist.co/anime/20832",
+      "trailer": {
+        "id": "RuNAPPcjDr4",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/RuNAPPcjDr4/hqdefault.jpg"
+      }
+    },
+    "naruto": {
+      "id": 20,
+      "idMal": 20,
+      "title": {
+        "romaji": "NARUTO",
+        "english": "Naruto",
+        "native": "NARUTO -ナルト-"
+      },
+      "synonyms": [
+        "נארוטו",
+        "ناروتو",
+        "火影忍者",
+        "นารูโตะ นินจาจอมคาถา",
+        "Наруто"
+      ],
+      "genres": [
+        "Action",
+        "Adventure",
+        "Comedy",
+        "Drama",
+        "Fantasy",
+        "Supernatural"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20-dE6UHbFFg1A5.jpg",
+        "color": "#e47850"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/20-HHxhPj5JD13a.jpg",
+      "siteUrl": "https://anilist.co/anime/20",
+      "trailer": {
+        "id": "-G9BqkgZXRA",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/-G9BqkgZXRA/hqdefault.jpg"
+      }
+    },
+    "wind-breaker": {
+      "id": 163270,
+      "idMal": 54900,
+      "title": {
+        "romaji": "WIND BREAKER",
+        "english": "WIND BREAKER",
+        "native": "WIND BREAKER"
+      },
+      "synonyms": [
+        "WB",
+        "ウィンブレ",
+        "WBK",
+        "ウィンドブレイカー"
+      ],
+      "genres": [
+        "Action",
+        "Comedy",
+        "Drama"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx163270-wboZJp0ybwVK.jpg",
+        "color": "#288643"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/163270-fcjrqp3iKWdb.jpg",
+      "siteUrl": "https://anilist.co/anime/163270",
+      "trailer": {
+        "id": "k5qM1PoLmUc",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/k5qM1PoLmUc/hqdefault.jpg"
+      }
+    },
+    "attack-on-titan": {
+      "id": 16498,
+      "idMal": 16498,
+      "title": {
+        "romaji": "Shingeki no Kyojin",
+        "english": "Attack on Titan",
+        "native": "進撃の巨人"
+      },
+      "synonyms": [
+        "SnK",
+        "AoT",
+        "Ataque a los Titanes",
+        "Ataque dos Titãs",
+        "L'Attacco dei Giganti",
+        "מתקפת הטיטאנים",
+        "进击的巨人",
+        "L’Attaque des Titans",
+        "الهجوم على العمالقة",
+        "ผ่าพิภพไททัน",
+        "حمله به تایتان",
+        "Ataque de Titãs",
+        "Atak Tytanów",
+        "Атака титанов",
+        "Đại Chiến Titan"
+      ],
+      "genres": [
+        "Action",
+        "Drama",
+        "Fantasy",
+        "Mystery"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx16498-buvcRTBx4NSm.jpg",
+        "color": "#f1a143"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/16498-8jpFCOcDmneX.jpg",
+      "siteUrl": "https://anilist.co/anime/16498",
+      "trailer": {
+        "id": "LHtdKWJdif4\t",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/LHtdKWJdif4\t/hqdefault.jpg"
+      }
+    },
+    "dandadan": {
+      "id": 171018,
+      "idMal": 57334,
+      "title": {
+        "romaji": "Dandadan",
+        "english": "DAN DA DAN",
+        "native": "ダンダダン"
+      },
+      "synonyms": [
+        "ดันดาดัน",
+        "膽大黨",
+        "DAN DA DAN: FIRST ENCOUNTER",
+        "Дандадан"
+      ],
+      "genres": [
+        "Action",
+        "Comedy",
+        "Drama",
+        "Romance",
+        "Sci-Fi",
+        "Supernatural"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx171018-60q1B6GK2Ghb.jpg",
+        "color": "#e47850"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/171018-SpwPNAduszXl.jpg",
+      "siteUrl": "https://anilist.co/anime/171018",
+      "trailer": {
+        "id": "rJo1MnsuxyY",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/rJo1MnsuxyY/hqdefault.jpg"
+      }
+    },
+    "mob-psycho-100": {
+      "id": 21507,
+      "idMal": 32182,
+      "title": {
+        "romaji": "Mob Psycho 100",
+        "english": "Mob Psycho 100",
+        "native": "モブサイコ100"
+      },
+      "synonyms": [
+        "מוב פסיכו 100",
+        "ม็อบไซโค 100 คนพลังจิต",
+        "Моб Психо 100"
+      ],
+      "genres": [
+        "Action",
+        "Comedy",
+        "Drama",
+        "Psychological",
+        "Slice of Life",
+        "Supernatural"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21507-6YUSbh2m0N1p.jpg",
+        "color": "#d65d1a"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/21507-Qx8bGsLXUgLo.jpg",
+      "siteUrl": "https://anilist.co/anime/21507",
+      "trailer": {
+        "id": "mV39saBlBLI",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/mV39saBlBLI/hqdefault.jpg"
+      }
+    },
+    "vinland-saga": {
+      "id": 101348,
+      "idMal": 37521,
+      "title": {
+        "romaji": "VINLAND SAGA",
+        "english": "Vinland Saga",
+        "native": "ヴィンランド・サガ"
+      },
+      "synonyms": [
+        "סאגת וינלנד",
+        "فينلاند ساغا",
+        "สงครามคนทมิฬ",
+        "Сага о Винланде"
+      ],
+      "genres": [
+        "Action",
+        "Adventure",
+        "Drama"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101348-2fhDFPCuMNiz.jpg",
+        "color": "#f16b5d"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/101348-pivKKffCAwAY.jpg",
+      "siteUrl": "https://anilist.co/anime/101348",
+      "trailer": {
+        "id": "5xqEp7R9SYM",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/5xqEp7R9SYM/hqdefault.jpg"
+      }
+    },
+    "kaguya-sama": {
+      "id": 101921,
+      "idMal": 37999,
+      "title": {
+        "romaji": "Kaguya-sama wa Kokurasetai: Tensaitachi no Renai Zunousen",
+        "english": "Kaguya-sama: Love is War",
+        "native": "かぐや様は告らせたい～天才たちの恋愛頭脳戦～"
+      },
+      "synonyms": [
+        "Kaguya Wants to be Confessed To: The Geniuses' War of Love and Brains",
+        "קאגויה סאמה",
+        "辉夜大小姐想让我告白～天才们的恋爱头脑战～",
+        "辉夜姬想让人告白",
+        "辉夜姬想让人告白～天才们的恋爱头脑战～",
+        "辉告",
+        "Kaguya-sama wa Kokurasetai: Tensai-tachi no Renai Zunousen",
+        "Kaguya-sama : L'Amour est une guerre",
+        "สารภาพรักกับคุณคางุยะซะดีๆ ~สงครามประสาทความรักของเหล่าอัจฉริยะ~",
+        "Госпожа Кагуя: В любви как на войне",
+        "Kaguya-sama: Cuộc Chiến Tỏ Tình",
+        "Cuộc Chiến Tỏ Tình"
+      ],
+      "genres": [
+        "Comedy",
+        "Psychological",
+        "Romance",
+        "Slice of Life"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101921-ufrjLzhSz7L1.jpg",
+        "color": "#e45086"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/101921-GgvvFhlNhzlF.jpg",
+      "siteUrl": "https://anilist.co/anime/101921",
+      "trailer": {
+        "id": "IwpJJiQkZzI",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/IwpJJiQkZzI/hqdefault.jpg"
+      }
+    },
+    "fruits-basket": {
+      "id": 105334,
+      "idMal": 38680,
+      "title": {
+        "romaji": "Fruits Basket: 1st Season",
+        "english": "Fruits Basket (2019)",
+        "native": "フルーツバスケット 1st Season"
+      },
+      "synonyms": [
+        "Fruits Basket (Zenpen)",
+        "Furuba",
+        "Fruba",
+        "フルバ",
+        "水果篮子（第一季）",
+        "水果篮子（2019）",
+        "เสน่ห์สาวข้าวปั้น",
+        "Корзинка фруктов"
+      ],
+      "genres": [
+        "Comedy",
+        "Drama",
+        "Romance",
+        "Slice of Life",
+        "Supernatural"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx105334-AZwEdMu4KFtV.jpg",
+        "color": "#e4d6a1"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/105334-dPfrCyZ8GkOI.jpg",
+      "siteUrl": "https://anilist.co/anime/105334",
+      "trailer": {
+        "id": "4jgVaA4bxDI",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/4jgVaA4bxDI/hqdefault.jpg"
+      }
+    },
+    "bocchi-the-rock": {
+      "id": 130003,
+      "idMal": 47917,
+      "title": {
+        "romaji": "Bocchi the Rock!",
+        "english": "BOCCHI THE ROCK!",
+        "native": "ぼっち・ざ・ろっく！"
+      },
+      "synonyms": [
+        "РОК-ТИХОНЯ!",
+        "บจจิเดอะร็อก!",
+        "孤獨搖滾！",
+        "孤独摇滚！",
+        "외톨이 THE ROCK!",
+        "봇치 더 록!",
+        "BTR"
+      ],
+      "genres": [
+        "Comedy",
+        "Music",
+        "Slice of Life"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx130003-HTDmeL4RGeJ4.png",
+        "color": "#e4bb50"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/130003-5F90a7BtsPQN.jpg",
+      "siteUrl": "https://anilist.co/anime/130003",
+      "trailer": {
+        "id": "SyMMZF5zNW4",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/SyMMZF5zNW4/hqdefault.jpg"
+      }
+    },
+    "cowboy-bebop": {
+      "id": 1,
+      "idMal": 1,
+      "title": {
+        "romaji": "Cowboy Bebop",
+        "english": "Cowboy Bebop",
+        "native": "カウボーイビバップ"
+      },
+      "synonyms": [
+        "카우보이 비밥",
+        "קאובוי ביבופ",
+        "คาวบอย บีบ๊อป",
+        "Ковбой Бибоп",
+        "Καουμπόηδες του Διαστήματος",
+        "Kowboj Bebop"
+      ],
+      "genres": [
+        "Action",
+        "Adventure",
+        "Drama",
+        "Sci-Fi"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1-GCsPm7waJ4kS.png",
+        "color": "#f16b50"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/1-OquNCNB6srGe.jpg",
+      "siteUrl": "https://anilist.co/anime/1",
+      "trailer": {
+        "id": "OhNwckCLzis",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/OhNwckCLzis/hqdefault.jpg"
+      }
+    },
+    "steins-gate": {
+      "id": 9253,
+      "idMal": 9253,
+      "title": {
+        "romaji": "Steins;Gate",
+        "english": "Steins;Gate",
+        "native": "シュタインズ・ゲート"
+      },
+      "synonyms": [
+        "S;G",
+        "סטיינס;גייט",
+        "命运石之门",
+        "Врата;Штейна"
+      ],
+      "genres": [
+        "Drama",
+        "Psychological",
+        "Sci-Fi",
+        "Thriller"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx9253-tIUXF2gfU8Sg.jpg",
+        "color": "#ffd6ae"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/n9253-JIhmKgBKsWUN.jpg",
+      "siteUrl": "https://anilist.co/anime/9253",
+      "trailer": {
+        "id": "27OZc-ku6is",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/27OZc-ku6is/hqdefault.jpg"
+      }
+    },
+    "code-geass": {
+      "id": 1575,
+      "idMal": 1575,
+      "title": {
+        "romaji": "Code Geass: Hangyaku no Lelouch",
+        "english": "Code Geass: Lelouch of the Rebellion",
+        "native": "コードギアス 反逆のルルーシュ"
+      },
+      "synonyms": [
+        "Code Geass: Lelouch de la Rebelión",
+        "קוד גיאס: המהפכה של ללוש"
+      ],
+      "genres": [
+        "Action",
+        "Drama",
+        "Mecha",
+        "Sci-Fi",
+        "Thriller"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1575-hsmWM2ydNm1m.jpg",
+        "color": "#c9d678"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/1575.jpg",
+      "siteUrl": "https://anilist.co/anime/1575",
+      "trailer": {
+        "id": "Ab9ztHX-DVg",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/Ab9ztHX-DVg/hqdefault.jpg"
+      }
+    },
+    "hells-paradise": {
+      "id": 128893,
+      "idMal": 46569,
+      "title": {
+        "romaji": "Jigokuraku",
+        "english": "Hell’s Paradise",
+        "native": "地獄楽"
+      },
+      "synonyms": [
+        "Hell’s Paradise: Jigokuraku",
+        "สุขาวดีอเวจี",
+        "Адский рай"
+      ],
+      "genres": [
+        "Action",
+        "Adventure",
+        "Mystery",
+        "Supernatural"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx128893-Gc2t8b8M0mVu.jpg",
+        "color": "#e4bb35"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/128893-pAA7PjY8l7dy.jpg",
+      "siteUrl": "https://anilist.co/anime/128893",
+      "trailer": {
+        "id": "t1Sqcxti0Ls",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/t1Sqcxti0Ls/hqdefault.jpg"
+      }
+    },
+    "mashle": {
+      "id": 151801,
+      "idMal": 52211,
+      "title": {
+        "romaji": "MASHLE",
+        "english": "MASHLE: MAGIC AND MUSCLES",
+        "native": "マッシュル-MASHLE-"
+      },
+      "synonyms": [
+        "MASHLE ศึกโลกเวทมนตร์คนพลังกล้าม",
+        "MASHLE: MAGIA E MÚSCULOS",
+        "MASHLE: Магия и мускулы"
+      ],
+      "genres": [
+        "Action",
+        "Comedy",
+        "Fantasy"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx151801-XxVf22Le6C8o.png",
+        "color": "#f1bb5d"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/151801-zBFaJMIJFWfS.jpg",
+      "siteUrl": "https://anilist.co/anime/151801",
+      "trailer": {
+        "id": "zl0Kiv0kuQQ",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/zl0Kiv0kuQQ/hqdefault.jpg"
+      }
+    },
+    "hunter-x-hunter": {
+      "id": 11061,
+      "idMal": 11061,
+      "title": {
+        "romaji": "HUNTER×HUNTER (2011)",
+        "english": "Hunter x Hunter (2011)",
+        "native": "HUNTER×HUNTER (2011)"
+      },
+      "synonyms": [
+        "ハンター×ハンター",
+        "HxH",
+        "全职猎人",
+        "האנטר האנטר",
+        "ฮันเตอร์ x ฮันเตอร์",
+        "القناص ",
+        "Мисливець X Мисливець"
+      ],
+      "genres": [
+        "Action",
+        "Adventure",
+        "Fantasy"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx11061-y5gsT1hoHuHw.png",
+        "color": "#f1d65d"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/11061-8WkkTZ6duKpq.jpg",
+      "siteUrl": "https://anilist.co/anime/11061",
+      "trailer": {
+        "id": "d6kBeJjTGnY",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/d6kBeJjTGnY/hqdefault.jpg"
+      }
+    },
+    "assassination-classroom": {
+      "id": 20755,
+      "idMal": 24833,
+      "title": {
+        "romaji": "Ansatsu Kyoushitsu",
+        "english": "Assassination Classroom",
+        "native": "暗殺教室"
+      },
+      "synonyms": [
+        "כיתת ההתנקשות",
+        "فصل الاغتيال",
+        "Klasa skrytobójców",
+        "Lớp học ám sát"
+      ],
+      "genres": [
+        "Action",
+        "Comedy",
+        "Drama",
+        "Supernatural"
+      ],
+      "coverImage": {
+        "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20755-dWrhs569YGUO.jpg",
+        "color": "#f1e45d"
+      },
+      "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/20755-D4ipww9U8YkC.jpg",
+      "siteUrl": "https://anilist.co/anime/20755",
+      "trailer": {
+        "id": "vAuTJFzjNLs",
+        "site": "youtube",
+        "thumbnail": "https://i.ytimg.com/vi/vAuTJFzjNLs/hqdefault.jpg"
+      }
+    }
+  }
+}

@@ -1,5 +1,5 @@
 /**
- * Automated Test Suite for Anime-Themed Productivity & Todo List
+ * Legacy compatibility suite for the preserved One Piece dashboard (legacy.html)
  * Tests all 14 user flows and edge cases in a simulated environment.
  */
 
@@ -406,7 +406,7 @@ console.log(`✓ Persisted companion memory: tasksCompletedTotal=${companionMemP
 
 // Test 25: HTML & CSS Validation for Bug Fixes
 console.log('\n--- Test 25: HTML & CSS Validation for Bug Fixes ---');
-const htmlContent = fs.readFileSync('index.html', 'utf-8');
+const htmlContent = fs.readFileSync('legacy.html', 'utf-8');
 const cssContent = fs.readFileSync('style.css', 'utf-8');
 
 // 1. No companion-panel or right sidebar

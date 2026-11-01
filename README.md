@@ -1,3 +1,5 @@
+> **UI upgrade in progress:** the default app is now Anime Todo, a bright manga workspace with 64 worlds, including a dated Crunchyroll Popular 50 view. Run `npm run dev`. The original interface documented below remains at `/legacy.html`. See [implementation status](docs/implementation/STATUS.md) for verified behavior, media provenance, pending Flow/Stitch work, and [account setup](docs/implementation/ACCOUNT_SETUP.md).
+
 # ☠️ One Piece Todo & Mission Log | Grand Line Dashboard
 
 <div align="center">

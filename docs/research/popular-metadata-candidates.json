@@ -1,0 +1,1209 @@
+{
+  "data": {
+    "q0": {
+      "media": [
+        {
+          "id": 99699,
+          "idMal": 36028,
+          "title": {
+            "romaji": "Golden Kamuy",
+            "english": "Golden Kamuy",
+            "native": "ゴールデンカムイ"
+          },
+          "seasonYear": 2018,
+          "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx99699-mBCjpoWpAVGX.jpg",
+            "color": "#78281a"
+          },
+          "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/99699-95D2XWA6eWAH.jpg",
+          "siteUrl": "https://anilist.co/anime/99699",
+          "synonyms": [
+            "Golden Kamui",
+            "黄金神威"
+          ],
+          "genres": [
+            "Action",
+            "Adventure",
+            "Comedy"
+          ],
+          "trailer": {
+            "id": "5olutLS6mdo",
+            "site": "youtube"
+          }
+        },
+        {
+          "id": 101830,
+          "idMal": 37884,
+          "title": {
+            "romaji": "Golden Kamuy OVA",
+            "english": "Golden Kamuy OVA",
+            "native": "ゴールデンカムイOVA"
+          },
+          "seasonYear": 2018,
+          "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx101830-9KeLagRcnSzM.jpg",
+            "color": "#f1865d"
+          },
+          "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/101830-Gj0fVRkzG14o.jpg",
+          "siteUrl": "https://anilist.co/anime/101830",
+          "synonyms": [
+            "茨戸の用心棒",
+            "Barato no Youjinbou",
+            "The Bodyguard of Barato",
+            "怪奇！謎の巨大鳥",
+            "Kaiki! Nazo no Kyodai Tori",
+            "Terror! The Mysterious Giant Bird"
+          ],
+          "genres": [
+            "Action",
+            "Adventure"
+          ],
+          "trailer": null
+        },
+        {
+          "id": 110355,
+          "idMal": 40059,
+          "title": {
+            "romaji": "Golden Kamuy 3rd Season",
+            "english": "Golden Kamuy Season 3",
+            "native": "ゴールデンカムイ 第三期"
+          },
+          "seasonYear": 2020,
+          "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx110355-yXOXm5tr8kgr.png",
+            "color": null
+          },
+          "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/110355-NjeP9BVLSWG4.jpg",
+          "siteUrl": "https://anilist.co/anime/110355",
+          "synonyms": [
+            "Golden Kamui 3"
+          ],
+          "genres": [
+            "Action",
+            "Adventure",
+            "Comedy"
+          ],
+          "trailer": {
+            "id": "G2raRyN6kgY",
+            "site": "youtube"
+          }
+        }
+      ]
+    },
+    "q1": {
+      "media": [
+        {
+          "id": 166617,
+          "idMal": 55830,
+          "title": {
+            "romaji": "Fate/strange Fake",
+            "english": "Fate/strange Fake",
+            "native": "Fate/strange Fake"
+          },
+          "seasonYear": 2026,
+          "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx166617-34fpC9y47tTx.png",
+            "color": "#1a0df1"
+          },
+          "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/166617-P4w3p0H4lE1O.jpg",
+          "siteUrl": "https://anilist.co/anime/166617",
+          "synonyms": [
+            "Судьба/Странная подделка"
+          ],
+          "genres": [
+            "Action",
+            "Adventure",
+            "Fantasy",
+            "Mystery",
+            "Supernatural"
+          ],
+          "trailer": {
+            "id": "k1G8EvZg_BY",
+            "site": "youtube"
+          }
+        },
+        {
+          "id": 209984,
+          "idMal": null,
+          "title": {
+            "romaji": "Fate/strange Fake (Zoku-hen)",
+            "english": null,
+            "native": "Fate/strange Fake (続編)"
+          },
+          "seasonYear": null,
+          "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx209984-0x94nfPZV7Le.jpg",
+            "color": null
+          },
+          "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/209984-Dv4umdM6fPHH.jpg",
+          "siteUrl": "https://anilist.co/anime/209984",
+          "synonyms": [
+            "Fate/strange Fake (Sequel)"
+          ],
+          "genres": [
+            "Action",
+            "Adventure",
+            "Fantasy",
+            "Mystery",
+            "Supernatural"
+          ],
+          "trailer": {
+            "id": "AOR_K6DWXY0",
+            "site": "youtube"
+          }
+        },
+        {
+          "id": 114389,
+          "idMal": 40982,
+          "title": {
+            "romaji": "Fate/strange Fake TVCM",
+            "english": null,
+            "native": "Fate/strange Fake TVCM"
+          },
+          "seasonYear": null,
+          "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx114389-AQvf70CQUvDq.jpg",
+            "color": "#e45da1"
+          },
+          "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/114389-Vtr1sWYsmGFy.jpg",
+          "siteUrl": "https://anilist.co/anime/114389",
+          "synonyms": [],
+          "genres": [
+            "Action",
+            "Fantasy"
+          ],
+          "trailer": {
+            "id": "yHmQsWyCP3Q",
+            "site": "youtube"
+          }
+        }
+      ]
+    },
+    "q2": {
+      "media": [
+        {
+          "id": 153845,
+          "idMal": 52830,
+          "title": {
+            "romaji": "Isekai de Cheat Skill wo Te ni Shita Ore wa, Genjitsu Sekai wo mo Musou Suru: Level Up wa Jinsei wo Kaeta",
+            "english": "I Got a Cheat Skill in Another World and Became Unrivaled in The Real World, Too",
+            "native": "異世界でチート能力を手にした俺は、現実世界をも無双する ～レベルアップは人生を変えた～"
+          },
+          "seasonYear": 2023,
+          "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx153845-C47aoKy7wf19.jpg",
+            "color": "#86281a"
+          },
+          "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/153845-qcUXgT0toF1J.jpg",
+          "siteUrl": "https://anilist.co/anime/153845",
+          "synonyms": [
+            "I Got a Cheat Ability in a Different World, and Became Extraordinary Even in the Real World",
+            "Isekai de Cheat Nouryoku Ote ni Shita Ore wa, Genjitsu Sekai o mo Musou Suru",
+            "สกิลโกงไร้เทียมทาน สร้างตำนานในสองโลก: ชีวิตพลิกผันด้วยการอัปเลเวล",
+            "Ganhei um Poder Apelão em Outro Mundo e Agora Sou Imbatível no Mundo Real",
+            "Iseleve",
+            "在异世界获得超强能力的我，在现实世界照样无敌～等级提升改变人生命运",
+            "いせれべ",
+            "Skill Nge-Cheat yang Kudapat di Dunia Lain Juga Membuatku Tanpa Tanding di Dunia Asal"
+          ],
+          "genres": [
+            "Action",
+            "Adventure",
+            "Fantasy",
+            "Romance"
+          ],
+          "trailer": {
+            "id": "qDaUzzpowzQ",
+            "site": "youtube"
+          }
+        },
+        {
+          "id": 209980,
+          "idMal": 63822,
+          "title": {
+            "romaji": "Isekai de Cheat Skill wo Te ni Shita Ore wa, Genjitsu Sekai wo mo Musou Suru: Level Up wa Jinsei wo Kaeta 2nd Season",
+            "english": null,
+            "native": "異世界でチート能力を手にした俺は、現実世界をも無双する ～レベルアップは人生を変えた～ 2nd Season"
+          },
+          "seasonYear": 2027,
+          "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx209980-CTTwiweBKBS2.png",
+            "color": "#5da1e4"
+          },
+          "bannerImage": null,
+          "siteUrl": "https://anilist.co/anime/209980",
+          "synonyms": [
+            "I Got a Cheat Skill in Another World and Became Unrivaled in The Real World, Too Season 2"
+          ],
+          "genres": [
+            "Action",
+            "Adventure",
+            "Fantasy",
+            "Romance"
+          ],
+          "trailer": {
+            "id": "twGVFfRI-7s",
+            "site": "youtube"
+          }
+        },
+        {
+          "id": 170110,
+          "idMal": 56906,
+          "title": {
+            "romaji": "Isekai de Cheat Skill wo Te ni Shita Ore wa, Genjitsu Sekai wo mo Musou Suru: Level Up wa Jinsei wo Kaeta",
+            "english": "I Got a Cheat Skill in Another World and Became Unrivaled in The Real World, Too (Special) - The Legendary Dragon—Awakens",
+            "native": "異世界でチート能力を手にした俺は、現実世界をも無双する ～レベルアップは人生を変えた～"
+          },
+          "seasonYear": 2026,
+          "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx170110-MzWm7RaFxAnu.png",
+            "color": "#bb43e4"
+          },
+          "bannerImage": null,
+          "siteUrl": "https://anilist.co/anime/170110",
+          "synonyms": [
+            "สกิลโกงไร้เทียมทาน สร้างตำนานในสองโลก -ชีวิตพลิกผันด้วยการอัปเลเวล- TVSP"
+          ],
+          "genres": [
+            "Action",
+            "Adventure",
+            "Fantasy",
+            "Romance"
+          ],
+          "trailer": {
+            "id": "SRYZgp2VliQ",
+            "site": "youtube"
+          }
+        }
+      ]
+    },
+    "q3": {
+      "media": [
+        {
+          "id": 143327,
+          "idMal": 50695,
+          "title": {
+            "romaji": "MF Ghost",
+            "english": "MF GHOST",
+            "native": "MFゴースト"
+          },
+          "seasonYear": 2023,
+          "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx143327-6gv1QzquNg2o.png",
+            "color": "#1af1f1"
+          },
+          "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/143327-9oKdfizmBzC7.jpg",
+          "siteUrl": "https://anilist.co/anime/143327",
+          "synonyms": [
+            "燃油車鬥魂"
+          ],
+          "genres": [
+            "Sports"
+          ],
+          "trailer": {
+            "id": "_BGFUbJcJi8",
+            "site": "youtube"
+          }
+        },
+        {
+          "id": 209876,
+          "idMal": 63807,
+          "title": {
+            "romaji": "MF Ghost Final Season",
+            "english": null,
+            "native": "MFゴースト Final Season"
+          },
+          "seasonYear": null,
+          "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx209876-VbbzBZf6HfE7.png",
+            "color": "#2843ae"
+          },
+          "bannerImage": null,
+          "siteUrl": "https://anilist.co/anime/209876",
+          "synonyms": [
+            "MF GHOST Final Season"
+          ],
+          "genres": [
+            "Sports"
+          ],
+          "trailer": {
+            "id": "syW86r5PrfE",
+            "site": "youtube"
+          }
+        },
+        {
+          "id": 171642,
+          "idMal": 57559,
+          "title": {
+            "romaji": "MF Ghost 2nd Season",
+            "english": "MF GHOST Season 2",
+            "native": "MFゴースト 2nd Season"
+          },
+          "seasonYear": 2024,
+          "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx171642-Tj5KCJPILuUN.jpg",
+            "color": null
+          },
+          "bannerImage": null,
+          "siteUrl": "https://anilist.co/anime/171642",
+          "synonyms": [],
+          "genres": [
+            "Sports"
+          ],
+          "trailer": {
+            "id": "zn_3RAMZj9E",
+            "site": "youtube"
+          }
+        }
+      ]
+    },
+    "q4": {
+      "media": [
+        {
+          "id": 151040,
+          "idMal": 52093,
+          "title": {
+            "romaji": "TRIGUN STAMPEDE",
+            "english": "TRIGUN STAMPEDE",
+            "native": "TRIGUN STAMPEDE"
+          },
+          "seasonYear": 2023,
+          "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx151040-9QXRpaprfNmL.png",
+            "color": "#5da1e4"
+          },
+          "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/151040-1auPdaGqDGYd.jpg",
+          "siteUrl": "https://anilist.co/anime/151040",
+          "synonyms": [
+            "トライガン スタンピード"
+          ],
+          "genres": [
+            "Action",
+            "Drama",
+            "Sci-Fi"
+          ],
+          "trailer": {
+            "id": "lcFWdVqh3Xs",
+            "site": "youtube"
+          }
+        },
+        {
+          "id": 163144,
+          "idMal": 54863,
+          "title": {
+            "romaji": "TRIGUN STARGAZE",
+            "english": "TRIGUN STARGAZE",
+            "native": "TRIGUN STARGAZE"
+          },
+          "seasonYear": 2026,
+          "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx163144-XdVwFRxPGY6j.jpg",
+            "color": "#e4bb50"
+          },
+          "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/163144-EyR6TQyQVbx5.jpg",
+          "siteUrl": "https://anilist.co/anime/163144",
+          "synonyms": [
+            "トライガン スタンピード 完結編",
+            "TRIGUN STAMPEDE: Kanketsu-hen",
+            "トライガン スターゲイズ"
+          ],
+          "genres": [
+            "Action",
+            "Comedy",
+            "Drama",
+            "Sci-Fi"
+          ],
+          "trailer": {
+            "id": "JBYLkW--zmI",
+            "site": "youtube"
+          }
+        }
+      ]
+    },
+    "q5": {
+      "media": [
+        {
+          "id": 114535,
+          "idMal": 41025,
+          "title": {
+            "romaji": "Fumetsu no Anata e",
+            "english": "To Your Eternity",
+            "native": "不滅のあなたへ"
+          },
+          "seasonYear": 2021,
+          "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx114535-y3NnjexcqKG1.jpg",
+            "color": "#f1d6a1"
+          },
+          "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/114535-ASUprf4AsNwC.jpg",
+          "siteUrl": "https://anilist.co/anime/114535",
+          "synonyms": [
+            "To You, the Immortal",
+            "Uma vida imortal",
+            "致不灭的你",
+            "A te, l'immortale",
+            "Ku twej wieczności",
+            "불멸의 그대에게",
+            "Untukmu yang Abadi",
+            "Gửi em, người bất tử",
+            "แด่เธอผู้เป็นนิรันดร์"
+          ],
+          "genres": [
+            "Adventure",
+            "Drama",
+            "Fantasy",
+            "Psychological",
+            "Supernatural"
+          ],
+          "trailer": {
+            "id": "0S0ty44JPao",
+            "site": "youtube"
+          }
+        },
+        {
+          "id": 162669,
+          "idMal": 54703,
+          "title": {
+            "romaji": "Fumetsu no Anata e Season 3",
+            "english": "To Your Eternity Season 3",
+            "native": "不滅のあなたへ Season 3"
+          },
+          "seasonYear": 2025,
+          "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx162669-FLYUTftoXgMh.jpg",
+            "color": "#f1a150"
+          },
+          "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/162669-SvOE44IccAT0.jpg",
+          "siteUrl": "https://anilist.co/anime/162669",
+          "synonyms": [],
+          "genres": [
+            "Adventure",
+            "Drama",
+            "Fantasy",
+            "Psychological",
+            "Supernatural"
+          ],
+          "trailer": {
+            "id": "JmT51BjIJ5w",
+            "site": "youtube"
+          }
+        },
+        {
+          "id": 138565,
+          "idMal": 49709,
+          "title": {
+            "romaji": "Fumetsu no Anata e Season 2",
+            "english": "To Your Eternity Season 2",
+            "native": "不滅のあなたへ Season 2"
+          },
+          "seasonYear": 2022,
+          "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx138565-JzvDqH84ILzi.png",
+            "color": "#e4c950"
+          },
+          "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/138565-Gzw9xYWtgF6U.jpg",
+          "siteUrl": "https://anilist.co/anime/138565",
+          "synonyms": [
+            "不滅のあなたへ 第２シリーズ",
+            "Uma vida imortal 2",
+            "แด่เธอผู้เป็นนิรันดร์ ภาค 2"
+          ],
+          "genres": [
+            "Adventure",
+            "Drama",
+            "Fantasy",
+            "Psychological",
+            "Supernatural"
+          ],
+          "trailer": {
+            "id": "xlULSshsTHc",
+            "site": "youtube"
+          }
+        }
+      ]
+    },
+    "q6": {
+      "media": [
+        {
+          "id": 183161,
+          "idMal": 60146,
+          "title": {
+            "romaji": "Saikyou no Ousama, Nidome no Jinsei wa Nani wo Suru?",
+            "english": "The Beginning After the End",
+            "native": "最強の王様、二度目の人生は 何をする?"
+          },
+          "seasonYear": 2025,
+          "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx183161-5M054tuPmZJX.jpg",
+            "color": "#43aeff"
+          },
+          "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/183161-L5X2veRcYJnh.jpg",
+          "siteUrl": "https://anilist.co/anime/183161",
+          "synonyms": [
+            "TBATE",
+            "終末起點",
+            "Начало после конца"
+          ],
+          "genres": [
+            "Action",
+            "Adventure",
+            "Fantasy"
+          ],
+          "trailer": {
+            "id": "LwCJhJbpg4Q",
+            "site": "youtube"
+          }
+        },
+        {
+          "id": 194317,
+          "idMal": 61831,
+          "title": {
+            "romaji": "Saikyou no Ousama, Nidome no Jinsei wa Nani wo Suru? 2nd Season",
+            "english": "The Beginning After the End Season 2",
+            "native": "最強の王様、二度目の人生は 何をする? 第2期"
+          },
+          "seasonYear": 2026,
+          "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx194317-M7t2ymBDHqyW.jpg",
+            "color": "#e49335"
+          },
+          "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/194317-p7wkLgp4yKrz.jpg",
+          "siteUrl": "https://anilist.co/anime/194317",
+          "synonyms": [
+            "TBATE S2",
+            "Начало после конца 2"
+          ],
+          "genres": [
+            "Action",
+            "Adventure",
+            "Fantasy"
+          ],
+          "trailer": {
+            "id": "embD4ae1ufk",
+            "site": "youtube"
+          }
+        }
+      ]
+    },
+    "q7": {
+      "media": [
+        {
+          "id": 125206,
+          "idMal": 43523,
+          "title": {
+            "romaji": "Tsuki ga Michibiku Isekai Douchuu",
+            "english": "TSUKIMICHI -Moonlit Fantasy-",
+            "native": "月が導く異世界道中"
+          },
+          "seasonYear": 2021,
+          "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx125206-O2MsOWdW1lVi.jpg",
+            "color": "#e4a150"
+          },
+          "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/125206-UdWijVTgcC5t.jpg",
+          "siteUrl": "https://anilist.co/anime/125206",
+          "synonyms": [
+            "Moon-led Journey Across Another World",
+            "จันทรานำพาสู่ต่างโลก",
+            "月光下的异世界之旅",
+            "Благословлённое лунным светом приключение в другом мире"
+          ],
+          "genres": [
+            "Action",
+            "Adventure",
+            "Comedy",
+            "Fantasy"
+          ],
+          "trailer": {
+            "id": "U8T63kIny7E",
+            "site": "youtube"
+          }
+        },
+        {
+          "id": 178467,
+          "idMal": 59139,
+          "title": {
+            "romaji": "Tsuki ga Michibiku Isekai Douchuu 3rd Season",
+            "english": null,
+            "native": "月が導く異世界道中 第三幕"
+          },
+          "seasonYear": null,
+          "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx178467-mw0zYp9gVfiO.png",
+            "color": "#f1bb43"
+          },
+          "bannerImage": null,
+          "siteUrl": "https://anilist.co/anime/178467",
+          "synonyms": [
+            "Tsukimichi Moonlit Fantasy Season 3"
+          ],
+          "genres": [
+            "Action",
+            "Adventure",
+            "Comedy",
+            "Fantasy"
+          ],
+          "trailer": null
+        },
+        {
+          "id": 139518,
+          "idMal": 49889,
+          "title": {
+            "romaji": "Tsuki ga Michibiku Isekai Douchuu 2nd Season",
+            "english": "TSUKIMICHI -Moonlit Fantasy- Season 2",
+            "native": "月が導く異世界道中 第二幕"
+          },
+          "seasonYear": 2024,
+          "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx139518-GZWYKM8Kg1S2.png",
+            "color": "#f17843"
+          },
+          "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/139518-OxLRGjPm9Tms.jpg",
+          "siteUrl": "https://anilist.co/anime/139518",
+          "synonyms": [
+            "จันทรานำพาสู่ต่างโลก ภาค 2",
+            "月光下的異世界之旅 第二季",
+            "Благословлённое лунным светом приключение в другом мире 2"
+          ],
+          "genres": [
+            "Action",
+            "Adventure",
+            "Comedy",
+            "Fantasy"
+          ],
+          "trailer": {
+            "id": "bJaTrqUGXXU",
+            "site": "youtube"
+          }
+        }
+      ]
+    },
+    "q8": {
+      "media": [
+        {
+          "id": 20665,
+          "idMal": 23273,
+          "title": {
+            "romaji": "Shigatsu wa Kimi no Uso",
+            "english": "Your lie in April",
+            "native": "四月は君の嘘"
+          },
+          "seasonYear": 2014,
+          "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20665-TLgkL8T8IRFd.png",
+            "color": "#e4bb50"
+          },
+          "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/20665-j4kSsfhfkM24.jpg",
+          "siteUrl": "https://anilist.co/anime/20665",
+          "synonyms": [
+            "KimiUso",
+            "השקר שלך באפריל",
+            "Bugie d'aprile",
+            "四月是你的谎言",
+            "YLIA",
+            "Sekunden in Moll",
+            "Твоя апрельская ложь",
+            "Tháng Tư Là Lời Nói Dối Của Em"
+          ],
+          "genres": [
+            "Drama",
+            "Music",
+            "Romance",
+            "Slice of Life"
+          ],
+          "trailer": {
+            "id": "3aL0gDZtFbE",
+            "site": "youtube"
+          }
+        },
+        {
+          "id": 21039,
+          "idMal": 28069,
+          "title": {
+            "romaji": "Shigatsu wa Kimi no Uso: MOMENTS",
+            "english": "Your lie in April: Moments",
+            "native": "四月は君の嘘 MOMENTS"
+          },
+          "seasonYear": 2015,
+          "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/21039-X68Dgfa7VG2v.jpg",
+            "color": "#febb0d"
+          },
+          "bannerImage": null,
+          "siteUrl": "https://anilist.co/anime/21039",
+          "synonyms": [],
+          "genres": [
+            "Music",
+            "Slice of Life"
+          ],
+          "trailer": null
+        }
+      ]
+    },
+    "q9": {
+      "media": [
+        {
+          "id": 107693,
+          "idMal": 39196,
+          "title": {
+            "romaji": "Mairimashita! Iruma-kun",
+            "english": "Welcome to Demon School! Iruma-kun",
+            "native": "魔入りました！入間くん"
+          },
+          "seasonYear": 2019,
+          "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx107693-A9bSSFAMxA6j.jpg",
+            "color": "#f18635"
+          },
+          "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/107693-h0syT88giDiw.jpg",
+          "siteUrl": "https://anilist.co/anime/107693",
+          "synonyms": [
+            "Welcome to Demon School, Iruma-kun!",
+            "入间同学入魔了！",
+            "อิรุมะคุง พจญในแดนปีศาจ!",
+            "Vào ma giới rồi đấy! Iruma-kun"
+          ],
+          "genres": [
+            "Comedy",
+            "Fantasy"
+          ],
+          "trailer": {
+            "id": "kkeuJt0DE7g",
+            "site": "youtube"
+          }
+        },
+        {
+          "id": 139092,
+          "idMal": 49784,
+          "title": {
+            "romaji": "Mairimashita! Iruma-kun 3",
+            "english": "Welcome to Demon School! Iruma-kun Season 3",
+            "native": "魔入りました！入間くん 第3シリーズ"
+          },
+          "seasonYear": 2022,
+          "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx139092-q521Du1fkosV.jpg",
+            "color": "#ffae35"
+          },
+          "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/139092-gcuDazzfT0uC.jpg",
+          "siteUrl": "https://anilist.co/anime/139092",
+          "synonyms": [
+            "อิรุมะคุง พจญในแดนปีศาจ! ภาค 3"
+          ],
+          "genres": [
+            "Comedy",
+            "Fantasy",
+            "Supernatural"
+          ],
+          "trailer": {
+            "id": "v0M9JojWdFA",
+            "site": "youtube"
+          }
+        },
+        {
+          "id": 184492,
+          "idMal": 60310,
+          "title": {
+            "romaji": "Mairimashita! Iruma-kun 4",
+            "english": "Welcome to Demon School! Iruma-kun Season 4",
+            "native": "魔入りました！入間くん 第4シリーズ"
+          },
+          "seasonYear": 2026,
+          "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx184492-KUVFGieuMaOx.jpg",
+            "color": "#f1bb28"
+          },
+          "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/184492-JsZazzn4Acqf.jpg",
+          "siteUrl": "https://anilist.co/anime/184492",
+          "synonyms": [
+            "อิรุมะคุง ผจญในแดนปีศาจ ซีซั่น 4"
+          ],
+          "genres": [
+            "Comedy",
+            "Fantasy",
+            "Supernatural"
+          ],
+          "trailer": {
+            "id": "6Lo1DUCY9nY",
+            "site": "youtube"
+          }
+        }
+      ]
+    },
+    "q10": {
+      "media": [
+        {
+          "id": 3588,
+          "idMal": 3588,
+          "title": {
+            "romaji": "Soul Eater",
+            "english": "Soul Eater",
+            "native": "ソウルイーター"
+          },
+          "seasonYear": 2008,
+          "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx3588-fSMggQoFSbUI.png",
+            "color": "#e4bb5d"
+          },
+          "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/3588-rpnVOMaLD3is.jpg",
+          "siteUrl": "https://anilist.co/anime/3588",
+          "synonyms": [
+            "אכלן הנשמות ",
+            "סול איטר",
+            "Пожирач душ"
+          ],
+          "genres": [
+            "Action",
+            "Adventure",
+            "Comedy",
+            "Fantasy",
+            "Supernatural"
+          ],
+          "trailer": {
+            "id": "DTTCUzmHKvI",
+            "site": "youtube"
+          }
+        },
+        {
+          "id": 20547,
+          "idMal": 21507,
+          "title": {
+            "romaji": "Soul Eater Not!",
+            "english": null,
+            "native": "ソウルイータノット！"
+          },
+          "seasonYear": 2014,
+          "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20547-w5Gp0a2E4YCe.png",
+            "color": "#f1c986"
+          },
+          "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/20547-NdXpOBSW4Eqw.jpg",
+          "siteUrl": "https://anilist.co/anime/20547",
+          "synonyms": [],
+          "genres": [
+            "Action",
+            "Comedy",
+            "Fantasy",
+            "Supernatural"
+          ],
+          "trailer": {
+            "id": "qoGvNse_TCo",
+            "site": "youtube"
+          }
+        },
+        {
+          "id": 21687,
+          "idMal": 21195,
+          "title": {
+            "romaji": "Soul Eater Late Show",
+            "english": "Soul Eater Late Show",
+            "native": "ソウルイーターレイトショー"
+          },
+          "seasonYear": 2008,
+          "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/21687-UCt418ZNhBMu.jpg",
+            "color": "#e4ae43"
+          },
+          "bannerImage": null,
+          "siteUrl": "https://anilist.co/anime/21687",
+          "synonyms": [],
+          "genres": [
+            "Action",
+            "Comedy",
+            "Fantasy"
+          ],
+          "trailer": null
+        }
+      ]
+    },
+    "q11": {
+      "media": [
+        {
+          "id": 223,
+          "idMal": 223,
+          "title": {
+            "romaji": "Dragon Ball",
+            "english": "Dragon Ball",
+            "native": "ドラゴンボール"
+          },
+          "seasonYear": 1986,
+          "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx223-scE5uJfXqqj8.png",
+            "color": "#e48635"
+          },
+          "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/223-vyRuUBBYfcUb.jpg",
+          "siteUrl": "https://anilist.co/anime/223",
+          "synonyms": [
+            "Dragonball",
+            "Bola de Drac",
+            "דרגון בול ",
+            "ดราก้อนบอล",
+            "Bảy Viên Ngọc Rồng",
+            "DB",
+            "Драконий жемчуг"
+          ],
+          "genres": [
+            "Action",
+            "Adventure",
+            "Comedy",
+            "Fantasy",
+            "Sci-Fi",
+            "Supernatural"
+          ],
+          "trailer": null
+        },
+        {
+          "id": 813,
+          "idMal": 813,
+          "title": {
+            "romaji": "Dragon Ball Z",
+            "english": "Dragon Ball Z",
+            "native": "ドラゴンボールZ"
+          },
+          "seasonYear": 1989,
+          "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx813-ZhnFNOeCU5dQ.png",
+            "color": "#e49343"
+          },
+          "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/813-03ZLvWJgR6Wd.jpg",
+          "siteUrl": "https://anilist.co/anime/813",
+          "synonyms": [
+            "DBZ",
+            "Dragonball Z",
+            "דרגון בול זי",
+            "What's My Destiny Dragon Ball",
+            "ดราก้อนบอล Z",
+            "Bảy Viên Ngọc Rồng Z",
+            "Драконий жемчуг Зет"
+          ],
+          "genres": [
+            "Action",
+            "Adventure",
+            "Comedy",
+            "Fantasy",
+            "Supernatural"
+          ],
+          "trailer": null
+        },
+        {
+          "id": 21175,
+          "idMal": 30694,
+          "title": {
+            "romaji": "Dragon Ball Super",
+            "english": "Dragon Ball Super",
+            "native": "ドラゴンボール超"
+          },
+          "seasonYear": 2015,
+          "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21175-EH06qlfF8TnB.jpg",
+            "color": "#e48628"
+          },
+          "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/21175-Qo9gdGPUm4Im.jpg",
+          "siteUrl": "https://anilist.co/anime/21175",
+          "synonyms": [
+            "DBS",
+            "Dragonball Super",
+            "דרגון בול סופר",
+            "Драконий жемчуг: Супер"
+          ],
+          "genres": [
+            "Action",
+            "Adventure",
+            "Comedy",
+            "Fantasy",
+            "Sci-Fi"
+          ],
+          "trailer": {
+            "id": "ycaU9xEEdi8",
+            "site": "youtube"
+          }
+        }
+      ]
+    },
+    "q12": {
+      "media": [
+        {
+          "id": 174576,
+          "idMal": 58059,
+          "title": {
+            "romaji": "Tsue to Tsurugi no Wistoria",
+            "english": "Wistoria: Wand and Sword",
+            "native": "杖と剣のウィストリア"
+          },
+          "seasonYear": 2024,
+          "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx174576-tpKcHG0eO6CS.jpg",
+            "color": "#e4865d"
+          },
+          "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/174576-6stJnscy5rCi.jpg",
+          "siteUrl": "https://anilist.co/anime/174576",
+          "synonyms": [
+            "杖與劍的魔劍譚",
+            "ตำนานดาบและคทาแห่งวิสตอเรีย",
+            "Wistoria: Varinhas e Espadas",
+            "Wistoria: Trượng và Kiếm"
+          ],
+          "genres": [
+            "Action",
+            "Comedy",
+            "Drama",
+            "Fantasy"
+          ],
+          "trailer": {
+            "id": "FNiBiXXeyb8",
+            "site": "youtube"
+          }
+        },
+        {
+          "id": 213656,
+          "idMal": 64500,
+          "title": {
+            "romaji": "Tsue to Tsurugi no Wistoria Season 3",
+            "english": null,
+            "native": "杖と剣のウィストリア Season3"
+          },
+          "seasonYear": null,
+          "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx213656-qtf5YfNxZbEa.jpg",
+            "color": "#a150e4"
+          },
+          "bannerImage": null,
+          "siteUrl": "https://anilist.co/anime/213656",
+          "synonyms": [
+            "Wistoria: Wand and Sword Season 3"
+          ],
+          "genres": [
+            "Action",
+            "Adventure",
+            "Drama",
+            "Fantasy"
+          ],
+          "trailer": {
+            "id": "zNK65BuShFc",
+            "site": "youtube"
+          }
+        },
+        {
+          "id": 182300,
+          "idMal": 59983,
+          "title": {
+            "romaji": "Tsue to Tsurugi no Wistoria Season 2",
+            "english": "Wistoria: Wand and Sword Season 2",
+            "native": "杖と剣のウィストリア Season2"
+          },
+          "seasonYear": 2026,
+          "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx182300-IYkq5KrkQq1V.jpg",
+            "color": "#e4a150"
+          },
+          "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/182300-d1znfWKzn1bT.jpg",
+          "siteUrl": "https://anilist.co/anime/182300",
+          "synonyms": [
+            "ตำนานดาบและคทาแห่งวิสตอเรีย ซีซั่น 2",
+            "Tongkat Sihir dan Pedang Wistoria Season 2"
+          ],
+          "genres": [
+            "Action",
+            "Adventure",
+            "Drama",
+            "Fantasy"
+          ],
+          "trailer": {
+            "id": "57OL0uTIBVg",
+            "site": "youtube"
+          }
+        }
+      ]
+    },
+    "q13": {
+      "media": [
+        {
+          "id": 108268,
+          "idMal": 39468,
+          "title": {
+            "romaji": "Honzuki no Gekokujou: Shisho ni Naru Tame ni wa Shudan wo Erandeiraremasen",
+            "english": "Ascendance of a Bookworm",
+            "native": "本好きの下剋上 司書になるためには手段を選んでいられません"
+          },
+          "seasonYear": 2019,
+          "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx108268-Dtt82uOi3vq5.jpg",
+            "color": "#e4bb50"
+          },
+          "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/108268-JbUzGiUlmCTy.jpg",
+          "siteUrl": "https://anilist.co/anime/108268",
+          "synonyms": [
+            "Ascendance of a Bookworm: I'll do anything to become a librarian",
+            "爱书的下克上：为了成为图书管理员不择手段！",
+            "หนอนหนังสือยึดอำนาจ "
+          ],
+          "genres": [
+            "Fantasy",
+            "Slice of Life"
+          ],
+          "trailer": {
+            "id": "Wo28IopG2WE",
+            "site": "youtube"
+          }
+        },
+        {
+          "id": 113811,
+          "idMal": 40841,
+          "title": {
+            "romaji": "Honzuki no Gekokujou: Shisho ni Naru Tame ni wa Shudan wo Erandeiraremasen OVA",
+            "english": "Ascendance of a Bookworm Side Story",
+            "native": "本好きの下剋上 司書になるためには手段を選んでいられません OVA"
+          },
+          "seasonYear": 2020,
+          "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx113811-DxnS7eOL5zfn.jpg",
+            "color": "#f1ae0d"
+          },
+          "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/113811-rHBOVuel9Flw.jpg",
+          "siteUrl": "https://anilist.co/anime/113811",
+          "synonyms": [
+            "Ascendance of a Bookworm OVA",
+            "Ascendance of a Bookworm Episode 14.5",
+            "Honzuki no Gekokujou Episode 14.5",
+            "Ascendance of a Bookworm Side Story One: Eustachius's Incognito Operation Downtown",
+            "Ascendance of a Bookworm Side Story Two: Visiting Missus Corinna",
+            "หนอนหนังสือยึดอำนาจ OVA"
+          ],
+          "genres": [
+            "Fantasy",
+            "Slice of Life"
+          ],
+          "trailer": {
+            "id": "TmjSLUfp6Jw",
+            "site": "youtube"
+          }
+        },
+        {
+          "id": 217712,
+          "idMal": 65103,
+          "title": {
+            "romaji": "Honzuki no Gekokujou: Kizoku-in no Jishou Tosho Iin",
+            "english": null,
+            "native": "本好きの下剋上 貴族院の自称図書委員"
+          },
+          "seasonYear": null,
+          "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx217712-dnqVxq7dslWJ.jpg",
+            "color": null
+          },
+          "bannerImage": null,
+          "siteUrl": "https://anilist.co/anime/217712",
+          "synonyms": [
+            "Ascendance of a Bookworm Season 5",
+            "Ascendance of a Bookworm: Founder of the Royal Academy's So-Called Library Committee"
+          ],
+          "genres": [
+            "Fantasy",
+            "Slice of Life"
+          ],
+          "trailer": null
+        }
+      ]
+    }
+  }
+}

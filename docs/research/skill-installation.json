@@ -1,0 +1,18 @@
+{
+  "skill": "sota-animated-landing-page",
+  "installedOn": "2026-11-01",
+  "repositorySource": "/Users/jatin/Projects/Anime Todolist/.agents/skills/sota-animated-landing-page",
+  "locations": [
+    "/Users/jatin/.agents/skills/sota-animated-landing-page",
+    "/Users/jatin/.codex/skills/sota-animated-landing-page",
+    "/Users/jatin/.claude/skills/sota-animated-landing-page",
+    "/Users/jatin/.config/opencode/skills/sota-animated-landing-page",
+    "/Users/jatin/.gemini/config/skills/sota-animated-landing-page"
+  ],
+  "files": {
+    "SKILL.md": "4977a848147c18f26eba1fde53692ff41c0abc6dd2969236da9baf9df81a8ea3",
+    "references/animation-production.md": "ecb43bbb9c4af0877cd4aa4a48001ee76b79467baf23bf281302ffc18843899f",
+    "agents/openai.yaml": "1a1bd8e905b8de341f300665d16737f4f2f1ab36d34464df09f7d86285367e12"
+  },
+  "verification": "Bundled quick_validate.py passed for repository skill and all five global copies; every file hash matches the repository source. Runtime discovery in other agent applications has not been tested."
+}

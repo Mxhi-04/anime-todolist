@@ -1,17 +1,26 @@
 {
   "name": "one-piece-todolist",
   "version": "1.0.0",
-  "description": "One Piece Todo & Mission Log Dashboard",
+  "description": "An anime-inspired personal workspace with 64 worlds, including a verified Popular 50 snapshot, a manga editorial landing page, tasks and focus.",
   "scripts": {
     "start": "vite",
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "node --test tests/*.test.mjs",
+    "test:legacy": "node test_app.js",
+    "media:sync": "python3 scripts/sync-anime-media.py",
+    "media:loops": "python3 scripts/build-ambient-loops.py"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "vite": "^8.3.4"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.118.0",
+    "gsap": "^3.15.0",
+    "three": "^0.187.0"
   }
 }

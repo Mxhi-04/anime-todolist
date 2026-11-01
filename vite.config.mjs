@@ -22,6 +22,9 @@ function copyAssetsPlugin() {
 export default defineConfig({
   plugins: [copyAssetsPlugin()],
   build: {
-    outDir: 'dist'
+    outDir: 'dist',
+    rolldownOptions: {
+      input: { main: path.resolve(__dirname, 'index.html'), legacy: path.resolve(__dirname, 'legacy.html') }
+    }
   }
 });
