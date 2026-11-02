@@ -30,5 +30,4 @@ const paths = {
 };
 export const icon = (name, cls = "") =>
   `<svg class="icon ${cls}" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${paths[name] || paths.spark}"/></svg>`;
-export const mark = () =>
-  `<span class="brand-mark" aria-hidden="true">${icon("check")}</span>`;
+export const mark = () => `<span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path d="M9 37 22 9h7L16 37Z" fill="#ff705a"/><path d="m27 9 13 28H28l-4-9 6-1-4-10Z" fill="#ffd36b"/><path d="m15 27 7 7 15-17" stroke="#f8f4ed" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path d="m39 4 1.5 4.5L45 10l-4.5 1.5L39 16l-1.5-4.5L33 10l4.5-1.5Z" fill="#ff705a"/></svg></span>`;

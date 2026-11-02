@@ -162,6 +162,12 @@ export async function mountScrollAnimations() {
           scrollTrigger: { trigger: el, start: "top 93%", once: true },
         }),
       );
+    gsap.utils.toArray('.section-heading:not([data-reveal]), .custom-world-banner:not([data-reveal]), .manifesto-inner:not([data-reveal])').forEach(el => {
+      gsap.from(el, {y:40, opacity:0, duration:0.9, ease:'power3.out', scrollTrigger:{trigger:el,start:'top 92%',once:true}});
+    });
+    gsap.utils.toArray('.featured-image img, .step-art').forEach(el => {
+      gsap.fromTo(el, {y:18}, {y:-18,ease:'none',scrollTrigger:{trigger:el,start:'top bottom',end:'bottom top',scrub:1}});
+    });
     const track = document.querySelector(".hero-track");
     if (track && innerWidth >= 740) {
       const tl = gsap.timeline({

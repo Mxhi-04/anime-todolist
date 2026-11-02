@@ -3,9 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#fff9ed" />
+    <meta name="theme-color" content="#10131b" />
+    <script>
+      try { document.documentElement.dataset.appearance = localStorage.getItem("anime_appearance_v1") === "light" ? "light" : "dark"; }
+      catch { document.documentElement.dataset.appearance = "dark"; }
+      if (document.documentElement.dataset.appearance === "light") document.querySelector('meta[name="theme-color"]').content = "#fff9ee";
+    </script>
     <meta name="description" content="Your day deserves a great arc. Plan tasks, find your focus, and build a workspace inspired by your favorite anime." />
-    <title>Anime Todo — Your next arc starts here.</title>
+    <title>AnimeTodo — Your next arc starts here.</title>
     <link rel="icon" type="image/svg+xml" href="/mark.svg" />
     <link rel="preload" href="/fonts/ranade-400.woff2" as="font" type="font/woff2" crossorigin />
   </head>
@@ -14,7 +19,7 @@
     <div id="app"></div>
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
     <div id="modal-root"></div>
-    <noscript><main style="padding:10%;font:20px system-ui;background:#fff9ed"><h1>Your day. Your anime. Your next arc.</h1><p>Anime Todo is a personal workspace inspired by your favorite anime. Enable JavaScript to explore the worlds and manage your tasks.</p></main></noscript>
+    <noscript><main style="padding:10%;font:20px system-ui;background:#10131b"><h1>Your day. Your anime. Your next arc.</h1><p>AnimeTodo is a personal workspace inspired by your favorite anime. Enable JavaScript to explore the worlds and manage your tasks.</p></main></noscript>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

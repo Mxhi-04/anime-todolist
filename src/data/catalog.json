@@ -39,7 +39,8 @@
     "popularPosition": 1,
     "popularObservedOn": "2026-11-01",
     "loop": "/media/anime/frieren/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 4.752475247524752
   },
   {
     "id": "golden-kamuy",
@@ -67,7 +68,8 @@
     "popularPosition": 2,
     "popularObservedOn": "2026-11-01",
     "loop": "/media/anime/golden-kamuy/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 4.752475247524752
   },
   {
     "id": "fire-force",
@@ -98,7 +100,8 @@
     "popularPosition": 3,
     "popularObservedOn": "2026-11-01",
     "loop": "/media/anime/fire-force/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 4.752475247524752
   },
   {
     "id": "fate-strange-fake",
@@ -124,7 +127,8 @@
     "popularPosition": 4,
     "popularObservedOn": "2026-11-01",
     "loop": "/media/anime/fate-strange-fake/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 4.752475247524752
   },
   {
     "id": "cheat-skill-another-world",
@@ -159,7 +163,8 @@
     "popularPosition": 5,
     "popularObservedOn": "2026-11-01",
     "loop": "/media/anime/cheat-skill-another-world/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 4.752475247524752
   },
   {
     "id": "one-piece",
@@ -195,7 +200,8 @@
     "popularPosition": 6,
     "popularObservedOn": "2026-11-01",
     "loop": "/media/anime/one-piece/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 4.752475247524752
   },
   {
     "id": "mf-ghost",
@@ -223,7 +229,8 @@
     "popularPosition": 7,
     "popularObservedOn": "2026-11-01",
     "loop": "/media/anime/mf-ghost/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 4.752475247524752
   },
   {
     "id": "trigun-stampede",
@@ -249,7 +256,8 @@
     "popularPosition": 8,
     "popularObservedOn": "2026-11-01",
     "loop": "/media/anime/trigun-stampede/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 4.752475247524752
   },
   {
     "id": "jujutsu-kaisen",
@@ -285,7 +293,8 @@
     "popularPosition": 9,
     "popularObservedOn": "2026-11-01",
     "loop": "/media/anime/jujutsu-kaisen/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 4.752475247524752
   },
   {
     "id": "my-hero-academia",
@@ -325,7 +334,8 @@
     "popularPosition": 10,
     "popularObservedOn": "2026-11-01",
     "loop": "/media/anime/my-hero-academia/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 4.752475247524752
   },
   {
     "id": "to-your-eternity",
@@ -361,7 +371,8 @@
     "popularPosition": 11,
     "popularObservedOn": "2026-11-01",
     "loop": "/media/anime/to-your-eternity/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 4.752475247524752
   },
   {
     "id": "slime",
@@ -400,7 +411,8 @@
     "popularPosition": 12,
     "popularObservedOn": "2026-11-01",
     "loop": "/media/anime/slime/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 4.8
   },
   {
     "id": "solo-leveling",
@@ -430,7 +442,8 @@
     "popularPosition": 13,
     "popularObservedOn": "2026-11-01",
     "loop": "/media/anime/solo-leveling/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 4.752475247524752
   },
   {
     "id": "classroom-of-the-elite",
@@ -466,7 +479,8 @@
     "popularPosition": 14,
     "popularObservedOn": "2026-11-01",
     "loop": "/media/anime/classroom-of-the-elite/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 4.752475247524752
   },
   {
     "id": "apothecary-diaries",
@@ -508,7 +522,8 @@
     "popularPosition": 15,
     "popularObservedOn": "2026-11-01",
     "loop": "/media/anime/apothecary-diaries/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 4.752475247524752
   },
   {
     "id": "black-clover",
@@ -537,7 +552,8 @@
     "popularPosition": 16,
     "popularObservedOn": "2026-11-01",
     "loop": "/media/anime/black-clover/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 4.752475247524752
   },
   {
     "id": "dr-stone",
@@ -568,7 +584,8 @@
     "popularPosition": 17,
     "popularObservedOn": "2026-11-01",
     "loop": "/media/anime/dr-stone/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 4.752475247524752
   },
   {
     "id": "haikyu",
@@ -600,7 +617,8 @@
     "popularPosition": 18,
     "popularObservedOn": "2026-11-01",
     "loop": "/media/anime/haikyu/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 4.752475247524752
   },
   {
     "id": "demon-slayer",
@@ -644,7 +662,8 @@
     "popularPosition": 19,
     "popularObservedOn": "2026-11-01",
     "loop": "/media/anime/demon-slayer/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 3.2653061224489797
   },
   {
     "id": "dragon-ball-z",
@@ -677,7 +696,8 @@
     "popularPosition": 20,
     "popularObservedOn": "2026-11-01",
     "loop": "/media/anime/dragon-ball-z/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 4.752475247524752
   },
   {
     "id": "gachiakuta",
@@ -704,7 +724,8 @@
     "popularPosition": 21,
     "popularObservedOn": "2026-11-01",
     "loop": "/media/anime/gachiakuta/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 4.752475247524752
   },
   {
     "id": "beginning-after-end",
@@ -734,7 +755,8 @@
     "popularPosition": 22,
     "popularObservedOn": "2026-11-01",
     "loop": "/media/anime/beginning-after-end/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 4.752475247524752
   },
   {
     "id": "mushoku-tensei",
@@ -765,7 +787,8 @@
     "popularPosition": 23,
     "popularObservedOn": "2026-11-01",
     "loop": "/media/anime/mushoku-tensei/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 4.752475247524752
   },
   {
     "id": "naruto-shippuden",
@@ -799,7 +822,8 @@
     "popularPosition": 24,
     "popularObservedOn": "2026-11-01",
     "loop": "/media/anime/naruto-shippuden/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 4.4036697247706424
   },
   {
     "id": "tsukimichi",
@@ -830,7 +854,8 @@
     "popularPosition": 25,
     "popularObservedOn": "2026-11-01",
     "loop": "/media/anime/tsukimichi/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 4.752475247524752
   },
   {
     "id": "shield-hero",
@@ -860,7 +885,8 @@
     "popularPosition": 26,
     "popularObservedOn": "2026-11-01",
     "loop": "/media/anime/shield-hero/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 3.0
   },
   {
     "id": "blue-lock",
@@ -889,7 +915,8 @@
     "popularPosition": 27,
     "popularObservedOn": "2026-11-01",
     "loop": "/media/anime/blue-lock/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 4.752475247524752
   },
   {
     "id": "rezero",
@@ -924,7 +951,8 @@
     "popularPosition": 28,
     "popularObservedOn": "2026-11-01",
     "loop": "/media/anime/rezero/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 4.752475247524752
   },
   {
     "id": "fairy-tail",
@@ -954,7 +982,8 @@
     "popularPosition": 29,
     "popularObservedOn": "2026-11-01",
     "loop": "/media/anime/fairy-tail/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 4.752475247524752
   },
   {
     "id": "your-lie-in-april",
@@ -989,7 +1018,8 @@
     "popularPosition": 30,
     "popularObservedOn": "2026-11-01",
     "loop": "/media/anime/your-lie-in-april/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 4.752475247524752
   },
   {
     "id": "jojos-bizarre-adventure",
@@ -1031,7 +1061,8 @@
     "popularPosition": 31,
     "popularObservedOn": "2026-11-01",
     "loop": "/media/anime/jojos-bizarre-adventure/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 3.4285714285714284
   },
   {
     "id": "shangri-la-frontier",
@@ -1064,7 +1095,8 @@
     "popularPosition": 32,
     "popularObservedOn": "2026-11-01",
     "loop": "/media/anime/shangri-la-frontier/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 3.902439024390244
   },
   {
     "id": "iruma-kun",
@@ -1095,7 +1127,8 @@
     "popularPosition": 33,
     "popularObservedOn": "2026-11-01",
     "loop": "/media/anime/iruma-kun/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 3.1578947368421053
   },
   {
     "id": "spy-family",
@@ -1127,7 +1160,8 @@
     "popularPosition": 34,
     "popularObservedOn": "2026-11-01",
     "loop": "/media/anime/spy-family/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 4.752475247524752
   },
   {
     "id": "dragon-ball-super",
@@ -1157,7 +1191,8 @@
     "popularPosition": 35,
     "popularObservedOn": "2026-11-01",
     "loop": "/media/anime/dragon-ball-super/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 4.752475247524752
   },
   {
     "id": "soul-eater",
@@ -1186,7 +1221,8 @@
     "popularPosition": 36,
     "popularObservedOn": "2026-11-01",
     "loop": "/media/anime/soul-eater/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 4.752475247524752
   },
   {
     "id": "my-dress-up-darling",
@@ -1223,7 +1259,8 @@
     "popularPosition": 37,
     "popularObservedOn": "2026-11-01",
     "loop": "/media/anime/my-dress-up-darling/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 4.752475247524752
   },
   {
     "id": "sword-art-online",
@@ -1255,7 +1292,8 @@
     "popularPosition": 38,
     "popularObservedOn": "2026-11-01",
     "loop": "/media/anime/sword-art-online/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 4.752475247524752
   },
   {
     "id": "horimiya",
@@ -1284,7 +1322,8 @@
     "popularPosition": 39,
     "popularObservedOn": "2026-11-01",
     "loop": "/media/anime/horimiya/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 4.752475247524752
   },
   {
     "id": "kaiju-no-8",
@@ -1316,7 +1355,8 @@
     "popularPosition": 40,
     "popularObservedOn": "2026-11-01",
     "loop": "/media/anime/kaiju-no-8/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 4.752475247524752
   },
   {
     "id": "tokyo-ghoul",
@@ -1347,7 +1387,8 @@
     "popularPosition": 41,
     "popularObservedOn": "2026-11-01",
     "loop": "/media/anime/tokyo-ghoul/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 2.526315789473684
   },
   {
     "id": "dragon-ball",
@@ -1380,7 +1421,8 @@
     "popularPosition": 42,
     "popularObservedOn": "2026-11-01",
     "loop": "/media/anime/dragon-ball/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 3.4532374100719423
   },
   {
     "id": "wistoria",
@@ -1411,7 +1453,8 @@
     "popularPosition": 43,
     "popularObservedOn": "2026-11-01",
     "loop": "/media/anime/wistoria/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 4.752475247524752
   },
   {
     "id": "chainsaw-man",
@@ -1443,7 +1486,8 @@
     "popularPosition": 44,
     "popularObservedOn": "2026-11-01",
     "loop": "/media/anime/chainsaw-man/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 4.752475247524752
   },
   {
     "id": "fullmetal-alchemist",
@@ -1481,7 +1525,8 @@
     "popularPosition": 45,
     "popularObservedOn": "2026-11-01",
     "loop": "/media/anime/fullmetal-alchemist/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 1.6
   },
   {
     "id": "ascendance-bookworm",
@@ -1511,7 +1556,8 @@
     "popularPosition": 46,
     "popularObservedOn": "2026-11-01",
     "loop": "/media/anime/ascendance-bookworm/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 3.902439024390244
   },
   {
     "id": "konosuba",
@@ -1547,7 +1593,8 @@
     "popularPosition": 47,
     "popularObservedOn": "2026-11-01",
     "loop": "/media/anime/konosuba/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 3.4285714285714284
   },
   {
     "id": "overlord",
@@ -1576,7 +1623,8 @@
     "popularPosition": 48,
     "popularObservedOn": "2026-11-01",
     "loop": "/media/anime/overlord/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 4.752475247524752
   },
   {
     "id": "naruto",
@@ -1608,7 +1656,8 @@
     "popularPosition": 49,
     "popularObservedOn": "2026-11-01",
     "loop": "/media/anime/naruto/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 4.752475247524752
   },
   {
     "id": "wind-breaker",
@@ -1637,7 +1686,8 @@
     "popularPosition": 50,
     "popularObservedOn": "2026-11-01",
     "loop": "/media/anime/wind-breaker/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 4.752475247524752
   },
   {
     "id": "attack-on-titan",
@@ -1679,7 +1729,8 @@
     "popularPosition": null,
     "popularObservedOn": null,
     "loop": "/media/anime/attack-on-titan/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 4.752475247524752
   },
   {
     "id": "dandadan",
@@ -1710,7 +1761,8 @@
     "popularPosition": null,
     "popularObservedOn": null,
     "loop": "/media/anime/dandadan/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 4.752475247524752
   },
   {
     "id": "mob-psycho-100",
@@ -1739,7 +1791,8 @@
     "popularPosition": null,
     "popularObservedOn": null,
     "loop": "/media/anime/mob-psycho-100/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 4.752475247524752
   },
   {
     "id": "vinland-saga",
@@ -1770,7 +1823,8 @@
     "popularPosition": null,
     "popularObservedOn": null,
     "loop": "/media/anime/vinland-saga/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 3.4532374100719423
   },
   {
     "id": "kaguya-sama",
@@ -1809,7 +1863,8 @@
     "popularPosition": null,
     "popularObservedOn": null,
     "loop": "/media/anime/kaguya-sama/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 3.5555555555555554
   },
   {
     "id": "fruits-basket",
@@ -1844,7 +1899,8 @@
     "popularPosition": null,
     "popularObservedOn": null,
     "loop": "/media/anime/fruits-basket/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 5.161290322580645
   },
   {
     "id": "bocchi-the-rock",
@@ -1878,7 +1934,8 @@
     "popularPosition": null,
     "popularObservedOn": null,
     "loop": "/media/anime/bocchi-the-rock/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 4.752475247524752
   },
   {
     "id": "cowboy-bebop",
@@ -1910,7 +1967,8 @@
     "popularPosition": null,
     "popularObservedOn": null,
     "loop": "/media/anime/cowboy-bebop/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 4.752475247524752
   },
   {
     "id": "steins-gate",
@@ -1940,7 +1998,8 @@
     "popularPosition": null,
     "popularObservedOn": null,
     "loop": "/media/anime/steins-gate/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 4.752475247524752
   },
   {
     "id": "code-geass",
@@ -1969,7 +2028,8 @@
     "popularPosition": null,
     "popularObservedOn": null,
     "loop": "/media/anime/code-geass/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 3.4285714285714284
   },
   {
     "id": "hells-paradise",
@@ -1999,7 +2059,8 @@
     "popularPosition": null,
     "popularObservedOn": null,
     "loop": "/media/anime/hells-paradise/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 4.752475247524752
   },
   {
     "id": "mashle",
@@ -2029,7 +2090,8 @@
     "popularPosition": null,
     "popularObservedOn": null,
     "loop": "/media/anime/mashle/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 4.752475247524752
   },
   {
     "id": "hunter-x-hunter",
@@ -2062,7 +2124,8 @@
     "popularPosition": null,
     "popularObservedOn": null,
     "loop": "/media/anime/hunter-x-hunter/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 4.752475247524752
   },
   {
     "id": "assassination-classroom",
@@ -2093,6 +2156,7 @@
     "popularPosition": null,
     "popularObservedOn": null,
     "loop": "/media/anime/assassination-classroom/ambient.mp4",
-    "loopKind": "live-artwork"
+    "loopKind": "live-artwork",
+    "mediaAspect": 4.752475247524752
   }
 ]
