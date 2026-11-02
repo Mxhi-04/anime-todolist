@@ -95,7 +95,7 @@ const shortTitle = (t) =>
   })[t.title] || t.title;
 const appearanceButton = () => {
   const light = document.documentElement.dataset.appearance === "light";
-  return `<button type="button" class="icon-button appearance-toggle" data-action="appearance" aria-label="Switch to ${light ? "dark" : "light"} mode" title="Switch to ${light ? "dark" : "light"} mode"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true">${light ? '<path d="M20.5 13a8.5 8.5 0 0 1-9.5-9.5A8.5 8.5 0 1 0 20.5 13Z"/>' : '<circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/>'}</svg></button>`;
+  return `<button type="button" class="icon-button appearance-toggle" data-action="appearance" aria-label="Switch to ${light ? "dark" : "light"} mode" title="Switch to ${light ? "dark" : "light"} mode"><svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true">${light ? '<path d="M20.5 13a8.5 8.5 0 0 1-9.5-9.5A8.5 8.5 0 1 0 20.5 13Z"/>' : '<circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/>'}</svg></button>`;
 };
 function toggleAppearance() {
   const value = document.documentElement.dataset.appearance === "light" ? "dark" : "light";
@@ -215,7 +215,7 @@ function renderRecovery() {
   app.innerHTML = `<main id="main" class="recovery"><span class="eyebrow">Your work comes first</span><h1>Let’s recover your workspace.</h1><p>${escape(storageError.message)}</p><p>Your original saved records have not been changed.</p>${button("Download the original data", "recover-data")}</main>`;
 }
 function header() {
-  return `<header class="site-header"><div class="header-inner">${logo()}<nav class="desktop-nav" aria-label="Main navigation"><a href="/#worlds" data-anchor="worlds">The worlds</a><a href="/#how-it-works" data-anchor="how-it-works">How it works</a><a href="/#workspace" data-anchor="workspace">The workspace</a></nav><div class="nav-actions">${appearanceButton()}<a class="sign-in-link" href="/sign-in" data-route="/sign-in">${store.prefs.onboarding ? "Your workspace" : "Sign in"}</a>${button(`Find your world ${icon("arrow")}`, "start", "small primary")}<button class="icon-button mobile-toggle" data-action="menu" aria-label="Open navigation" aria-expanded="false">${icon("menu")}</button></div></div><nav class="mobile-nav" aria-label="Mobile navigation"><a href="/#worlds" data-anchor="worlds">The worlds</a><a href="/#how-it-works" data-anchor="how-it-works">How it works</a><a href="/#workspace" data-anchor="workspace">The workspace</a><a href="/sign-in" data-route="/sign-in">Sign in / Your workspace</a></nav></header>`;
+  return `<header class="site-header"><div class="header-inner">${logo()}<nav class="desktop-nav" aria-label="Main navigation"><a href="/#worlds" data-anchor="worlds">The worlds</a><a href="/#how-it-works" data-anchor="how-it-works">How it works</a><a href="/#workspace" data-anchor="workspace">The workspace</a></nav><div class="nav-actions">${appearanceButton()}<a class="sign-in-link ${store.prefs.onboarding ? "workspace-link" : ""}" href="/sign-in" data-route="/sign-in">${store.prefs.onboarding ? "Your workspace" : "Sign in"}</a>${button(`Find your world ${icon("arrow")}`, "start", "small primary")}<button class="icon-button mobile-toggle" data-action="menu" aria-label="Open navigation" aria-expanded="false">${icon("menu")}</button></div></div><nav class="mobile-nav" aria-label="Mobile navigation"><a href="/#worlds" data-anchor="worlds">The worlds</a><a href="/#how-it-works" data-anchor="how-it-works">How it works</a><a href="/#workspace" data-anchor="workspace">The workspace</a><a href="/sign-in" data-route="/sign-in">Sign in / Your workspace</a></nav></header>`;
 }
 function renderLanding() {
   const featured = [
@@ -402,11 +402,11 @@ function taskPanel(view) {
     )
     .join(
       "",
-    )}</div><label class="task-search">${icon("search")}<input id="task-search" type="search" placeholder="Find a task…" aria-label="Search your tasks" value="${escape(taskQuery)}"/></label></div><div class="task-list">${taskList(filtered)}</div><button class="add-task-row" data-action="new-task">${icon("plus")} Add your next little mission <kbd>⌘ K</kbd></button>${!user && store.tasks.length ? '<div class="device-note">Your tasks are saved in this browser. Make a backup in settings.</div>' : ""}`;
+    )}</div><label class="task-search">${icon("search")}<input id="task-search" type="search" placeholder="Find a task…" aria-label="Search your tasks" value="${escape(taskQuery)}"/></label></div><div class="task-list">${taskList(filtered)}</div>${filtered.length ? `<button class="add-task-row" data-action="new-task">${icon("plus")} Add your next little mission <kbd>⌘ K</kbd></button>` : ""}${!user && store.tasks.length ? '<div class="device-note">Your tasks are saved in this browser. Make a backup in settings.</div>' : ""}`;
 }
 function taskList(tasks) {
   if (!tasks.length)
-    return `<div class="tasks-empty"><span>✳</span><h3>${taskQuery ? "No tasks found." : "A fresh page. All yours."}</h3><p>${taskQuery ? "Try a different search." : "Start small. Add one thing you’d like to do today."}</p>${!taskQuery ? button(`${icon("plus")} Write your first task`, "new-task", "outline small") : ""}</div>`;
+    return `<div class="tasks-empty"><span class="empty-mark" aria-hidden="true">${icon("spark")}</span><h3>${taskQuery ? "No tasks found." : "A fresh page. All yours."}</h3><p>${taskQuery ? "Try a different search." : "Start small. Add one thing you’d like to do today."}</p>${!taskQuery ? button(`${icon("plus")} Write your first task`, "new-task", "outline small") : ""}</div>`;
   return tasks
     .map((t) => {
       const a = store.activities.find((x) => x.id === t.activityId);

@@ -6052,3 +6052,70 @@ body{background:radial-gradient(ellipse at 85% 5%,#30213955,transparent 45%),var
 .form-error{color:#ff998a}
 [data-appearance="light"] .form-error{color:#aa2a1b}
 [data-appearance="light"] .auth-art .brand{color:#10131b}
+
+/* Theme control: explicit SVG geometry prevents the intrinsic 300×150 size. */
+.appearance-toggle{display:inline-flex;align-items:center;justify-content:center;padding:0;line-height:1;overflow:hidden;box-sizing:border-box;min-width:44px;min-height:44px;align-self:center;color:var(--ink);background:var(--surface);border:1px solid var(--line);box-shadow:0 2px 8px #0000000d;transition:background .18s,border-color .18s}
+.appearance-toggle>.icon{display:block;flex:0 0 22px;width:22px!important;height:22px!important;max-width:22px;max-height:22px;pointer-events:none}
+.appearance-toggle:hover{border-color:var(--muted)}
+.appearance-toggle:active{background:var(--surface-raised)}
+.tasks-empty>.empty-mark{display:grid;place-items:center;width:48px;height:48px;margin:0 auto 16px;border-radius:14px;background:color-mix(in srgb,var(--world) 12%,var(--surface));color:var(--world)}
+.empty-mark>.icon{width:26px;height:26px}
+
+@media(max-width:739px){
+ /* Keep persistent navigation compact; the workspace link remains in the menu. */
+ .header-inner{height:68px;padding-inline:16px;gap:8px}
+ .header-inner>.brand{min-width:0;font-size:22px;gap:7px}
+ .header-inner .brand-mark{width:30px;height:30px;flex:0 0 30px}
+ .nav-actions{gap:6px;flex-shrink:0}
+ .nav-actions>.workspace-link{display:none}
+ .nav-actions>.sign-in-link{font-size:12px;white-space:nowrap;max-width:none}
+ .nav-actions>.mobile-toggle{display:inline-flex;align-items:center;justify-content:center;width:44px;min-width:44px;height:44px;padding:0}
+ .mobile-nav{top:68px}
+ .hero-inner{padding:30px 20px 28px}
+ .hero-copy h1{font-size:clamp(76px,21vw,112px);line-height:.88}
+ .hero-copy .eyebrow{font-size:9px;letter-spacing:.7px;line-height:1.6;margin-bottom:20px}
+ .hero-copy p{font-size:14px;line-height:1.7;margin-top:26px;max-width:36ch}
+ .hero-actions{display:flex;flex-direction:column;align-items:stretch;gap:10px!important;margin-top:24px}
+ .hero-actions>.button{width:100%;justify-content:center;font-size:14px;min-height:50px}
+ .hero-actions>.text-link{justify-content:center;font-size:13px;min-height:44px}
+ /* Scale every poster with its container instead of mixing pixel widths and offsets. */
+ .hero-art{height:auto;aspect-ratio:1/1.12;width:100%;max-width:400px;min-width:0;margin:26px auto 0;overflow:visible}
+ .hero-webgl{inset:0;width:100%;height:100%}
+ .hero-poster{padding:3px;box-shadow:3px 5px 0 #0003}
+ .hero-poster img{height:auto;width:100%;aspect-ratio:2/3;object-fit:cover}
+ .poster-0{left:6%;top:10%;width:33%;transform:rotate(-10deg)}
+ .poster-1{left:31%;top:28%;width:40%;transform:rotate(5deg)}
+ .poster-2{left:61%;top:11%;width:32%;transform:rotate(10deg)}
+ .poster-3{left:8%;top:58%;width:28%;transform:rotate(7deg)}
+ .poster-4{left:65%;top:57%;width:28%;transform:rotate(-8deg)}
+ .sun-disc{width:76%;height:auto;aspect-ratio:1;left:12%;top:15%}
+ .manga-sticker{width:70px;height:76px;font-size:21px;right:1%;top:1%}
+ .orbit-label{top:1%;left:4%;font-size:7px;letter-spacing:.8px;transform:none}
+ .hero-annotation{bottom:0;left:0;right:0;text-align:center;font-size:12px;line-height:1.5;white-space:normal}
+ /* A concise empty state with one clear action, rather than a tall blank panel. */
+ .task-panel{min-height:0;padding:20px 16px;border-color:var(--line);border-radius:12px}
+ .task-panel .panel-title{gap:12px;align-items:center}
+ .task-panel .panel-title h2{font-size:18px;line-height:1.35;letter-spacing:-.3px}
+ .task-panel .panel-title .eyebrow{font-size:9px;line-height:1.5;margin-bottom:6px}
+ .task-toolbar{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;margin-top:20px;padding-bottom:16px;border-color:var(--line)}
+ .task-filter{width:100%;padding:4px;gap:4px;background:var(--paper);border-radius:9px}
+ .task-filter>button{flex:1;font-size:13px;min-height:44px;padding:8px 10px;border-radius:6px}
+ .task-filter>button.active{background:var(--surface-raised);box-shadow:none}
+ .task-search{width:100%;gap:10px;border:1px solid var(--line);border-radius:9px;padding:0 12px;background:var(--paper)}
+ .task-search>.icon{width:18px;height:18px}
+ .task-search>input{min-height:46px;font-size:16px;padding:8px 0;color:var(--ink)}
+ .task-search>input::placeholder{color:var(--muted);opacity:1}
+ .tasks-empty{padding:28px 4px 12px}
+ .tasks-empty>.empty-mark{margin-bottom:14px}
+ .tasks-empty h3{font-size:18px;line-height:1.4;margin:0}
+ .tasks-empty p{font-size:13px;line-height:1.7;max-width:28ch;margin:10px auto 20px}
+ .tasks-empty .button{width:100%;min-height:48px;font-size:13px;justify-content:center;padding:12px}
+ .add-task-row{min-height:48px;font-size:13px;line-height:1.5;padding-block:14px}
+ .app-topbar>div>.appearance-toggle>.icon{width:22px;height:22px}
+}
+@media(max-width:370px){
+ .header-inner{padding-inline:12px;gap:4px}.header-inner>.brand{font-size:19px;gap:5px}.nav-actions{gap:2px}
+ .hero-copy h1{font-size:22vw}.hero-inner{padding-inline:18px}
+ .manga-sticker{width:60px;height:66px;font-size:18px}
+ .orbit-label{font-size:6px;letter-spacing:.5px}
+}
